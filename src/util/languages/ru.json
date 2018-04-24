@@ -1,0 +1,17 @@
+{
+	"cn":{
+		"nav":{
+			"login": "登录",
+			"register": "注册",
+			"home": "首页",
+			"pool": "矿池",
+			"support": "帮助",
+			"chinese": "中文",
+			"english": "英文",
+			"russian": "俄文",
+			"currency": "币种",
+			"PoolHashrate": "矿池算力",
+			"PoolFee": "矿池费率"
+		}
+	}
+}

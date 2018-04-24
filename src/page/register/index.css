@@ -1,0 +1,236 @@
+
+body {
+    background-color: #f4f4f4;
+}
+
+.box {
+    width: 1000px;
+    margin: 0 auto;
+}
+
+.logo {
+    display: inline-block;
+    height: 52px;
+    font-size: 18px;
+    color: #433b3b;
+    line-height: 52px;
+    padding-left: 150px;
+    background: url("../../images/logo_header.png") no-repeat;
+}
+
+.nav-title {
+    height: 52px;
+}
+
+.nav-title li {
+    float: left;
+    font-size: 14px;
+    color: #555555;
+    padding: 0 10px;
+    margin-top: 20px;
+}
+
+.nav-title li:first-child {
+    border-right: 1px solid #555555;
+}
+
+.nav-title li a {
+    color: #f75001;
+}
+
+.title{
+    width: 100%;
+    height: 75px;
+    line-height: 75px;
+    font-size: 24px;
+    color: #fff;
+    letter-spacing: 10px;
+    text-align: center;
+    background: url("../../images/search_bg.jpg") center center no-repeat;
+    background-size: cover;
+    border-radius: 4px 4px 0 0;
+}
+
+.content{
+    background-color: #fff;
+    border-radius: 0 0 4px 4px;
+    padding: 30px 0 20px 0;
+    text-align: center;
+}
+.content form{
+    width: 320px;
+    position: relative;
+    margin: 0 auto;
+}
+.content form input[type='text'],.content form input[type='button']{
+    width: 100%;
+    padding: 8px 0;
+    border-radius: 4px;
+    outline: none;
+}
+.content form input[type='text']{
+    background-color: #f4f4f4;
+    border: 1px solid #dddddd;
+    text-indent: 8px;
+}
+.content form input[type='button']{
+    background-color: #ff7519;
+    border: none;
+    color: #fff;
+}
+.content form input[type='button']:hover{
+    opacity: .8;
+}
+.checkbox {
+    position: relative;
+    height: 30px;
+}
+.checkbox input[type='checkbox'] {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 15px;
+    height: 15px;
+    opacity: 0;
+    z-index: 99;
+    margin:0;
+    padding: 0;
+    cursor: pointer;
+}
+.checkbox label {
+    position: absolute;
+    left: 30px;
+    top: 0;
+    height: 15px;
+    line-height: 15px;
+    white-space: nowrap;
+    font-size: 14px;
+}
+.checkbox label:before {
+    content: '';
+    position: absolute;
+    left: -30px;
+    top: 0;
+    width: 14px;
+    height: 14px;
+    border: 1px solid #ddd;
+    border-radius: 3px;
+    transition: all 0.3s ease;
+    -webkit-transition: all 0.3s ease;
+    -moz-transition: all 0.3s ease;
+}
+.checkbox label:after {
+    opacity: 0;
+    content: '';
+    position: absolute;
+    left: -24.5px;
+    top: 2.5px;
+    width: 4px;
+    height: 8px;
+    border: 0;
+    border-right: 1px solid #ff8300;
+    border-bottom: 1px solid #ff8300;
+    background: #fff;
+    transform: rotate(45deg);
+    -webkit-transform: rotate(45deg);
+    -moz-transform: rotate(45deg);
+    -ms-transform: rotate(45deg);
+    transition: all 0.3s ease;
+    -webkit-transition: all 0.3s ease;
+    -moz-transition: all 0.3s ease;
+}
+.checkbox input[type='checkbox']:checked + label:before {
+
+}
+.checkbox input[type='checkbox']:checked + label:after {
+    opacity: 1;
+}
+.checkbox input[type='checkbox']:checked + label em{
+    color:#333;
+}
+.checkbox label em{
+    font-style: normal;
+    margin-left: -10px;
+    color: #999999;
+}
+
+.third{
+    margin-top: 15px;
+    text-align: center;
+}
+.third-title{
+    font-size: 16px;
+    color:#999999;
+}
+.third-name{
+    display: inline-block;
+    overflow: hidden;
+    margin-top: 30px;
+}
+.third-name li{
+    float: left;
+    margin-right: 20px;
+}
+.third-name li a{
+    display: block;
+    width: 40px;
+    height: 40px;
+    line-height: 42px;
+    text-align: center;
+    background-color: #dddddd;
+    border-radius: 50%;
+    color:#fff;
+    border: 2px solid #ddd;
+}
+.third-name li:last-child{
+    margin-right: 0;
+}
+.third-name li.wechat a:hover{
+    background-color: transparent;
+    border-color: #40af37;
+    color: #40af37;
+}
+.third-name li.weibo a:hover{
+    background-color: transparent;
+    border-color: #ea5d5c;
+    color: #ea5d5c;
+}
+.third-name li.QQ a:hover{
+    background-color: transparent;
+    border-color: #4cafe9;
+    color: #4cafe9;
+}
+
+.copy{
+    text-align: center;
+}
+.language{
+    display: inline-block;
+    margin-top: 20px;
+}
+.language li{
+    float: left;
+    border-right: 1px solid #fec808;
+}
+.language li a{
+    display: block;
+    color: #fec808;
+    padding: 0 20px;
+    font-size: 14px;
+}
+.language li.active a{
+    color: #fff;
+}
+.language li:last-child{
+    border-right: none;
+}
+.copy p{
+    color: #fff;
+    margin-top: 20px;
+    font-size: 14px;
+}
+.section {
+    width: 100%;
+    height: auto;
+    /*f55c1e*/
+}

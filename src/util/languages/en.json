@@ -1,0 +1,22 @@
+{
+  "en": {
+    "translation": {
+      "input": {
+        "placeholder": "a placeholder"
+      },
+      "nav": {
+        "login": "login",
+        "register": "register",
+        "home": "Home",
+        "pool": "Pool",
+        "support": "Support",
+        "chinese": "Chinese",
+        "english": "English",
+        "russian": "Russian",
+        "currency": "Currency",
+        "poolHashrate": "Pool Hashrate",
+        "poolFee": "Pool Fee"
+      }
+    }
+  }
+}

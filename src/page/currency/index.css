@@ -1,0 +1,732 @@
+
+.search-box {
+    width: 100%;
+    height: 255px;
+    background: url("../../images/search_bg.jpg") center center no-repeat;
+    background-size: cover;
+    overflow: hidden;
+    position: relative;
+}
+
+.search-box .form {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 672px;
+    height: 36px;
+    margin: -18px 0 0 -345px;
+}
+
+.search-box .form span {
+    position: absolute;
+    color: #a9a9a9;
+    font-size: 14px;
+    top: 11px;
+    left: 10px;
+    z-index: 9;
+}
+
+.search-box .form input[type='text'] {
+    position: absolute;
+    left: 0;
+    top: 0;
+    padding: 0;
+    font-size: 14px;
+    color: #a9a9a9;
+    height: 32px;
+    line-height: 32px;
+    padding-left: 30px;
+    border: 1px solid #dae2ed;
+    width: 540px;
+    border-radius: 4px 0 0 4px;
+    outline: none;
+}
+
+.search-box .form input[type='button'] {
+    position: absolute;
+    right: 0;
+    top: 0;
+    background-color: #fd752c;
+    color: #fff;
+    height: 36px;
+    width: 100px;
+    padding: 0;
+    border: 1px solid #fd752c;
+    border-radius: 0 4px 4px 0;
+    outline: none;
+    cursor: pointer;
+}
+
+.search-box .form input[type='button']:hover {
+    background-color: #dd6626;
+}
+
+.section {
+    margin-right: auto;
+    margin-left: auto;
+    position: relative;
+    text-align: center;
+}
+
+.coin-logo {
+    width: 94px;
+    height: 94px;
+    background-color: #2d8d4b;
+    border-radius: 50%;
+    text-align: center;
+    line-height: 94px;
+    margin: 25px auto 10px;
+}
+
+.coin-logo img {
+    display: inline-block;
+    vertical-align: middle;
+}
+
+.coin-title {
+    display: inline-block;
+    padding: 50px 0 32px 0;
+    /*overflow: hidden;*/
+}
+.coin-name{
+    min-height: 16px;
+}
+.coin-title li {
+    float: left;
+    height: 16px;
+    width: 140px;
+    border-right: 1px solid #333;
+}
+
+.coin-title li.active a {
+    border-bottom: 4px solid #f86601;
+    color: #f86601;
+}
+
+.coin-title li a:hover {
+    color: #f86601;
+}
+
+.coin-title li a {
+    display: inline-block;
+    font-size: 14px;
+    color: #333;
+    padding-bottom: 30px;
+}
+
+.coin-title li:last-child {
+    border-right: none;
+}
+
+.tab {
+    display: none;
+}
+
+.coin-info {
+    width: 100%;
+    height: auto;
+    overflow: hidden;
+    position: relative;
+    min-height: 500px;
+}
+
+.loading {
+    display: none;
+    position: absolute;
+    color: #f86601;
+    font-size: 30px;
+    left: 50%;
+    top: 120px;
+    margin-left: -13px;
+}
+
+/*ETC首页 样式*/
+.home {
+    width: 100%;
+    background-color: #f7f8fa;
+    padding: 20px 0;
+}
+
+.coin-intro li {
+    float: left;
+    width: 285px;
+    height: 100px;
+    margin: 0 10px 10px 0;
+    overflow: hidden;
+    position: relative;
+    background-color: #9aa9b5;
+}
+
+/*.coin-intro li:nth-child(1), .coin-intro li:nth-child(8) {*/
+    /*background-color: #f86601;*/
+/*}*/
+
+/*.coin-intro li:nth-child(2), .coin-intro li:nth-child(7) {*/
+    /*background-color: #fea112;*/
+/*}*/
+
+/*.coin-intro li:nth-child(3), .coin-intro li:nth-child(6) {*/
+    /*background-color: #57bcda;*/
+/*}*/
+
+/*.coin-intro li:nth-child(4), .coin-intro li:nth-child(5) {*/
+    /*background-color: #2d8d4b;*/
+/*}*/
+
+.coin-intro li:nth-child(4n) {
+    margin-right: 0;
+}
+
+.coin-intro li .data-title, .coin-intro li .data-number {
+    position: absolute;
+    left: 20px;
+    white-space: nowrap;
+    color: #fff;
+}
+
+.coin-intro li .data-title {
+    font-size: 14px;
+    top: 20px;
+}
+
+.coin-intro li .data-number {
+    font-size: 24px;
+    bottom: 20px;
+}
+
+.coin-intro li .icon {
+    font-size: 80px;
+    color: #fff;
+    opacity: 0.1;
+    position: absolute;
+    right: 10px;
+    top: 7px;
+}
+
+.mine-calc {
+    margin: 40px 0;
+}
+
+.mine-calc .chart {
+    height: 500px;
+}
+
+.same-title {
+    border-left: 3px solid #f86601;
+    text-align: left;
+    font-size: 20px;
+    height: 30px;
+    line-height: 30px;
+    padding-left: 10px;
+}
+
+.mine-feature {
+    margin-bottom: 40px;
+}
+.feature{
+    display: inline-block;
+    width: 100%;
+}
+.feature li {
+    float: left;
+    width: 360px;
+    padding: 10px 0 10px 10px;
+    text-align: left;
+    border-bottom: 1px solid #ccc;
+    margin-right: 20px;
+}
+
+.feature li .feature-box {
+    width: 370px;
+    border-right: 1px solid #ccc;
+}
+
+.feature li .number {
+    display: inline-block;
+    font-size: 60px;
+    color: #cbc3b7;
+}
+
+.feature li .text {
+    display: inline-block;
+}
+
+.feature li .text p:nth-child(1) {
+    font-size: 22px;
+    color: #515151;
+    margin-bottom: 10px;
+}
+
+.feature li .text p:nth-child(2) {
+    font-size: 16px;
+    color: #666666;
+}
+.feature li:nth-child(3n) .feature-box {
+    border-right: none;
+}
+.feature li:nth-last-child(3){
+    width: 361px;
+}
+.feature li:nth-last-child(2){
+    width: 359px;
+}
+.feature li:nth-last-child(1), .feature li:nth-last-child(2), .feature li:nth-last-child(3){
+    border-bottom: none;
+}
+
+/*区块信息*/
+
+.information {
+    background-color: #eff4f7;
+    padding: 80px 0 50px 0;
+}
+
+.info-title {
+    font-size: 24px;
+    color: #515151;
+    text-align: left;
+}
+
+.info-stitle {
+    font-size: 16px;
+    color: #7c7b7b;
+    text-align: left;
+    margin: 10px 0 50px 0;
+}
+
+.info-stitle span {
+    display: inline-block;
+    border-bottom: 3px solid #f86601;
+    padding-bottom: 5px;
+}
+
+.info-list {
+    width: 100%;
+    display: inline-block;
+    padding-bottom: 30px;
+    border-bottom: 1px solid #fff;
+}
+
+.info-list ul li {
+    float: left;
+    width: 291.5px;
+    border-right: 1px solid #fff;
+}
+
+.info-list ul li:last-child {
+    border-right: none;
+}
+
+.info-list ul li .icon {
+    color: #f86601;
+    font-size: 50px;
+}
+
+.info-list ul li .name {
+    color: #7e7e7e;
+    font-size: 16px;
+    margin: 15px 0;
+}
+
+.info-list table {
+    width: 100%;
+}
+
+.info-list table tbody tr:nth-child(odd) {
+    background-color: #fafcfd;
+}
+
+.info-list table tbody tr td {
+    width: 291.5px;
+    color: #515151;
+    font-size: 18px;
+    padding: 16px 0;
+    border-right: 1px solid #fff;
+}
+
+.info-list table tbody tr td:last-child {
+    border-right: none;
+}
+
+.cubes {
+    width: 100%;
+    display: inline-block;
+    margin: 30px 0;
+}
+
+.cubes li {
+    width: 390px;
+    height: 162px;
+    position: relative;
+    float: left;
+}
+
+.cubes li .cube-bg {
+    width: 160px;
+    height: 160px;
+    border-radius: 50%;
+    opacity: 0.3;
+    position: absolute;
+    left: 115px;
+    top: 0;
+}
+
+.cubes li .cube-number {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    vertical-align: middle;
+    color: #fff;
+    position: absolute;
+    left: 120px;
+    top: 5px;
+    z-index: 2;
+}
+
+.cubes li .cube-number p {
+    text-align: center;
+}
+
+.cubes li .cube-number p:nth-child(1) {
+    font-size: 30px;
+    margin: 55px 0 10px 0;
+}
+
+.cubes li .cube-number p:nth-child(2) {
+    font-size: 16px;
+}
+
+.cubes li .color-one {
+    background-color: #fea112;
+}
+
+.cubes li .color-two {
+    background-color: #78c5ed;
+}
+
+.cubes li .color-three {
+    background-color: #84bf65;
+}
+
+.work {
+    background-color: #f4f6f9;
+    padding: 30px 0;
+}
+
+.work-title {
+    display: inline-block;
+    width: 100%;
+    margin-bottom: 20px;
+    background: url("../../images/search_bg.jpg") center center no-repeat;
+    background-size: cover;
+}
+
+.work-title li {
+    float: left;
+    margin-right: 40px;
+    margin-bottom: 1px;
+}
+
+.work-title li:first-child {
+    margin-left: 30px;
+}
+
+.work-title li a {
+    display: inline-block;
+    color: rgba(255, 255, 255, .6);
+    font-size: 18px;
+    padding: 20px 8px 20px 8px;
+}
+
+.work-title li.active a {
+    color: rgba(255, 255, 255, 1);
+    border-bottom: 4px solid #fff;
+}
+
+.work-title li em {
+    margin-left: 5px;
+    font-style: normal;
+    padding: 0 10px;
+    font-size: 14px;
+    background-color: #febd02;
+    color: #ff3606;
+    border-radius: 10px;
+}
+
+.f-tab {
+    border: 1px solid #e6ebf1;
+    background-color: #fff;
+    border-radius: 4px;
+    min-height: 300px;
+    display: none;
+}
+
+.f-tab table {
+    width: 100%;
+}
+
+.f-tab table thead tr th {
+    font-size: 14px;
+    text-align: center;
+    padding: 15px 0;
+    /*width: 291.5px;*/
+    font-weight: normal;
+    border-bottom: 1px solid #e6ebf1;
+    border-right: 1px solid #e6ebf1;
+}
+
+.f-tab table thead tr th:last-child {
+    border-right: none;
+}
+
+.f-tab table tbody tr td {
+    font-size: 14px;
+    padding: 15px 20px;
+    width: 25%;
+    text-align: center;
+    border-bottom: 1px solid #e6ebf1;
+    color: #4e4e4e;
+    white-space: nowrap;
+}
+
+.f-tab table tbody tr td:first-child {
+    color: #474747;
+    font-weight: bold;
+}
+
+.f-tab table tbody tr:last-child td {
+    border-bottom: none;
+}
+
+/*常见问题*/
+
+.problem {
+    padding-bottom: 50px;
+}
+
+.support {
+    display: inline-block;
+    width: 100%;
+}
+
+.support li {
+    width: 100%;
+    margin-bottom: 5px;
+    height: 39px;
+    overflow: hidden;
+}
+
+.support li .title {
+    border-left: 6px solid #f86601;
+    color: #ff832a;
+    font-size: 14px;
+    background-color: #f3f3f3;
+    text-align: left;
+    padding: 10px 0 10px 20px;
+    cursor: pointer;
+    user-select: none;
+}
+
+.support li .content {
+    text-align: left;
+    padding: 20px 26px;
+    line-height: 26px;
+    font-size: 16px;
+    min-height: 100px;
+    overflow: auto;
+}
+
+.support li .content .such {
+    color: #ababad;
+}
+
+/*兼容分辨率*/
+
+@media (max-width: 700px) {
+    .search-box{
+        height: 155px!important;
+    }
+    .search-box .form{
+        width: 80%;
+        margin: -18px 0 0 -40%;
+    }
+    .search-box .form span{
+        top: 7px;
+    }
+    .search-box .form input[type='text'],.search-box .form input[type='button']{
+        -webkit-appearance: none;
+    }
+    .search-box .form input[type='text']{
+        width: calc(100% - 92px);
+        height: 17px;
+        line-height: 17px;
+        padding: 5px 0 5px 30px!important;
+        box-shadow: none;
+    }
+    .search-box .form input[type='button']{
+        height: 29px;
+        line-height: 29px;
+        width: 60px;
+    }
+    .tab{
+        width: auto!important;
+        padding: 20px 10px;
+    }
+    .coin-title{
+        width: 100%;
+    }
+    .coin-title li{
+        width: 19%;
+    }
+    .coin-intro li{
+        width: 49%;
+        margin-right: 2%;
+        font-family: Arial;
+    }
+    .coin-intro li:nth-child(2n){
+        margin-right: 0;
+    }
+
+    .coin-intro li .data-number{
+        font-size: 20px;
+    }
+    .feature li{
+        width: 46%;
+        margin-right: 2%;
+    }
+    .feature li:nth-child(2n){
+        margin-right: 0;
+        border-right: none;
+    }
+    .feature li .number{
+        width: 70px;
+    }
+    .feature li:nth-child(2n) .feature-box{
+        border-right: none;
+    }
+    .feature li .text p:nth-child(1){
+        font-size: 13px;
+    }
+    .feature li .text p:nth-child(2){
+        font-size: 15px;
+    }
+    .feature li .feature-box{
+        width: 102%;
+    }
+    .feature li:nth-last-child(1), .feature li:nth-last-child(2), .feature li:nth-last-child(3), .feature li:nth-last-child(4){
+        border-bottom: 1px solid #ccc;
+    }
+
+    .info-title{
+        font-size: 18px;
+    }
+    .info-stitle{
+        font-size: 14px;
+    }
+    .info-list ul li:nth-child(1){
+        width: 26%;
+    }
+    .info-list ul li:nth-child(2){
+        width: 27%;
+    }
+    .info-list ul li:nth-child(3){
+        width: 23.1%;
+    }
+    .info-list ul li:nth-child(4){
+        width: 22%;
+    }
+    .info-list ul li .name{
+        font-size: 14px;
+        white-space: nowrap;
+    }
+    .cubes li{
+        width: 33.33%;
+        height: 120px;
+    }
+    .cubes li .cube-bg{
+        width: 100px;
+        height: 100px;
+        left: 50%;
+        top: 50%;
+        margin: -50px 0 0 -50px;
+    }
+    .cubes li .cube-number{
+        width: 90px;
+        height: 90px;
+        left: 50%;
+        top: 50%;
+        margin: -45px 0 0 -45px;
+    }
+    .cubes li .cube-number p:nth-child(1){
+        font-size: 16px;
+        width: 100%;
+        position: absolute;
+        top:50%;
+        left: 0;
+        margin-top: -16px;
+    }
+    .cubes li .cube-number p:nth-child(2){
+        font-size: 14px;
+        width: 100%;
+        position: absolute;
+        top:50%;
+        left: 0;
+        margin-top: 7px;
+    }
+    .work{
+        background-color: transparent;
+        padding: 0;
+    }
+    .work-title li:first-child{
+        margin-left: 10px;
+    }
+    .work-title li{
+        margin-right: 10px;
+    }
+    .work-title li a{
+        font-size: 14px;
+    }
+    .work-title li em{
+        font-size: 12px;
+        padding: 0 5px;
+        margin-left: 0;
+    }
+    .f-tab{
+        /*display: -webkit-box;*/
+        overflow-x: scroll;
+        -webkit-overflow-scrolling: touch;
+    }
+    .f-tab table thead tr th{
+        font-size: 13px;
+    }
+    .f-tab table tbody tr td{
+        font-size: 12px;
+    }
+    .f-tab table tbody tr td:nth-child(2) a{
+        font-size: 12px!important;
+    }
+    .f-tab table tbody tr td a{
+        font-size: 12px;
+    }
+    .problem{
+        height: 670px;
+    }
+}
+
+@media (min-width: 768px) and (max-width: 992px) {
+    .section {
+        width: 750px;
+    }
+}
+
+@media (min-width: 992px) and (max-width: 1200px) {
+    .section {
+        width: 970px;
+    }
+}
+
+@media (min-width: 1200px) {
+    .section {
+        width: 1170px;
+    }
+}

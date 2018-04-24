@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    #include("./layout/head-common.html")
+    <title>LCH挖矿教程 - 91pool</title>
+</head>
+<body>
+<!--header部分-->
+#include("./layout/header.html")
+
+<!--搜索栏-->
+<div class="search-box">
+    <div class="form">
+        <span class="fa fa-search"></span>
+        <input type="text" placeholder="请输入LCH矿工地址" id="address">
+        <input type="button" value="搜索" id="search">
+    </div>
+</div>
+<!--主要显示区-->
+<div class="section">
+    <div class="coin-logo"><img src="../images/lch.png"></div>
+    <p class="coin-name">LCH</p>
+    <ul class="coin-title tab-title">
+        <li><a href="./currency.html?coin=lch&i=0">LCH首页</a></li>
+        <li class="active"><a href="javascript:;">挖矿教程</a></li>
+        <li><a href="./currency.html?coin=lch&i=2">区块信息</a></li>
+        <li><a href="./currency.html?coin=lch&i=3">我的矿池</a></li>
+        <li><a href="./currency.html?coin=lch&i=4">常见问题</a></li>
+    </ul>
+</div>
+<div class="teach">
+    <div class="section">
+        <div class="time-line">
+            <ul class="teach-info">
+                <li>
+                    <div class="step">1</div>
+                    <div class="content">
+                        <p>获取钱包</p>
+                        <div>
+                            莱特现金的官方app钱包正在开发中，目前可以通过以下几种方法获取钱包地址<br>
+                            方法1（推荐）<br>
+                            使用比特派钱包，详见http://bitpie.com，选择LCH<br>
+                            <img src="../images/lch_img1.png"><br>
+                            方法2<br>
+                            使用莱特现金官方客户端，源码<a href="https://github.com/litecoincash/LitecoinCash" target="_blank">https://github.com/litecoincash/LitecoinCash</a>（91pool为矿友提供了编译版本，可以直接下载使用，qq群文件里）<br>
+                        </div>
+                    </div>
+                </li>
+                <li>
+                    <div class="step">2</div>
+                    <div class="content">
+                        <p>配置莱特币矿机</p>
+                        <div>
+                            <span class="red">注意：由于专用莱特矿机的推出，现在已经不推荐大家GPU挖莱特现金。</span><br>
+                            蚂蚁L3+莱特币挖矿机配置如下<br>
+                            <img src="../images/lch_img2.png"><br>
+                        </div>
+                    </div>
+                </li>
+                <li>
+                    <div class="step">3</div>
+                    <div class="content">
+                        <p>页面查看挖矿结果</p>
+                        <div>
+                            请点击打开<a href="http://www.91pool.com" target="_blank">http://www.91pool.com</a>，点击LCH，进入LCH页面，输入钱包ID，即可查看自己的矿工信息和挖矿结果！
+                        </div>
+                    </div>
+                </li>
+            </ul>
+        </div>
+    </div>
+</div>
+<!--footer部分-->
+#include("./layout/footer.html")
+</body>
+</html>

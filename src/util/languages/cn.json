@@ -1,0 +1,42 @@
+{
+  "cn": {
+    "translation": {
+      "input": {
+        "placeholder": "a placeholder"
+      },
+      "language": {
+        "cn": "中文",
+        "en": "英文",
+        "ru": "俄文"
+      },
+      "nav": {
+        "login": "登录",
+        "register": "注册",
+        "logout": "退出",
+        "home": "首页",
+        "pool": "矿池",
+        "support": "帮助",
+        "chinese": "中文",
+        "english": "英文",
+        "russian": "俄文",
+        "about": "关于我们",
+        "protocol": "服务协议",
+        "activity": "活动公告"
+      },
+      "table": {
+        "currency": "币种",
+        "poolHashrate": "矿池算力",
+        "netWorkHashrate": "全网算力",
+        "poolFee": "矿池费率",
+        "netWorkDifficulty": "网络难度",
+        "price": "价格",
+        "onlineMiners": "在线矿工"
+      },
+      "contact": {
+        "QQGroup": "QQ群",
+        "full": "满",
+        "businessCooperation": "商务合作"
+      }
+    }
+  }
+}

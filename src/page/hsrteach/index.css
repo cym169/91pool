@@ -1,0 +1,281 @@
+
+.search-box {
+    width: 100%;
+    height: 255px;
+    background: url("../../images/search_bg.jpg") center center no-repeat;
+    background-size: cover;
+    overflow: hidden;
+    position: relative;
+}
+
+.search-box .form {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 672px;
+    height: 36px;
+    margin: -18px 0 0 -345px;
+}
+
+.search-box .form span {
+    position: absolute;
+    color: #a9a9a9;
+    font-size: 14px;
+    top: 11px;
+    left: 10px;
+    z-index: 9;
+}
+
+.search-box .form input[type='text'] {
+    position: absolute;
+    left: 0;
+    top: 0;
+    padding: 0;
+    font-size: 14px;
+    color: #a9a9a9;
+    height: 32px;
+    line-height: 32px;
+    padding-left: 30px;
+    border: 1px solid #dae2ed;
+    width: 540px;
+    border-radius: 4px 0 0 4px;
+    outline: none;
+}
+
+.search-box .form input[type='button'] {
+    position: absolute;
+    right: 0;
+    top: 0;
+    background-color: #fd752c;
+    color: #fff;
+    height: 36px;
+    width: 100px;
+    padding: 0;
+    border: 1px solid #fd752c;
+    border-radius: 0 4px 4px 0;
+    outline: none;
+    cursor: pointer;
+}
+
+.search-box .form input[type='button']:hover {
+    background-color: #dd6626;
+}
+
+.coin-logo {
+    width: 94px;
+    height: 94px;
+    background-color: #2d8d4b;
+    border-radius: 50%;
+    text-align: center;
+    line-height: 94px;
+    margin: 25px auto 10px;
+}
+
+.coin-logo img {
+    display: inline-block;
+    vertical-align: middle;
+}
+
+.coin-title {
+    display: inline-block;
+    padding: 50px 0 32px 0;
+    /*overflow: hidden;*/
+}
+
+.coin-title li {
+    float: left;
+    height: 16px;
+    width: 140px;
+    border-right: 1px solid #333;
+}
+
+.coin-title li.active a {
+    border-bottom: 4px solid #f86601;
+    color: #f86601;
+}
+
+.coin-title li a:hover {
+    color: #f86601;
+}
+
+.coin-title li a {
+    display: inline-block;
+    font-size: 14px;
+    color: #333;
+    padding-bottom: 30px;
+}
+
+.coin-title li:last-child {
+    border-right: none;
+}
+
+/*挖矿教程*/
+.teach {
+    width: 100%;
+    background: url("../../images/teach_bg.jpg") center center no-repeat;
+    background-size: cover;
+}
+
+.time-line {
+    display: inline-block;
+    width: 100%;
+    position: relative;
+    margin-top: 30px;
+}
+
+.time-line:before {
+    content: "";
+    display: block;
+    width: 1px;
+    border-right: 1px solid #fff;
+    position: absolute;
+    left: 10px;
+    top: 0;
+    bottom: 0;
+}
+
+.teach-info {
+    width: 100%;
+    padding: 40px 0;
+}
+
+.teach-info li {
+    margin-bottom: 50px;
+}
+
+.teach-info li .step {
+    position: absolute;
+    left: 1px;
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    color: #fff;
+    line-height: 20px;
+    text-align: center;
+    font-size: 13px;
+    background-color: #f86601;
+}
+
+.teach-info li .content > p {
+    text-align: left;
+    padding-left: 30px;
+    color: #fec711;
+    font-size: 18px;
+    margin-bottom: 20px;
+}
+
+.teach-info li .content > div {
+    color: #fff;
+    font-size: 14px;
+    text-align: left;
+    padding-left: 30px;
+    line-height: 30px;
+}
+
+.teach-info li .content > div a {
+    color: #57bcda;
+}
+
+.teach-info li .content > div p {
+    border: 1px dashed #fff;
+    padding: 10px 15px;
+    font-size: 12px;
+    border-radius: 4px;
+}
+
+.content table {
+    width: 500px;
+}
+
+.section {
+    margin-right: auto;
+    margin-left: auto;
+    position: relative;
+    text-align: center;
+}
+
+/*兼容分辨率*/
+
+@media (max-width: 700px) {
+    .search-box {
+        height: 155px !important;
+    }
+
+    .search-box .form {
+        width: 80%;
+        margin: -18px 0 0 -40%;
+    }
+
+    .search-box .form span {
+        top: 7px;
+    }
+
+    .search-box .form input[type='text'], .search-box .form input[type='button'] {
+        -webkit-appearance: none;
+    }
+
+    .search-box .form input[type='text'] {
+        width: calc(100% - 92px);
+        height: 17px;
+        line-height: 17px;
+        padding: 5px 0 5px 30px !important;
+        box-shadow: none;
+    }
+
+    .search-box .form input[type='button'] {
+        height: 29px;
+        line-height: 29px;
+        width: 60px;
+    }
+
+    .coin-title {
+        width: 100%;
+    }
+
+    .coin-title li {
+        width: 19%;
+    }
+
+    .teach-info {
+        width: auto;
+        padding: 40px 10px;
+    }
+
+    .time-line:before {
+        left: 15px;
+    }
+
+    .teach-info li .step {
+        left: 6px;
+    }
+
+    .content {
+        word-wrap: break-word;
+    }
+
+    .content img {
+        width: 100%;
+    }
+
+    .content table {
+        width: 100%;
+    }
+}
+
+@media (min-width: 768px) and (max-width: 992px) {
+    .section {
+        width: 750px;
+    }
+}
+
+@media (min-width: 992px) and (max-width: 1200px) {
+    .section {
+        width: 970px;
+    }
+}
+
+@media (min-width: 1200px) {
+    .section {
+        width: 1170px;
+    }
+}

@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    #include("./layout/head-common.html")
+    <title>ETF挖矿教程 - 91pool</title>
+</head>
+<body>
+<!--header部分-->
+#include("./layout/header.html")
+<!--搜索栏-->
+<div class="search-box">
+    <div class="form">
+        <span class="fa fa-search"></span>
+        <input type="text" placeholder="请输入ETF矿工地址" id="address">
+        <input type="button" value="搜索" id="search">
+    </div>
+</div>
+<!--主要显示区-->
+<div class="section">
+    <div class="coin-logo"><img src="../images/etf.png"></div>
+    <p class="coin-name">ETF</p>
+    <ul class="coin-title tab-title">
+        <li><a href="./currency.html?coin=etf&i=0">ETF首页</a></li>
+        <li class="active"><a href="javascript:;">挖矿教程</a></li>
+        <li><a href="./currency.html?coin=etf&i=2">区块信息</a></li>
+        <li><a href="./currency.html?coin=etf&i=3">我的矿池</a></li>
+        <li><a href="./currency.html?coin=etf&i=4">常见问题</a></li>
+    </ul>
+</div>
+<div class="teach">
+    <div class="section">
+        <div class="time-line">
+            <ul class="teach-info">
+                <li>
+                    <div class="step">1</div>
+                    <div class="content">
+                        <p>获取钱包</p>
+                        <div>
+                            以下地址均可：<br>
+                            1.各大交易所充值地址<br>
+                            2.手机轻钱包地址<br>
+                            3.全节点钱包 （群文件下载）<br>
+                            请先按照以下方法获得地址并妥善保管钱包文件<br>
+                            1.下载后的钱包文件(压缩包)<br>
+                            <img src="../images/etf_img1.png"><br>
+                            2.使用压缩软件进行解压,得到一个文件夹<br>
+                            <img src="../images/etf_img2.png"><br>
+                            3.打开文件夹,双击打开里面的"创建地址.bat"文件<br>
+                            <img src="../images/etf_img3.png"><br>
+                            4.在弹出的窗口中,会提示用户设置钱包密码,使用键盘输入密码,然后回车进入下一步<br>
+                            <span class="red">温馨提示: 请牢记钱包密码,转账需使用</span><br>
+                            <img src="../images/etf_img4.png"><br>
+                            这个界面是不显示密码的,不用担心,直接输入后回车<br>
+                            5. 根据界面提示,再次输入密码,然后回车进入下一步<br>
+                            <span class="red">注意:两次输入的密码须一致</span><br>
+                            <img src="../images/etf_img5.png"><br>
+                            6. 钱包地址生成成功,地址如下图标识,可以自行抄下地址或复制至其他地方保存<br>
+                            图中所示地址为: 26b67d0810393fe405c1caf66df39139f6b3c390<br>
+                            如果没有成功生成,请重新完成以上步骤<br>
+                            如果地址无法复制或未及时记录,无需紧张,后续步骤中还可以找回地址<br>
+                            <img src="../images/etf_img6.png"><br>
+                            此处生成的地址在挖矿中不能直接使用,需要在地址前加上0x才能使用。<br>
+                            如：0x26b67d0810393fe405c1caf66df39139f6b3c390<br>
+                            7. 生成地址后还需要保存好钱包文件,文件目录下多了一个子目录"Ethereum",双击进入<br>
+                            <span class="red">钱包文件非常重要,钱包文件丢失后无法恢复</span><br>
+                            <img src="../images/etf_img7.png"><br>
+                            8. 双击进入"keystore"<br>
+                            9. 图中UTC开头的即为钱包文件,请妥善保存<br>
+                            <span class="red">再次提醒: 钱包文件非常重要,钱包文件丢失后无法恢复</span><br>
+                            <img src="../images/etf_img8.png"><br>
+                            10. 前面没有及时记住钱包地址的用户,可以通过 右键->重命名 直接复制钱包地址<br>
+                            <img src="../images/etf_img9.png"><br>
+                        </div>
+                    </div>
+                </li>
+                <li>
+                    <div class="step">2</div>
+                    <div class="content">
+                        <p>下载软件</p>
+                        <div>目前无论N卡或A卡，都使用claymore软件进行挖矿。</div>
+                    </div>
+                </li>
+                <li>
+                    <div class="step">3</div>
+                    <div class="content">
+                        <p>编辑挖矿参数</p>
+                        <div>
+                            1. 下载挖矿软件(压缩包)<br>
+                            2. 使用压缩软件进行解压,得到一个文件夹<br>
+                            3. 打开文件夹,找到后缀为bat的文件进行编辑参数。<br>
+                            <img src="../images/etf_img10.png"><br>
+                            1. 在"ETF.bat"文件处,右键单击->编辑<br>
+                            2. 在弹出的记事本页面,修改"钱包地址"为自己的钱包地址,编辑矿工号(自己命名,用于区分不同的矿机),修改后保存文件并关闭记事本<br>
+                            修改后的参数格式如: ethdcrminer64.exe -epool etf1.91pool.com:8108 -ewal 0xbc42eb23728c73c6a3c79b273c370e85f76927fc -epsw x -eworker 10 -mode 1<br>
+                            注意:地址必须以0x开头,如果地址不是以0x开头,请手动加上。<br>
+                            如原地址：bc42eb23728c73c6a3c79b273c370e85f76927fc,&nbsp;&nbsp;加上0x开头后地址为：0x bc42eb23728c73c6a3c79b273c370e85f76927fc (<span class="red">PS: 0x是数字0加小写字母x</span>)<br>
+                            3. 双击打开"ETF.bat",弹出挖矿界面,如出现"Share accpeted"字样,则说明提交矿池成功<br>
+                        </div>
+                    </div>
+                </li>
+                <li>
+                    <div class="step" style="font-size: 12px">4</div>
+                    <div class="content">
+                        <p>进入矿池查看矿工页面</p>
+                        <div>
+                            请点击打开<a href="http://www.91pool.com" target="_blank">http://www.91pool.com</a>，点击ETF，进入ETF页面，输入钱包ID，即可查看自己的矿工信息和挖矿结果！
+                        </div>
+                    </div>
+                </li>
+            </ul>
+        </div>
+    </div>
+</div>
+<!--footer部分-->
+#include("./layout/footer.html")
+</body>
+</html>

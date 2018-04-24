@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    #include("./layout/head-common.html")
+    <title>首页 - 91pool</title>
+    <link rel="stylesheet" href="lib/swiper/swiper.css">
+    <link rel="stylesheet" href="lib/swiper/swiper.3dflow.css">
+</head>
+<body>
+<!--header部分-->
+#include("./layout/header.html")
+
+<!--notice公告-->
+<div class="notice">
+    <div class="section" style="background-color: #eee;">
+        <ul class="scroll" id="scroll">
+            <script type="text/html" id="scroll-tp">
+                {{each list as item}}
+                <li><a href="./activity.html?id={{item.id}}" target="_blank" title="{{item.title}}">{{item.title}}</a></li>
+                {{/each}}
+            </script>
+        </ul>
+    </div>
+</div>
+<!--banner-->
+<div class="section banner">
+    <div class="swiper-container">
+        <!--banner图-->
+        <div class="swiper-wrapper">
+            <div class="swiper-slide" style="text-align: center">
+                <a href="javascript:;"><img class="sliderImg" src="../images/activity/201804231624_banner.jpg" width="100%"></a>
+            </div>
+            <div class="swiper-slide" style="text-align: center">
+                <a href="./activity.html?id=42" target="_blank"><img class="sliderImg" src="../images/activity/20180420190949_banner.jpg" width="100%"></a>
+            </div>
+        </div>
+        <div class="pagination"></div>
+    </div>
+</div>
+
+<!--货币行情-->
+<div class="section market">
+    <ul class="market-type">
+        <li class="active"><a href="javascript:;">显卡挖矿</a></li>
+        <!--<li><a href="javascript:;">ASIC挖矿</a></li>-->
+        <!--<li><a href="javascript:;">POS挖矿</a></li>-->
+    </ul>
+    <div class="table-box">
+        <table class="table market-info">
+            <thead>
+                <tr>
+                    <th>币种</th>
+                    <th>矿池算力</th>
+                    <th>全网算力</th>
+                    <th>全网难度</th>
+                    <th>价格（CNY）</th>
+                    <th>理论收益</th>
+                </tr>
+            </thead>
+            <tbody id="coinList">
+            <script type="text/html" id="coinList-tp">
+                {{each list as item i}}
+                <tr class="coinType">
+                    <td><a href="./currency.html?coin={{item.coin}}"><i class="{{item.coin}}_icon"><img src="{{item.imgUrl}}"></i>{{item.upcoin}}</a></td>
+                    <td class="hashrate{{i}}">{{item.hashrate}}</td>
+                    <td class="netHashrate{{i}}">{{item.netHashrate}}</td>
+                    <td class="netDiff{{i}}">{{item.netDiff}}</td>
+                    <td class="price" type="{{item.coin}}"></td>
+                    <td class="profit{{i}}">{{item.profit}}</td>
+                </tr>
+                {{/each}}
+            </script>
+            </tbody>
+        </table>
+    </div>
+</div>
+
+<!--footer部分-->
+#include("./layout/footer.html")
+
+</body>
+<script type="text/javascript" src="lib/swiper/swiper.min.js"></script>
+<script type="text/javascript" src="lib/swiper/swiper.3dflow.js"></script>
+<script type="text/javascript" src="lib/arttemplate.js"></script>
+</html>

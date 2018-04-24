@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    #include("./layout/head-common.html")
+    <title>登录 - 91pool</title>
+</head>
+<body>
+#include("./layout/simple.html")
+<div class="login-bg">
+    <div class="login-box">
+        <div class="logo"></div>
+        <div class="welcome-text">欢迎登陆91pool，一个最专业、最稳定的矿池！</div>
+        <div class="login">
+            <ul class="login-type">
+                <li type="pw" class="active">密码登录</li>
+                <li type="ph">短信登录</li>
+            </ul>
+            <div class="login-form-box">
+                <div class="loading" id="loading"><i class="fa fa-spinner fa-pulse"></i></div>
+                <div id="login-form"></div>
+            </div>
+            <div class="fl">
+                <div class="checkbox">
+                    <input type="checkbox">
+                    <label><em>下次自动登录</em></label>
+                </div>
+            </div>
+            <ul class="choose fr">
+                <li><a href="/views/forget.html">忘记密码</a></li>
+                <li><a href="/views/register.html">注册</a></li>
+            </ul>
+            <div class="clear"></div>
+            <div class="third">
+                <div class="third-title">第三方登录</div>
+                <ul class="third-name">
+                    <li class="wechat" title="微信"><a href="javascript:;"><i class="fa fa-wechat"></i></a></li>
+                    <li class="weibo" title="微博"><a href="javascript:;"><i class="fa fa-weibo"></i></a></li>
+                    <li class="QQ" title="QQ"><a href="javascript:;"><i class="fa fa-qq"></i></a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="copy">
+            <ul class="language">
+                <li class="active"><a href="javascript:;">中文</a></li>
+                <li><a href="javascript:;">English</a></li>
+                <li><a href="javascript:;">Русский</a></li>
+            </ul>
+            <p>© 91 Pool   沪ICP备16035023号-2</p>
+        </div>
+    </div>
+</div>
+</body>
+</html>

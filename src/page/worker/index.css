@@ -1,0 +1,204 @@
+
+.status {
+    width: 100%;
+    background: url("../../images/worker_bg.jpg") center center no-repeat;
+    background-size: cover;
+}
+
+.section {
+    margin-right: auto;
+    margin-left: auto;
+    position: relative;
+}
+
+.all-status {
+    display: inline-block;
+    width: 100%;
+    margin: 25px 0;
+}
+
+.all-status li {
+    float: left;
+    width: 280.5px;
+    height: 110px;
+    background-color: rgba(255, 255, 255, 0.8);
+    border-radius: 5px;
+    margin: 0 15px 15px 0;
+    position: relative;
+    user-select: none;
+}
+
+.all-status li.empty {
+    background-color: rgba(255, 255, 255, 0.5);
+}
+
+.all-status li:nth-child(4n) {
+    margin-right: 0;
+}
+
+.all-status li:nth-last-child(1), .all-status li:nth-last-child(2), .all-status li:nth-last-child(3), .all-status li:nth-last-child(4) {
+    margin-bottom: 0;
+}
+
+.all-status li .title, .all-status li .number, .all-status li .tips {
+    padding-left: 20px;
+    text-align: left;
+}
+
+.all-status li .title {
+    font-size: 16px;
+    color: #515151;
+    margin-top: 20px;
+}
+
+.all-status li .number {
+    font-size: 30px;
+    margin: 5px 0;
+    min-height: 30px;
+}
+
+.all-status li .tips {
+    font-size: 14px;
+    color: rgba(81, 81, 81, .8)
+}
+
+.color-green {
+    color: #2d8d4b;
+}
+
+.color-red {
+    color: #ff3606;
+}
+
+.color-blue {
+    color: #57bcda;
+}
+
+.color-orange {
+    color: #f86601;
+}
+
+.chart-box {
+    margin: 50px 0;
+}
+
+.chart-box .title {
+    border-left: 5px solid #f86601;
+    font-size: 20px;
+    padding-left: 10px;
+    height: 26px;
+    line-height: 26px;
+}
+
+.work {
+    background-color: #f4f6f9;
+    padding: 30px 0;
+}
+
+.work-title {
+    display: inline-block;
+    width: 100%;
+    margin-bottom: 20px;
+    background: url("../../images/search_bg.jpg") center center no-repeat;
+    background-size: cover;
+}
+
+.work-title li {
+    float: left;
+    margin-right: 40px;
+    margin-bottom: 1px;
+}
+
+.work-title li:first-child {
+    margin-left: 30px;
+}
+
+.work-title li a {
+    display: inline-block;
+    color: rgba(255, 255, 255, .6);
+    font-size: 18px;
+    padding: 20px 8px 20px 8px;
+}
+
+.work-title li.active a {
+    color: rgba(255, 255, 255, 1);
+    border-bottom: 4px solid #fff;
+}
+
+.work-title li em {
+    margin-left: 5px;
+    font-style: normal;
+    padding: 0 10px;
+    font-size: 14px;
+    background-color: #febd02;
+    color: #ff3606;
+    border-radius: 10px;
+}
+
+.f-tab {
+    border: 1px solid #e6ebf1;
+    background-color: #fff;
+    border-radius: 4px;
+    min-height: 300px;
+}
+
+.tab {
+    display: none;
+}
+
+.f-tab table thead tr th {
+    font-size: 14px;
+    text-align: center;
+    padding: 15px 0;
+    width: 291.5px;
+    font-weight: normal;
+    border-bottom: 1px solid #e6ebf1;
+    border-right: 1px solid #e6ebf1;
+}
+
+.f-tab table thead tr th:last-child {
+    border-right: none;
+}
+
+.f-tab table tbody tr td {
+    font-size: 14px;
+    padding: 15px 0;
+    width: 25%;
+    text-align: center;
+    border-bottom: 1px solid #e6ebf1;
+    color: #4e4e4e;
+}
+
+.f-tab table tbody tr td:first-child {
+    color: #474747;
+    font-weight: bold;
+}
+
+.f-tab table tbody tr:last-child td {
+    border-bottom: none;
+}
+
+@media (max-width: 640px) {
+
+}
+
+@media (min-width: 768px) and (max-width: 992px) {
+    .section {
+        width: 750px;
+    }
+
+}
+
+@media (min-width: 992px) and (max-width: 1200px) {
+    .section {
+        width: 970px;
+    }
+
+}
+
+@media (min-width: 1200px) {
+    .section {
+        width: 1170px;
+    }
+
+}

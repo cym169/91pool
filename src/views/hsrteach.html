@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    #include("./layout/head-common.html")
+    <title>HSR挖矿教程 - 91pool</title>
+</head>
+<body>
+<!--header部分-->
+#include("./layout/header.html")
+<!--搜索栏-->
+<div class="search-box">
+    <div class="form">
+        <span class="fa fa-search"></span>
+        <input type="text" placeholder="请输入HSR矿工地址" id="address">
+        <input type="button" value="搜索" id="search">
+    </div>
+</div>
+<!--主要显示区-->
+<div class="section">
+    <div class="coin-logo"><img src="../images/hsr.png"></div>
+    <p class="coin-name">HSR</p>
+    <ul class="coin-title tab-title">
+        <li><a href="./currency.html?coin=hsr&i=0">HSR首页</a></li>
+        <li class="active"><a href="javascript:;">挖矿教程</a></li>
+        <li><a href="./currency.html?coin=hsr&i=2">区块信息</a></li>
+        <li><a href="./currency.html?coin=hsr&i=3">我的矿池</a></li>
+        <li><a href="./currency.html?coin=hsr&i=4">常见问题</a></li>
+    </ul>
+</div>
+<div class="teach">
+    <div class="section">
+        <div class="time-line">
+            <ul class="teach-info">
+                <li>
+                    <div class="step">1</div>
+                    <div class="content">
+                        <p>获取钱包</p>
+                        <div>
+                            从HCash官网下载钱包，或者直接用交易所提供的钱包地址，推荐用交易所的地址，这样你的挖矿收益直接进入交易所交易，省去转账费用。<br>
+                            具体操作方法参考：<br>
+                            HCash官方地址  <a href="https://h.cash" target="_blank">https://h.cash</a><br>
+                            各个交易所，自己的账户中心，有红烧肉的充值地址
+                        </div>
+                    </div>
+                </li>
+                <li>
+                    <div class="step">2</div>
+                    <div class="content">
+                        <p>准备矿机</p>
+                        <div>
+                            一般不推荐个人使用的电脑挖矿，特别是笔记本电脑，即使笔记本满足一般的挖矿软件运行要求，但发热量厉害，容易出问题。个人组装的台式机，如果散热不好，也是不推荐的。<br>
+                            目前多数的挖矿软件对运行的硬件都设定了下限，基本要求是显卡2G内存以上，一般从耗电量和收益等综合来说，推荐配置专业显卡矿机比较划算，(6G以上显存，1500HM以上频率，6卡）<br>
+                            对于红烧肉来说，目前软件支持比较好是N卡（后续A卡应该也有超级软件出来），这里有个简单对照表（网络数据）可供参考<br>
+                                <table>
+                                    <thead>
+                                        <tr>
+                                            <th>显卡型号</th>
+                                            <th>单卡算力</th>
+                                            <th>6卡算力</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <td>NVIDIA(英伟达)1060 3G</td>
+                                            <td>~7m</td>
+                                            <td>40m-48m</td>
+                                        </tr>
+                                        <tr>
+                                            <td>NVIDIA(英伟达)1060 6G</td>
+                                            <td>~8m</td>
+                                            <td>45m-52m</td>
+                                        </tr>
+                                        <tr>
+                                            <td>NVIDIA(英伟达)1070 8G</td>
+                                            <td>~12.05m</td>
+                                            <td>72m~80m</td>
+                                        </tr>
+                                        <tr>
+                                            <td>NVIDIA(英伟达)1080 8G</td>
+                                            <td>~15m</td>
+                                            <td>90m~100m</td>
+                                        </tr>
+                                        <tr>
+                                            <td>NVIDIA(英伟达)1080ti</td>
+                                            <td>~20m</td>
+                                            <td>120m-130m</td>
+                                        </tr>
+                                        <tr>
+                                            <td>AMD rx470/570</td>
+                                            <td>~4.8m</td>
+                                            <td>30m-32m</td>
+                                        </tr>
+                                        <tr>
+                                            <td>AMD rx480/580</td>
+                                            <td>~5m-6m</td>
+                                            <td>32m-38m</td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                        </div>
+                    </div>
+                </li>
+                <li>
+                    <div class="step">3</div>
+                    <div class="content">
+                        <p>设置挖矿软件</p>
+                        <div>
+                            91pool官方群提供了几个热门挖矿软件，大家可以下载使用，具体是否用方法如下。<br>
+                            <span class="red">特别注意：有些挖矿软件由于加壳等原因，容易被杀毒软件查杀，建议关闭杀毒软件（qq管家，360等），不推荐个人电脑挖矿，本群软件为广大矿友提供，在此只做参考。</span><br>
+                            1.查看自己的是AMD卡还是Nvidia卡<br>
+                            参考下面操作步骤<a href="https://jingyan.baidu.com/article/7e440953cec6182fc1e2ef57.html" target="_blank">https://jingyan.baidu.com/article/7e440953cec6182fc1e2ef57.html</a><br>
+                            2.解压下面我们提供的挖矿软件包<br>
+                            <img src="../images/hsr_img1.png"><br>
+                            A卡和N卡，根据自己的情况，选择<br><br>
+                            3.配置，我们以N卡为例<br>
+                            <img src="../images/hsr_img2.png"><br>
+                            用【记事本】打开这个文件，修改你的钱包地址（记事本使用：<a href="https://jingyan.baidu.com/article/e52e3615a5378840c70c5157.html" target="_blank">https://jingyan.baidu.com/article/e52e3615a5378840c70c5157.html</a>）<br>
+                            <img src="../images/hsr_img3.png"><br>
+                            格式是：<br>
+                            -o 91地址 -u 钱包地址.机器编号 -p x <br>
+                            这里，-u是用户，-p是秘密，91暂时不设置密码，直接x就可以<br>
+                            如果想配置一个故障转移的地址，也就是配置2个矿池地址，那么复制这一部分就可以，如下：<br>
+                            -o 91地址1 -u 钱包地址.机器编号 -p x  -o 91地址2 -u 钱包地址.机器编号 -p x<br>
+                            如下图<br>
+                            <img src="../images/hsr_img4.png"><br>
+                            这里注意：<br>
+                            1.机器名字，自行定义，比如你有3台机器，你可以定义为：ok001,0k002,ok003，方便你从91网站看到自己每台机器的情况，如果机器名字定义一样，91会将他们合算到一起，算一台机器，当然收益肯定是1+1=2<br>
+                            2.机器名，只能是数字字母，不能还有其他符号，长度10位以内<br>
+                            修改好后，保存即可<br>
+                        </div>
+                    </div>
+                </li>
+                <li>
+                    <div class="step" style="font-size: 12px">4</div>
+                    <div class="content">
+                        <p>挖矿</p>
+                        <div>
+                            双击启动文件，那么挖矿程序就运行了<br>
+                            <img src="../images/hsr_img5.png"><br>
+                            注意：如果节目出现红色字体（如下图），那么一般是软件运行错误，这个不同的挖矿软件，错误信息不同，可以发客服问下具体情况，或者自己看下提示内容。<br>
+                            <img src="../images/hsr_img6.png"><br>
+                        </div>
+                    </div>
+                </li>
+                <li>
+                    <div class="step" style="font-size: 12px;">5</div>
+                    <div class="content">
+                        <p>查看收益</p>
+                        <div>
+                            1.进入<a href="http://www.91pool.com">www.91pool.com</a>，点击HSR，进入红烧肉主页面，输入你的钱包地址，点击查询。<br>
+                        </div>
+                    </div>
+                </li>
+            </ul>
+        </div>
+    </div>
+</div>
+<!--footer部分-->
+#include("./layout/footer.html")
+</body>
+</html>

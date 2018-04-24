@@ -1,0 +1,218 @@
+
+.bottom-line {
+    background: -webkit-linear-gradient(left, #ff911a, #ff3606);
+    background: -moz-linear-gradient(left, #ff911a, #ff3606);
+    background: -ms-linear-gradient(left, #ff911a, #ff3606);
+    background: -o-linear-gradient(left, #ff911a, #ff3606);
+    height: 13px;
+}
+
+.footer-container {
+    background-color: #2b2b2b;
+}
+.footer-logo{
+    width: 135px;
+    height: 52px;
+    opacity: .65;
+}
+.footer-logo img{
+    width: 100%;
+    height: 100%;
+}
+.footer {
+    margin-right: auto;
+    margin-left: auto;
+    position: relative;
+    text-align: center;
+}
+
+.footer-top {
+    border-bottom: 1px solid #333;
+    padding: 50px 0 20px 0;
+}
+
+.footer-nav {
+    margin-top: 19px;
+}
+
+.footer-nav > li {
+    float: left;
+    margin-left: 60px;
+}
+
+.footer-nav > li > a {
+    color: #6e6e6e;
+}
+
+.footer-nav > li > a:hover {
+    color: #9b9b9b;
+}
+
+.language-nav {
+    margin-top: 7px;
+}
+
+.language-nav > li {
+    float: left;
+    margin-right: 20px;
+    width: 58px;
+    height: 36px;
+    position: relative;
+}
+
+.language-nav > li:last-child {
+    margin-right: 0;
+}
+
+.language-nav > li > a {
+    display: block;
+    width: 100%;
+    height: 100%;
+    background: url("../../../images/flag.png") no-repeat;
+}
+
+.language-nav > li.cn a {
+    background-position: 0 -43px;
+}
+
+.language-nav > li.en a {
+    background-position: -64px -43px;
+}
+
+.language-nav > li.ru a {
+    background-position: -128px -43px;
+}
+
+.language-nav > li.cn.active a {
+    background-position: 0 0;
+}
+
+.language-nav > li.en.active a {
+    background-position: -64px 0;
+}
+
+.language-nav > li.ru.active a {
+    background-position: -128px 0;
+}
+
+/*.language-nav > li.cn > a:hover {*/
+    /*background-position: 0 0;*/
+/*}*/
+
+/*.language-nav > li.en > a:hover {*/
+    /*background-position: -64px 0;*/
+/*}*/
+
+/*.language-nav > li.ru > a:hover {*/
+    /*background-position: -128px 0;*/
+/*}*/
+
+.footer-bottom {
+    padding: 20px 0 30px 0;
+}
+
+.footer-bottom .content p {
+    color: rgba(255,255,255,.8);
+    font-size: 14px;
+    margin-bottom: 20px;
+    text-align: left;
+}
+
+.footer-bottom .content p a {
+    color: rgba(255,255,255,.8);
+}
+.phone-copyright{
+    display: none;
+}
+.pc-copyright{
+    margin-left: 20px;
+}
+.contact li {
+    float: left;
+    color: rgba(255, 255, 255, 0.4);
+    border: 2px solid rgba(255, 255, 255, 0.4);
+    font-size: 24px;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    text-align: center;
+    line-height: 40px;
+    cursor: pointer;
+    margin-left: 8px;
+}
+
+.contact li:hover {
+    color: rgba(255, 255, 255, 1);
+    border-color: rgba(255, 255, 255, 1);
+}
+
+/*兼容分辨率*/
+
+@media (max-width: 700px) {
+    .footer-logo {
+        float: none !important;
+        margin: 0 auto;
+    }
+
+    .footer-nav {
+        float: none !important;
+        overflow: hidden;
+        display: inline-block;
+    }
+
+    .footer-nav li:first-child {
+        margin-left: 0 !important;
+    }
+
+    .footer-nav li {
+        margin-left: 10px !important;
+        margin-bottom: 25px;
+    }
+
+    .language-nav {
+        float: none !important;
+        overflow: hidden;
+        width: 234px;
+        margin: 20px auto 0 !important;
+    }
+
+    .footer-bottom .content {
+        float: none !important;
+        padding: 0 10px;
+    }
+
+    .footer-bottom .content p {
+        text-align: center;
+        line-height: 20px;
+        margin-bottom: 10px !important;
+    }
+    .phone-copyright{
+        display: block;
+    }
+    .pc-copyright{
+        display: none;
+    }
+
+    .contact {
+        float: none;
+        display: inline-block;
+    }
+}
+
+@media (min-width: 768px) {
+    .footer {
+        width: 750px;
+    }
+}
+
+@media (min-width: 992px) {
+    .footer {
+        width: 970px;
+    }
+}
+
+@media (min-width: 1200px) {
+    .footer {
+        width: 1170px;
+    }
+}

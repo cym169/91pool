@@ -1,0 +1,141 @@
+
+.section {
+    margin-right: auto;
+    margin-left: auto;
+    position: relative;
+}
+
+.banner {
+    width: 100%;
+    height: 150px;
+    background: url("../../images/search_bg.jpg") center center no-repeat;
+    background-size: cover;
+}
+
+.notice-title {
+    display: inline-block;
+    width: 100%;
+    margin-top: 40px;
+    min-height: 400px;
+}
+
+.notice-title li {
+    width: 100%;
+    position: relative;
+    height: 100px;
+    margin-bottom: 30px;
+    padding-bottom: 30px;
+    border-bottom: 1px solid #f7f6f4;
+}
+
+.notice-title li .time {
+    width: 60px;
+    height: 100%;
+    margin-right: 20px;
+}
+
+.notice-title li .time .month, .notice-title li .time .day {
+    width: 100%;
+    height: 50px;
+    text-align: center;
+    line-height: 50px;
+}
+
+.notice-title li .time .month {
+    background-color: #fd6b21;
+    color: #fff;
+}
+
+.notice-title li .time .day {
+    background-color: #f7f6f4;
+    color: #fd6b21;
+}
+
+.notice-title li .info-box {
+    width: calc(100% - 80px);
+    height: 100%;
+}
+
+.info-box p {
+    text-align: left;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+.info-box .title {
+    margin-top: 5px;
+}
+
+.info-box .title a {
+    font-size: 18px;
+    color: #000200;
+}
+
+.info-box .from {
+    font-size: 14px;
+    color: #a0a0a0;
+    margin: 8px 0;
+}
+
+.info-box .intro {
+    width: 100%;
+    height: calc(100% - 57px);
+}
+
+.info-box .intro a {
+    width: 100%;
+    height: 100%;
+    color: #000200;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 2;
+    overflow: hidden;
+    font-size: 13px;
+    text-align: left;
+    line-height: 22px;
+}
+
+.info-box .intro a:hover {
+    text-decoration: underline;
+}
+
+@media (max-width: 700px) {
+    .notice-box {
+        padding: 0 20px;
+    }
+
+    .notice-title {
+        margin-top: 20px;
+    }
+
+    .notice-title li {
+        margin-bottom: 20px;
+        padding-bottom: 20px;
+    }
+    .info-box .title{
+        margin-top: 0;
+    }
+    .info-box .from{
+        margin: 5px 0;
+    }
+
+}
+
+@media (min-width: 768px) and (max-width: 992px) {
+    .section {
+        width: 750px;
+    }
+}
+
+@media (min-width: 992px) and (max-width: 1200px) {
+    .section {
+        width: 970px;
+    }
+}
+
+@media (min-width: 1200px) {
+    .section {
+        width: 1170px;
+    }
+}

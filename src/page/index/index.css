@@ -1,0 +1,269 @@
+
+.section {
+    margin-right: auto;
+    margin-left: auto;
+    position: relative;
+}
+
+.notice {
+    width: 100%;
+    margin-bottom: 10px;
+    display: none;
+}
+
+.notice .section {
+    height: 30px;
+    overflow: hidden;
+}
+
+.scroll {
+    position: absolute;
+    left: 1170px;
+    top: 0;
+}
+
+.scroll li {
+    float: left;
+    margin-right: 60px;
+    height: 30px;
+    line-height: 30px;
+}
+
+.scroll li a {
+    color: #333;
+    white-space: nowrap;
+}
+
+.scroll li a:hover {
+    text-decoration: underline;
+}
+
+.scroll li:last-child {
+    margin-right: 0;
+}
+
+.swiper-container {
+    width: 100%;
+}
+
+.market {
+    margin-top: 20px;
+    margin-bottom: 60px;
+}
+
+.market-type {
+    border-bottom: 3px solid #ff3606;
+    padding-bottom: 5px;
+    overflow: hidden;
+}
+
+.market-type > li {
+    float: left;
+    margin-right: 40px;
+}
+
+.market-type > li > a {
+    display: block;
+    color: #595858;
+    padding: 3px 10px;
+}
+
+.market-type > li.active a {
+    color: #fd6b21;
+}
+
+.market-type > li > a:hover {
+    background-color: #dfdfdf;
+    color: #878383;
+    border-radius: 50px;
+}
+.market-info table{
+    font-family: "Microsoft YaHei" ;
+}
+.market-info > thead > tr {
+    background-color: #e5e8ee;
+}
+
+.market-info > thead > tr > th {
+    height: 36px;
+    line-height: 36px;
+    color: #808080;
+    font-weight: normal;
+    font-size: 14px;
+    white-space: nowrap;
+    text-align: center;
+}
+.market-info > tbody > tr{
+    cursor: default;
+}
+.market-info > tbody > tr > td{
+    font-family: Arial ;
+}
+.market-info > tbody > tr > td:nth-child(1) a{
+    color: #808080;
+    position: relative;
+    display: block;
+    width: 100%;
+    height: 100%;
+}
+.market-info > tbody > tr > td:nth-child(1) i{
+    display: inline-block;
+    position: absolute;
+}
+.market-info > tbody > tr > td:nth-child(1) i.etc_icon{
+    left: -8px;
+    top: 8px;
+}
+.market-info > tbody > tr > td:nth-child(1) i.hsr_icon{
+    width: 24px;
+    left: -11px;
+    top: 5px;
+}
+.market-info > tbody > tr > td:nth-child(1) i.hsr_icon img{
+    width: 100%;
+}
+.market-info > tbody > tr > td:nth-child(1) i.etf_icon{
+    left: -10px;
+    top: 7px;
+}
+.market-info > tbody > tr > td:nth-child(1) i.lch_icon{
+    width: 24px;
+    left: -10px;
+    top: 7px;
+}
+.market-info > tbody > tr > td:nth-child(1) i.lch_icon img{
+    width: 100%;
+}
+.market-info > tbody > tr:nth-child(odd) {
+    background-color: #fff;
+}
+
+.market-info > tbody > tr:nth-child(even) {
+    background-color: #f4f4f4;
+}
+
+.market-info > tbody > tr > td {
+    font-size: 14px;
+    height: 56px;
+    line-height: 56px;
+    padding: 0 20px;
+    color: #666666;
+    text-align: center;
+    white-space: nowrap;
+}
+
+.market-info > tbody > tr > td:first-child {
+    font-weight: bold;
+}
+
+.pagination {
+    position: absolute;
+    z-index: 20;
+    bottom: 10px;
+    width: 100%;
+    text-align: center;
+}
+
+.swiper-pagination-switch {
+    display: inline-block;
+    width: 8px;
+    height: 8px;
+    border-radius: 8px;
+    background: #555;
+    margin: 0 5px;
+    opacity: 0.8;
+    border: 1px solid #fff;
+    cursor: pointer;
+}
+
+.swiper-active-switch {
+    background: #fff;
+}
+
+.swiper-slide p {
+    width: 800px;
+    text-align: center;
+    position: absolute;
+    left: 50%;
+    margin-left: -400px;
+}
+
+.swiper-slide p:nth-child(1) {
+    top: 60px;
+    font-size: 30px;
+}
+
+.swiper-slide p:nth-child(2) {
+    top: 120px;
+    font-size: 18px;
+}
+
+.swiper-slide p[index='1'] {
+    color: #fff;
+}
+
+.swiper-slide p[index='2'] {
+    color: #ccc;
+}
+
+/*兼容分辨率*/
+
+@media (max-width: 700px) {
+    .notice {
+        margin: 10px 0;
+    }
+    .market-type > li {
+        margin-right: 15px;
+    }
+
+    .table-box {
+        display: -webkit-box;
+        overflow-x: scroll;
+        -webkit-overflow-scrolling: touch;
+    }
+    .swiper-container {
+        min-height: 124px;
+    }
+    .market {
+        margin: 30px 0;
+    }
+
+    .market-info > thead > tr > th {
+        padding: 0 15px;
+    }
+    .market-info > tbody > tr > td{
+        padding: 0 30px;
+    }
+    .market-info > tbody > tr > td:nth-child(1) a{
+        width: 70px;
+    }
+}
+@media (min-width: 768px) and (max-width: 992px) {
+    .section {
+        width: 750px;
+    }
+
+    .swiper-container {
+        height: 244px;
+    }
+}
+
+@media (min-width: 992px) and (max-width: 1200px) {
+    .section {
+        width: 970px;
+    }
+
+    .swiper-container {
+        height: 244px;
+    }
+}
+
+@media (min-width: 1200px) {
+    .section {
+        width: 1170px;
+    }
+
+    .swiper-container {
+        height: 350px;
+    }
+}

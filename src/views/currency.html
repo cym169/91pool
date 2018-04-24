@@ -1,0 +1,440 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    #include("./layout/head-common.html")
+    <title id="html-title"></title>
+</head>
+<body>
+<!--header部分-->
+#include("./layout/header.html")
+
+<!--搜索栏-->
+<div class="search-box">
+    <div class="form">
+        <span class="fa fa-search"></span>
+        <input type="text" placeholder="" id="address">
+        <input type="button" value="搜索" id="search">
+    </div>
+</div>
+
+<!--主要显示区-->
+<div class="section">
+    <div class="coin-logo"></div>
+    <p class="coin-name"></p>
+    <ul class="coin-title tab-title">
+        <li page="home"><a href="javascript:;"><span id="coin-name"></span>首页</a></li>
+        <li page="teach"><a href="javascript:;">挖矿教程</a></li>
+        <li page="information"><a href="javascript:;">区块信息</a></li>
+        <li page="mine"><a href="javascript:;">我的矿池</a></li>
+        <li page="problem"><a href="javascript:;">常见问题</a></li>
+    </ul>
+</div>
+<div class="coin-info">
+    <div class="home tab">
+        <div class="section">
+            <ul class="coin-intro">
+                <li>
+                    <div class="data-title">矿工在线</div>
+                    <div class="data-number" id="workers"></div>
+                    <div class="icon"><i class="fa fa-user-o"></i></div>
+                </li>
+                <li>
+                    <div class="data-title">矿池算力</div>
+                    <div class="data-number" id="pool_hash"></div>
+                    <div class="icon"><i class="fa fa-object-ungroup"></i></div>
+                </li>
+                <li>
+                    <div class="data-title">已打包区块</div>
+                    <div class="data-number maturedTotal"></div>
+                    <div class="icon"><i class="fa fa-sliders"></i></div>
+                </li>
+                <li>
+                    <div class="data-title">网络难度</div>
+                    <div class="data-number" id="net_diff"></div>
+                    <div class="icon"><i class="fa fa-globe"></i></div>
+                </li>
+                <li>
+                    <div class="data-title">价格</div>
+                    <div class="data-number" id="price"></div>
+                    <div class="icon"><i class="fa fa-line-chart"></i></div>
+                </li>
+                <li>
+                    <div class="data-title">上一个区块</div>
+                    <div class="data-number" id="last-one"></div>
+                    <div class="icon"><i class="fa fa-hourglass-o"></i></div>
+                </li>
+                <li>
+                    <div class="data-title">采矿区块</div>
+                    <div class="data-number" id="blocks">5,469,026</div>
+                    <div class="icon"><i class="fa fa-sitemap"></i></div>
+                </li>
+                <li>
+                    <div class="data-title">幸运值</div>
+                    <div class="data-number" id="lucky"></div>
+                    <div class="icon"><i class="fa fa-diamond"></i></div>
+                </li>
+            </ul>
+            <div class="clear"></div>
+            <div class="mine-calc">
+                <div class="title same-title">矿池算力</div>
+                <div class="chart" id="calc-chart"></div>
+            </div>
+            <div class="mine-feature">
+                <div class="same-title">矿池特征</div>
+                <ul class="feature">
+                    <li>
+                        <div class="feature-box">
+                            <div class="number">01</div>
+                            <div class="text">
+                                <p id="mPrice"></p>
+                                <p>最小支付</p>
+                            </div>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="feature-box">
+                            <div class="number">02</div>
+                            <div class="text">
+                                <p id="everyTime">每半小时结算一次</p>
+                                <p>结算时间</p>
+                            </div>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="feature-box">
+                            <div class="number">03</div>
+                            <div class="text">
+                                <p id="payment"></p>
+                                <p>矿池费率</p>
+                            </div>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="feature-box">
+                            <div class="number">04</div>
+                            <div class="text">
+                                <p>PPLNS</p>
+                                <p>费用奖励制度</p>
+                            </div>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="feature-box">
+                            <div class="number">05</div>
+                            <div class="text">
+                                <p id="reward"></p>
+                                <p>区块奖励</p>
+                            </div>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="feature-box">
+                            <div class="number">06</div>
+                            <div class="text">
+                                <p>简单易学</p>
+                                <p>无需注册</p>
+                            </div>
+                        </div>
+                    </li>
+                    <!--<li>-->
+                        <!--<div class="feature-box">-->
+                            <!--<div class="number">07</div>-->
+                            <!--<div class="text">-->
+                                <!--<p>简单易学</p>-->
+                                <!--<p>无需注册</p>-->
+                            <!--</div>-->
+                        <!--</div>-->
+                    <!--</li>-->
+                    <!--<li>-->
+                        <!--<div class="feature-box">-->
+                            <!--<div class="number">08</div>-->
+                            <!--<div class="text">-->
+                                <!--<p></p>-->
+                                <!--<p></p>-->
+                            <!--</div>-->
+                        <!--</div>-->
+                    <!--</li>-->
+                </ul>
+                <div class="clear"></div>
+            </div>
+        </div>
+    </div>
+    <div class="information tab">
+        <div class="section" id="get-box">
+            <div class="info-title">矿池将支付所有的收益（包括所有的叔块）</div>
+            <div class="info-stitle"><span>新挖出的区块</span>需要120个区块确认，一般需要等待30分钟</div>
+            <div class="info-list">
+                <ul>
+                    <li>
+                        <p class="icon"><i class="fa fa-cubes"></i></p>
+                        <p class="name">统计块数量</p>
+                    </li>
+                    <li>
+                        <div class="icon"><i class="fa fa-diamond"></i></div>
+                        <div class="name">幸运值</div>
+                    </li>
+                    <li>
+                        <div class="icon"><i class="fa fa-bar-chart"></i></div>
+                        <div class="name">叔块率</div>
+                    </li>
+                    <li>
+                        <div class="icon"><i class="fa fa-shield"></i></div>
+                        <div class="name">孤块率</div>
+                    </li>
+                </ul>
+                <div class="clear"></div>
+                <table>
+                    <tbody id="luckList">
+                    <script type="text/html" id="luckList-tp">
+                        {{each list as item}}
+                        <tr>
+                            <td>{{item.number}}</td>
+                            <td>{{item.luck}}</td>
+                            <td>{{item.uncleRate}}</td>
+                            <td>{{item.orphanRate}}</td>
+                        </tr>
+                        {{/each}}
+                    </script>
+                    </tbody>
+                </table>
+            </div>
+            <ul class="cubes">
+                <li>
+                    <div class="cube-bg color-one"></div>
+                    <div class="cube-number color-one">
+                        <p class="maturedTotal"></p>
+                        <p>已成熟区块</p>
+                    </div>
+                </li>
+                <li>
+                    <div class="cube-bg color-two"></div>
+                    <div class="cube-number color-two">
+                        <p class="immatureTotal"></p>
+                        <p>未成熟区块</p>
+                    </div>
+                </li>
+                <li>
+                    <div class="cube-bg color-three"></div>
+                    <div class="cube-number color-three">
+                        <p class="candidatesTotal"></p>
+                        <p>新挖出区块</p>
+                    </div>
+                </li>
+            </ul>
+            <div class="clear"></div>
+        </div>
+        <div class="work">
+            <div class="section">
+                <ul class="work-title">
+                    <li class="active"><a href="javascript:;">已成熟区块</a><em class="maturedTotal">0</em></li>
+                    <li><a href="javascript:;">未成熟区块</a><em class="immatureTotal">0</em></li>
+                    <li><a href="javascript:;">新挖出区块</a><em class="candidatesTotal">0</em></li>
+                </ul>
+                <div class="f-tab" style="display: block;">
+                    <table id="block-one">
+                        <script type="text/html" id="block-one-tp">
+                            <thead>
+                            <tr>
+                                <th>高度</th>
+                                <th>区块Hash</th>
+                                <th>发现时间</th>
+                                <th>困难度</th>
+                                <th>收益</th>
+                            </tr>
+                            </thead>
+                            <tbody>
+                            {{each list as item}}
+                            {{if item.orphan == false}}
+                            <tr>
+                                {{if ('etc' == item.coin || 'eth' == item.coin || 'etf' == item.coin)&&item.uncle}}
+                                <td><a style="color: #fea112;" href="https://gastracker.io/block/{{item.height}}"
+                                       target="_blank">{{item.uncleHeight}}</a></td>
+                                {{else if 'etc' == item.coin || 'eth' == item.coin || 'etf' == item.coin}}
+                                <td><a style="color: #fea112;" href="https://gastracker.io/block/{{item.height}}"
+                                       target="_blank">{{item.height}}</a></td>
+                                {{else}}
+                                <td><a style="color: #fea112;" href="https://gastracker.io/block/{{item.hash}}"
+                                       target="_blank">{{item.height}}</a></td>
+                                {{/if}}
+
+                                {{if item.orphan == false}}
+                                <td><a style="color: #fea112;" href="https://gastracker.io/block/{{item.hash}}"
+                                       target="_blank">{{item.hash}}</a></td>
+                                {{else}}
+                                <td><a style="color: #fea112;" href="javascript:;">{{item.hash}}</a></td>
+                                {{/if}}
+                                <td>{{item.timestamp}}</td>
+                                <td>{{item.diff}}</td>
+                                {{if item.orphan == false}}
+                                <td>{{item.reward}}</td>
+                                {{else}}
+                                <td>0</td>
+                                {{/if}}
+                            </tr>
+                            {{/if}}
+                            {{/each}}}
+                            </tbody>
+                        </script>
+                    </table>
+                </div>
+                <div class="f-tab">
+                    <table id="block-two">
+                        <script type="text/html" id="block-two-tp">
+                            <thead>
+                            <tr>
+                                <th>高度</th>
+                                <th>区块Hash</th>
+                                <th>发现时间</th>
+                                <th>困难度</th>
+                                <th>收益</th>
+                            </tr>
+                            </thead>
+                            <tbody>
+                            {{each list as item}}
+                            {{if item.orphan == false}}
+                            <tr>
+                                {{if ('etc' == item.coin || 'eth' == item.coin || 'etf' == item.coin)&&item.uncle}}
+                                <td><a style="color: #fea112;" href="https://gastracker.io/block/{{item.height}}"
+                                       target="_blank">{{item.uncleHeight}}</a></td>
+                                {{else if 'etc' == item.coin || 'eth' == item.coin || 'etf' == item.coin}}
+                                <td><a style="color: #fea112;" href="https://gastracker.io/block/{{item.height}}"
+                                       target="_blank">{{item.height}}</a></td>
+                                {{else}}
+                                <td><a style="color: #fea112;" href="https://gastracker.io/block/{{item.hash}}"
+                                       target="_blank">{{item.height}}</a></td>
+                                {{/if}}
+
+                                {{if item.orphan == false}}
+                                <td><a style="color: #fea112;" href="https://gastracker.io/block/{{item.hash}}"
+                                       target="_blank">{{item.hash}}</a></td>
+                                {{else}}
+                                <td><a style="color: #fea112;" href="javascript:;">{{item.hash}}</a></td>
+                                {{/if}}
+                                <td>{{item.timestamp}}</td>
+                                <td>{{item.diff}}</td>
+                                {{if item.orphan == false}}
+                                <td>{{item.reward}}</td>
+                                {{else}}
+                                <td>0</td>
+                                {{/if}}
+                            </tr>
+                            {{/if}}
+                            {{/each}}}
+                            </tbody>
+                        </script>
+                    </table>
+                </div>
+                <div class="f-tab">
+                    <table id="block-three">
+                        <script type="text/html" id="block-three-tp">
+                            <thead>
+                            <tr>
+                                <th>高度</th>
+                                <th>发现时间</th>
+                                <th>困难度</th>
+                            </tr>
+                            </thead>
+                            <tbody>
+                            {{each list as item}}
+                            <tr>
+                                {{if ('etc' == item.coin || 'eth' == item.coin || 'etf' == item.coin)&&item.uncle}}
+                                <td><a style="color: #fea112;" href="https://gastracker.io/block/{{item.height}}"
+                                       target="_blank">{{item.uncleHeight}}</a></td>
+                                {{else if 'etc' == item.coin || 'eth' == item.coin || 'etf' == item.coin}}
+                                <td><a style="color: #fea112;" href="https://gastracker.io/block/{{item.height}}"
+                                       target="_blank">{{item.height}}</a></td>
+                                {{else}}
+                                <td><a style="color: #fea112;" href="https://gastracker.io/block/{{item.hash}}"
+                                       target="_blank">{{item.height}}</a></td>
+                                {{/if}}
+                                <td>{{item.timestamp}}</td>
+                                <td>{{item.diff}}</td>
+                            </tr>
+                            {{/each}}}
+                            </tbody>
+                        </script>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="mine tab">
+        <div class="section">
+            <div style="font-size: 20px;margin-top: 100px;">敬请期待！</div>
+        </div>
+    </div>
+    <div class="problem tab">
+        <div class="section">
+            <ul class="support">
+                <li style="height: 178px;">
+                    <div class="title">我的支付次数和已支付数量如何查看？</div>
+                    <div class="content">
+                        您好，您可以在区块链浏览器上查询历史支付数据。
+                    </div>
+                </li>
+                <li>
+                    <div class="title">为什么算力显示不稳定？不正确？</div>
+                    <div class="content">
+                        您好，因为矿池显示的算力是根据机器提交的分享值反推的，所以矿池显示的算力有上下各10%-25%左右的波动。您可以放心的哈。有什么疑问可以随时联系我们。
+                    </div>
+                </li>
+                <li>
+                    <div class="title">支付什么时候开始？何时发放收益？</div>
+                    <div class="content">
+                        您好，支付是在每天12:00开始哦，一般会在18:00点前支付完毕（支付前一天0:00:00-23:59:59的收益）。
+                    </div>
+                </li>
+                <li>
+                    <div class="title">我三台矿机挖怎么只、显示一台？</div>
+                    <div class="content">
+                        您好，您查看下机器名是不是起的是一样的，矿工名字不能是一个。
+                    </div>
+                </li>
+                <li>
+                    <div class="title">矿池的费率是多少？</div>
+                    <div class="content">
+                        矿池费率：1%
+                    </div>
+                </li>
+                <li>
+                    <div class="title">矿工号怎么写？</div>
+                    <div class="content">
+                        您好，这个您可以随意设置，一般是数字或者字母15个字符以内即可。
+                    </div>
+                </li>
+                <li>
+                    <div class="title">91Pool矿工页面中已支付收益是什么？</div>
+                    <div class="content">
+                        您好，已经支付的是昨天的挖的币数量。
+                    </div>
+                </li>
+                <li>
+                    <div class="title">未成熟收益什么意思？</div>
+                    <div class="content">
+                        您好，未成熟的收益即您贡献的share占分配区块百分比的收益，等待全网确认数足额后即转入未支付收益。
+                    </div>
+                </li>
+                <li>
+                    <div class="title">双节点怎么改？</div>
+                    <div class="content">
+                        下载群文件 epools,然后加进去，把钱包地址改成自己的。
+                    </div>
+                </li>
+                <li>
+                    <div class="title">我还有其他问题怎么办？</div>
+                    <div class="content">
+                        您好，您可以通过我们的QQ群联系客服工作人员。他们会对您的相关问题进行解答。
+                    </div>
+                </li>
+
+            </ul>
+        </div>
+    </div>
+</div>
+
+<!--footer部分-->
+#include("./layout/footer.html")
+</body>
+<script type="text/javascript" src="lib/echarts.min.js"></script>
+<script type="text/javascript" src="lib/arttemplate.js"></script>
+</html>
