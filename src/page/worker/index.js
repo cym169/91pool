@@ -14,7 +14,7 @@ var _workers = require('util/services/worker-services.js');
 var $ = require('jQuery');
 var coin = util.getUrlParam('coin');
 var redirect = util.getUrlParam('redirect');
-var name = localStorage.name;
+var name = util.getUrlParam('wallet');
 
 var xTime = ['now'],
     yData = [0];
@@ -162,7 +162,7 @@ var index = {
             $("#payList").html(payHtml);
         }, function (error) {
             alert('没有找到您设置的矿工地址的数据，请确保矿工地址配置正确！');
-            window.location.href = decodeURIComponent(redirect);
+            window.location.href = './currency.html?coin='+coin;
         });
     }
 };

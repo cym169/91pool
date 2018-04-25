@@ -16,15 +16,16 @@ time, mark, audio, video {
     outline: 0;
     font-size: 100%;
     background: transparent;
+    -webkit-tap-highlight-color:transparent;
 }
 
 body {
     font-family: Arial,"Microsoft YaHei";
 }
 
-:focus {
-    outline: 1;
-}
+/*:focus {*/
+    /*outline: 1;*/
+/*}*/
 
 article, aside, canvas, details, figcaption, figure,
 footer, header, hgroup, menu, nav, section, summary {

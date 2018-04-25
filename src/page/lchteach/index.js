@@ -17,6 +17,6 @@ $(function () {
             return false;
         }
         localStorage.name = val;
-        window.location.href = './worker.html?coin=lch&redirect=' + encodeURIComponent(window.location.href);
+        window.location.href = './worker.html?coin=lch&wallet='+ val;
     });
 });

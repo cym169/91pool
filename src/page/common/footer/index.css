@@ -139,13 +139,36 @@
     line-height: 40px;
     cursor: pointer;
     margin-left: 8px;
+    position: relative;
 }
 
 .contact li:hover {
     color: rgba(255, 255, 255, 1);
     border-color: rgba(255, 255, 255, 1);
 }
-
+.contact li.wechat>div{
+    position: absolute;
+    width: 200px;
+    height: 225px;
+    left: -160px;
+    top: -240px;
+    z-index: 5;
+    background-color: #fff;
+    display: none;
+}
+.contact li.wechat>div img{
+    width: 100%;
+    display: block;
+    margin-bottom: 0;
+}
+.contact li.wechat>div p{
+    font-size: 14px;
+    color: #333;
+    height: 15px;
+    line-height: 15px;
+    padding-bottom: 10px;
+    letter-spacing: 2px;
+}
 /*兼容分辨率*/
 
 @media (max-width: 700px) {
@@ -172,7 +195,7 @@
     .language-nav {
         float: none !important;
         overflow: hidden;
-        width: 234px;
+        display: inline-block;
         margin: 20px auto 0 !important;
     }
 
@@ -196,6 +219,12 @@
     .contact {
         float: none;
         display: inline-block;
+    }
+    .contact li.wechat>div{
+        width: 150px;
+        height: 175px;
+        left: -58px;
+        top: -190px;
     }
 }
 

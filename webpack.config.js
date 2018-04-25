@@ -11,7 +11,7 @@ if(process.env.type== "build"){
     }
 }else{
     var website={
-        publicPath:"http://localhost:8066/"
+        publicPath:"http://localhost:1717/"
     }
 }
 
@@ -23,14 +23,14 @@ var getHtmlConfig = function(name, title){
         title       : title,
         inject      : true,
         hash        : true,
-        chunks      : ['common', name]
+        chunks      : ['common', name],
         // 压缩HTML代码，生产的时候用
-        // minify      : {
-        //     caseSensitive           : false,
-        //     removeComments          : true,
-        //     removeEmptyAttributes   : true,
-        //     collapseWhitespace      : true
-        // }
+        minify      : {
+            caseSensitive           : false,
+            removeComments          : true,
+            removeEmptyAttributes   : true,
+            collapseWhitespace      : true
+        }
     };
 };
 var config = {
@@ -79,14 +79,14 @@ var config = {
                 test:/\.css$/,
                 use: extractTextPlugin.extract({
                     fallback: "style-loader",
-                    use: "css-loader"
+                    // use: "css-loader"
                     // 压缩CSS代码，生产时候用
-                    // use: [{
-                    //     loader: 'css-loader',
-                    //     options: {
-                    //         minimize: true
-                    //     }
-                    // }]
+                    use: [{
+                        loader: 'css-loader',
+                        options: {
+                            minimize: true
+                        }
+                    }]
                 })
             },
             {
@@ -106,7 +106,7 @@ var config = {
     //插件，用于生产模版和各项功能
     plugins:[
         // 压缩JS代码，生产时候用
-        // new uglify(),
+        new uglify(),
 
         new copyWebpackPlugin([{
             from:__dirname+'/src/lib',
@@ -143,7 +143,7 @@ var config = {
         //服务端压缩是否开启
         compress:true,
         //配置服务端口号
-        port:8066
+        port:1717
     }
 };
 

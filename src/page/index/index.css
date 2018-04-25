@@ -107,22 +107,27 @@
     height: 100%;
 }
 .market-info > tbody > tr > td:nth-child(1) i{
-    display: inline-block;
+    display: block;
     position: absolute;
 }
+.market-info > tbody > tr > td:nth-child(1) i img{
+    width: 100%;
+}
 .market-info > tbody > tr > td:nth-child(1) i.etc_icon{
-    left: -8px;
-    top: 8px;
+    left: -14px;
+    top: 10px;
+    width: 32px;
 }
 .market-info > tbody > tr > td:nth-child(1) i.hsr_icon{
     width: 24px;
-    left: -11px;
-    top: 5px;
+    left: -10px;
+    top: 7px;
 }
 .market-info > tbody > tr > td:nth-child(1) i.hsr_icon img{
     width: 100%;
 }
 .market-info > tbody > tr > td:nth-child(1) i.etf_icon{
+    width: 24px;
     left: -10px;
     top: 7px;
 }
@@ -155,7 +160,12 @@
 .market-info > tbody > tr > td:first-child {
     font-weight: bold;
 }
-
+.market-info tr td .down{
+    color: #399736;
+}
+.market-info tr td .up{
+    color: #ea5c5c;
+}
 .pagination {
     position: absolute;
     z-index: 20;

@@ -39,7 +39,7 @@ var index = {
             }
         });
 
-        $(document).on('click', '.phone-help', function (e) {
+        $(".phone-help").on('click', function (e) {
             e.stopPropagation();
             if (_this.phoneFlag) {
                 $('.phone-menu').fadeIn();
@@ -77,14 +77,25 @@ var index = {
             window.location.reload();
         });
 
-        $(document).on('click', function (e) {
-            _this.flag = true;
-            _this.langFlag = true;
-            _this.phoneFlag = true;
-            $('.dropdown-menu').fadeOut();
-            $('.chooseLang').fadeOut();
-            $('.phone-menu').fadeOut();
-        });
+        if($(window).width() <= 700){
+            $("body>*").on('click', function (e) {
+                _this.flag = true;
+                _this.langFlag = true;
+                _this.phoneFlag = true;
+                $('.dropdown-menu').fadeOut();
+                $('.chooseLang').fadeOut();
+                $('.phone-menu').fadeOut();
+            });
+        }else{
+            $(document).on('click', function (e) {
+                _this.flag = true;
+                _this.langFlag = true;
+                _this.phoneFlag = true;
+                $('.dropdown-menu').fadeOut();
+                $('.chooseLang').fadeOut();
+                $('.phone-menu').fadeOut();
+            });
+        }
 
         i18next.init({
             lng: lang,

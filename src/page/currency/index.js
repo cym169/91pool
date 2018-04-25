@@ -29,8 +29,7 @@ var index = {
             if (val == '') {
                 return false;
             }
-            localStorage.name = val;
-            window.location.href = './worker.html?coin=' + coinName + '&redirect=' + encodeURIComponent(window.location.href);
+            window.location.href = './worker.html?coin=' + coinName + '&wallet='+ val;
         });
 
         // setInterval(_this.setData, 6000);
@@ -174,6 +173,10 @@ var index = {
                 var luckHtml = template('luckList-tp', luckList);
                 $('#luckList').html(luckHtml);
             }
+
+            $(".maturedTotal-small").html(_reset.formatNumber(data.maturedTotal));
+            $(".immatureTotal-small").html(_reset.formatNumber(data.immatureTotal));
+            $(".candidatesTotal-small").html(_reset.formatNumber(data.candidatesTotal));
             $(".maturedTotal").html(data.maturedTotal);
             $(".immatureTotal").html(data.immatureTotal);
             $(".candidatesTotal").html(data.candidatesTotal);
@@ -182,12 +185,19 @@ var index = {
                 $.each(data.matured, function (i, t) {
                     switch (coin) {
                         case 'etc':
-                        case 'eth':
+                            t.myUrl = "https://gastracker.io/block/";
+                            t.reward = (t.reward * 1e-18).toFixed(6);
+                            break;
+                        // case 'eth':
                         case 'etf':
+                            t.myUrl = "#";
                             t.reward = (t.reward * 1e-18).toFixed(6);
                             break;
                         case 'hsr':
+                            t.myUrl = "http://explorer.h.cash/block/";
+                            break;
                         case 'lch':
+                            t.myUrl = "http://explorer.litecoincash.tech/block/";
                             t.reward = (t.mint).toFixed(6);
                             break;
                         case 'btg':
@@ -212,12 +222,19 @@ var index = {
                 $.each(data.immature, function (i, t) {
                     switch (coin) {
                         case 'etc':
-                        case 'eth':
+                            t.myUrl = "https://gastracker.io/block/";
+                            t.reward = (t.reward * 1e-18).toFixed(6);
+                            break;
+                        // case 'eth':
                         case 'etf':
+                            t.myUrl = "#";
                             t.reward = (t.reward * 1e-18).toFixed(6);
                             break;
                         case 'hsr':
+                            t.myUrl = "http://explorer.h.cash/block/";
+                            break;
                         case 'lch':
+                            t.myUrl = "http://explorer.litecoincash.tech/block/";
                             t.reward = (t.mint).toFixed(6);
                             break;
                         case 'btg':
@@ -242,6 +259,20 @@ var index = {
                     t.timestamp = _reset.formatDateLocale(t.timestamp);
                     t.diff = _reset.getRoundVariance(t.shares, t.difficulty);
                     t.coin = coin;
+                    switch (coin) {
+                        case 'etc':
+                            t.myUrl = "https://gastracker.io/block/";
+                            break;
+                        case 'etf':
+                            t.myUrl = "#";
+                            break;
+                        case 'hsr':
+                            t.myUrl = "http://explorer.h.cash/block/";
+                            break;
+                        case 'lch':
+                            t.myUrl = "http://explorer.litecoincash.tech/block/";
+                            break;
+                    }
                 });
                 var dataList3 = {
                     list: data.candidates
@@ -270,7 +301,7 @@ var index = {
         $("#address").attr('placeholder', '请输入' + upper + '矿工地址');
         $("#html-title").html(upper + '矿池 ' + '- 91pool');
         if (coinName == 'etc') {
-            $("#mPrice").html("0.1ETC");
+            $("#mPrice").html("1ETC");
             $("#payment").html("1%");
             $("#reward").html("4ETC+交易费用");
         }

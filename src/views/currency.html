@@ -95,7 +95,7 @@
                         <div class="feature-box">
                             <div class="number">02</div>
                             <div class="text">
-                                <p id="everyTime">每半小时结算一次</p>
+                                <p id="everyTime">半小时结算一次</p>
                                 <p>结算时间</p>
                             </div>
                         </div>
@@ -226,9 +226,9 @@
         <div class="work">
             <div class="section">
                 <ul class="work-title">
-                    <li class="active"><a href="javascript:;">已成熟区块</a><em class="maturedTotal">0</em></li>
-                    <li><a href="javascript:;">未成熟区块</a><em class="immatureTotal">0</em></li>
-                    <li><a href="javascript:;">新挖出区块</a><em class="candidatesTotal">0</em></li>
+                    <li class="active"><a href="javascript:;">已成熟区块</a><em class="maturedTotal-small">0</em></li>
+                    <li><a href="javascript:;">未成熟区块</a><em class="immatureTotal-small" >0</em></li>
+                    <li><a href="javascript:;">新挖出区块</a><em class="candidatesTotal-small">0</em></li>
                 </ul>
                 <div class="f-tab" style="display: block;">
                     <table id="block-one">
@@ -247,18 +247,18 @@
                             {{if item.orphan == false}}
                             <tr>
                                 {{if ('etc' == item.coin || 'eth' == item.coin || 'etf' == item.coin)&&item.uncle}}
-                                <td><a style="color: #fea112;" href="https://gastracker.io/block/{{item.height}}"
+                                <td><a style="color: #fea112;" href="{{item.myUrl}}{{item.height}}"
                                        target="_blank">{{item.uncleHeight}}</a></td>
                                 {{else if 'etc' == item.coin || 'eth' == item.coin || 'etf' == item.coin}}
-                                <td><a style="color: #fea112;" href="https://gastracker.io/block/{{item.height}}"
+                                <td><a style="color: #fea112;" href="{{item.myUrl}}{{item.height}}"
                                        target="_blank">{{item.height}}</a></td>
                                 {{else}}
-                                <td><a style="color: #fea112;" href="https://gastracker.io/block/{{item.hash}}"
+                                <td><a style="color: #fea112;" href="{{item.myUrl}}{{item.hash}}"
                                        target="_blank">{{item.height}}</a></td>
                                 {{/if}}
 
                                 {{if item.orphan == false}}
-                                <td><a style="color: #fea112;" href="https://gastracker.io/block/{{item.hash}}"
+                                <td><a style="color: #fea112;" href="{{item.myUrl}}{{item.hash}}"
                                        target="_blank">{{item.hash}}</a></td>
                                 {{else}}
                                 <td><a style="color: #fea112;" href="javascript:;">{{item.hash}}</a></td>
@@ -294,18 +294,18 @@
                             {{if item.orphan == false}}
                             <tr>
                                 {{if ('etc' == item.coin || 'eth' == item.coin || 'etf' == item.coin)&&item.uncle}}
-                                <td><a style="color: #fea112;" href="https://gastracker.io/block/{{item.height}}"
+                                <td><a style="color: #fea112;" href="{{item.myUrl}}{{item.height}}"
                                        target="_blank">{{item.uncleHeight}}</a></td>
                                 {{else if 'etc' == item.coin || 'eth' == item.coin || 'etf' == item.coin}}
-                                <td><a style="color: #fea112;" href="https://gastracker.io/block/{{item.height}}"
+                                <td><a style="color: #fea112;" href="{{item.myUrl}}{{item.height}}"
                                        target="_blank">{{item.height}}</a></td>
                                 {{else}}
-                                <td><a style="color: #fea112;" href="https://gastracker.io/block/{{item.hash}}"
+                                <td><a style="color: #fea112;" href="{{item.myUrl}}{{item.hash}}"
                                        target="_blank">{{item.height}}</a></td>
                                 {{/if}}
 
                                 {{if item.orphan == false}}
-                                <td><a style="color: #fea112;" href="https://gastracker.io/block/{{item.hash}}"
+                                <td><a style="color: #fea112;" href="{{item.myUrl}}{{item.hash}}"
                                        target="_blank">{{item.hash}}</a></td>
                                 {{else}}
                                 <td><a style="color: #fea112;" href="javascript:;">{{item.hash}}</a></td>
@@ -338,13 +338,13 @@
                             {{each list as item}}
                             <tr>
                                 {{if ('etc' == item.coin || 'eth' == item.coin || 'etf' == item.coin)&&item.uncle}}
-                                <td><a style="color: #fea112;" href="https://gastracker.io/block/{{item.height}}"
+                                <td><a style="color: #fea112;" href="{{item.myUrl}}{{item.height}}"
                                        target="_blank">{{item.uncleHeight}}</a></td>
                                 {{else if 'etc' == item.coin || 'eth' == item.coin || 'etf' == item.coin}}
-                                <td><a style="color: #fea112;" href="https://gastracker.io/block/{{item.height}}"
+                                <td><a style="color: #fea112;" href="{{item.myUrl}}{{item.height}}"
                                        target="_blank">{{item.height}}</a></td>
                                 {{else}}
-                                <td><a style="color: #fea112;" href="https://gastracker.io/block/{{item.hash}}"
+                                <td><a style="color: #fea112;" href="{{item.myUrl}}{{item.hash}}"
                                        target="_blank">{{item.height}}</a></td>
                                 {{/if}}
                                 <td>{{item.timestamp}}</td>
@@ -385,7 +385,7 @@
                     </div>
                 </li>
                 <li>
-                    <div class="title">我三台矿机挖怎么只、显示一台？</div>
+                    <div class="title">为什么我的三台矿机只显示1台？</div>
                     <div class="content">
                         您好，您查看下机器名是不是起的是一样的，矿工名字不能是一个。
                     </div>
@@ -393,7 +393,7 @@
                 <li>
                     <div class="title">矿池的费率是多少？</div>
                     <div class="content">
-                        矿池费率：1%
+                        您好，目前ETC和ETF的矿池费率是1%；HSR和LCH是目前是免费的。
                     </div>
                 </li>
                 <li>

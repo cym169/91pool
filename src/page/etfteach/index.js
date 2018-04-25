@@ -16,6 +16,6 @@ $(function () {
             return false;
         }
         localStorage.name = val;
-        window.location.href = './worker.html?coin=etf&redirect=' + encodeURIComponent(window.location.href);
+        window.location.href = './worker.html?coin=etf&wallet='+ val;
     });
 });

@@ -52,48 +52,108 @@ var index = {
 
             _coin.getPrice('etc', function (err, data) {
                 if (data.data)
-                    $(".price[type='ETC']").html('￥' + data.data[0].priceCny + '(' + data.data[0].rose + ')');
+                    var p = "";
+                if( parseInt(data.data[0].rose) < 0 ){
+                    p = '￥' + data.data[0].priceCny + '(<span class="down">' + data.data[0].rose + '</span>)'
+                }
+                else{
+                    p = '￥' + data.data[0].priceCny + '(<span class="up">' + data.data[0].rose + '</span>)'
+                }
+                $(".etcprice").html(p);
             });
             _coin.getPrice('etf', function (err, data) {
                 if (data.data)
-                    $(".price[type='ETF']").html('￥' + data.data[0].priceCny + '(' + data.data[0].rose + ')');
+                    var p = "";
+                if( parseInt(data.data[0].rose) < 0 ){
+                    p = '￥' + data.data[0].priceCny + '(<span class="down">' + data.data[0].rose + '</span>)'
+                }
+                else{
+                    p = '￥' + data.data[0].priceCny + '(<span class="up">' + data.data[0].rose + '</span>)'
+                }
+                $(".etfprice").html(p);
             });
             _coin.getPrice('hsr', function (err, data) {
                 if (data.data)
-                    $(".price[type='HSR']").html('￥' + data.data[0].priceCny + '(' + data.data[0].rose + ')');
+                    var p = "";
+                if( parseInt(data.data[0].rose) < 0 ){
+                    p = '￥' + data.data[0].priceCny + '(<span class="down">' + data.data[0].rose + '</span>)'
+                }
+                else{
+                    p = '￥' + data.data[0].priceCny + '(<span class="up">' + data.data[0].rose + '</span>)'
+                }
+                $(".hsrprice").html(p);
             });
-            _coin.getPrice('lch', function (err, data) {
-                if (data.data)
-                    $(".price[type='LCH']").html('￥' + data.data[0].priceCny + '(' + data.data[0].rose + ')');
+            _coin.getLCH(function (data) {
+                if (data.data){
+                    var LCHprice = data.data.data[0].price;
+                    LCHprice = LCHprice.toFixed(4);
+                    var p = "";
+                    if( data.data.data[0].change1d < 0 ){
+                        p = '￥' + LCHprice + '(<span class="down">' + data.data.data[0].change1d + '%</span>)'
+                    }
+                    else{
+                        p = '￥' + LCHprice + '(<span class="up">' + data.data.data[0].change1d + '%</span>)'
+                    }
+                    $(".lchprice").html(p);
+                }
             });
         });
     },
     refresh: function () {
         _coin.getCoinList(function (data) {
             $.each(data, function (i, t) {
-
                 $(".hashrate" + i).html(_reset.formatHashrate(t.hashrate));
                 $(".netHashrate" + i).html(_reset.formatHashrate(t.netHashrate));
-                t.netDiff = _reset.changeDiff(t.netDiff);
+                $(".netDiff" + i).html(_reset.changeDiff(t.netDiff));
                 $(".profit" + i).html(t.profit);
             });
         });
-
         _coin.getPrice('etc', function (err, data) {
             if (data.data)
-                $(".price[type='ETC']").html('￥' + data.data[0].priceCny + '(' + data.data[0].rose + ')');
+                var p = "";
+                if( parseInt(data.data[0].rose) < 0 ){
+                    p = '￥' + data.data[0].priceCny + '(<span class="down">' + data.data[0].rose + '</span>)'
+                }
+                else{
+                    p = '￥' + data.data[0].priceCny + '(<span class="up">' + data.data[0].rose + '</span>)'
+                }
+                $(".etcprice").html(p);
         });
         _coin.getPrice('etf', function (err, data) {
             if (data.data)
-                $(".price[type='ETF']").html('￥' + data.data[0].priceCny + '(' + data.data[0].rose + ')');
+                var p = "";
+                if( parseInt(data.data[0].rose) < 0 ){
+                    p = '￥' + data.data[0].priceCny + '(<span class="down">' + data.data[0].rose + '</span>)'
+                }
+                else{
+                    p = '￥' + data.data[0].priceCny + '(<span class="up">' + data.data[0].rose + '</span>)'
+                }
+                $(".etfprice").html(p);
         });
         _coin.getPrice('hsr', function (err, data) {
             if (data.data)
-                $(".price[type='HSR']").html('￥' + data.data[0].priceCny + '(' + data.data[0].rose + ')');
+                var p = "";
+                if( parseInt(data.data[0].rose) < 0 ){
+                    p = '￥' + data.data[0].priceCny + '(<span class="down">' + data.data[0].rose + '</span>)'
+                }
+                else{
+                    p = '￥' + data.data[0].priceCny + '(<span class="up">' + data.data[0].rose + '</span>)'
+                }
+                $(".hsrprice").html(p);
         });
-        _coin.getPrice('lch', function (err, data) {
-            if (data.data)
-                $(".price[type='LCH']").html('￥' + data.data[0].priceCny + '(' + data.data[0].rose + ')');
+        _coin.getLCH(function (data) {
+            if (data.data){
+                var LCHprice = data.data.data[0].price;
+                LCHprice = LCHprice.toFixed(4);
+                var p = "";
+                if( data.data.data[0].change1d < 0 ){
+                    p = '￥' + LCHprice + '(<span class="down">' + data.data.data[0].change1d + '%</span>)'
+                }
+                else{
+                    p = '￥' + LCHprice + '(<span class="up">' + data.data.data[0].change1d + '%</span>)'
+                }
+                $(".lchprice").html(p);
+            }
         });
 
     },
