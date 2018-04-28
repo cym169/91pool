@@ -16,7 +16,8 @@
         <ul class="scroll" id="scroll">
             <script type="text/html" id="scroll-tp">
                 {{each list as item}}
-                <li><a href="./activity.html?id={{item.id}}" target="_blank" title="{{item.title}}">{{item.title}}</a></li>
+                <li><a href="./activity.html?id={{item.id}}" target="_blank" title="{{item.title}}">{{item.title}}</a>
+                </li>
                 {{/each}}
             </script>
         </ul>
@@ -28,10 +29,14 @@
         <!--banner图-->
         <div class="swiper-wrapper">
             <div class="swiper-slide" style="text-align: center">
-                <a href="javascript:;"><img class="sliderImg" src="../images/activity/201804231624_banner.jpg" width="100%"></a>
+                <a href="./activity.html?id=45" target="_blank"><img class="sliderImg"
+                                                                     src="../images/activity/201804231624_banner.jpg"
+                                                                     width="100%"></a>
             </div>
             <div class="swiper-slide" style="text-align: center">
-                <a href="./activity.html?id=42" target="_blank"><img class="sliderImg" src="../images/activity/20180420190949_banner.jpg" width="100%"></a>
+                <a href="./activity.html?id=42" target="_blank"><img class="sliderImg"
+                                                                     src="../images/activity/20180420190949_banner.jpg"
+                                                                     width="100%"></a>
             </div>
         </div>
         <div class="pagination"></div>
@@ -41,27 +46,30 @@
 <!--货币行情-->
 <div class="section market">
     <ul class="market-type">
-        <li class="active"><a href="javascript:;">显卡挖矿</a></li>
+        <li class="active"><a href="javascript:;" data-i18n="table.GraphicMining"></a></li>
         <!--<li><a href="javascript:;">ASIC挖矿</a></li>-->
         <!--<li><a href="javascript:;">POS挖矿</a></li>-->
     </ul>
     <div class="table-box">
         <table class="table market-info">
             <thead>
-                <tr>
-                    <th>币种</th>
-                    <th>矿池算力</th>
-                    <th>全网算力</th>
-                    <th>全网难度</th>
-                    <th>价格（CNY）</th>
-                    <th>理论收益</th>
-                </tr>
+            <tr>
+                <th data-i18n="table.currency"></th>
+                <th data-i18n="table.poolHashrate"></th>
+                <th data-i18n="table.netWorkHashrate"></th>
+                <th data-i18n="table.netWorkDifficulty"></th>
+                <th><span data-i18n="table.price"></span>CNY（<span style="font-size: 12px;color:#333;opacity: .5;"
+                                                                   data-i18n="table.fromFXH"></span>）
+                </th>
+                <th data-i18n="table.theoreticalEarnings"></th>
+            </tr>
             </thead>
             <tbody id="coinList">
             <script type="text/html" id="coinList-tp">
                 {{each list as item i}}
                 <tr class="coinType">
-                    <td><a href="./currency.html?coin={{item.coin}}"><i class="{{item.coin}}_icon"><img src="{{item.imgUrl}}"></i>{{item.upcoin}}</a></td>
+                    <td><a href="./currency.html?coin={{item.coin}}&i=0"><i class="{{item.coin}}_icon"><img
+                            src="{{item.imgUrl}}"></i>{{item.upcoin}}</a></td>
                     <td class="hashrate{{i}}">{{item.hashrate}}</td>
                     <td class="netHashrate{{i}}">{{item.netHashrate}}</td>
                     <td class="netDiff{{i}}">{{item.netDiff}}</td>
@@ -82,4 +90,13 @@
 <script type="text/javascript" src="lib/swiper/swiper.min.js"></script>
 <script type="text/javascript" src="lib/swiper/swiper.3dflow.js"></script>
 <script type="text/javascript" src="lib/arttemplate.js"></script>
+<script>
+    var _hmt = _hmt || [];
+    (function () {
+        var hm = document.createElement("script");
+        hm.src = "https://hm.baidu.com/hm.js?1e879d382f50006c81fc7a1b0d688da0";
+        var s = document.getElementsByTagName("script")[0];
+        s.parentNode.insertBefore(hm, s);
+    })();
+</script>
 </html>

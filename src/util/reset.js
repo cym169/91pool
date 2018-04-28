@@ -131,10 +131,10 @@ var _reset = {
 
         var la = localStorage.lang;
         if (la == null) {
-            la = "zh-cn";
+            la = "cn";
         }
         var arr;
-        if (la == "en-us") {
+        if (la == "en") {
             arr = enarr;
         } else if (la == "ru") {
             arr = ruarr;
@@ -191,13 +191,13 @@ var _reset = {
         var len = number.toString().length;
         var newNumber = 0;
 
-        if (len < 3) {
+        if (len <= 3) {
             newNumber = number;
         }
-        else if (len >= 3 && len < 4) {
+        else if (len > 3 && len <= 4) {
             newNumber = Math.floor(number / 1000) + "k+";
         }
-        else if (len >= 4) {
+        else if (len > 4) {
             newNumber = Math.floor(number / 10000) + "w+";
         }
         return newNumber;

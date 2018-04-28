@@ -35,16 +35,16 @@
     margin-top: 19px;
 }
 
-.footer-nav > li {
+.footer-nav > ul > li {
     float: left;
     margin-left: 60px;
 }
 
-.footer-nav > li > a {
+.footer-nav > ul > li > a {
     color: #6e6e6e;
 }
 
-.footer-nav > li > a:hover {
+.footer-nav > ul > li > a:hover {
     color: #9b9b9b;
 }
 
@@ -52,7 +52,7 @@
     margin-top: 7px;
 }
 
-.language-nav > li {
+.language-nav > ul > li {
     float: left;
     margin-right: 20px;
     width: 58px;
@@ -60,52 +60,52 @@
     position: relative;
 }
 
-.language-nav > li:last-child {
+.language-nav > ul > li:last-child {
     margin-right: 0;
 }
 
-.language-nav > li > a {
+.language-nav > ul > li > a {
     display: block;
     width: 100%;
     height: 100%;
     background: url("../../../images/flag.png") no-repeat;
 }
 
-.language-nav > li.cn a {
+.language-nav > ul > li.cn a {
     background-position: 0 -43px;
 }
 
-.language-nav > li.en a {
+.language-nav > ul > li.en a {
     background-position: -64px -43px;
 }
 
-.language-nav > li.ru a {
+.language-nav > ul > li.ru a {
     background-position: -128px -43px;
 }
 
-.language-nav > li.cn.active a {
+.language-nav > ul > li.cn.active a {
     background-position: 0 0;
 }
 
-.language-nav > li.en.active a {
+.language-nav > ul > li.en.active a {
     background-position: -64px 0;
 }
 
-.language-nav > li.ru.active a {
+.language-nav > ul > li.ru.active a {
     background-position: -128px 0;
 }
 
-/*.language-nav > li.cn > a:hover {*/
-    /*background-position: 0 0;*/
-/*}*/
+.language-nav > ul > li.cn > a:hover {
+    background-position: 0 0;
+}
 
-/*.language-nav > li.en > a:hover {*/
-    /*background-position: -64px 0;*/
-/*}*/
+.language-nav > ul > li.en > a:hover {
+    background-position: -64px 0;
+}
 
-/*.language-nav > li.ru > a:hover {*/
-    /*background-position: -128px 0;*/
-/*}*/
+.language-nav > ul > li.ru > a:hover {
+    background-position: -128px 0;
+}
 
 .footer-bottom {
     padding: 20px 0 30px 0;
@@ -180,25 +180,27 @@
     .footer-nav {
         float: none !important;
         overflow: hidden;
+    }
+    .footer-nav > ul{
         display: inline-block;
     }
-
-    .footer-nav li:first-child {
+    .footer-nav > ul > li:first-child {
         margin-left: 0 !important;
     }
 
-    .footer-nav li {
-        margin-left: 10px !important;
-        margin-bottom: 25px;
+    .footer-nav > ul > li {
+        margin-left: 40px !important;
+        margin-bottom: 0;
     }
 
     .language-nav {
         float: none !important;
         overflow: hidden;
-        display: inline-block;
         margin: 20px auto 0 !important;
     }
-
+    .language-nav > ul{
+        display: inline-block;
+    }
     .footer-bottom .content {
         float: none !important;
         padding: 0 10px;

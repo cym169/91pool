@@ -11,26 +11,25 @@ if(process.env.type== "build"){
     }
 }else{
     var website={
-        publicPath:"http://localhost:1717/"
+        publicPath:"http://172.16.2.58:1717/"
     }
 }
 
 // 获取html-webpack-plugin参数的方法
-var getHtmlConfig = function(name, title){
+var getHtmlConfig = function(name){
     return {
         template    : 'html-withimg-loader!'+'./src/views/'+name+'.html',
         filename    : name+'.html',
-        title       : title,
         inject      : true,
         hash        : true,
-        chunks      : ['common', name],
+        chunks      : ['common', name]
         // 压缩HTML代码，生产的时候用
-        minify      : {
-            caseSensitive           : false,
-            removeComments          : true,
-            removeEmptyAttributes   : true,
-            collapseWhitespace      : true
-        }
+        // minify      : {
+        //     caseSensitive           : false,
+        //     removeComments          : true,
+        //     removeEmptyAttributes   : true,
+        //     collapseWhitespace      : true
+        // }
     };
 };
 var config = {
@@ -48,6 +47,7 @@ var config = {
         'hsrteach'      : ['./src/page/hsrteach/index.js'],
         'etfteach'      : ['./src/page/etfteach/index.js'],
         'lchteach'      : ['./src/page/lchteach/index.js'],
+        'edit'          : ['./src/page/edit/index.js'],
         'notice'        : ['./src/page/notice/index.js'],
         'about'         : ['./src/page/about/index.js'],
         'order'         : ['./src/page/order/index.js'],
@@ -79,14 +79,14 @@ var config = {
                 test:/\.css$/,
                 use: extractTextPlugin.extract({
                     fallback: "style-loader",
-                    // use: "css-loader"
+                    use: "css-loader"
                     // 压缩CSS代码，生产时候用
-                    use: [{
-                        loader: 'css-loader',
-                        options: {
-                            minimize: true
-                        }
-                    }]
+                    // use: [{
+                    //     loader: 'css-loader',
+                    //     options: {
+                    //         minimize: true
+                    //     }
+                    // }]
                 })
             },
             {
@@ -106,7 +106,7 @@ var config = {
     //插件，用于生产模版和各项功能
     plugins:[
         // 压缩JS代码，生产时候用
-        new uglify(),
+        // new uglify(),
 
         new copyWebpackPlugin([{
             from:__dirname+'/src/lib',
@@ -120,26 +120,27 @@ var config = {
         new HtmlWebpackPlugin({
             favicon: path.resolve('./src/images/favicon.ico')
         }),
-        new HtmlWebpackPlugin(getHtmlConfig('index','首页')),
-        new HtmlWebpackPlugin(getHtmlConfig('login','登录')),
-        new HtmlWebpackPlugin(getHtmlConfig('register','注册')),
-        new HtmlWebpackPlugin(getHtmlConfig('currency','货币详情')),
-        new HtmlWebpackPlugin(getHtmlConfig('worker','矿工详情')),
-        new HtmlWebpackPlugin(getHtmlConfig('etcteach','ETC挖矿教程')),
-        new HtmlWebpackPlugin(getHtmlConfig('etfteach','ETF挖矿教程')),
-        new HtmlWebpackPlugin(getHtmlConfig('hsrteach','HSR挖矿教程')),
-        new HtmlWebpackPlugin(getHtmlConfig('lchteach','LCC挖矿教程')),
-        new HtmlWebpackPlugin(getHtmlConfig('notice','活动公告')),
-        new HtmlWebpackPlugin(getHtmlConfig('about','关于我们')),
-        new HtmlWebpackPlugin(getHtmlConfig('order','服务协议')),
-        new HtmlWebpackPlugin(getHtmlConfig('activity','服务协议'))
+        new HtmlWebpackPlugin(getHtmlConfig('index')),
+        new HtmlWebpackPlugin(getHtmlConfig('login')),
+        new HtmlWebpackPlugin(getHtmlConfig('register')),
+        new HtmlWebpackPlugin(getHtmlConfig('currency')),
+        new HtmlWebpackPlugin(getHtmlConfig('worker')),
+        new HtmlWebpackPlugin(getHtmlConfig('etcteach')),
+        new HtmlWebpackPlugin(getHtmlConfig('etfteach')),
+        new HtmlWebpackPlugin(getHtmlConfig('hsrteach')),
+        new HtmlWebpackPlugin(getHtmlConfig('lchteach')),
+        new HtmlWebpackPlugin(getHtmlConfig('edit')),
+        new HtmlWebpackPlugin(getHtmlConfig('notice')),
+        new HtmlWebpackPlugin(getHtmlConfig('about')),
+        new HtmlWebpackPlugin(getHtmlConfig('order')),
+        new HtmlWebpackPlugin(getHtmlConfig('activity'))
     ],
     //配置webpack开发服务功能
     devServer:{
         //设置基本目录结构
         contentBase:path.resolve(__dirname,'91pool'),
         //服务器的IP地址，可以使用IP也可以使用localhost
-        host:'localhost',
+        host:'172.16.2.58',
         //服务端压缩是否开启
         compress:true,
         //配置服务端口号

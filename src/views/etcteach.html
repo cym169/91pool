@@ -11,8 +11,8 @@
 <div class="search-box">
     <div class="form">
         <span class="fa fa-search"></span>
-        <input type="text" placeholder="请输入ETC矿工地址" id="address">
-        <input type="button" value="搜索" id="search">
+        <input type="text" id="address" data-i18n="[placeholder]input.etcPlaceholder">
+        <input type="button" id="search" data-i18n="[value]input.search">
     </div>
 </div>
 <!--主要显示区-->
@@ -20,11 +20,11 @@
     <div class="coin-logo"><img src="../images/etc.png"></div>
     <p class="coin-name">ETC</p>
     <ul class="coin-title tab-title">
-        <li><a href="./currency.html?coin=etc&i=0">ETC首页</a></li>
-        <li class="active"><a href="javascript:;">挖矿教程</a></li>
-        <li><a href="./currency.html?coin=etc&i=2">区块信息</a></li>
-        <li><a href="./currency.html?coin=etc&i=3">我的矿池</a></li>
-        <li><a href="./currency.html?coin=etc&i=4">常见问题</a></li>
+        <li><a href="./currency.html?coin=etc&i=0">ETC<span data-i18n="currency.home"></span></a></li>
+        <li class="active"><a href="javascript:;" data-i18n="currency.miningTutorial"></a></li>
+        <li><a href="./currency.html?coin=etc&i=2" data-i18n="currency.blockInformation"></a></li>
+        <li><a href="./currency.html?coin=etc&i=3" data-i18n="currency.myPool"></a></li>
+        <li><a href="./currency.html?coin=etc&i=4" data-i18n="currency.FAQ"></a></li>
     </ul>
 </div>
 <div class="teach">
@@ -39,7 +39,8 @@
                             获得一个钱包地址：<br>
                             ZB <a href="https://www.zb.com/" target="_blank">https://www.zb.com/</a>（科学上网）<br>
                             EXX <a href="EXX https://www.exx.com/">https://www.exx.com/</a>（科学上网）<br>
-                            P网 <a href="https://poloniex.com" target="_blank">https://poloniex.com</a> (注册时需科学上网获取验证码)<br>
+                            P网 <a href="https://poloniex.com" target="_blank">https://poloniex.com</a>
+                            (注册时需科学上网获取验证码)<br>
                             小白建议去以上交易所注册个账号， 然后生成一个充值地址
                         </div>
                     </div>
@@ -76,7 +77,8 @@
                             <img src="../images/etc_img4.jpg"><br><br>
                             用记事本打开 wakuang.bat，编辑 IP 地址、调整其他参数：<br>
                             <img src="../images/etc_img5.jpg"><br><br>
-                            --farm-recheck：软件强制更新任务周期，100-600 单位是 MS；机器少，单台算力 100M 以上的话 可以设置为 100；一般机器建议设置为 200；数值越小拒绝率越低，但是过小会导致机器算力下降；<br>
+                            --farm-recheck：软件强制更新任务周期，100-600 单位是 MS；机器少，单台算力 100M 以上的话 可以设置为 100；一般机器建议设置为
+                            200；数值越小拒绝率越低，但是过小会导致机器算力下降；<br>
                             --cl-local-work ：运算位宽，可以是 64，128，256；<br>
                             --cl-global-work：显卡运算线程数；<br>
                             矿工号：仅支持小些字母和数字，不能包含”.”，矿池自动添加矿工不需要在矿池新建<br>
@@ -100,7 +102,8 @@
                             1、 双击wakuang.bat 闪退:<br>
                             确保挖矿软件在非中文目录下；检查显卡驱动和系统；<br>
                             确保 C 盘有 4G 左右剩余空间；<br>
-                            如果 CPU 有核显，并安装了驱动，请选择挖矿显卡 ethminer --farm-recheck 200 -G --opencl-platform 1 -F http://192.168.1.55:8080/work1
+                            如果 CPU 有核显，并安装了驱动，请选择挖矿显卡 ethminer --farm-recheck 200 -G --opencl-platform 1 -F
+                            http://192.168.1.55:8080/work1
 
                         </div>
                     </div>

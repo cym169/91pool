@@ -12,6 +12,7 @@ var json = require('util/languages/' + lang + '.json');
 var index = {
     flag: true,
     langFlag: true,
+    phoneLangFlag: true,
     phoneFlag: true,
     init: function () {
         this.setLang();
@@ -50,16 +51,27 @@ var index = {
             }
         });
 
-        // $(document).on('click', '.lang', function (e) {
-        //     e.stopPropagation();
-        //     if (_this.langFlag) {
-        //         $('.chooseLang').fadeIn();
-        //         _this.langFlag = false;
-        //     } else {
-        //         _this.langFlag = true;
-        //         $('.chooseLang').fadeOut();
-        //     }
-        // });
+        $(document).on('click', '.lang', function (e) {
+            e.stopPropagation();
+            if (_this.langFlag) {
+                $('.chooseLang').fadeIn();
+                _this.langFlag = false;
+            } else {
+                _this.langFlag = true;
+                $('.chooseLang').fadeOut();
+            }
+        });
+
+        $('.phone-chooselang').on('click', function (e) {
+            if (_this.phoneLangFlag) {
+                $('.phone-lang').fadeIn();
+                _this.phoneLangFlag = false;
+            } else {
+                _this.phoneLangFlag = true;
+                $('.phone-lang').fadeOut();
+            }
+            e.stopPropagation();
+        });
 
         $(document).on('click', '.phone-menu a', function () {
             var type = $(this).attr('type');
@@ -77,33 +89,27 @@ var index = {
             window.location.reload();
         });
 
+        $(document).on('click', '.phone-lang a', function () {
+            var language = $(this).attr('lang');
+            localStorage.lang = language;
+            window.location.reload();
+        });
+
         if($(window).width() <= 700){
             $("body>*").on('click', function (e) {
-                _this.flag = true;
-                _this.langFlag = true;
                 _this.phoneFlag = true;
-                $('.dropdown-menu').fadeOut();
-                $('.chooseLang').fadeOut();
+                _this.phoneLangFlag = true;
                 $('.phone-menu').fadeOut();
+                $('.phone-lang').fadeOut();
             });
         }else{
             $(document).on('click', function (e) {
                 _this.flag = true;
                 _this.langFlag = true;
-                _this.phoneFlag = true;
                 $('.dropdown-menu').fadeOut();
                 $('.chooseLang').fadeOut();
-                $('.phone-menu').fadeOut();
             });
         }
-
-        i18next.init({
-            lng: lang,
-            resources: json
-        }, function (err, t) {
-            jqueryI18next.init(i18next, $);
-            $(document).localize();
-        });
     },
     setLang: function () {
         var html = "";
@@ -117,9 +123,17 @@ var index = {
             html = "Русский";
         }
         $(".lang").html(html);
+        $(".phone-chooselang").html(html);
     }
 };
 
 $(function () {
     index.init();
+    i18next.init({
+        lng: lang,
+        resources: json
+    }, function (err, t) {
+        jqueryI18next.init(i18next, $);
+        $(document).localize();
+    });
 });

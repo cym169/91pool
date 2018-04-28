@@ -11,8 +11,13 @@ var $ = require('jQuery');
 var _article = require('util/services/article-services.js');
 var _coin = require('util/services/coin-services.js');
 var _reset = require('util/reset.js');
+var util = require('util/util.js');
+var lang = localStorage.lang;
+var json = require('util/languages/' + lang + '.json');
 var index = {
     init: function () {
+        util.getWxInfo();
+        this.setwx();
         this.handler();
         this.slider();
         this.list();
@@ -157,6 +162,32 @@ var index = {
         });
 
     },
+    setwx: function () {
+        var baseUrl = location.href.split("#")[0];
+        wx.ready(function () {
+            // <% --公共方法--%>
+            var shareData = {
+                title: "91pool，值得信赖的矿池服务商",
+                desc: "专注于数字资产增值服务",
+                link: baseUrl,
+                imgUrl: "http://www.91pool.com/images/wx_logo.png",
+                success: function (res) {
+
+                },
+                cancel: function (res) {
+
+                }
+            };
+            // <% --分享给朋友接口--%>
+            wx.onMenuShareAppMessage(shareData);
+            // <% --分享到朋友圈接口--%>
+            wx.onMenuShareTimeline(shareData);
+        });
+        //   <% --处理失败验证--%>
+        wx.error(function (res) {
+
+        });
+    },
     scroll: function () {
         var _this = this;
         _article.getList({currentPage: 1}, function (data) {
@@ -202,8 +233,17 @@ var index = {
             })
         }
     }
+
 };
 
 $(function () {
     index.init();
+
+    i18next.init({
+        lng: lang,
+        resources: json
+    }, function (err, t) {
+        jqueryI18next.init(i18next, $);
+        $(document).localize();
+    });
 });

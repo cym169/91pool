@@ -229,6 +229,7 @@
     .table-box {
         display: -webkit-box;
         overflow-x: scroll;
+        overflow-y: hidden;
         -webkit-overflow-scrolling: touch;
     }
     .swiper-container {

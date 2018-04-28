@@ -80,20 +80,18 @@
 
 .info-box .intro {
     width: 100%;
-    height: calc(100% - 57px);
-}
-
-.info-box .intro a {
-    width: 100%;
-    height: 100%;
-    color: #000200;
+    height: 39px;
     display: -webkit-box;
     -webkit-box-orient: vertical;
     -webkit-line-clamp: 2;
     overflow: hidden;
-    font-size: 13px;
     text-align: left;
     line-height: 22px;
+}
+
+.info-box .intro a {
+    color: #000200;
+    font-size: 13px;
 }
 
 .info-box .intro a:hover {
@@ -118,6 +116,9 @@
     }
     .info-box .from{
         margin: 5px 0;
+    }
+    .info-box .intro{
+        height: 50px;
     }
 
 }

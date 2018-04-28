@@ -14,37 +14,37 @@ var index = {
 
         $(".language-nav li[lang=" + lang + "]").addClass("active");
 
-        // $(".language-nav").on("click", "li", function () {
-        //     var language = $(this).attr("lang");
-        //     $(this).addClass("active").siblings("li").removeClass("active");
-        //     localStorage.lang = language;
-        //     window.location.reload();
-        // });
+        $(".language-nav").on("click", "li", function () {
+            var language = $(this).attr("lang");
+            $(this).addClass("active").siblings("li").removeClass("active");
+            localStorage.lang = language;
+            window.location.reload();
+        });
         var ww = $(window).width();
         var wechatFlag = true;
-        if( ww <= 700){
+        if (ww <= 700) {
             $(document).on("click", ".wechat", function (e) {
                 e.preventDefault();
-                if(wechatFlag){
+                if (wechatFlag) {
                     $(".wechat-img").fadeIn();
                     wechatFlag = false;
-                }else{
+                } else {
                     wechatFlag = true;
                     $(".wechat-img").fadeOut()
                 }
             });
 
-            $("body>*").on("click",function (e) {
+            $("body>*").on("click", function (e) {
                 wechatFlag = true;
                 var _con = $(".wechat");
-                if(!_con.is(e.target) && _con.has(e.target).length === 0){
+                if (!_con.is(e.target) && _con.has(e.target).length === 0) {
                     $(".wechat-img").fadeOut();
                 }
             });
-        }else{
+        } else {
             $(".wechat").hover(function (e) {
                 $(this).children(".wechat-img").show();
-            },function () {
+            }, function () {
                 $(this).children(".wechat-img").hide();
             })
         }

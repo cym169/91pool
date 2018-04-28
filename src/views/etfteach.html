@@ -11,8 +11,8 @@
 <div class="search-box">
     <div class="form">
         <span class="fa fa-search"></span>
-        <input type="text" placeholder="请输入ETF矿工地址" id="address">
-        <input type="button" value="搜索" id="search">
+        <input type="text" id="address" data-i18n="[placeholder]input.etfPlaceholder">
+        <input type="button" id="search" data-i18n="[value]input.search">
     </div>
 </div>
 <!--主要显示区-->
@@ -20,11 +20,11 @@
     <div class="coin-logo"><img src="../images/etf.png"></div>
     <p class="coin-name">ETF</p>
     <ul class="coin-title tab-title">
-        <li><a href="./currency.html?coin=etf&i=0">ETF首页</a></li>
-        <li class="active"><a href="javascript:;">挖矿教程</a></li>
-        <li><a href="./currency.html?coin=etf&i=2">区块信息</a></li>
-        <li><a href="./currency.html?coin=etf&i=3">我的矿池</a></li>
-        <li><a href="./currency.html?coin=etf&i=4">常见问题</a></li>
+        <li><a href="./currency.html?coin=etf&i=0">ETF<span data-i18n="currency.home"></span></a></li>
+        <li class="active"><a href="javascript:;" data-i18n="currency.miningTutorial"></a></li>
+        <li><a href="./currency.html?coin=etf&i=2" data-i18n="currency.blockInformation"></a></li>
+        <li><a href="./currency.html?coin=etf&i=3" data-i18n="currency.myPool"></a></li>
+        <li><a href="./currency.html?coin=etf&i=4" data-i18n="currency.FAQ"></a></li>
     </ul>
 </div>
 <div class="teach">
@@ -91,9 +91,11 @@
                             <img src="../images/etf_img10.png"><br>
                             1. 在"ETF.bat"文件处,右键单击->编辑<br>
                             2. 在弹出的记事本页面,修改"钱包地址"为自己的钱包地址,编辑矿工号(自己命名,用于区分不同的矿机),修改后保存文件并关闭记事本<br>
-                            修改后的参数格式如: ethdcrminer64.exe -epool etf1.91pool.com:8108 -ewal 0xbc42eb23728c73c6a3c79b273c370e85f76927fc -epsw x -eworker 10 -mode 1<br>
+                            修改后的参数格式如: ethdcrminer64.exe -epool etf1.91pool.com:8108 -ewal
+                            0xbc42eb23728c73c6a3c79b273c370e85f76927fc -epsw x -eworker 10 -mode 1<br>
                             注意:地址必须以0x开头,如果地址不是以0x开头,请手动加上。<br>
-                            如原地址：bc42eb23728c73c6a3c79b273c370e85f76927fc,&nbsp;&nbsp;加上0x开头后地址为：0x bc42eb23728c73c6a3c79b273c370e85f76927fc (<span class="red">PS: 0x是数字0加小写字母x</span>)<br>
+                            如原地址：bc42eb23728c73c6a3c79b273c370e85f76927fc,&nbsp;&nbsp;加上0x开头后地址为：0x
+                            bc42eb23728c73c6a3c79b273c370e85f76927fc (<span class="red">PS: 0x是数字0加小写字母x</span>)<br>
                             3. 双击打开"ETF.bat",弹出挖矿界面,如出现"Share accpeted"字样,则说明提交矿池成功<br>
                         </div>
                     </div>

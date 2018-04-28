@@ -11,12 +11,16 @@ var util = require('util/util.js');
 var _reset = require('util/reset.js');
 var _coins = require('util/services/coin-services.js');
 var $ = require('jQuery');
-
+var lang = localStorage.lang;
+var json = require('util/languages/' + lang + '.json');
 var xTime = ['now'],
     yData = [0];
 
 var index = {
     init: function () {
+        util.getWxInfo();
+        this.setwx();
+        this.setBaidu();
         this.default();
         this.setData();
         this.handler();
@@ -298,27 +302,28 @@ var index = {
         $('.coin-logo').html(imgTempl);
         $(".coin-name").html(upper);
         $("#coin-name").html(upper);
-        $("#address").attr('placeholder', '请输入' + upper + '矿工地址');
-        $("#html-title").html(upper + '矿池 ' + '- 91pool');
+        $("#address").attr('data-i18n', '[placeholder]input.'+coinName+'Placeholder');
+        $("#html-title").html(upper + '- 91pool');
         if (coinName == 'etc') {
             $("#mPrice").html("1ETC");
             $("#payment").html("1%");
-            $("#reward").html("4ETC+交易费用");
+            $("#reward").html("4ETC");
         }
         else if (coinName == 'etf') {
             $("#mPrice").html("0.1ETF");
             $("#payment").html("1%");
-            $("#reward").html("3ETF+交易费用");
+            $("#reward").html("3ETF");
         }
         else if (coinName == 'hsr') {
             $("#mPrice").html("0.1HSR");
             $("#payment").html("0%");
-            $("#reward").html("1.584HSR+交易费");
+            $("#reward").html("1.584HSR");
         }
         else if (coinName == 'lch') {
             $("#mPrice").html("0.1LCH");
             $("#payment").html("0%");
-            $("#reward").html("25LCH+交易费用");
+            $("#reward").html("25LCH");
+            $("#reward").html("25LCH");
         }
         if (i) {
             $('.coin-title li:eq(' + i + ')').addClass('active');
@@ -328,9 +333,59 @@ var index = {
             $('.coin-title li:eq(0)').addClass('active');
             $('.home').show();
         }
+    },
+    setBaidu : function () {
+        var coin = util.getUrlParam('coin');
+        if(coin === 'etc'){
+            $("#baidu").attr("src","https://hm.baidu.com/hm.js?3486de3be2cbc530bb79945f4b87f0d8");
+        }
+        else if(coin === 'etf'){
+            $("#baidu").attr("src","https://hm.baidu.com/hm.js?47d6096998f3b16663aa637d3ada3443");
+        }
+        else if(coin === 'hsr'){
+            $("#baidu").attr("src","https://hm.baidu.com/hm.js?635b661136fcc9cd418e2d71052312d0");
+        }
+        else if(coin === 'lch'){
+            $("#baidu").attr("src","https://hm.baidu.com/hm.js?ea68a83da63e357e1b28c662d1ac93df");
+        }
+    },
+    setwx : function () {
+        var baseUrl = location.href.split("#")[0];
+        var coin = util.getUrlParam('coin');
+        var upper = coin.toUpperCase();
+        wx.ready(function () {
+            // <% --公共方法--%>
+            var shareData = {
+                title: upper+"矿池介绍",
+                desc: "专注于数字资产增值服务",
+                link: baseUrl,
+                imgUrl: "http://www.91pool.com/images/wx_logo.png",
+                success: function (res) {
+
+                },
+                cancel: function (res) {
+
+                }
+            };
+            // <% --分享给朋友接口--%>
+            wx.onMenuShareAppMessage(shareData);
+            // <% --分享到朋友圈接口--%>
+            wx.onMenuShareTimeline(shareData);
+        });
+        //   <% --处理失败验证--%>
+        wx.error(function (res) {
+
+        });
     }
 };
 $(function () {
     index.init();
+    i18next.init({
+        lng: lang,
+        resources: json
+    }, function (err, t) {
+        jqueryI18next.init(i18next, $);
+        $(document).localize();
+    });
 });
 

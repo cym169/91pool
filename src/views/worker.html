@@ -12,64 +12,64 @@
     <div class="section">
         <ul class="all-status">
             <li>
-                <div class="title">未成熟收益</div>
+                <div class="title" data-i18n="worker.immatureProfit"></div>
                 <div class="number color-green" id="immature"></div>
-                <div class="tips">待全网确认120个块后成熟</div>
+                <div class="tips" data-i18n="worker.IPtips"></div>
             </li>
             <li>
-                <div class="title">未支付收益</div>
+                <div class="title" data-i18n="worker.matureProfit"></div>
                 <div class="number color-orange" id="balance"></div>
-                <div class="tips">区块已成熟但未支付收益</div>
+                <div class="tips" data-i18n="worker.MPtips"></div>
             </li>
             <li>
-                <div class="title">支付中收益</div>
+                <div class="title" data-i18n="worker.pendingProfit"></div>
                 <div class="number color-blue" id="pending"></div>
                 <div class="tips"></div>
             </li>
             <li>
-                <div class="title">已支付收益</div>
+                <div class="title" data-i18n="worker.paid"></div>
                 <div class="number color-red" id="paid"></div>
                 <div class="tips"></div>
             </li>
             <li>
-                <div class="title">最近提交</div>
+                <div class="title" data-i18n="worker.lastBeat"></div>
                 <div class="number" id="lastShare"></div>
                 <div class="tips"></div>
             </li>
             <li>
-                <div class="title">在线机器</div>
+                <div class="title" data-i18n="worker.onlineWorker"></div>
                 <div class="number workersOnline"></div>
                 <div class="tips"></div>
             </li>
             <li>
-                <div class="title">算力（30分钟）</div>
+                <div class="title"><span data-i18n="worker.hashrate"></span>（30<span data-i18n="worker.m"></span>）</div>
                 <div class="number" id="currentHashrate"></div>
                 <div class="tips"></div>
             </li>
             <li>
-                <div class="title">算力（3小时）</div>
+                <div class="title"><span data-i18n="worker.hashrate"></span>（3<span data-i18n="worker.h"></span>）</div>
                 <div class="number" id="hashrate"></div>
                 <div class="tips"></div>
             </li>
             <li>
-                <div class="title">发现区块</div>
+                <div class="title" data-i18n="worker.findBlock"></div>
                 <div class="number" id="blocksFound"></div>
                 <div class="tips"></div>
             </li>
             <li>
-                <div class="title">支付次数</div>
+                <div class="title" data-i18n="worker.paymentTimes"></div>
                 <div class="number" id="paymentsTotal"></div>
                 <div class="tips"></div>
             </li>
             <li>
-                <div class="title">本轮分享</div>
+                <div class="title" data-i18n="worker.roundShare"></div>
                 <div class="number" id="percents"></div>
-                <div class="tips">占本轮分享的百分比</div>
+                <div class="tips" data-i18n="worker.RStips"></div>
             </li>
             <!--<li class="empty">-->
-                <!--<div class="title"></div>-->
-                <!--<div class="number"></div>-->
-                <!--<div class="tips"></div>-->
+            <!--<div class="title"></div>-->
+            <!--<div class="number"></div>-->
+            <!--<div class="tips"></div>-->
             <!--</li>-->
         </ul>
     </div>
@@ -85,22 +85,22 @@
 <div class="work">
     <div class="section">
         <ul class="work-title">
-            <li class="active"><a href="javascript:;">工作中</a><em class="workersOnline"></em></li>
-            <li><a href="javascript:;">未工作</a><em class="workersOffline"></em></li>
-            <li><a href="javascript:;">支付记录</a></li>
+            <li class="active"><a href="javascript:;" data-i18n="worker.online"></a><em class="workersOnline"></em></li>
+            <li><a href="javascript:;" data-i18n="worker.offline"></a><em class="workersOffline"></em></li>
+            <li><a href="javascript:;" data-i18n="worker.payment"></a></li>
         </ul>
         <div class="tab f-tab" style="display: block;">
-            <table id="workerOnline">
+            <table>
+                <thead>
+                <tr>
+                    <th data-i18n="worker.name"></th>
+                    <th><span data-i18n="worker.hashrate"></span>（30<span data-i18n="worker.m"></span>）</th>
+                    <th><span data-i18n="worker.hashrate"></span>（3<span data-i18n="worker.h"></span>）</th>
+                    <th data-i18n="worker.recentCommit"></th>
+                </tr>
+                </thead>
+                <tbody id="workerOnline">
                 <script type="text/html" id="workerOnline-tp">
-                    <thead>
-                    <tr>
-                        <th>矿机名</th>
-                        <th>算力（30分钟）</th>
-                        <th>算力（3小时）</th>
-                        <th>最近提交时间</th>
-                    </tr>
-                    </thead>
-                    <tbody>
                     {{each list as item}}
                     {{if item.offline === false}}
                     <tr>
@@ -116,17 +116,17 @@
             </table>
         </div>
         <div class="tab f-tab">
-            <table id="workerOffline">
+            <table>
+                <thead>
+                <tr>
+                    <th data-i18n="worker.name"></th>
+                    <th><span data-i18n="worker.hashrate"></span>（30<span data-i18n="worker.m"></span>）</th>
+                    <th><span data-i18n="worker.hashrate"></span>（3<span data-i18n="worker.h"></span>）</th>
+                    <th data-i18n="worker.recentCommit"></th>
+                </tr>
+                </thead>
+                <tbody id="workerOffline">
                 <script type="text/html" id="workerOffline-tp">
-                    <thead>
-                    <tr>
-                        <th>矿机名</th>
-                        <th>算力（30分钟）</th>
-                        <th>算力（3小时）</th>
-                        <th>最近提交时间</th>
-                    </tr>
-                    </thead>
-                    <tbody>
                     {{each list as item}}
                     {{if item.offline === true}}
                     <tr>
@@ -142,16 +142,16 @@
             </table>
         </div>
         <div class="tab f-tab">
-            <table id="payList">
+            <table>
+                <thead>
+                <tr>
+                    <th data-i18n="worker.time"></th>
+                    <th data-i18n="worker.TXhash"></th>
+                    <th data-i18n="worker.profit"></th>
+                </tr>
+                </thead>
+                <tbody id="payList">
                 <script type="text/html" id="payList-tp">
-                    <thead>
-                    <tr>
-                        <th>时间</th>
-                        <th>交易Hash</th>
-                        <th>收益</th>
-                    </tr>
-                    </thead>
-                    <tbody>
                     {{each list as item}}
                     <tr>
                         <td>{{item.timestamp}}</td>

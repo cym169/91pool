@@ -10,3 +10,4 @@ require('./reset.css');
 if (!localStorage.lang) {
     localStorage.lang = 'cn';
 }
+
