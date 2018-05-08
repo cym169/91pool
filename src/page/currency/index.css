@@ -81,6 +81,7 @@
 .coin-logo img {
     display: inline-block;
     vertical-align: middle;
+    width: 40%;
 }
 
 .coin-title {

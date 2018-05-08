@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    #include("./layout/head-common.html")
+    <title>BTM挖矿教程 - 91pool</title>
+</head>
+<body>
+<!--header部分-->
+#include("./layout/header.html")
+<!--搜索栏-->
+<div class="search-box">
+    <div class="form">
+        <span class="fa fa-search"></span>
+        <input type="text" id="address" data-i18n="[placeholder]input.btmPlaceholder">
+        <input type="button" id="search" data-i18n="[value]input.search">
+    </div>
+</div>
+<!--主要显示区-->
+<div class="section">
+    <div class="coin-logo"><img src="../images/btm.png"></div>
+    <p class="coin-name">BTM</p>
+    <ul class="coin-title tab-title">
+        <li><a href="./currency.html?coin=btm&i=0">BTM<span data-i18n="currency.home"></span></a></li>
+        <li class="active"><a href="javascript:;" data-i18n="currency.miningTutorial"></a></li>
+        <li><a href="./currency.html?coin=btm&i=2" data-i18n="currency.blockInformation"></a></li>
+        <li><a href="./currency.html?coin=btm&i=3" data-i18n="currency.myPool"></a></li>
+        <li><a href="./currency.html?coin=btm&i=4" data-i18n="currency.FAQ"></a></li>
+    </ul>
+</div>
+<div class="teach">
+    <div class="section">
+        <div class="time-line">
+            <ul class="teach-info">
+                <li>
+                    <div class="step">1</div>
+                    <div class="content">
+                        <p data-i18n="btmTeach.1"></p>
+                        <div>
+                            <span data-i18n="btmTeach.2"></span>（<a href="https://bytom.io/wallet/" target="_blank">https://bytom.io/wallet/</a>）
+                            <br>
+                            <span data-i18n="btmTeach.3"></span>
+                            <br>
+                            <span data-i18n="btmTeach.4"></span>
+                        </div>
+                    </div>
+                </li>
+                <li>
+                    <div class="step">2</div>
+                    <div class="content">
+                        <p data-i18n="btmTeach.5"></p>
+                        <div>
+                            <br>
+                            <span data-i18n="btmTeach.6"></span>
+                            <br>
+                            <span data-i18n="btmTeach.7"></span>
+                            <br>
+                            <span data-i18n="btmTeach.8"></span>
+                            <br>
+                            <span data-i18n="btmTeach.9"></span>
+                            <br>
+                            <span data-i18n="btmTeach.10"></span>
+                            <br>
+                            <span data-i18n="btmTeach.11"></span>
+                            <br>
+                            <span data-i18n="btmTeach.12"></span>
+
+                        </div>
+                    </div>
+                </li>
+                <li>
+                    <div class="step">3</div>
+                    <div class="content">
+                        <p data-i18n="btmTeach.13">矿机配置</p>
+                        <div>
+                            <span data-i18n="btmTeach.14"></span>
+                            <br>
+                            <span data-i18n="btmTeach.15"></span>
+                            <br>
+                            <span data-i18n="btmTeach.16"></span>stratum+tcp://btm1.91pool.com:6666 <span data-i18n="btmTeach.17"></span>
+                        </div>
+                    </div>
+                </li>
+                <li>
+                    <div class="step">4</div>
+                    <div class="content">
+                        <p data-i18n="btmTeach.18"></p>
+                        <div>
+                            <span data-i18n="btmTeach.19"></span> <a href="www.91pool.com" target="_blank">www.91pool.com</a>,<span data-i18n="btmTeach.20"></span>
+                        </div>
+                    </div>
+                </li>
+            </ul>
+        </div>
+    </div>
+</div>
+<!--footer部分-->
+#include("./layout/footer.html")
+</body>
+</html>

@@ -74,6 +74,7 @@
 .coin-logo img {
     display: inline-block;
     vertical-align: middle;
+    width: 40%;
 }
 
 .coin-title {
@@ -184,7 +185,7 @@
 }
 
 .content table {
-    width: 500px;
+    width: 800px;
 }
 
 .section {

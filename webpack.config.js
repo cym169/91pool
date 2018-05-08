@@ -11,7 +11,7 @@ if(process.env.type== "build"){
     }
 }else{
     var website={
-        publicPath:"http://172.16.2.58:1717/"
+        publicPath:"http://172.16.2.73:1717/"
     }
 }
 
@@ -47,7 +47,7 @@ var config = {
         'hsrteach'      : ['./src/page/hsrteach/index.js'],
         'etfteach'      : ['./src/page/etfteach/index.js'],
         'lchteach'      : ['./src/page/lchteach/index.js'],
-        'edit'          : ['./src/page/edit/index.js'],
+        'btmteach'      : ['./src/page/btmteach/index.js'],
         'notice'        : ['./src/page/notice/index.js'],
         'about'         : ['./src/page/about/index.js'],
         'order'         : ['./src/page/order/index.js'],
@@ -117,6 +117,7 @@ var config = {
             filename : 'js/base.js'
         }),
         new extractTextPlugin('css/[name].css'),
+
         new HtmlWebpackPlugin({
             favicon: path.resolve('./src/images/favicon.ico')
         }),
@@ -129,7 +130,7 @@ var config = {
         new HtmlWebpackPlugin(getHtmlConfig('etfteach')),
         new HtmlWebpackPlugin(getHtmlConfig('hsrteach')),
         new HtmlWebpackPlugin(getHtmlConfig('lchteach')),
-        new HtmlWebpackPlugin(getHtmlConfig('edit')),
+        new HtmlWebpackPlugin(getHtmlConfig('btmteach')),
         new HtmlWebpackPlugin(getHtmlConfig('notice')),
         new HtmlWebpackPlugin(getHtmlConfig('about')),
         new HtmlWebpackPlugin(getHtmlConfig('order')),
@@ -140,7 +141,7 @@ var config = {
         //设置基本目录结构
         contentBase:path.resolve(__dirname,'91pool'),
         //服务器的IP地址，可以使用IP也可以使用localhost
-        host:'172.16.2.58',
+        host:'172.16.2.73',
         //服务端压缩是否开启
         compress:true,
         //配置服务端口号

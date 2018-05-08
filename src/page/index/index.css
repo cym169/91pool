@@ -123,9 +123,6 @@
     left: -10px;
     top: 7px;
 }
-.market-info > tbody > tr > td:nth-child(1) i.hsr_icon img{
-    width: 100%;
-}
 .market-info > tbody > tr > td:nth-child(1) i.etf_icon{
     width: 24px;
     left: -10px;
@@ -136,8 +133,10 @@
     left: -10px;
     top: 7px;
 }
-.market-info > tbody > tr > td:nth-child(1) i.lch_icon img{
-    width: 100%;
+.market-info > tbody > tr > td:nth-child(1) i.btm_icon{
+    width: 21px;
+    left: -10px;
+    top: 6px;
 }
 .market-info > tbody > tr:nth-child(odd) {
     background-color: #fff;

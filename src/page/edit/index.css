@@ -1,0 +1,62 @@
+
+.section {
+    margin-right: auto;
+    margin-left: auto;
+    position: relative;
+}
+
+.title-box {
+    margin: 30px 0 15px 0;
+}
+
+.author-box {
+    margin-bottom: 15px;
+}
+
+.text {
+    padding: 8px 0;
+    border: 1px solid #ccc;
+    width: 100%;
+    text-indent: 8px;
+    font-size: 16px;
+    outline: none;
+}
+
+.button-box {
+    margin: 15px 0 30px 0;
+}
+
+.submit {
+    border: none;
+    color: #fff;
+    background-color: #f86601;
+    padding: 6px 20px;
+    cursor: pointer;
+}
+
+/*.submit:hover{*/
+/*background-color: ;*/
+/*}*/
+/*兼容分辨率*/
+
+@media (max-width: 640px) {
+
+}
+
+@media (min-width: 768px) and (max-width: 992px) {
+    .section {
+        width: 750px;
+    }
+}
+
+@media (min-width: 992px) and (max-width: 1200px) {
+    .section {
+        width: 970px;
+    }
+}
+
+@media (min-width: 1200px) {
+    .section {
+        width: 1170px;
+    }
+}

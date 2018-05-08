@@ -34,63 +34,83 @@
                 <li>
                     <div class="step">1</div>
                     <div class="content">
-                        <p>准备钱包</p>
+                        <p data-i18n="etcTeach.1"></p>
                         <div>
-                            获得一个钱包地址：<br>
-                            ZB <a href="https://www.zb.com/" target="_blank">https://www.zb.com/</a>（科学上网）<br>
-                            EXX <a href="EXX https://www.exx.com/">https://www.exx.com/</a>（科学上网）<br>
-                            P网 <a href="https://poloniex.com" target="_blank">https://poloniex.com</a>
-                            (注册时需科学上网获取验证码)<br>
-                            小白建议去以上交易所注册个账号， 然后生成一个充值地址
+                            <span data-i18n="etcTeach.2"></span>
+                            <br>
+                            ZB <a href="https://www.zb.com/" target="_blank">https://www.zb.com/</a>（<span data-i18n="etcTeach.3"></span>）<br>
+                            EXX <a href="EXX https://www.exx.com/">https://www.exx.com/</a>（<span data-i18n="etcTeach.3"></span>）<br>
+                            <span data-i18n="etcTeach.32"></span> <a href="https://poloniex.com" target="_blank">https://poloniex.com</a>
+                            (<span data-i18n="etcTeach.4"></span>)<br>
+                            <span data-i18n="etcTeach.5"></span>
                         </div>
                     </div>
                 </li>
                 <li>
                     <div class="step">2</div>
                     <div class="content">
-                        <p>挖矿设置</p>
+                        <p><span data-i18n="etcTeach.6"></span></p>
                         <div>
-                            1、 系统及驱动<br>
-                            系统以 win7 64 位最佳， 建设使用官方原版系统。<br>
+                            <span data-i18n="etcTeach.7"></span>
+                            <br>
+                            <span data-i18n="etcTeach.8"></span>
+                            <br>
                             cn_windows_7_ultimate_with_sp1_x64_dvd_u_677408.iso
-                            SHA1 2CE0B2DB34D76ED3F697CE148CB7594432405E23<br>
-                            下载地址：
+                            SHA1 2CE0B2DB34D76ED3F697CE148CB7594432405E23
+                            <br>
+                            <span data-i18n="etcTeach.9"></span>
                             ed2k://|file|cn_windows_7_ultimate_with_sp1_x64_dvd_u_677408.iso|3420
-                            557312|B58548681854236C 7939003B583A8078|/<br>
-                            最新版本的驱动由于挖矿软件尚未优化， 速度较差。 <br>AMD R9 3**系列建议 15.12
-                            版本驱动， 旧卡尤其是 2G 显存使用 14.X 版本驱动， 确保识别所有显卡。<br>
-                            2、 挖矿软件<br>
-                            挖矿软件包含 ethminer 和 Stratum Proxy。 Ethminer 以 getwork 方式获取任
-                            务， 并进行挖矿。 Stratum Proxy 将 getwork 协议转化为 Stratum 协议， 连接 矿
-                            池， 为局域网矿机提供稳定快速的 getwork 连接。 <br>
-                            局域网中仅需运行一个Stratum Proxy。 使用 Stratum Proxy 会减少丢包和延时， 并提供矿池备份设
-                            置， 提升收益 10-20%。 由于 ETC 每 15 秒一个区块， 挖矿软件也不完善， 目前通
-                            过 Stratum Proxy 的拒绝率在 2-4%， getwork 协议在 10%以上。
-                            安装好系统和显卡驱动， 确保识别所有显卡后， 将附件的软件下载解压，<span class="red">放在非
-                            中文目录里</span>
-                            <img src="../images/etc_img1.jpg"><br><br>
-                            打开 eth-proxy文件夹，以记事本打开eth-proxy.conf，填写您的ETC收款地址，其他不用设置，保存。<br>
-                            <img src="../images/etc_img2.jpg"><br><br>
-                            双击运行 eth-proxy.exe,部分系统需要右键以管理员身份运行。核对钱包地址是否正确，观察能否连接到矿池获取任务。<br>
-                            <img src="../images/etc_img3.jpg"><br><br>
-                            打开网络和共享中心，查看运行代理机器的 IP 地址，图中为 192.168.1.55。建议设置成固定 IP。<br>
+                            557312|B58548681854236C 7939003B583A8078|/
+                            <br>
+                            <span data-i18n="etcTeach.10"></span>
+                            <br>
+                            <span data-i18n="etcTeach.11"></span>
+                            <br>
+                            <span data-i18n="etcTeach.12"></span>
+                            <br>
+                            <span data-i18n="etcTeach.13"></span>
+                            <br>
+                            <span data-i18n="etcTeach.14"></span>
+                            <span data-i18n="etcTeach.15" class="red"></span>
+                            <br>
+                            <img src="../images/etc_img1.jpg"><br>
+                            <br>
+                            <span data-i18n="etcTeach.16"></span>
+                            <br>
+                            <img src="../images/etc_img2.jpg">
+                            <br><br>
+                            <span data-i18n="etcTeach.17"></span>
+                            <br>
+                            <img src="../images/etc_img3.jpg">
+                            <br><br>
+                            <span data-i18n="etcTeach.18"></span>
+                            <br>
                             <img src="../images/etc_img4.jpg"><br><br>
-                            用记事本打开 wakuang.bat，编辑 IP 地址、调整其他参数：<br>
+                            <span data-i18n="etcTeach.19"></span>
+                            <br>
                             <img src="../images/etc_img5.jpg"><br><br>
-                            --farm-recheck：软件强制更新任务周期，100-600 单位是 MS；机器少，单台算力 100M 以上的话 可以设置为 100；一般机器建议设置为
-                            200；数值越小拒绝率越低，但是过小会导致机器算力下降；<br>
-                            --cl-local-work ：运算位宽，可以是 64，128，256；<br>
-                            --cl-global-work：显卡运算线程数；<br>
-                            矿工号：仅支持小些字母和数字，不能包含”.”，矿池自动添加矿工不需要在矿池新建<br>
-                            2G 显存卡不能挖矿的，在 wankuang.bat 中添加以下命令,：<br>
+                            <span data-i18n="etcTeach.20"></span>
+                            <br>
+                            <span data-i18n="etcTeach.21"></span>
+                            <br>
+                            <span data-i18n="etcTeach.22"></span>
+                            <br>
+                            <span data-i18n="etcTeach.23"></span>
+                            <br>
+                            <span data-i18n="etcTeach.24"></span>
+                            <br>
                             setx GPU_FORCE_64BIT_PTR 0<br>
                             setx GPU_MAX_HEAP_SIZE 100<br>
                             setx GPU_USE_SYNC_OBJECTS 1<br>
                             setx GPU_MAX_ALLOC_PERCENT 100<br>
+
                             <img src="../images/etc_img6.jpg"><br><br>
-                            双击wakuang.bat，等待更新 DAG 文件（约15s）。开始挖矿后观察挖矿和代理，是否有下图内容产生。<br>
+                            <span data-i18n="etcTeach.25"></span>
+                            <br>
                             <img src="../images/etc_img7.jpg"><br>
-                            在有上图内容产生后，打开 <a href="http://www.91pool.com/currency.html?coin=etc&i=0" target="">http://www.91pool.com/currency.html?coin=etc&i=0</a>,输入你的钱包查看矿机状态和收益。
+                            <span data-i18n="etcTeach.26"></span>
+                            <a href="http://www.91pool.com/currency.html?coin=etc&i=0" target="">http://www.91pool.com/currency.html?coin=etc&i=0</a>
+                            <span data-i18n="etcTeach.27"></span>
                         </div>
                     </div>
                 </li>
@@ -99,12 +119,27 @@
                     <div class="content">
                         <p>FQA</p>
                         <div>
-                            1、 双击wakuang.bat 闪退:<br>
-                            确保挖矿软件在非中文目录下；检查显卡驱动和系统；<br>
-                            确保 C 盘有 4G 左右剩余空间；<br>
-                            如果 CPU 有核显，并安装了驱动，请选择挖矿显卡 ethminer --farm-recheck 200 -G --opencl-platform 1 -F
+                            <span data-i18n="etcTeach.28"></span>
+                            <br>
+                            <span data-i18n="etcTeach.29"></span>
+                            <br>
+                            <span data-i18n="etcTeach.30"></span>
+                            <br>
+                            <span data-i18n="etcTeach.31"></span> ethminer --farm-recheck 200 -G --opencl-platform 1 -F
                             http://192.168.1.55:8080/work1
-
+                        </div>
+                    </div>
+                </li>
+                <li>
+                    <div class="step">4</div>
+                    <div class="content">
+                        <p data-i18n="etcTeach.33"></p>
+                        <div>
+                            <span data-i18n="etcTeach.34"></span>1：hk-etc.91Pool.com:8008
+                            <br>
+                            <span data-i18n="etcTeach.34"></span>2：cn-etc.91Pool.com:8008
+                            <br>
+                            <span data-i18n="etcTeach.35"></span>
                         </div>
                     </div>
                 </li>

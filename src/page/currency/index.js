@@ -87,80 +87,9 @@ var index = {
     },
     setData: function () {
         var coin = util.getUrlParam('coin');
-        _coins.getCoins(coin, function (data) {
-            $("#workers").html(data.minersTotal);
-            $("#pool_hash").html(_reset.formatHashrate(data.hashrate));
-            $("#net_diff").html(_reset.changeDiff(data.nodes[0].difficulty));
-            $("#last-one").html(_reset.getDateDiff(data.stats.lastBlockFound));
-            $("#blocks").html(data.maturedTotal);
-
-            if (typeof (data.poolCharts) != 'undefined' || data.poolCharts.length > 0) {
-                xTime = [];
-                yData = [];
-                $.each(data.poolCharts, function (i, t) {
-                    xTime.unshift(t.timeFormat);
-                    yData.unshift(_reset.formatHashrateWithoutSuffix(t.poolHash));
-                });
-            }
-            var w = $(".section").width();
-            $('#calc-chart').css('width', w);
-            var options = {
-                tooltip: {
-                    trigger: 'axis',
-                    axisPointer: {
-                        type: 'cross',
-                        label: {
-                            backgroundColor: '#6a7985'
-                        }
-                    }
-                },
-                title: false,
-                xAxis: {
-                    type: 'category',
-                    boundaryGap: false,
-                    data: []
-                },
-                yAxis: {
-                    type: 'value',
-                    boundaryGap: [0, '100%'],
-                    axisLine: {
-                        show: false
-                    },
-                    axisTick: {
-                        show: false
-                    }
-                },
-                series: [
-                    {
-                        type: 'line',
-                        smooth: true,
-                        sampling: 'average',
-                        itemStyle: {
-                            normal: {
-                                color: new echarts.graphic.LinearGradient(0, 0, 0, 1, [{
-                                    offset: 0,
-                                    color: 'rgb(254, 161, 18)'
-                                }, {
-                                    offset: 1,
-                                    color: 'rgb(255, 255, 255)'
-                                }])
-                            }
-                        },
-                        areaStyle: {},
-                        data: []
-                    }
-                ]
-            };
-            options.series[0].data = yData;
-            options.xAxis.data = xTime;
-            var chartId = document.getElementById('calc-chart');
-            var myChart = echarts.init(chartId);
-            // 绘制图表
-            myChart.setOption(options);
-        }, function (error) {
-        });
 
         _coins.getBlocks(coin, function (data) {
+
             if (data.luck == null) {
                 $('#get-box').hide();
             } else {
@@ -185,7 +114,7 @@ var index = {
             $(".immatureTotal").html(data.immatureTotal);
             $(".candidatesTotal").html(data.candidatesTotal);
 
-            if (data.matured.length > 0) {
+            if (data.matured != null) {
                 $.each(data.matured, function (i, t) {
                     switch (coin) {
                         case 'etc':
@@ -287,6 +216,79 @@ var index = {
 
         });
 
+        _coins.getCoins(coin, function (data) {
+            $("#workers").html(data.minersTotal);
+            $("#pool_hash").html(_reset.formatHashrate(data.hashrate));
+            $("#net_diff").html(_reset.changeDiff(data.nodes[0].difficulty));
+            $("#last-one").html(_reset.getDateDiff(data.stats.lastBlockFound));
+            $("#blocks").html(data.maturedTotal);
+
+            if (typeof (data.poolCharts) != 'undefined' || data.poolCharts.length > 0) {
+                xTime = [];
+                yData = [];
+                $.each(data.poolCharts, function (i, t) {
+                    xTime.unshift(t.timeFormat);
+                    yData.unshift(_reset.formatHashrateWithoutSuffix(t.poolHash));
+                });
+            }
+            var w = $(".section").width();
+            $('#calc-chart').css('width', w);
+            var options = {
+                tooltip: {
+                    trigger: 'axis',
+                    axisPointer: {
+                        type: 'cross',
+                        label: {
+                            backgroundColor: '#6a7985'
+                        }
+                    }
+                },
+                title: false,
+                xAxis: {
+                    type: 'category',
+                    boundaryGap: false,
+                    data: []
+                },
+                yAxis: {
+                    type: 'value',
+                    boundaryGap: [0, '100%'],
+                    axisLine: {
+                        show: false
+                    },
+                    axisTick: {
+                        show: false
+                    }
+                },
+                series: [
+                    {
+                        type: 'line',
+                        smooth: true,
+                        sampling: 'average',
+                        itemStyle: {
+                            normal: {
+                                color: new echarts.graphic.LinearGradient(0, 0, 0, 1, [{
+                                    offset: 0,
+                                    color: 'rgb(254, 161, 18)'
+                                }, {
+                                    offset: 1,
+                                    color: 'rgb(255, 255, 255)'
+                                }])
+                            }
+                        },
+                        areaStyle: {},
+                        data: []
+                    }
+                ]
+            };
+            options.series[0].data = yData;
+            options.xAxis.data = xTime;
+            var chartId = document.getElementById('calc-chart');
+            var myChart = echarts.init(chartId);
+            // 绘制图表
+            myChart.setOption(options);
+        }, function (error) {
+        });
+
         _coins.getPrice(coin, function (error, data) {
             if (data.data)
                 $("#price").html('￥' + data.data[0].priceCny + '(' + data.data[0].rose + ')');
@@ -304,27 +306,36 @@ var index = {
         $("#coin-name").html(upper);
         $("#address").attr('data-i18n', '[placeholder]input.'+coinName+'Placeholder');
         $("#html-title").html(upper + '- 91pool');
+        var mPrice,payment,reward;
         if (coinName == 'etc') {
-            $("#mPrice").html("1ETC");
-            $("#payment").html("1%");
-            $("#reward").html("4ETC");
+            mPrice = "1ETC";
+            payment = "1%";
+            reward = "4ETC";
         }
         else if (coinName == 'etf') {
-            $("#mPrice").html("0.1ETF");
-            $("#payment").html("1%");
-            $("#reward").html("3ETF");
+            mPrice = "0.1ETF";
+            payment = "1%";
+            reward = "3ETF";
         }
         else if (coinName == 'hsr') {
-            $("#mPrice").html("0.1HSR");
-            $("#payment").html("0%");
-            $("#reward").html("1.584HSR");
+            mPrice = "0.1HSR";
+            payment = "0%";
+            reward = "1.584HSR";
         }
         else if (coinName == 'lch') {
-            $("#mPrice").html("0.1LCH");
-            $("#payment").html("0%");
-            $("#reward").html("25LCH");
-            $("#reward").html("25LCH");
+            mPrice = "0.1LCH";
+            payment = "0%";
+            reward = "25LCH";
         }
+        else if (coinName == 'btm') {
+            mPrice = "100BTM";
+            payment = "0%";
+            reward = "420.5BTM";
+        }
+        $("#mPrice").html(mPrice);
+        $("#payment").html(payment);
+        $("#reward").html(reward);
+
         if (i) {
             $('.coin-title li:eq(' + i + ')').addClass('active');
             var page = $('.coin-title li.active').attr('page');
@@ -347,6 +358,9 @@ var index = {
         }
         else if(coin === 'lch'){
             $("#baidu").attr("src","https://hm.baidu.com/hm.js?ea68a83da63e357e1b28c662d1ac93df");
+        }
+        else if(coin === 'btm'){
+            $("#baidu").attr("src","https://hm.baidu.com/hm.js?54a8a321e608052c96b72be4e84304c4");
         }
     },
     setwx : function () {
