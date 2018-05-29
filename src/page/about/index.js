@@ -8,7 +8,6 @@ require('./index.css');
 require('page/common/header/index.js');
 require('page/common/footer/index.js');
 
-var $ = require('jQuery');
 var util = require('util/util.js');
 
 $(function () {

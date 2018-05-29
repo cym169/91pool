@@ -7,6 +7,7 @@
         "lchPlaceholder": "Please enter your LCH wallet address",
         "hsrPlaceholder": "Please enter your HSR wallet address",
         "btmPlaceholder": "Please enter your BTM wallet address",
+        "xdagPlaceholder": "Please enter your XDAG wallet address",
         "search": "Search"
       },
       "language": {

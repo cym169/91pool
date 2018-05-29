@@ -7,7 +7,11 @@
 <body>
 #include("./layout/simple.html")
 <div class="box">
-    <div class="logo fl">欢迎注册91pool，一个最专业、最稳定的矿池!</div>
+    <div class="logo-box fl">
+        <div class="logo fl"><img src="../images/logo_header.png"></div>
+        <div class="slogan fl">欢迎注册91pool，一个最专业、最稳定的矿池!</div>
+        <div class="clear"></div>
+    </div>
     <ul class="nav-title fr">
         <li>已有账号，<a href="./login.html">马上登录</a></li>
         <li><a href="/">返回91POOL</a></li>
@@ -17,30 +21,62 @@
         <div class="title">注册会员</div>
         <div class="content">
             <form>
-                <input type="text" name="phone" placeholder="请输入手机号">
+                <div class="phone-box">
+                    <span class="area-code"><span id="areaNumber">+86</span> <i class="fa fa-caret-down"></i></span>
+                    <input type="text" name="phone" placeholder="请输入手机号">
+                    <ul class="area-choose" style="display: none">
+                        <li class="active">+86</li>
+                        <li>+87</li>
+                        <li>+88</li>
+                        <li>+89</li>
+                        <li>+90</li>
+                        <li>+91</li>
+                        <li>+87</li>
+                        <li>+88</li>
+                        <li>+89</li>
+                        <li>+90</li>
+                        <li>+91</li>
+                        <li>+87</li>
+                        <li>+88</li>
+                        <li>+89</li>
+                        <li>+90</li>
+                        <li>+91</li>
+                        <div class="arrow"></div>
+                    </ul>
+                </div>
+                <div class="code-box">
+                    <input type="text" name="code" placeholder="请输入验证码">
+                    <button type="button" class="send no-send">发送验证码</button>
+                </div>
+                <div class="slider-bar-drag">
+                    <div class="slider-bar-bg"></div>
+                    <p class="slider-bar-text">拖动滑块至最右边发送验证码</p>
+                    <div class="slider-bar-btn"><i class="fa fa-angle-double-right"></i></div>
+                </div>
                 <div class="checkbox">
-                    <input type="checkbox">
-                    <label><em>我已阅读并接受<span>用户协议</span></em></label>
+                    <input type="checkbox" id="check">
+                    <label><em>我已阅读并接受<a href="./order.html" target="_blank">用户协议</a></em></label>
                 </div>
                     <input type="button" value="注册">
             </form>
             <div class="third">
-                <div class="third-title">第三方登录</div>
-                <ul class="third-name">
+                <div class="third-title fl">使用社交账号注册</div>
+                <ul class="third-name fl">
                     <li class="wechat" title="微信"><a href="javascript:;"><i class="fa fa-wechat"></i></a></li>
                     <li class="weibo" title="微博"><a href="javascript:;"><i class="fa fa-weibo"></i></a></li>
                     <li class="QQ" title="QQ"><a href="javascript:;"><i class="fa fa-qq"></i></a></li>
                 </ul>
-            </div>
-            <div class="copy">
-                <ul class="language">
-                    <li class="active"><a href="javascript:;">中文</a></li>
-                    <li><a href="javascript:;">English</a></li>
-                    <li><a href="javascript:;">Русский</a></li>
-                </ul>
-                <p>© 91 Pool   沪ICP备16035023号-2</p>
+                <div class="clear"></div>
             </div>
         </div>
+    </div>
+    <div class="copy">
+        <ul class="language">
+            <li class="active"><a href="javascript:;">中文</a></li>
+            <li><a href="javascript:;">English</a></li>
+            <li><a href="javascript:;">Русский</a></li>
+        </ul>
+        <p>© 91 Pool   <a href="http://www.miitbeian.gov.cn/">沪ICP备16035023号-2</a></p>
     </div>
 </div>
 </body>

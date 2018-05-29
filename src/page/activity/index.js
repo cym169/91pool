@@ -8,7 +8,6 @@ require('./index.css');
 require('page/common/header/index.js');
 require('page/common/footer/index.js');
 
-var $ = require('jQuery');
 var util = require('util/util.js');
 var _article = require('util/services/article-services.js');
 var _reset = require('util/reset.js');
@@ -33,7 +32,7 @@ var index = {
                 $("#aContent").html(html);
             }
             else {
-                alert("服务器错误，请通知管理员！");
+                util.errorTips("服务器错误，请通知管理员！");
             }
         })
     },

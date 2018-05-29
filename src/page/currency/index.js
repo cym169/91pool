@@ -12,7 +12,10 @@ var _reset = require('util/reset.js');
 var _coins = require('util/services/coin-services.js');
 var $ = require('jQuery');
 var lang = localStorage.lang;
+var coin = util.getUrlParam('coin');
+var upper = coin.toUpperCase();
 var json = require('util/languages/' + lang + '.json');
+var teach = require('teach/' + coin + '_teach.string');
 var xTime = ['now'],
     yData = [0];
 
@@ -27,45 +30,21 @@ var index = {
     },
     handler: function () {
         var _this = this;
-        var coinName = util.getUrlParam('coin');
         $(document).on('click', '#search', function () {
             var val = $.trim($("#address").val());
             if (val == '') {
                 return false;
             }
-            window.location.href = './worker.html?coin=' + coinName + '&wallet='+ val;
+            window.location.href = './worker.html?coin=' + coin + '&wallet='+ val;
         });
 
         // setInterval(_this.setData, 6000);
 
         // 币种导航
         $('.coin-title').on('click', 'li', function () {
-            if ($(this).hasClass('active')) {
-                return false;
-            }
-            var page = $(this).attr('page');
+            var i = $(this).index();
             $(this).addClass('active').siblings().removeClass('active');
-            switch (page) {
-                case 'home':
-                    $(".tab").hide();
-                    $('.home').show();
-                    break;
-                case 'teach':
-                    window.location.href = './' + coinName + 'teach.html';
-                    break;
-                case 'information':
-                    $(".tab").hide();
-                    $('.information').show();
-                    break;
-                case 'mine':
-                    $(".tab").hide();
-                    $('.mine').show();
-                    break;
-                case 'problem':
-                    $(".tab").hide();
-                    $('.problem').show();
-                    break;
-            }
+            $(".tab").hide().eq(i).show();
         });
 
         $(document).on('click', '.work-title li', function () {
@@ -86,8 +65,9 @@ var index = {
         });
     },
     setData: function () {
-        var coin = util.getUrlParam('coin');
-
+        if(coin == 'btm'){
+            return
+        }
         _coins.getBlocks(coin, function (data) {
 
             if (data.luck == null) {
@@ -296,57 +276,56 @@ var index = {
 
     },
     default: function () {
-        var i = util.getUrlParam('i');
-        var coinName = util.getUrlParam('coin');
-        var upper = coinName.toUpperCase();
-        var imgUrl = require('images/' + coinName + '.png');
+        var teachHtml = util.renderHtml(teach);
+        $(".teach").html(teachHtml);
+        if(coin == 'btm'){
+            return
+        }
+        var imgUrl = require('images/' + coin + '.png');
         var imgTempl = '<img src="' + imgUrl + '" />';
         $('.coin-logo').html(imgTempl);
         $(".coin-name").html(upper);
         $("#coin-name").html(upper);
-        $("#address").attr('data-i18n', '[placeholder]input.'+coinName+'Placeholder');
-        $("#html-title").html(upper + '- 91pool');
+        $("#address").attr('data-i18n', '[placeholder]input.'+coin+'Placeholder');
+        $("#html-title").html(upper + '矿池 - 91pool');
         var mPrice,payment,reward;
-        if (coinName == 'etc') {
-            mPrice = "1ETC";
-            payment = "1%";
-            reward = "4ETC";
-        }
-        else if (coinName == 'etf') {
-            mPrice = "0.1ETF";
-            payment = "1%";
-            reward = "3ETF";
-        }
-        else if (coinName == 'hsr') {
-            mPrice = "0.1HSR";
-            payment = "0%";
-            reward = "1.584HSR";
-        }
-        else if (coinName == 'lch') {
-            mPrice = "0.1LCH";
-            payment = "0%";
-            reward = "25LCH";
-        }
-        else if (coinName == 'btm') {
-            mPrice = "100BTM";
-            payment = "0%";
-            reward = "420.5BTM";
+        switch (coin) {
+            case 'etc':
+                mPrice = "1ETC";
+                payment = "1%";
+                reward = "4ETC";
+                break;
+            case 'etf':
+                mPrice = "0.1ETF";
+                payment = "1%";
+                reward = "3ETF";
+                break;
+            case 'hsr':
+                mPrice = "0.1HSR";
+                payment = "0%";
+                reward = "1.584HSR";
+                break;
+            case 'lch':
+                mPrice = "0.1LCH";
+                payment = "0%";
+                reward = "25LCH";
+                break;
+            case 'btm':
+                mPrice = "100BTM";
+                payment = "0%";
+                reward = "420.5BTM";
+                break;
+            case 'xdag':
+                mPrice = "100XDAG";
+                payment = "0%";
+                reward = "420.5XDAG";
+                break;
         }
         $("#mPrice").html(mPrice);
         $("#payment").html(payment);
         $("#reward").html(reward);
-
-        if (i) {
-            $('.coin-title li:eq(' + i + ')').addClass('active');
-            var page = $('.coin-title li.active').attr('page');
-            $('.' + page).show();
-        } else {
-            $('.coin-title li:eq(0)').addClass('active');
-            $('.home').show();
-        }
     },
     setBaidu : function () {
-        var coin = util.getUrlParam('coin');
         if(coin === 'etc'){
             $("#baidu").attr("src","https://hm.baidu.com/hm.js?3486de3be2cbc530bb79945f4b87f0d8");
         }
@@ -365,8 +344,6 @@ var index = {
     },
     setwx : function () {
         var baseUrl = location.href.split("#")[0];
-        var coin = util.getUrlParam('coin');
-        var upper = coin.toUpperCase();
         wx.ready(function () {
             // <% --公共方法--%>
             var shareData = {

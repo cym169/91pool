@@ -12,6 +12,8 @@
   "license": "ISC",
   "devDependencies": {
     "copy-webpack-plugin": "^4.5.1",
+    "layui-layer": "^1.0.9",
+    "string-loader": "0.0.1",
     "webpack": "^3.10.0",
     "webpack-dev-server": "^2.9.7"
   },
@@ -21,6 +23,7 @@
     "expose-loader": "^0.7.5",
     "extract-text-webpack-plugin": "^3.0.2",
     "file-loader": "^1.1.11",
+    "hogan": "^1.0.2",
     "html-loader": "^0.5.5",
     "html-webpack-plugin": "^3.2.0",
     "html-withimg-loader": "^0.1.16",
@@ -31,7 +34,6 @@
     "style-loader": "^0.20.3",
     "svg-url-loader": "^2.3.2",
     "uglifyjs-webpack-plugin": "^1.2.4",
-    "url-loader": "^1.0.1",
-    "wangeditor": "^3.1.1"
+    "url-loader": "^1.0.1"
   }
 }

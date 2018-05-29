@@ -1,0 +1,139 @@
+<div class="section">
+        <div class="time-line">
+            <ul class="teach-info">
+                <li>
+                    <div class="step">1</div>
+                    <div class="content">
+                        <p data-i18n="etfTeach.1"></p>
+                        <div>
+                            <span data-i18n="etfTeach.2"></span>
+                            <br>
+                            <span data-i18n="etfTeach.3"></span>
+                            <br>
+                            <span data-i18n="etfTeach.4"></span>
+                            <br>
+                            <span data-i18n="etfTeach.5"></span>
+                            <br>
+                            <span data-i18n="etfTeach.6"></span>
+                            <br>
+                            <span data-i18n="etfTeach.7"></span>
+                            <br>
+                            <img src="../images/etf_img1.png">
+                            <br>
+                            <span data-i18n="etfTeach.8"></span>
+                            <br>
+                            <img src="../images/etf_img2.png">
+                            <br>
+                            <span data-i18n="etfTeach.9"></span>
+                            <br>
+                            <img src="../images/etf_img3.png">
+                            <br>
+                            <span data-i18n="etfTeach.10"></span>
+                            <br>
+                            <span data-i18n="etfTeach.11" class="red"></span>
+                            <br>
+                            <img src="../images/etf_img4.png">
+                            <br>
+                            <span data-i18n="etfTeach.12"></span>
+                            <br>
+                            <span data-i18n="etfTeach.13"></span>
+                            <br>
+                            <span data-i18n="etfTeach.14" class="red"></span>
+                            <br>
+                            <img src="../images/etf_img5.png">
+                            <br>
+                            <span data-i18n="etfTeach.15"></span>
+                            <br>
+                            <span data-i18n="etfTeach.16"></span> 26b67d0810393fe405c1caf66df39139f6b3c390
+                            <br>
+                            <span data-i18n="etfTeach.17"></span>
+                            <br>
+                            <span data-i18n="etfTeach.18"></span>
+                            <br>
+                            <img src="../images/etf_img6.png">
+                            <br>
+                            <span data-i18n="etfTeach.19"></span>
+                            <br>
+                            <span data-i18n="etfTeach.20"></span> 0x26b67d0810393fe405c1caf66df39139f6b3c390
+                            <br>
+                            <span data-i18n="etfTeach.21"></span>
+                            <br>
+                            <span data-i18n="etfTeach.22" class="red"></span>
+                            <br>
+                            <img src="../images/etf_img7.png">
+                            <br>
+                            <span data-i18n="etfTeach.23"></span>
+                            <br>
+                            <span data-i18n="etfTeach.24"></span>
+                            <br>
+                            <span data-i18n="etfTeach.25" class="red"></span>
+                            <br>
+                            <img src="../images/etf_img8.png">
+                            <br>
+                            <span data-i18n="etfTeach.26"></span>
+                            <br>
+                            <img src="../images/etf_img9.png"><br>
+                        </div>
+                    </div>
+                </li>
+                <li>
+                    <div class="step">2</div>
+                    <div class="content">
+                        <p data-i18n="etfTeach.27"></p>
+                        <div><span data-i18n="etfTeach.28"></span></div>
+                    </div>
+                </li>
+                <li>
+                    <div class="step">3</div>
+                    <div class="content">
+                        <p data-i18n="etfTeach.29"></p>
+                        <div>
+                            <span data-i18n="etfTeach.30"></span>
+                            <br>
+                            <span data-i18n="etfTeach.31"></span>
+                            <br>
+                            <span data-i18n="etfTeach.32"></span>
+                            <br>
+                            <img src="../images/etf_img10.png">
+                            <br>
+                            <span data-i18n="etfTeach.33"></span>
+                            <br>
+                            <span data-i18n="etfTeach.34"></span>
+                            <br>
+                            <span data-i18n="etfTeach.35"></span>ethdcrminer64.exe -epool etf1.91pool.com:9108 -ewal 0xbc42eb23728c73c6a3c79b273c370e85f76927fc -epsw x -eworker 10 -mode 1 -allcoins -1
+                            <br>
+                            <span data-i18n="etfTeach.36"></span>
+                            <br>
+                            <span data-i18n="etfTeach.37"></span>bc42eb23728c73c6a3c79b273c370e85f76927fc,&nbsp;&nbsp;<span data-i18n="etfTeach.38"></span>0x
+                            bc42eb23728c73c6a3c79b273c370e85f76927fc (<span data-i18n="etfTeach.39" class="red"></span>)
+                            <br>
+                            <span data-i18n="etfTeach.40"></span><br>
+                        </div>
+                    </div>
+                </li>
+                <li>
+                    <div class="step" style="font-size: 12px">4</div>
+                    <div class="content">
+                        <p data-i18n="etfTeach.41"></p>
+                        <div>
+                            <span data-i18n="etfTeach.42"></span><a href="http://www.91pool.com" target="_blank">http://www.91pool.com</a>，<span data-i18n="etfTeach.43"></span>
+                        </div>
+                    </div>
+                </li>
+                <li>
+                    <div class="step" style="font-size: 12px">5</div>
+                    <div class="content">
+                        <p data-i18n="etfTeach.44"></p>
+                        <div>
+                            <span data-i18n="etfTeach.45"></span>1：etf1.91pool.com:9108
+                            <br>
+                            <span data-i18n="etfTeach.45"></span>2：etf2.91pool.com:9109
+                            <br>
+                            <span data-i18n="etfTeach.46"></span>
+                            <br>
+                        </div>
+                    </div>
+                </li>
+            </ul>
+        </div>
+    </div>

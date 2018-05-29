@@ -4,18 +4,19 @@
 */
 
 'use strict';
-var $ = require('jQuery');
 var jsonp = require('jsonp');
 var type = '';
-
+require("layui-layer");
+var Hogan = require('hogan.js');
 var util = {
     // 网络请求
     request : function(param){
         $.ajax({
-            type        : param.type                || 'get',
-            url         : param.url     || '',
-            dataType    : param.dataType            || 'json',
-            data        : param.data                || '',
+            type        : param.type        || 'get',
+            url         : param.url         || '',
+            dataType    : param.dataType    || 'json',
+            data        : param.data        || '',
+            time        : param.time        || '0',
             success     : param.success,
             error       : param.error
         });
@@ -29,13 +30,19 @@ var util = {
         var result  = window.location.search.substr(1).match(reg);
         return result ? decodeURIComponent(result[2]) : null;
     },
+    // 渲染html模板
+    renderHtml : function(htmlTemplate, data){
+        var template    = Hogan.compile(htmlTemplate),
+            result      = template.render(data);
+        return result;
+    },
     // 成功提示
-    successTips : function(msg){
-        alert(msg || '操作成功！');
+    successTips : function(msg,resolve){
+        layer.alert(msg,{icon:1},resolve);
     },
     // 错误提示
-    errorTips : function(msg){
-        alert(msg || '哪里不对了~');
+    errorTips : function(msg,reject){
+        layer.alert(msg,{icon:2},reject);
     },
     // 字段的验证，支持非空、手机、邮箱的判断
     validate : function(value, type){
@@ -86,6 +93,23 @@ var util = {
                 });
             }
         });
+    },
+    countDown: function (obj,time) {
+        var count = time;
+        setTime(obj);
+
+        function setTime(obj) {
+            if (count <= 0) {
+
+                $(obj).attr('disabled',false).attr('mark',0).val("发送验证码").removeClass('has-send').addClass('no-send');
+                count = time;
+                return;
+            } else {
+                $(obj).attr('disabled',true).attr('mark',1).val(count+"s").removeClass('no-send').addClass('has-send');
+                count--;
+            }
+            setTimeout(function () { setTime(obj) },1000)
+        }
     }
 };
 

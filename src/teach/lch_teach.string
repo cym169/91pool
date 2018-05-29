@@ -1,0 +1,58 @@
+<div class="section">
+        <div class="time-line">
+            <ul class="teach-info">
+                <li>
+                    <div class="step">1</div>
+                    <div class="content">
+                        <p data-i18n="lchTeach.1"></p>
+                        <div>
+                            <span data-i18n="lchTeach.2"></span>
+                            <br>
+                            <span data-i18n="lchTeach.3"></span>
+                            <br>
+                            <span data-i18n="lchTeach.4"></span><a href="http://bitpie.com" target="_blank">http://bitpie.com</a>，<span data-i18n="lchTeach.5"></span>
+                            <br>
+                            <img src="../images/lch_img1.png"><br>
+                            <span data-i18n="lchTeach.6"></span><br>
+                            <span data-i18n="lchTeach.7"></span>
+                            <a href="https://github.com/litecoincash/LitecoinCash" target="_blank">https://github.com/litecoincash/LitecoinCash</a>
+                            （<span data-i18n="lchTeach.8"></span>）<br>
+                        </div>
+                    </div>
+                </li>
+                <li>
+                    <div class="step">2</div>
+                    <div class="content">
+                        <p data-i18n="lchTeach.9"></p>
+                        <div>
+                            <span class="red" data-i18n="lchTeach.10"></span><br>
+                            <span data-i18n="lchTeach.11"></span><br>
+                            <img src="../images/lch_img2.png"><br>
+                        </div>
+                    </div>
+                </li>
+                <li>
+                    <div class="step">3</div>
+                    <div class="content">
+                        <p data-i18n="lchTeach.12"></p>
+                        <div>
+                            <span data-i18n="lchTeach.13"></span><a href="http://www.91pool.com" target="_blank">http://www.91pool.com</a>，<span data-i18n="lchTeach.14"></span>
+                        </div>
+                    </div>
+                </li>
+                <li>
+                    <div class="step">4</div>
+                    <div class="content">
+                        <p data-i18n="lchTeach.15"></p>
+                        <div>
+                            <span data-i18n="lchTeach.16"></span>1：lch1.91pool.com:9003
+                            <br>
+                            <span data-i18n="lchTeach.16"></span>2：lch2.91pool.com:9004
+                            <br>
+                            <span data-i18n="lchTeach.17"></span>
+                        </div>
+                    </div>
+                </li>
+            </ul>
+        </div>
+    </div>

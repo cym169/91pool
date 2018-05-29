@@ -1,0 +1,64 @@
+<div class="section">
+        <div class="time-line">
+            <ul class="teach-info">
+                <li>
+                    <div class="step">1</div>
+                    <div class="content">
+                        <p data-i18n="btmTeach.1"></p>
+                        <div>
+                            <span data-i18n="btmTeach.2"></span>（<a href="https://bytom.io/wallet/" target="_blank">https://bytom.io/wallet/</a>）
+                            <br>
+                            <span data-i18n="btmTeach.3"></span>
+                            <br>
+                            <span data-i18n="btmTeach.4"></span>
+                        </div>
+                    </div>
+                </li>
+                <li>
+                    <div class="step">2</div>
+                    <div class="content">
+                        <p data-i18n="btmTeach.5"></p>
+                        <div>
+                            <br>
+                            <span data-i18n="btmTeach.6"></span>
+                            <br>
+                            <span data-i18n="btmTeach.7"></span>
+                            <br>
+                            <span data-i18n="btmTeach.8"></span>
+                            <br>
+                            <span data-i18n="btmTeach.9"></span>
+                            <br>
+                            <span data-i18n="btmTeach.10"></span>
+                            <br>
+                            <span data-i18n="btmTeach.11"></span>
+                            <br>
+                            <span data-i18n="btmTeach.12"></span>
+
+                        </div>
+                    </div>
+                </li>
+                <li>
+                    <div class="step">3</div>
+                    <div class="content">
+                        <p data-i18n="btmTeach.13">矿机配置</p>
+                        <div>
+                            <span data-i18n="btmTeach.14"></span>
+                            <br>
+                            <span data-i18n="btmTeach.15"></span>
+                            <br>
+                            <span data-i18n="btmTeach.16"></span>stratum+tcp://btm1.91pool.com:6666 <span data-i18n="btmTeach.17"></span>
+                        </div>
+                    </div>
+                </li>
+                <li>
+                    <div class="step">4</div>
+                    <div class="content">
+                        <p data-i18n="btmTeach.18"></p>
+                        <div>
+                            <span data-i18n="btmTeach.19"></span> <a href="www.91pool.com" target="_blank">www.91pool.com</a>,<span data-i18n="btmTeach.20"></span>
+                        </div>
+                    </div>
+                </li>
+            </ul>
+        </div>
+    </div>

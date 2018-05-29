@@ -4,7 +4,6 @@
 */
 
 'use strict';
-var $ = require('jQuery');
 var jsonp = require('jsonp');
 
 var mwx = {

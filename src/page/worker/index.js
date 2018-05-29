@@ -11,11 +11,12 @@ var util = require('util/util.js');
 var _reset = require('util/reset.js');
 var _coins = require('util/services/coin-services.js');
 var _workers = require('util/services/worker-services.js');
-var $ = require('jQuery');
 var coin = util.getUrlParam('coin');
+var upper = coin.toUpperCase();
 var redirect = util.getUrlParam('redirect');
 var name = util.getUrlParam('wallet');
 var totalShare = 0;
+var timer;
 var xTime = ['now'],
     yData = [0];
 var index = {
@@ -27,7 +28,7 @@ var index = {
     },
     handler: function () {
         var _this = this;
-        setInterval(_this.setData, 5000);
+        timer = setInterval(_this.setData, 6000);
 
         $(document).on('click', '.work-title li', function () {
             if ($(this).hasClass('active')) {
@@ -42,6 +43,23 @@ var index = {
         });
     },
     setData: function () {
+        var mPrice;
+        if (coin == 'etc') {
+            mPrice = "1ETC";
+        }
+        else if (coin == 'etf') {
+            mPrice = "0.1ETF";
+        }
+        else if (coin == 'hsr') {
+            mPrice = "0.1HSR";
+        }
+        else if (coin == 'lch') {
+            mPrice = "0.1LCH";
+        }
+        else if (coin == 'btm') {
+            mPrice = "100BTM";
+        }
+        $("#minPrice").html(mPrice);
         _coins.getCoins(coin, function (data) {
             totalShare = data.stats.roundShares;
 
@@ -62,6 +80,7 @@ var index = {
                 $("#balance").html(balance <= 0 ? 0 : balance);
                 $("#pending").html(pending <= 0 ? 0 : pending);
                 $("#paid").html(paid);
+                $(".priceUnit").html(upper);
                 $("#currentHashrate").html(currentHashrate);
                 $("#hashrate").html(hashrate);
                 $("#lastShare").html(lastShare);
@@ -161,8 +180,10 @@ var index = {
                 var payHtml = template('payList-tp', payList);
                 $("#payList").html(payHtml);
             }, function (error) {
-                alert('没有找到您设置的矿工地址的数据，请确保矿工地址配置正确！');
-                window.location.href = './currency.html?coin='+coin;
+                clearInterval(timer);
+                util.errorTips("没有找到您设置的矿工地址的数据，请确保矿工地址配置正确！",function () {
+                    window.location.href = './currency.html?coin='+coin;
+                });
             });
         });
     },

@@ -4,7 +4,6 @@
 */
 'use strict';
 
-var $ = require('jQuery');
 var util = require('util/util.js');
 require('./index.css');
 var lang = localStorage.lang;
@@ -75,12 +74,12 @@ var index = {
 
         $(document).on('click', '.phone-menu a', function () {
             var type = $(this).attr('type');
-            window.location.href = './currency.html?coin=' + type + '&i=0';
+            window.location.href = './currency.html?coin=' + type;
         });
 
         $(document).on('click', '.dropdown-menu li', function () {
             var type = $(this).attr('type');
-            window.location.href = './currency.html?coin=' + type + '&i=0';
+            window.location.href = './currency.html?coin=' + type;
         });
 
         $(document).on('click', '.chooseLang li', function () {

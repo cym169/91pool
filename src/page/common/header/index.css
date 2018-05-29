@@ -38,9 +38,10 @@
     left: -17px;
     z-index: 999999;
     background-color: #fff;
-    border: 1px solid #e2e2e2;
-    border-radius: 8px;
+    border: 1px solid #ebeef5;
+    border-radius: 4px;
     overflow: hidden;
+    box-shadow: 0 2px 12px 0 rgba(0,0,0,.1);
 }
 
 .dropdown-menu li a {
@@ -86,10 +87,12 @@
     position: absolute;
     z-index: 9999;
     top: 30px;
+    left: -28px;
     background-color: #fff;
-    border: 1px solid #e2e2e2;
-    border-radius: 8px;
+    border-radius: 4px;
     overflow: hidden;
+    border: 1px solid #ebeef5;
+    box-shadow: 0 2px 12px 0 rgba(0,0,0,.1);
 }
 
 .language > ul > li > a {
@@ -145,16 +148,16 @@
         top: 55px;
         left: 20px;
         z-index: 99999;
-        border: 1px solid #ccc;
         background-color: #fff;
+        border: 1px solid #ebeef5;
         border-radius: 4px;
+        box-shadow: 0 2px 12px 0 rgba(0,0,0,.1);
     }
 
     .phone-menu > a {
         display: block;
         color: #333;
         padding: 15px 30px;
-        border-bottom: 1px solid #ccc;
     }
 
     .phone-menu > a:last-child {
@@ -184,9 +187,10 @@
         top: 65px;
         right: 10px;
         z-index: 99999;
-        border: 1px solid #ccc;
         background-color: #fff;
         border-radius: 4px;
+        border: 1px solid #ebeef5;
+        box-shadow: 0 2px 12px 0 rgba(0,0,0,.1);
     }
 
     .phone-lang > a {
@@ -196,7 +200,6 @@
         line-height: 40px;
         width: 100px;
         text-align: center;
-        border-bottom: 1px solid #ccc;
     }
 
     .phone-lang > a:last-child {

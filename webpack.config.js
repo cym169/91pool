@@ -11,7 +11,7 @@ if(process.env.type== "build"){
     }
 }else{
     var website={
-        publicPath:"http://172.16.2.73:1717/"
+        publicPath:"/"
     }
 }
 
@@ -43,11 +43,6 @@ var config = {
         'register'      : ['./src/page/register/index.js'],
         'currency'      : ['./src/page/currency/index.js'],
         'worker'        : ['./src/page/worker/index.js'],
-        'etcteach'      : ['./src/page/etcteach/index.js'],
-        'hsrteach'      : ['./src/page/hsrteach/index.js'],
-        'etfteach'      : ['./src/page/etfteach/index.js'],
-        'lchteach'      : ['./src/page/lchteach/index.js'],
-        'btmteach'      : ['./src/page/btmteach/index.js'],
         'notice'        : ['./src/page/notice/index.js'],
         'about'         : ['./src/page/about/index.js'],
         'order'         : ['./src/page/order/index.js'],
@@ -66,11 +61,9 @@ var config = {
             'page' : path.resolve('./src/page'),
             'images' : path.resolve('./src/images'),
             'util' : path.resolve('./src/util'),
-            'lib' : path.resolve('./src/lib')
+            'lib' : path.resolve('./src/lib'),
+            'teach' : path.resolve('./src/teach')
         }
-    },
-    externals : {
-        'jquery' : 'window.jQuery'
     },
     //模块：例如解读CSS,图片如何转换，压缩
     module:{
@@ -79,7 +72,7 @@ var config = {
                 test:/\.css$/,
                 use: extractTextPlugin.extract({
                     fallback: "style-loader",
-                    use: "css-loader"
+                    use: "css-loader",
                     // 压缩CSS代码，生产时候用
                     // use: [{
                     //     loader: 'css-loader',
@@ -97,9 +90,20 @@ var config = {
                 test: /\.(eot|woff|woff2|ttf|svg)$/,
                 use: ['file-loader?name=fonts/[name].[ext]']
             },
+            // {
+            //     test: /\.(htm|html)$/i,
+            //     loader: 'html-loader'
+            // },
+            { test: /\.string$/, loader: 'html-loader'},
             {
-                test: /\.(htm|html)$/i,
-                loader: 'html-withimg-loader'
+                test: require.resolve('jquery'),
+                use: [{
+                    loader: 'expose-loader',
+                    options: 'jQuery'
+                },{
+                    loader: 'expose-loader',
+                    options: '$'
+                }]
             }
         ]
     },
@@ -107,6 +111,13 @@ var config = {
     plugins:[
         // 压缩JS代码，生产时候用
         // new uglify(),
+
+        new webpack.ProvidePlugin({
+            $: 'jquery',
+            jQuery: 'jquery',
+            'window.jQuery': 'jquery',
+            'window.$': 'jquery'
+        }),
 
         new copyWebpackPlugin([{
             from:__dirname+'/src/lib',
@@ -121,32 +132,23 @@ var config = {
         new HtmlWebpackPlugin({
             favicon: path.resolve('./src/images/favicon.ico')
         }),
-        new HtmlWebpackPlugin(getHtmlConfig('index')),
-        new HtmlWebpackPlugin(getHtmlConfig('login')),
-        new HtmlWebpackPlugin(getHtmlConfig('register')),
-        new HtmlWebpackPlugin(getHtmlConfig('currency')),
-        new HtmlWebpackPlugin(getHtmlConfig('worker')),
-        new HtmlWebpackPlugin(getHtmlConfig('etcteach')),
-        new HtmlWebpackPlugin(getHtmlConfig('etfteach')),
-        new HtmlWebpackPlugin(getHtmlConfig('hsrteach')),
-        new HtmlWebpackPlugin(getHtmlConfig('lchteach')),
-        new HtmlWebpackPlugin(getHtmlConfig('btmteach')),
-        new HtmlWebpackPlugin(getHtmlConfig('notice')),
-        new HtmlWebpackPlugin(getHtmlConfig('about')),
-        new HtmlWebpackPlugin(getHtmlConfig('order')),
-        new HtmlWebpackPlugin(getHtmlConfig('activity'))
     ],
     //配置webpack开发服务功能
     devServer:{
         //设置基本目录结构
         contentBase:path.resolve(__dirname,'91pool'),
         //服务器的IP地址，可以使用IP也可以使用localhost
-        host:'172.16.2.73',
+        host:'172.16.2.108',
         //服务端压缩是否开启
         compress:true,
         //配置服务端口号
         port:1717
     }
 };
-
 module.exports = config;
+
+for(var key in config.entry){
+    if(key != "common"){
+        module.exports.plugins.push(new HtmlWebpackPlugin(getHtmlConfig(key)));
+    }
+}

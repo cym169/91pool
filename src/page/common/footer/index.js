@@ -3,7 +3,6 @@
 * @Date:   2018/4/8
 */
 'use strict';
-var $ = require('jQuery');
 require('./index.css');
 var lang = localStorage.lang;
 var index = {

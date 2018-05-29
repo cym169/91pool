@@ -7,6 +7,7 @@
         "lchPlaceholder": "请输入LCH矿工地址",
         "hsrPlaceholder": "请输入HSR矿工地址",
         "btmPlaceholder": "请输入BTM矿工地址",
+        "xdagPlaceholder": "请输入XDAG矿工地址",
         "search": "搜索"
       },
       "language": {
@@ -106,7 +107,7 @@
       "worker":{
         "immatureProfit": "未成熟收益",
         "matureProfit": "未支付收益",
-        "pendingProfit": "支付中收益",
+        "pendingProfit": "待支付收益",
         "paid": "已支付收益",
         "lastBeat": "最近提交",
         "onlineWorker": "在线机器",
