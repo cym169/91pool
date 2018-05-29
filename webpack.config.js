@@ -5,15 +5,6 @@ var HtmlWebpackPlugin = require('html-webpack-plugin');
 var uglify = require('uglifyjs-webpack-plugin');
 var extractTextPlugin = require("extract-text-webpack-plugin");
 var copyWebpackPlugin= require("copy-webpack-plugin");
-if(process.env.type== "build"){
-    var website={
-        publicPath: './'
-    }
-}else{
-    var website={
-        publicPath:"/"
-    }
-}
 
 // 获取html-webpack-plugin参数的方法
 var getHtmlConfig = function(name){
@@ -43,6 +34,8 @@ var config = {
         'register'      : ['./src/page/register/index.js'],
         'currency'      : ['./src/page/currency/index.js'],
         'worker'        : ['./src/page/worker/index.js'],
+        'etcteach'      : ['./src/page/etcteach/index.js'],
+        'edit'          : ['./src/page/edit/index.js'],
         'notice'        : ['./src/page/notice/index.js'],
         'about'         : ['./src/page/about/index.js'],
         'order'         : ['./src/page/order/index.js'],
@@ -51,9 +44,9 @@ var config = {
     //出口文件的配置项
     output:{
         //打包的路径
-        path : __dirname+'/dist/',
+        path : path.resolve(__dirname, './91pool'),
         filename : 'js/[name].js',
-        publicPath:website.publicPath
+        publicPath: process.env.type== "build" ? '/':"http://172.16.2.108:1717/"
     },
     resolve: {
         // 配置路径，为js require文件提供快捷路径
@@ -72,19 +65,28 @@ var config = {
                 test:/\.css$/,
                 use: extractTextPlugin.extract({
                     fallback: "style-loader",
-                    use: "css-loader",
-                    // 压缩CSS代码，生产时候用
-                    // use: [{
-                    //     loader: 'css-loader',
-                    //     options: {
-                    //         minimize: true
-                    //     }
-                    // }]
+                    use: [{
+                        loader: 'css-loader',
+                        options: {
+                            // url: true,
+                            // 压缩CSS代码，生产时候换为true
+                            minimize: false
+                        }
+                    }]
                 })
             },
             {
                 test: /\.(jpg|png|gif)$/,
-                loader: 'url-loader?limit=500000&name=images/[hash:8].[name].[ext]'
+                use: [
+                    {
+                        loader: 'url-loader',
+                        options: {
+                            limit: 100,
+                            name: '[name].[hash:8].[ext]',
+                            outputPath: 'img/'
+                        }
+                    }
+                ]
             },
             {
                 test: /\.(eot|woff|woff2|ttf|svg)$/,
@@ -123,10 +125,37 @@ var config = {
             from:__dirname+'/src/lib',
             to:'./lib'
         }]),
+        // new webpack.optimize.CommonsChunkPlugin({
+        //     name : 'common',
+        //     filename : 'js/base.js'
+        // }),
+
         new webpack.optimize.CommonsChunkPlugin({
-            name : 'common',
-            filename : 'js/base.js'
+            name: 'common',
+            minChunks: function (module) {
+                return (
+                    module.resource &&
+                    /\.js$/.test(module.resource) &&
+                    module.resource.indexOf(
+                        path.join(__dirname, '../node_modules')
+                    ) === 0
+                )
+            }
         }),
+        new webpack.optimize.CommonsChunkPlugin({
+            name:'manifest',
+            chunks:['commons'],
+            minChunks:function(module){
+                return (
+                    module.resource &&
+                    /\.js$/.test(module.resource) &&
+                    module.resource.indexOf(
+                        path.join(__dirname, '../node_modules')
+                    ) === 0 && ['jquery.js', 'layer.js'].indexOf( module.resource.substr(module.resource.lastIndexOf('/')+1).toLowerCase() ) != -1
+                )
+            }
+        }),  // 如果愿意，可以再new 一个commonsChunkPlugin
+
         new extractTextPlugin('css/[name].css'),
 
         new HtmlWebpackPlugin({
