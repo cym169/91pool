@@ -34,8 +34,6 @@ var config = {
         'register'      : ['./src/page/register/index.js'],
         'currency'      : ['./src/page/currency/index.js'],
         'worker'        : ['./src/page/worker/index.js'],
-        'etcteach'      : ['./src/page/etcteach/index.js'],
-        'edit'          : ['./src/page/edit/index.js'],
         'notice'        : ['./src/page/notice/index.js'],
         'about'         : ['./src/page/about/index.js'],
         'order'         : ['./src/page/order/index.js'],
