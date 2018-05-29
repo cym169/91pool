@@ -44,7 +44,7 @@ var config = {
         //打包的路径
         path : path.resolve(__dirname, './91pool'),
         filename : 'js/[name].js',
-        publicPath: process.env.type== "build" ? '/':"http://172.16.2.108:1717/"
+        publicPath: process.env.type== "build" ? '/':"http://localhost:1717/"
     },
     resolve: {
         // 配置路径，为js require文件提供快捷路径
@@ -165,7 +165,7 @@ var config = {
         //设置基本目录结构
         contentBase:path.resolve(__dirname,'91pool'),
         //服务器的IP地址，可以使用IP也可以使用localhost
-        host:'172.16.2.108',
+        host:'localhost',
         //服务端压缩是否开启
         compress:true,
         //配置服务端口号
