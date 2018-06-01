@@ -7,25 +7,24 @@
 require('common/header/index.js');
 require('common/footer/index.js');
 require('./index.css');
-var util = require('util/util.js');
+var mwx = require('util/wx.js');
 $(function () {
 
-    $(document).on('click', '#search', function () {
-        var val = $.trim($("#address").val());
-        if (val == '') {
-            return false;
-        }
-        localStorage.name = val;
-        window.location.href = './worker.html?coin=etc&wallet='+ val;
+    // 常见问题的风琴效果
+    $(document).on('click', '.support li', function () {
+        var h1 = $(this).children('.title').outerHeight(),
+            h2 = $(this).children('.content').outerHeight(),
+            h = h1 + h2;
+        $(this).stop(true).animate({height: h}, 300).siblings().stop(true).animate({height: h1}, 300);
     });
 
-    util.getWxInfo();
+    mwx.getWxInfo();
 
     var baseUrl = location.href.split("#")[0];
     wx.ready(function () {
         // <% --公共方法--%>
         var shareData = {
-            title: "ETC挖矿教程",
+            title: "91pool常见问题",
             desc: "专注于数字资产增值服务",
             link: baseUrl,
             imgUrl: "http://www.91pool.com/images/wx_logo.png",

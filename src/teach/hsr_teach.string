@@ -1,174 +1,174 @@
 <div class="section">
-        <div class="time-line">
-            <ul class="teach-info">
-                <li>
-                    <div class="step">1</div>
-                    <div class="content">
-                        <p data-i18n="hsrTeach.1"></p>
-                        <div>
-                            <span data-i18n="hsrTeach.2"></span>
-                            <br>
-                            <span data-i18n="hsrTeach.3"></span>
-                            <br>
-                            <span data-i18n="hsrTeach.4"></span>
-                            <a href="https://h.cash" target="_blank">https://h.cash</a>
-                            <br>
-                            <span data-i18n="hsrTeach.5"></span>
-                        </div>
+    <div class="time-line">
+        <ul class="teach-info">
+            <li>
+                <div class="step">1</div>
+                <div class="content">
+                    <p data-i18n="hsrTeach.1"></p>
+                    <div>
+                        <span data-i18n="hsrTeach.2"></span>
+                        <br>
+                        <span data-i18n="hsrTeach.3"></span>
+                        <br>
+                        <span data-i18n="hsrTeach.4"></span>
+                        <a href="https://h.cash" target="_blank">https://h.cash</a>
+                        <br>
+                        <span data-i18n="hsrTeach.5"></span>
                     </div>
-                </li>
-                <li>
-                    <div class="step">2</div>
-                    <div class="content">
-                        <p data-i18n="hsrTeach.6"></p>
-                        <div>
-                            <span data-i18n="hsrTeach.7"></span>
-                            <br>
-                            <span data-i18n="hsrTeach.8"></span>
-                            <br>
-                            <span data-i18n="hsrTeach.9"></span>
-                            <br>
-                            <table>
-                                <thead>
-                                <tr>
-                                    <th data-i18n="hsrTeach.10"></th>
-                                    <th data-i18n="hsrTeach.11"></th>
-                                    <th data-i18n="hsrTeach.12"></th>
-                                </tr>
-                                </thead>
-                                <tbody>
-                                <tr>
-                                    <td>NVIDIA(英伟达)1060 3G</td>
-                                    <td>~7m</td>
-                                    <td>40m-48m</td>
-                                </tr>
-                                <tr>
-                                    <td>NVIDIA(英伟达)1060 6G</td>
-                                    <td>~8m</td>
-                                    <td>45m-52m</td>
-                                </tr>
-                                <tr>
-                                    <td>NVIDIA(英伟达)1070 8G</td>
-                                    <td>~12.05m</td>
-                                    <td>72m~80m</td>
-                                </tr>
-                                <tr>
-                                    <td>NVIDIA(英伟达)1080 8G</td>
-                                    <td>~15m</td>
-                                    <td>90m~100m</td>
-                                </tr>
-                                <tr>
-                                    <td>NVIDIA(英伟达)1080ti</td>
-                                    <td>~20m</td>
-                                    <td>120m-130m</td>
-                                </tr>
-                                <tr>
-                                    <td>AMD rx470/570</td>
-                                    <td>~4.8m</td>
-                                    <td>30m-32m</td>
-                                </tr>
-                                <tr>
-                                    <td>AMD rx480/580</td>
-                                    <td>~5m-6m</td>
-                                    <td>32m-38m</td>
-                                </tr>
-                                </tbody>
-                            </table>
-                        </div>
+                </div>
+            </li>
+            <li>
+                <div class="step">2</div>
+                <div class="content">
+                    <p data-i18n="hsrTeach.6"></p>
+                    <div>
+                        <span data-i18n="hsrTeach.7"></span>
+                        <br>
+                        <span data-i18n="hsrTeach.8"></span>
+                        <br>
+                        <span data-i18n="hsrTeach.9"></span>
+                        <br>
+                        <table>
+                            <thead>
+                            <tr>
+                                <th data-i18n="hsrTeach.10"></th>
+                                <th data-i18n="hsrTeach.11"></th>
+                                <th data-i18n="hsrTeach.12"></th>
+                            </tr>
+                            </thead>
+                            <tbody>
+                            <tr>
+                                <td>NVIDIA(英伟达)1060 3G</td>
+                                <td>~7m</td>
+                                <td>40m-48m</td>
+                            </tr>
+                            <tr>
+                                <td>NVIDIA(英伟达)1060 6G</td>
+                                <td>~8m</td>
+                                <td>45m-52m</td>
+                            </tr>
+                            <tr>
+                                <td>NVIDIA(英伟达)1070 8G</td>
+                                <td>~12.05m</td>
+                                <td>72m~80m</td>
+                            </tr>
+                            <tr>
+                                <td>NVIDIA(英伟达)1080 8G</td>
+                                <td>~15m</td>
+                                <td>90m~100m</td>
+                            </tr>
+                            <tr>
+                                <td>NVIDIA(英伟达)1080ti</td>
+                                <td>~20m</td>
+                                <td>120m-130m</td>
+                            </tr>
+                            <tr>
+                                <td>AMD rx470/570</td>
+                                <td>~4.8m</td>
+                                <td>30m-32m</td>
+                            </tr>
+                            <tr>
+                                <td>AMD rx480/580</td>
+                                <td>~5m-6m</td>
+                                <td>32m-38m</td>
+                            </tr>
+                            </tbody>
+                        </table>
                     </div>
-                </li>
-                <li>
-                    <div class="step">3</div>
-                    <div class="content">
-                        <p data-i18n="hsrTeach.13">设置挖矿软件</p>
-                        <div>
-                            <span data-i18n="hsrTeach.14"></span>
-                            <br>
-                            <span data-i18n="hsrTeach.15" class="red"></span>
-                            <br>
-                            <span data-i18n="hsrTeach.16"></span>
-                            <br>
-                            <span data-i18n="hsrTeach.17"></span><a href="https://jingyan.baidu.com/article/7e440953cec6182fc1e2ef57.html"
-                                       target="_blank">https://jingyan.baidu.com/article/7e440953cec6182fc1e2ef57.html</a>
-                            <br>
-                            <span data-i18n="hsrTeach.18"></span>
-                            <br>
-                            <img src="../images/hsr_img1.png">
-                            <br>
-                            <span data-i18n="hsrTeach.19"></span>
-                            <br><br>
-                            <span data-i18n="hsrTeach.20"></span>
-                            <br>
-                            <img src="../images/hsr_img2.png">
-                            <br>
-                            <span data-i18n="hsrTeach.21"></span><a
-                                href="https://jingyan.baidu.com/article/e52e3615a5378840c70c5157.html" target="_blank">https://jingyan.baidu.com/article/e52e3615a5378840c70c5157.html</a>）
-                            <br>
-                            <img src="../images/hsr_img3.png">
-                            <br>
-                            <span data-i18n="hsrTeach.22"></span>
-                            <br>
-                            <span data-i18n="hsrTeach.23"></span>
-                            <br>
-                            <span data-i18n="hsrTeach.24"></span>
-                            <br>
-                            <span data-i18n="hsrTeach.25"></span>
-                            <br>
-                            <span data-i18n="hsrTeach.26"></span>
-                            <br>
-                            <span data-i18n="hsrTeach.27"></span>
-                            <br>
-                            <img src="../images/hsr_img4.png" width="100%">
-                            <br>
-                            <span data-i18n="hsrTeach.28"></span>
-                            <br>
-                            <span data-i18n="hsrTeach.29"></span>
-                            <br>
-                            <span data-i18n="hsrTeach.30"></span>
-                            <br>
-                            <span data-i18n="hsrTeach.31"></span>
-                            <br>
-                        </div>
+                </div>
+            </li>
+            <li>
+                <div class="step">3</div>
+                <div class="content">
+                    <p data-i18n="hsrTeach.13">设置挖矿软件</p>
+                    <div>
+                        <span data-i18n="hsrTeach.14"></span>
+                        <br>
+                        <span data-i18n="hsrTeach.15" class="red"></span>
+                        <br>
+                        <span data-i18n="hsrTeach.16"></span>
+                        <br>
+                        <span data-i18n="hsrTeach.17"></span><a href="https://jingyan.baidu.com/article/7e440953cec6182fc1e2ef57.html"
+                                   target="_blank">https://jingyan.baidu.com/article/7e440953cec6182fc1e2ef57.html</a>
+                        <br>
+                        <span data-i18n="hsrTeach.18"></span>
+                        <br>
+                        <img src="../images/hsr_img1.png">
+                        <br>
+                        <span data-i18n="hsrTeach.19"></span>
+                        <br><br>
+                        <span data-i18n="hsrTeach.20"></span>
+                        <br>
+                        <img src="../images/hsr_img2.png">
+                        <br>
+                        <span data-i18n="hsrTeach.21"></span><a
+                            href="https://jingyan.baidu.com/article/e52e3615a5378840c70c5157.html" target="_blank">https://jingyan.baidu.com/article/e52e3615a5378840c70c5157.html</a>）
+                        <br>
+                        <img src="../images/hsr_img3.png">
+                        <br>
+                        <span data-i18n="hsrTeach.22"></span>
+                        <br>
+                        <span data-i18n="hsrTeach.23"></span>
+                        <br>
+                        <span data-i18n="hsrTeach.24"></span>
+                        <br>
+                        <span data-i18n="hsrTeach.25"></span>
+                        <br>
+                        <span data-i18n="hsrTeach.26"></span>
+                        <br>
+                        <span data-i18n="hsrTeach.27"></span>
+                        <br>
+                        <img src="../images/hsr_img4.png" width="100%">
+                        <br>
+                        <span data-i18n="hsrTeach.28"></span>
+                        <br>
+                        <span data-i18n="hsrTeach.29"></span>
+                        <br>
+                        <span data-i18n="hsrTeach.30"></span>
+                        <br>
+                        <span data-i18n="hsrTeach.31"></span>
+                        <br>
                     </div>
-                </li>
-                <li>
-                    <div class="step" style="font-size: 12px">4</div>
-                    <div class="content">
-                        <p data-i18n="hsrTeach.32"></p>
-                        <div>
-                            <span data-i18n="hsrTeach.33"></span>
-                            <br>
-                            <img src="../images/hsr_img5.png">
-                            <br>
-                            <span data-i18n="hsrTeach.34"></span>
-                            <br>
-                            <img src="../images/hsr_img6.png">
-                            <br>
-                        </div>
+                </div>
+            </li>
+            <li>
+                <div class="step" style="font-size: 12px">4</div>
+                <div class="content">
+                    <p data-i18n="hsrTeach.32"></p>
+                    <div>
+                        <span data-i18n="hsrTeach.33"></span>
+                        <br>
+                        <img src="../images/hsr_img5.png">
+                        <br>
+                        <span data-i18n="hsrTeach.34"></span>
+                        <br>
+                        <img src="../images/hsr_img6.png">
+                        <br>
                     </div>
-                </li>
-                <li>
-                    <div class="step" style="font-size: 12px;">5</div>
-                    <div class="content">
-                        <p data-i18n="hsrTeach.35"></p>
-                        <div>
-                            <span data-i18n="hsrTeach.36"></span> <a href="http://www.91pool.com">www.91pool.com</a>，<span data-i18n="hsrTeach.37"></span><br>
-                        </div>
+                </div>
+            </li>
+            <li>
+                <div class="step" style="font-size: 12px;">5</div>
+                <div class="content">
+                    <p data-i18n="hsrTeach.35"></p>
+                    <div>
+                        <span data-i18n="hsrTeach.36"></span> <a href="http://www.91pool.com">www.91pool.com</a>，<span data-i18n="hsrTeach.37"></span><br>
                     </div>
-                </li>
-                <li>
-                    <div class="step" style="font-size: 12px;">6</div>
-                    <div class="content">
-                        <p data-i18n="hsrTeach.38"></p>
-                        <div>
-                            <span data-i18n="hsrTeach.39"></span>1：hsr1.91pool.com:9009
-                            <br>
-                            <span data-i18n="hsrTeach.39"></span>2：hsr2.91pool.com:9010
-                            <br>
-                            <span data-i18n="hsrTeach.40"></span>
-                        </div>
+                </div>
+            </li>
+            <li>
+                <div class="step" style="font-size: 12px;">6</div>
+                <div class="content">
+                    <p data-i18n="hsrTeach.38"></p>
+                    <div>
+                        <span data-i18n="hsrTeach.39"></span>1：hsr1.91pool.com:9009
+                        <br>
+                        <span data-i18n="hsrTeach.39"></span>2：hsr2.91pool.com:9010
+                        <br>
+                        <span data-i18n="hsrTeach.40"></span>
                     </div>
-                </li>
-            </ul>
-        </div>
+                </div>
+            </li>
+        </ul>
     </div>
+</div>

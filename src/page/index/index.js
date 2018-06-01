@@ -4,18 +4,19 @@
 */
 
 require('./index.css');
-require('page/common/header/index.js');
-require('page/common/footer/index.js');
+require('common/header/index.js');
+require('common/footer/index.js');
 
 var _article = require('util/services/article-services.js');
 var _coin = require('util/services/coin-services.js');
 var _reset = require('util/reset.js');
-var util = require('util/util.js');
+// var util = require('util/util.js');
+var mwx = require('util/wx.js');
 var lang = localStorage.lang;
 var json = require('util/languages/' + lang + '.json');
 var index = {
     init: function () {
-        util.getWxInfo();
+        mwx.getWxInfo();
         this.setwx();
         this.handler();
         this.slider();
@@ -33,8 +34,6 @@ var index = {
             pagination: '.pagination',
             paginationClickable: true
         };
-        var height = $(".sliderImg").height();
-        $(".swiper-container").css("height", height);
         var mySwiper = new Swiper('.swiper-container', param);
     },
     list: function () {
@@ -191,7 +190,6 @@ var index = {
         var _this = this;
         _article.getList({currentPage: 1}, function (data) {
             if (data.code === 200) {
-                $(".notice").show();
                 var menuList = {
                     list: data.data.data.slice(0, 3)
                 };

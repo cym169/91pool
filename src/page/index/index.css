@@ -8,7 +8,6 @@
 .notice {
     width: 100%;
     margin-bottom: 10px;
-    display: none;
 }
 
 .notice .section {
@@ -173,17 +172,17 @@
     text-align: center;
 }
 
-.swiper-pagination-switch {
-    display: inline-block;
-    width: 8px;
-    height: 8px;
-    border-radius: 8px;
-    background: #555;
-    margin: 0 5px;
-    opacity: 0.8;
-    border: 1px solid #fff;
-    cursor: pointer;
-}
+/*.swiper-pagination-bullets .swiper-pagination-bullet {*/
+    /*display: inline-block;*/
+    /*width: 8px;*/
+    /*height: 8px;*/
+    /*border-radius: 8px;*/
+    /*background: #555;*/
+    /*margin: 0 5px;*/
+    /*opacity: 0.8;*/
+    /*border: 1px solid #fff;*/
+    /*cursor: pointer;*/
+/*}*/
 
 .swiper-active-switch {
     background: #fff;
@@ -224,15 +223,11 @@
     .market-type > li {
         margin-right: 15px;
     }
-
     .table-box {
         display: -webkit-box;
         overflow-x: scroll;
         overflow-y: hidden;
         -webkit-overflow-scrolling: touch;
-    }
-    .swiper-container {
-        min-height: 124px;
     }
     .market {
         margin: 30px 0;
@@ -252,28 +247,16 @@
     .section {
         width: 750px;
     }
-
-    .swiper-container {
-        height: 244px;
-    }
 }
 
 @media (min-width: 992px) and (max-width: 1200px) {
     .section {
         width: 970px;
     }
-
-    .swiper-container {
-        height: 244px;
-    }
 }
 
 @media (min-width: 1200px) {
     .section {
         width: 1170px;
-    }
-
-    .swiper-container {
-        height: 350px;
     }
 }

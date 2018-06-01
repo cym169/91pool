@@ -5,7 +5,6 @@
 
 'use strict';
 var jsonp = require('jsonp');
-var type = '';
 require("layui-layer");
 var Hogan = require('hogan.js');
 var util = {
@@ -74,38 +73,20 @@ var util = {
             return arr[a-1]
         }
     },
-    getWxInfo : function () {
-        var url = encodeURIComponent(location.href.split("#")[0]);
-        $.ajax({
-            url: "http://www.91pool.com/api/article/wx/signature/wx4ffd9fbdf1388129?url=" +url,
-            async: true,
-            success: function (data) {
-                wx.config({
-                    debug: false,
-                    appId: data.appId,
-                    timestamp: data.timestamp,
-                    nonceStr: data.nonce,
-                    signature:data.signature,
-                    jsApiList: [
-                        'onMenuShareTimeline',
-                        'onMenuShareAppMessage'
-                    ]
-                });
-            }
-        });
-    },
-    countDown: function (obj,time) {
+    countDown: function (obj,mark,time) {
         var count = time;
+        var name = mark+'count';
         setTime(obj);
 
         function setTime(obj) {
             if (count <= 0) {
-
                 $(obj).attr('disabled',false).attr('mark',0).val("发送验证码").removeClass('has-send').addClass('no-send');
+                localStorage.removeItem(name);
                 count = time;
                 return;
             } else {
                 $(obj).attr('disabled',true).attr('mark',1).val(count+"s").removeClass('no-send').addClass('has-send');
+                localStorage.setItem(name,count);
                 count--;
             }
             setTimeout(function () { setTime(obj) },1000)

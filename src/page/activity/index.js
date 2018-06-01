@@ -5,15 +5,16 @@
 'use strict';
 
 require('./index.css');
-require('page/common/header/index.js');
-require('page/common/footer/index.js');
+require('common/header/index.js');
+require('common/footer/index.js');
 
 var util = require('util/util.js');
+var mwx = require('util/wx.js');
 var _article = require('util/services/article-services.js');
 var _reset = require('util/reset.js');
 var index = {
     init: function () {
-        util.getWxInfo();
+        mwx.getWxInfo();
         this.getArticle();
         this.setwx();
     },

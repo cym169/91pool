@@ -4,10 +4,9 @@
 */
 
 'use strict';
-var jsonp = require('jsonp');
 
 var mwx = {
-    set : function () {
+    getWxInfo : function () {
         var url = encodeURIComponent(location.href.split("#")[0]);
         $.ajax({
             url: "http://www.91pool.com/api/article/wx/signature/wx4ffd9fbdf1388129?url=" +url,

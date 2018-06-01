@@ -4,7 +4,7 @@
 */
 'use strict';
 
-require('page/common/simple/index.js');
+require('common/simple/index.js');
 require('./index.css');
 
 var index = {

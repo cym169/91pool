@@ -1,0 +1,139 @@
+
+.banner {
+    width: 100%;
+    height: 150px;
+    background: url("../../images/search_bg.jpg") center center no-repeat;
+    background-size: cover;
+}
+
+.problem {
+    margin-top: 40px;
+    padding-bottom: 50px;
+}
+
+.support {
+    display: inline-block;
+    width: 100%;
+}
+
+.support li {
+    width: 100%;
+    margin-bottom: 5px;
+    height: 39px;
+    overflow: hidden;
+}
+
+.support li .title {
+    height: 39px;
+    line-height: 39px;
+    border-left: 6px solid #f86601;
+    color: #ff832a;
+    font-size: 13px;
+    background-color: #f3f3f3;
+    text-align: left;
+    padding-left: 10px;
+    cursor: pointer;
+    user-select: none;
+}
+
+.support li .content {
+    text-align: left;
+    padding: 20px 26px;
+    line-height: 26px;
+    font-size: 16px;
+    min-height: 100px;
+    overflow: auto;
+}
+
+.support li .content .such {
+    color: #ababad;
+}
+
+.section {
+    margin-right: auto;
+    margin-left: auto;
+    position: relative;
+    text-align: center;
+}
+
+/*兼容分辨率*/
+
+@media (max-width: 700px) {
+    .search-box {
+        height: 155px !important;
+    }
+
+    .search-box .form {
+        width: 80%;
+        margin: -18px 0 0 -40%;
+    }
+
+    .search-box .form span {
+        top: 7px;
+    }
+
+    .search-box .form input[type='text'], .search-box .form input[type='button'] {
+        -webkit-appearance: none;
+    }
+
+    .search-box .form input[type='text'] {
+        width: calc(100% - 92px);
+        height: 17px;
+        line-height: 17px;
+        padding: 5px 0 5px 30px !important;
+        box-shadow: none;
+    }
+
+    .search-box .form input[type='button'] {
+        height: 29px;
+        line-height: 29px;
+        width: 60px;
+    }
+
+    .coin-title {
+        width: 100%;
+    }
+
+    .coin-title li {
+        width: 19%;
+    }
+
+    .teach-info {
+        width: auto;
+        padding: 40px 10px;
+    }
+
+    .time-line:before {
+        left: 15px;
+    }
+
+    .teach-info li .step {
+        left: 6px;
+    }
+
+    .content {
+        word-wrap: break-word;
+    }
+
+    .content img {
+        width: 100%;
+    }
+}
+
+@media (min-width: 768px) and (max-width: 992px) {
+    .section {
+        width: 750px;
+    }
+}
+
+@media (min-width: 992px) and (max-width: 1200px) {
+    .section {
+        width: 970px;
+    }
+}
+
+@media (min-width: 1200px) {
+    .section {
+        width: 1170px;
+    }
+}

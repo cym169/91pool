@@ -5,9 +5,10 @@
 'use strict';
 
 require('./index.css');
-require('page/common/header/index.js');
-require('page/common/footer/index.js');
+require('common/header/index.js');
+require('common/footer/index.js');
 var util = require('util/util.js');
+var mwx = require('util/wx.js');
 var _reset = require('util/reset.js');
 var _coins = require('util/services/coin-services.js');
 var $ = require('jQuery');
@@ -21,7 +22,7 @@ var xTime = ['now'],
 
 var index = {
     init: function () {
-        util.getWxInfo();
+        mwx.getWxInfo();
         this.setwx();
         this.setBaidu();
         this.default();
@@ -32,10 +33,10 @@ var index = {
         var _this = this;
         $(document).on('click', '#search', function () {
             var val = $.trim($("#address").val());
-            if (val == '') {
-                return false;
+            var continued = util.validate(val,'require');
+            if(continued){
+                window.location.href = './worker.html?coin=' + coin + '&wallet='+ val;
             }
-            window.location.href = './worker.html?coin=' + coin + '&wallet='+ val;
         });
 
         // setInterval(_this.setData, 6000);
@@ -54,14 +55,6 @@ var index = {
             var i = $(this).index();
             $(this).addClass('active').siblings().removeClass('active');
             $('.f-tab').hide().eq(i).show();
-        });
-
-        // 常见问题的风琴效果
-        $(document).on('click', '.support li', function () {
-            var h1 = $(this).children('.title').outerHeight(),
-                h2 = $(this).children('.content').outerHeight(),
-                h = h1 + h2;
-            $(this).stop(true).animate({height: h}, 300).siblings().stop(true).animate({height: h1}, 300);
         });
     },
     setData: function () {
@@ -350,13 +343,7 @@ var index = {
                 title: upper+"矿池介绍",
                 desc: "专注于数字资产增值服务",
                 link: baseUrl,
-                imgUrl: "http://www.91pool.com/images/wx_logo.png",
-                success: function (res) {
-
-                },
-                cancel: function (res) {
-
-                }
+                imgUrl: "http://www.91pool.com/images/wx_logo.png"
             };
             // <% --分享给朋友接口--%>
             wx.onMenuShareAppMessage(shareData);

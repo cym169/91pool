@@ -112,14 +112,16 @@
     padding: 0 10px;
 }
 
-.right-nav > li:last-child {
+.right-nav > li:nth-child(2n) {
     border-right: none;
 }
 
 .right-nav > li > a {
     color: #333;
 }
-
+.right-nav > li > a:hover{
+    color: #ff3606;
+}
 /*兼容分辨率*/
 
 @media (max-width: 700px) {

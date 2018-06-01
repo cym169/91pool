@@ -3,8 +3,7 @@
 <head>
     #include("./layout/head-common.html")
     <title>首页 - 91pool</title>
-    <link rel="stylesheet" href="lib/swiper/swiper.css">
-    <link rel="stylesheet" href="lib/swiper/swiper.3dflow.css">
+    <link rel="stylesheet" href="lib/swiper/swiper.min.css">
 </head>
 <body>
 <!--header部分-->
@@ -29,7 +28,7 @@
         <!--banner图-->
         <div class="swiper-wrapper">
             <div class="swiper-slide" style="text-align: center">
-                <a href="./activity.html?id=45" target="_blank"><img class="sliderImg"
+                <a href="./activity.html?id=45" target="_blank"><img id="sliderImg" class="sliderImg"
                                                                      src="../images/activity/201804231624_banner.jpg"
                                                                      width="100%"></a>
             </div>
@@ -39,7 +38,7 @@
                                                                      width="100%"></a>
             </div>
         </div>
-        <div class="pagination"></div>
+        <div class="swiper-pagination-white pagination"></div>
     </div>
 </div>
 
@@ -92,7 +91,6 @@
 
 </body>
 <script type="text/javascript" src="lib/swiper/swiper.min.js"></script>
-<script type="text/javascript" src="lib/swiper/swiper.3dflow.js"></script>
 <script type="text/javascript" src="lib/arttemplate.js"></script>
 <script>
     var _hmt = _hmt || [];

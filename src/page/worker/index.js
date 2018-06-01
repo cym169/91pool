@@ -5,9 +5,10 @@
 'use strict';
 
 require('./index.css');
-require('page/common/header/index.js');
-require('page/common/footer/index.js');
+require('common/header/index.js');
+require('common/footer/index.js');
 var util = require('util/util.js');
+var mwx = require('util/wx.js');
 var _reset = require('util/reset.js');
 var _coins = require('util/services/coin-services.js');
 var _workers = require('util/services/worker-services.js');
@@ -21,7 +22,7 @@ var xTime = ['now'],
     yData = [0];
 var index = {
     init: function () {
-        util.getWxInfo();
+        mwx.getWxInfo();
         this.setwx();
         this.setData();
         this.handler();

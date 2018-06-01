@@ -5,6 +5,7 @@ var HtmlWebpackPlugin = require('html-webpack-plugin');
 var uglify = require('uglifyjs-webpack-plugin');
 var extractTextPlugin = require("extract-text-webpack-plugin");
 var copyWebpackPlugin= require("copy-webpack-plugin");
+var glob = require('glob');
 
 // 获取html-webpack-plugin参数的方法
 var getHtmlConfig = function(name){
@@ -13,42 +14,46 @@ var getHtmlConfig = function(name){
         filename    : name+'.html',
         inject      : true,
         hash        : true,
-        chunks      : ['common', name]
+        chunks      : ['common', name],
+        title       : name,
         // 压缩HTML代码，生产的时候用
-        // minify      : {
-        //     caseSensitive           : false,
-        //     removeComments          : true,
-        //     removeEmptyAttributes   : true,
-        //     collapseWhitespace      : true
-        // }
+        minify      : {
+            // caseSensitive           : false,
+            // removeComments          : true,
+            // removeEmptyAttributes   : true,
+            // collapseWhitespace      : true
+        }
     };
 };
+
+var entries = {
+    'common'        : './src/common/index.js'
+};
+var chunks = [];
+var htmlWebpackPluginArray = [];
+glob.sync('./src/page/**/index.js').forEach(function (myPath) {
+    var chunk = myPath.split('./src/page/')[1].split('/index.js')[0];
+    entries[chunk] = myPath;
+    chunks.push(chunk);
+    htmlWebpackPluginArray.push(new HtmlWebpackPlugin(getHtmlConfig(chunk)))
+});
+console.log(htmlWebpackPluginArray)
 var config = {
     // devtool: 'eval-source-map',
     //入口文件的配置项 单页面为一项，多页面又多少个页面就有多少项
     //common为公用类。
-    entry:{
-        'common'        : ['./src/page/common/index.js'],
-        'index'         : ['./src/page/index/index.js'],
-        'login'         : ['./src/page/login/index.js'],
-        'register'      : ['./src/page/register/index.js'],
-        'currency'      : ['./src/page/currency/index.js'],
-        'worker'        : ['./src/page/worker/index.js'],
-        'notice'        : ['./src/page/notice/index.js'],
-        'about'         : ['./src/page/about/index.js'],
-        'order'         : ['./src/page/order/index.js'],
-        'activity'      : ['./src/page/activity/index.js']
-    },
+    entry: entries,
     //出口文件的配置项
     output:{
         //打包的路径
         path : path.resolve(__dirname, './91pool'),
         filename : 'js/[name].js',
-        publicPath: process.env.type== "build" ? '/':"http://localhost:1717/"
+        publicPath: process.env.type== "build" ? '/':"http://172.16.2.68:1717/"
     },
     resolve: {
         // 配置路径，为js require文件提供快捷路径
         alias: {
+            'common' : path.resolve('./src/common'),
             'page' : path.resolve('./src/page'),
             'images' : path.resolve('./src/images'),
             'util' : path.resolve('./src/util'),
@@ -66,9 +71,8 @@ var config = {
                     use: [{
                         loader: 'css-loader',
                         options: {
-                            // url: true,
-                            // 压缩CSS代码，生产时候换为true
-                            minimize: false
+                            // 压缩CSS代码，生产时候打开
+                            // minimize: true
                         }
                     }]
                 })
@@ -165,17 +169,14 @@ var config = {
         //设置基本目录结构
         contentBase:path.resolve(__dirname,'91pool'),
         //服务器的IP地址，可以使用IP也可以使用localhost
-        host:'localhost',
+        host:'172.16.2.68',
         //服务端压缩是否开启
         compress:true,
         //配置服务端口号
         port:1717
     }
 };
+
+config.plugins = [...config.plugins, ...htmlWebpackPluginArray]
 module.exports = config;
 
-for(var key in config.entry){
-    if(key != "common"){
-        module.exports.plugins.push(new HtmlWebpackPlugin(getHtmlConfig(key)));
-    }
-}

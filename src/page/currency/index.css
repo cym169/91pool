@@ -131,6 +131,7 @@
     overflow: hidden;
     position: relative;
     min-height: 500px;
+    margin-top: 1px;
 }
 
 .loading {
@@ -640,50 +641,6 @@
 
 .f-tab table tbody tr:last-child td {
     border-bottom: none;
-}
-
-/*常见问题*/
-
-.problem {
-    padding-bottom: 50px;
-}
-
-.support {
-    display: inline-block;
-    width: 100%;
-}
-
-.support li {
-    width: 100%;
-    margin-bottom: 5px;
-    height: 39px;
-    overflow: hidden;
-}
-
-.support li .title {
-    height: 39px;
-    line-height: 39px;
-    border-left: 6px solid #f86601;
-    color: #ff832a;
-    font-size: 13px;
-    background-color: #f3f3f3;
-    text-align: left;
-    padding-left: 10px;
-    cursor: pointer;
-    user-select: none;
-}
-
-.support li .content {
-    text-align: left;
-    padding: 20px 26px;
-    line-height: 26px;
-    font-size: 16px;
-    min-height: 100px;
-    overflow: auto;
-}
-
-.support li .content .such {
-    color: #ababad;
 }
 
 /*兼容分辨率*/

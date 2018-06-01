@@ -4,13 +4,14 @@
 */
 'use strict';
 
-require('page/common/simple/index.js');
+require('common/simple/index.js');
 require('./index.css');
 
 var util = require('util/util.js');
 var sendFlag = true;
 var index = {
     init: function () {
+        this.setLoginTime();
         this.handler();
     },
     handler: function () {
@@ -24,15 +25,28 @@ var index = {
 
         $("#sendCode").click(function () {
             var mark = $(this).attr('mark');
-            var phone = $("#phone").val();
+            var phone = $.trim($("#phone").val());
+            var require = util.validate(phone,'require');
+            var validate = util.validate(phone,'phone');
+            if(!require){
+                util.errorTips("请输入手机号！");
+                return false;
+            }
+            if(!validate){
+                util.errorTips("请输入正确的手机号！");
+                return false;
+            }
             if(mark == 0){
-                if(!phone){
-
-                }
-                util.countDown('#sendCode',30);
+                util.countDown('#sendCode','login',60);
             }
         })
 
+    },
+    setLoginTime: function () {
+        var count = localStorage.getItem('logincount');
+        if(count > 0){
+            util.countDown('#sendCode','login',count);
+        }
     }
 };
 

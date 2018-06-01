@@ -5,13 +5,12 @@
 'use strict';
 
 require('./index.css');
-require('page/common/header/index.js');
-require('page/common/footer/index.js');
+require('common/header/index.js');
+require('common/footer/index.js');
 
-var util = require('util/util.js');
-
+var mwx = require('util/wx.js');
 $(function () {
-    util.getWxInfo();
+    mwx.getWxInfo();
     var baseUrl = location.href.split("#")[0];
     wx.ready(function () {
         // <% --公共方法--%>
