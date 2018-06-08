@@ -5,13 +5,6 @@
     position: relative;
 }
 
-.banner {
-    width: 100%;
-    height: 150px;
-    background: url("../../images/search_bg.jpg") center center no-repeat;
-    background-size: cover;
-}
-
 .notice-title {
     display: inline-block;
     width: 100%;

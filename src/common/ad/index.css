@@ -1,0 +1,7 @@
+
+.advertisement {
+    width: 100%;
+    height: 150px;
+    background: url("../../images/search_bg.jpg") center center no-repeat;
+    background-size: cover;
+}

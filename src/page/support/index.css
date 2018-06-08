@@ -1,11 +1,4 @@
 
-.banner {
-    width: 100%;
-    height: 150px;
-    background: url("../../images/search_bg.jpg") center center no-repeat;
-    background-size: cover;
-}
-
 .problem {
     margin-top: 40px;
     padding-bottom: 50px;
@@ -21,6 +14,7 @@
     margin-bottom: 5px;
     height: 39px;
     overflow: hidden;
+    transition: all .3s;
 }
 
 .support li .title {

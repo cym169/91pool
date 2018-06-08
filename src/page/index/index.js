@@ -16,7 +16,7 @@ var lang = localStorage.lang;
 var json = require('util/languages/' + lang + '.json');
 var index = {
     init: function () {
-        mwx.getWxInfo();
+
         this.setwx();
         this.handler();
         this.slider();
@@ -25,7 +25,7 @@ var index = {
     },
     handler: function () {
         var _this = this;
-        setInterval(_this.refresh, 6000);
+        setInterval(_this.refresh, 300000);
     },
     slider: function () {
         var param = {
@@ -51,7 +51,6 @@ var index = {
             };
             var html = template('coinList-tp', coinList);
             $("#coinList").html(html);
-
 
             _coin.getPrice('etc', function (err, data) {
                 if (data.data)
@@ -86,6 +85,25 @@ var index = {
                 }
                 $(".hsrprice").html(p);
             });
+
+            // ETF
+            // $.get("/currencies/ethereumfog",function (data) {
+            //     var text = $(data).find('.coinprice').html();
+            //     $(".etfprice").html(text);
+            // });
+            //
+            // // ETC
+            // $.get("/currencies/ethereum-classic",function (data) {
+            //     var text = $(data).find('.coinprice').html();
+            //     $(".etcprice").html(text);
+            // });
+            //
+            // // HSR
+            // $.get("/currencies/hshare",function (data) {
+            //     var text = $(data).find('.coinprice').html();
+            //     $(".hsrprice").html(text);
+            // });
+
             _coin.getLCH(function (data) {
                 if (data.data){
                     var LCHprice = data.data.data[0].price;
@@ -111,39 +129,57 @@ var index = {
                 $(".profit" + i).html(t.profit);
             });
         });
+        // // ETF
+        // $.get("/currencies/ethereumfog",function (data) {
+        //     var text = $(data).find('.coinprice').html();
+        //     $(".etfprice").html(text);
+        // });
+        //
+        // // ETC
+        // $.get("/currencies/ethereum-classic",function (data) {
+        //     var text = $(data).find('.coinprice').html();
+        //     $(".etcprice").html(text);
+        // });
+        //
+        // // HSR
+        // $.get("/currencies/hshare",function (data) {
+        //     var text = $(data).find('.coinprice').html();
+        //     $(".hsrprice").html(text);
+        // });
         _coin.getPrice('etc', function (err, data) {
             if (data.data)
                 var p = "";
-                if( parseInt(data.data[0].rose) < 0 ){
-                    p = '￥' + data.data[0].priceCny + '(<span class="down">' + data.data[0].rose + '</span>)'
-                }
-                else{
-                    p = '￥' + data.data[0].priceCny + '(<span class="up">' + data.data[0].rose + '</span>)'
-                }
-                $(".etcprice").html(p);
+            if( parseInt(data.data[0].rose) < 0 ){
+                p = '￥' + data.data[0].priceCny + '(<span class="down">' + data.data[0].rose + '</span>)'
+            }
+            else{
+                p = '￥' + data.data[0].priceCny + '(<span class="up">' + data.data[0].rose + '</span>)'
+            }
+            $(".etcprice").html(p);
         });
         _coin.getPrice('etf', function (err, data) {
             if (data.data)
                 var p = "";
-                if( parseInt(data.data[0].rose) < 0 ){
-                    p = '￥' + data.data[0].priceCny + '(<span class="down">' + data.data[0].rose + '</span>)'
-                }
-                else{
-                    p = '￥' + data.data[0].priceCny + '(<span class="up">' + data.data[0].rose + '</span>)'
-                }
-                $(".etfprice").html(p);
+            if( parseInt(data.data[0].rose) < 0 ){
+                p = '￥' + data.data[0].priceCny + '(<span class="down">' + data.data[0].rose + '</span>)'
+            }
+            else{
+                p = '￥' + data.data[0].priceCny + '(<span class="up">' + data.data[0].rose + '</span>)'
+            }
+            $(".etfprice").html(p);
         });
         _coin.getPrice('hsr', function (err, data) {
             if (data.data)
                 var p = "";
-                if( parseInt(data.data[0].rose) < 0 ){
-                    p = '￥' + data.data[0].priceCny + '(<span class="down">' + data.data[0].rose + '</span>)'
-                }
-                else{
-                    p = '￥' + data.data[0].priceCny + '(<span class="up">' + data.data[0].rose + '</span>)'
-                }
-                $(".hsrprice").html(p);
+            if( parseInt(data.data[0].rose) < 0 ){
+                p = '￥' + data.data[0].priceCny + '(<span class="down">' + data.data[0].rose + '</span>)'
+            }
+            else{
+                p = '￥' + data.data[0].priceCny + '(<span class="up">' + data.data[0].rose + '</span>)'
+            }
+            $(".hsrprice").html(p);
         });
+
         _coin.getLCH(function (data) {
             if (data.data){
                 var LCHprice = data.data.data[0].price;
@@ -158,33 +194,10 @@ var index = {
                 $(".lchprice").html(p);
             }
         });
-
     },
     setwx: function () {
         var baseUrl = location.href.split("#")[0];
-        wx.ready(function () {
-            // <% --公共方法--%>
-            var shareData = {
-                title: "91pool，值得信赖的矿池服务商",
-                desc: "专注于数字资产增值服务",
-                link: baseUrl,
-                imgUrl: "http://www.91pool.com/images/wx_logo.png",
-                success: function (res) {
-
-                },
-                cancel: function (res) {
-
-                }
-            };
-            // <% --分享给朋友接口--%>
-            wx.onMenuShareAppMessage(shareData);
-            // <% --分享到朋友圈接口--%>
-            wx.onMenuShareTimeline(shareData);
-        });
-        //   <% --处理失败验证--%>
-        wx.error(function (res) {
-
-        });
+        mwx.setWxInfo("91pool，值得信赖的矿池服务商","专注于数字资产增值服务",baseUrl);
     },
     scroll: function () {
         var _this = this;

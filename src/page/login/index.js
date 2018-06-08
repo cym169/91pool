@@ -11,17 +11,18 @@ var util = require('util/util.js');
 var sendFlag = true;
 var index = {
     init: function () {
+        util.isMobile();
         this.setLoginTime();
         this.handler();
     },
     handler: function () {
         var _this = this;
         // 点击登录方式，切换不同的登录
-        $('.login-type').on('click', 'li', function () {
-            var i = $(this).index();
-            $(this).addClass('active').siblings().removeClass('active');
-            $(".login-form").hide().eq(i).show();
-        });
+        // $('.login-type').on('click', 'li', function () {
+        //     var i = $(this).index();
+        //     $(this).addClass('active').siblings().removeClass('active');
+        //     $(".login-form").hide().eq(i).show();
+        // });
 
         $("#sendCode").click(function () {
             var mark = $(this).attr('mark');

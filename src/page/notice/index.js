@@ -7,7 +7,7 @@
 require('./index.css');
 require('common/header/index.js');
 require('common/footer/index.js');
-
+require('common/ad/index.js');
 var util = require('util/util.js');
 var mwx = require('util/wx.js');
 var _article = require('util/services/article-services.js');
@@ -19,7 +19,6 @@ var page = {
 };
 var index = {
     init: function () {
-        mwx.getWxInfo();
         this.setwx();
         this.defaultMenu();
         this.handler();
@@ -49,29 +48,7 @@ var index = {
     },
     setwx: function () {
         var baseUrl = location.href.split("#")[0];
-        wx.ready(function () {
-            // <% --公共方法--%>
-            var shareData = {
-                title: "91pool最近动向，尽在掌握",
-                desc: "专注于数字资产增值服务",
-                link: baseUrl,
-                imgUrl: "http://www.91pool.com/images/wx_logo.png",
-                success: function (res) {
-
-                },
-                cancel: function (res) {
-
-                }
-            };
-            // <% --分享给朋友接口--%>
-            wx.onMenuShareAppMessage(shareData);
-            // <% --分享到朋友圈接口--%>
-            wx.onMenuShareTimeline(shareData);
-        });
-        //   <% --处理失败验证--%>
-        wx.error(function (res) {
-
-        });
+        mwx.setWxInfo("91pool最近动向，尽在掌握","专注于数字资产增值服务",baseUrl);
     }
 };
 

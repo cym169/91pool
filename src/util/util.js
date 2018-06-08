@@ -8,6 +8,15 @@ var jsonp = require('jsonp');
 require("layui-layer");
 var Hogan = require('hogan.js');
 var util = {
+
+    // 判断是否为移动端设备
+    isMobile : function () {
+        var width = $(window).width();
+        if(width <= 700){
+            window.location.href = "./downloadApp.html";
+            return
+        }
+    },
     // 网络请求
     request : function(param){
         $.ajax({

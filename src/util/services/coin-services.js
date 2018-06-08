@@ -62,29 +62,3 @@ var _coins = {
     }
 };
 module.exports = _coins;
-
-// {
-//     "code":200,
-//     "msg":"成功",
-//     "data":[
-//         {
-//             "id":"ethereum-classic",
-//             "name":null,
-//             "ranking":17,
-//             "fullName":"ETC-以太经典",
-//             "marketValueCny":"11737229945",
-//             "marketValueUsd":"1867231711",
-//             "marketValueBtc":"223399",
-//             "priceCny":"116",
-//             "priceUsd":"18.44",
-//             "priceBtc":"0.002206",
-//             "liquidity":"10,127万",
-//             "turnoverCny":"1326548156.18233",
-//             "turnoverUsd":"211035550.552492",
-//             "turnoverBtc":"25235.3055984628",
-//             "rose":"3.68%","updateTime":1524217238917
-//         }
-//             ],
-//     "dateTime":1524217254772,
-//     "success":true
-// }

@@ -10,6 +10,7 @@ require('./index.css');
 var index = {
     chooseFlag : true,
     init: function () {
+        util.isMobile();
         this.sliderBar();
         this.handler();
     },

@@ -17,7 +17,7 @@ html, body {
     position: absolute;
     left: 50%;
     top: 50%;
-    margin: -277px 0 0 -200px;
+    margin: -174px 0 0 -200px;
 }
 
 .logo {
@@ -75,7 +75,7 @@ html, body {
     position: relative;
 }
 .login-form{
-    display: none;
+    /*display: none;*/
 }
 .login-form.active{
     display: block;

@@ -19,10 +19,26 @@ var json = require('util/languages/' + lang + '.json');
 var teach = require('teach/' + coin + '_teach.string');
 var xTime = ['now'],
     yData = [0];
-
+var coinType = "";
+switch (coin) {
+    case 'etc':
+        coinType = "ethereum-classic";
+        break;
+    case 'etf':
+        coinType = "ethereumfog";
+        break;
+    case 'hsr':
+        coinType = "hshare";
+        break;
+    case 'btm':
+        coinType = "bytom";
+        break;
+    case 'xdag':
+        coinType = "dagger";
+        break;
+}
 var index = {
     init: function () {
-        mwx.getWxInfo();
         this.setwx();
         this.setBaidu();
         this.default();
@@ -262,6 +278,11 @@ var index = {
         }, function (error) {
         });
 
+        // $.get("/currencies/"+coinType,function (data) {
+        //     var text = $(data).find('.coinprice').html();
+        //     $(".etcprice").html(text);
+        // });
+
         _coins.getPrice(coin, function (error, data) {
             if (data.data)
                 $("#price").html('￥' + data.data[0].priceCny + '(' + data.data[0].rose + ')');
@@ -337,23 +358,7 @@ var index = {
     },
     setwx : function () {
         var baseUrl = location.href.split("#")[0];
-        wx.ready(function () {
-            // <% --公共方法--%>
-            var shareData = {
-                title: upper+"矿池介绍",
-                desc: "专注于数字资产增值服务",
-                link: baseUrl,
-                imgUrl: "http://www.91pool.com/images/wx_logo.png"
-            };
-            // <% --分享给朋友接口--%>
-            wx.onMenuShareAppMessage(shareData);
-            // <% --分享到朋友圈接口--%>
-            wx.onMenuShareTimeline(shareData);
-        });
-        //   <% --处理失败验证--%>
-        wx.error(function (res) {
-
-        });
+        mwx.setWxInfo(upper+"矿池介绍","专注于数字资产增值服务",baseUrl);
     }
 };
 $(function () {
