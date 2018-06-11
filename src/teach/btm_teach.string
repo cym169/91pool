@@ -48,6 +48,8 @@
                         <span data-i18n="btmTeach.16"></span>stratum+tcp://btm.91pool.com:9221 <span data-i18n="btmTeach.17"></span>
                         <br>
                         <img src="../images/btm_img1.png">
+                        <br>
+                        <span class="red" data-i18n="btmTeach.24"></span>
                     </div>
                 </div>
             </li>
@@ -58,6 +60,16 @@
                     <div>
                         <span data-i18n="btmTeach.19"></span> <a href="www.91pool.com" target="_blank">www.91pool.com</a>,<span data-i18n="btmTeach.20"></span>
                     </div>
+                </div>
+            </li>
+            <li>
+                <div class="step">5</div>
+                <div class="content">
+                     <p data-i18n="btmTeach.21"></p>
+                     <div>
+                          <span data-i18n="btmTeach.22"></span>1：stratum+tcp://btm.91pool.com:9221
+                          <br>
+                     </div>
                 </div>
             </li>
         </ul>

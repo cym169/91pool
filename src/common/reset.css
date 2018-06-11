@@ -21,6 +21,8 @@ time, mark, audio, video {
 
 body {
     font-family: Arial,"Microsoft YaHei";
+    -webkit-overflow-scrolling: touch;
+    overflow-scrolling: touch;
 }
 
 /*:focus {*/

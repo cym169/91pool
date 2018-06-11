@@ -53,6 +53,14 @@ var index = {
             $(this).addClass('active').siblings().removeClass('active');
             $('.f-tab').hide().eq(i).show();
         });
+
+        $('.teach').on('click', 'img', function () {
+            var wh = $(window).width();
+            if(wh > 700){
+                return
+            }
+            
+        })
     },
     setData: function () {
         _coins.getBlocks(coin, function (data) {
@@ -185,7 +193,9 @@ var index = {
         _coins.getCoins(coin, function (data) {
             $("#workers").html(data.minersTotal);
             $("#pool_hash").html(_reset.formatHashrate(data.hashrate));
-            $("#net_diff").html(_reset.changeDiff(data.nodes[0].difficulty));
+            if(data.nodes != null){
+                $("#net_diff").html(_reset.changeDiff(data.nodes[0].difficulty));
+            }
             $("#last-one").html(_reset.getDateDiff(data.stats.lastBlockFound));
             $("#blocks").html(data.maturedTotal);
 

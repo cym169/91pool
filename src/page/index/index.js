@@ -27,7 +27,7 @@ var index = {
         var _this = this;
         setInterval(function(){
             _this.refresh();
-        }, 15000);
+        }, 30000);
     },
     slider: function () {
         var param = {

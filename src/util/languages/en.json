@@ -47,6 +47,30 @@
         "full": "full",
         "cooperation": "Cooperation"
       },
+      "support":{
+        "1": "How to see how many times I pay and how much I have paid?",
+        "1An": "You can query historical payment data on the block chain browser.",
+        "2": "Why does the hashrate show instability? Isn't it correct?",
+        "2An": "Because hashrate shown in the pool is calculated according to the shared value submitted by the machine, hashrate of the pool has fluctuation of about 10%-25% of the upper and lower parts. You can rest assured on it. You can contact us at any time if you have any questions.",
+        "3": "When does the payment start? When will the profit be issued?",
+        "3An": "The payment starts at 12:00 every day. Generally, it will be paid before 18:00(Pay the earnings of the previous day).",
+        "4": "Why do my three miners only show one?",
+        "4An": "You can see if the name of the machine is the same, and the miner's name can not be one.",
+        "5": "What is the rate of the pool?",
+        "5An": "ETC, ETF and BTM's pool rate is 1%,HSR and LCH are free at present.",
+        "6": "How do the miners write?",
+        "6An": "You can set it at random, usually within 15 characters or letters.",
+        "7": "What is the Paid in the 91Pool miner page?",
+        "7An": "It is the amount of money dug yesterday",
+        "8": "What is the immature profit?",
+        "8An": "The immature profit is the contribution of your contribution share to the percentage of the allocated block, waiting for the full net confirmation number to be transferred to the unpaid proceeds.",
+        "9": "How to change the double node？",
+        "9An": "Download the group file epools, then add it and change the wallet address to your own.",
+        "10": "Can graphics card mine?",
+        "10An": "You can get more information about this through our QQ group.",
+        "11": "What else do I have to do with other questions?",
+        "11An": "You can contact our customer service staff through our QQ group. They will answer your questions."
+      },
       "currency": {
         "home": " Home",
         "miningTutorial": "Tutorial",
@@ -82,27 +106,7 @@
         "findTime": "Find Time",
         "difficulty": "Difficulty",
         "profit": "Profit",
-        "comingSoon": "Coming Soon!",
-        "faqOne": "How to see how many times I pay and how much I have paid?",
-        "faqOneAn": "You can query historical payment data on the block chain browser.",
-        "faqTwo": "Why does the hashrate show instability? Isn't it correct?",
-        "faqTwoAn": "Because hashrate shown in the pool is calculated according to the shared value submitted by the machine, hashrate of the pool has fluctuation of about 10%-25% of the upper and lower parts. You can rest assured on it. You can contact us at any time if you have any questions.",
-        "faqThree": "When does the payment start? When will the profit be issued?",
-        "faqThreeAn": "The payment starts at 12:00 every day. Generally, it will be paid before 18:00(Pay the earnings of the previous day).",
-        "faqFour": "Why do my three miners only show one?",
-        "faqFourAn": "You can see if the name of the machine is the same, and the miner's name can not be one.",
-        "faqFive": "What is the rate of the pool?",
-        "faqFiveAn": "ETC, ETF and BTM's pool rate is 1%,HSR and LCH are free at present.",
-        "faqSix": "How do the miners write?",
-        "faqSixAn": "You can set it at random, usually within 15 characters or letters.",
-        "faqSeven": "What is the Paid in the 91Pool miner page?",
-        "faqSevenAn": "It is the amount of money dug yesterday",
-        "faqEight": "What is the immature profit?",
-        "faqEightAn": "The immature profit is the contribution of your contribution share to the percentage of the allocated block, waiting for the full net confirmation number to be transferred to the unpaid proceeds.",
-        "faqNine": "How to change the double node？",
-        "faqNineAn": "Download the group file epools, then add it and change the wallet address to your own.",
-        "faqTen": "What else do I have to do with other questions?",
-        "faqTenAn": "You can contact our customer service staff through our QQ group. They will answer your questions."
+        "comingSoon": "Coming Soon!"
       },
       "worker":{
         "immatureProfit": "Immature Profit",
@@ -321,7 +325,11 @@
         "17": "Users need to configure in the format of 'wallet address. miner number'",
         "18": "View earnings",
         "19": "enter",
-        "20": "Click BTM to enter the BTM Mine Pool main page, enter your wallet address, and click Search."
+        "20": "Click BTM to enter the BTM Mine Pool main page, enter your wallet address, and click Search.",
+        "21": "Mine pool node configuration",
+        "22": "node",
+        "23": "Please spare friends must set up a standby node.",
+        "24": "Since each exchange will disable the ERC20 wallet address (beginning with 0x), the 91pool pool will only support the main network address (beginning with bm) for the sake of user's earnings security, so the miners should note that the miner address starts with bm."
       }
     }
   }

@@ -34,7 +34,9 @@
     letter-spacing: 1px;
     overflow: hidden;
 }
-
+.activity-content a{
+    color: #57bcda;
+}
 @media (max-width: 700px) {
     .activity {
         padding: 50px 20px;
