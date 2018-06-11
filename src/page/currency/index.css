@@ -716,7 +716,7 @@
         font-size: 20px;
     }
     .feature li{
-        width: 46%!important;
+        width: 45%!important;
         margin-right: 2%;
     }
     .feature li:nth-child(2n){
@@ -726,17 +726,29 @@
     .feature li .number{
         width: 70px;
     }
+    .feature li .feature-box{
+        width: 102%;
+        position: relative;
+    }
     .feature li:nth-child(2n) .feature-box{
         border-right: none;
+    }
+    .feature li .text{
+        width: calc(100% - 70px);
+        position: absolute;
+        top: 11px;
+    }
+    .feature li .text p{
+        width: 100%;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        white-space: nowrap;
     }
     .feature li .text p:nth-child(1){
         font-size: 13px;
     }
     .feature li .text p:nth-child(2){
         font-size: 15px;
-    }
-    .feature li .feature-box{
-        width: 102%;
     }
     .feature li:nth-last-child(1), .feature li:nth-last-child(2), .feature li:nth-last-child(3), .feature li:nth-last-child(4){
         border-bottom: 1px solid #ccc;

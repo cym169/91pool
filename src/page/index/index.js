@@ -25,7 +25,9 @@ var index = {
     },
     handler: function () {
         var _this = this;
-        setInterval(_this.refresh, 300000);
+        setInterval(function(){
+            _this.refresh();
+        }, 15000);
     },
     slider: function () {
         var param = {
@@ -37,6 +39,7 @@ var index = {
         var mySwiper = new Swiper('.swiper-container', param);
     },
     list: function () {
+        var _this = this;
         _coin.getCoinList(function (data) {
             $.each(data, function (i, t) {
                 var imgUrl = require('images/' + t.coin + '_icon.png');
@@ -51,76 +54,11 @@ var index = {
             };
             var html = template('coinList-tp', coinList);
             $("#coinList").html(html);
-
-            _coin.getPrice('etc', function (err, data) {
-                if (data.data)
-                    var p = "";
-                if( parseInt(data.data[0].rose) < 0 ){
-                    p = '￥' + data.data[0].priceCny + '(<span class="down">' + data.data[0].rose + '</span>)'
-                }
-                else{
-                    p = '￥' + data.data[0].priceCny + '(<span class="up">' + data.data[0].rose + '</span>)'
-                }
-                $(".etcprice").html(p);
-            });
-            _coin.getPrice('etf', function (err, data) {
-                if (data.data)
-                    var p = "";
-                if( parseInt(data.data[0].rose) < 0 ){
-                    p = '￥' + data.data[0].priceCny + '(<span class="down">' + data.data[0].rose + '</span>)'
-                }
-                else{
-                    p = '￥' + data.data[0].priceCny + '(<span class="up">' + data.data[0].rose + '</span>)'
-                }
-                $(".etfprice").html(p);
-            });
-            _coin.getPrice('hsr', function (err, data) {
-                if (data.data)
-                    var p = "";
-                if( parseInt(data.data[0].rose) < 0 ){
-                    p = '￥' + data.data[0].priceCny + '(<span class="down">' + data.data[0].rose + '</span>)'
-                }
-                else{
-                    p = '￥' + data.data[0].priceCny + '(<span class="up">' + data.data[0].rose + '</span>)'
-                }
-                $(".hsrprice").html(p);
-            });
-
-            // ETF
-            // $.get("/currencies/ethereumfog",function (data) {
-            //     var text = $(data).find('.coinprice').html();
-            //     $(".etfprice").html(text);
-            // });
-            //
-            // // ETC
-            // $.get("/currencies/ethereum-classic",function (data) {
-            //     var text = $(data).find('.coinprice').html();
-            //     $(".etcprice").html(text);
-            // });
-            //
-            // // HSR
-            // $.get("/currencies/hshare",function (data) {
-            //     var text = $(data).find('.coinprice').html();
-            //     $(".hsrprice").html(text);
-            // });
-
-            _coin.getLCH(function (data) {
-                if (data.data){
-                    var LCHprice = data.data.data[0].price;
-                    LCHprice = LCHprice.toFixed(4);
-                    var p = "";
-                    if( data.data.data[0].change1d < 0 ){
-                        p = '￥' + LCHprice + '(<span class="down">' + data.data.data[0].change1d + '%</span>)'
-                    }
-                    else{
-                        p = '￥' + LCHprice + '(<span class="up">' + data.data.data[0].change1d + '%</span>)'
-                    }
-                    $(".lchprice").html(p);
-                }
-            });
+            _this.getAllPrice();
         });
     },
     refresh: function () {
+        var _this = this;
         _coin.getCoinList(function (data) {
             $.each(data, function (i, t) {
                 $(".hashrate" + i).html(_reset.formatHashrate(t.hashrate));
@@ -129,23 +67,9 @@ var index = {
                 $(".profit" + i).html(t.profit);
             });
         });
-        // // ETF
-        // $.get("/currencies/ethereumfog",function (data) {
-        //     var text = $(data).find('.coinprice').html();
-        //     $(".etfprice").html(text);
-        // });
-        //
-        // // ETC
-        // $.get("/currencies/ethereum-classic",function (data) {
-        //     var text = $(data).find('.coinprice').html();
-        //     $(".etcprice").html(text);
-        // });
-        //
-        // // HSR
-        // $.get("/currencies/hshare",function (data) {
-        //     var text = $(data).find('.coinprice').html();
-        //     $(".hsrprice").html(text);
-        // });
+        _this.getAllPrice();
+    },
+    getAllPrice: function () {
         _coin.getPrice('etc', function (err, data) {
             if (data.data)
                 var p = "";
@@ -157,6 +81,7 @@ var index = {
             }
             $(".etcprice").html(p);
         });
+
         _coin.getPrice('etf', function (err, data) {
             if (data.data)
                 var p = "";
@@ -168,6 +93,7 @@ var index = {
             }
             $(".etfprice").html(p);
         });
+
         _coin.getPrice('hsr', function (err, data) {
             if (data.data)
                 var p = "";
@@ -180,19 +106,16 @@ var index = {
             $(".hsrprice").html(p);
         });
 
-        _coin.getLCH(function (data) {
-            if (data.data){
-                var LCHprice = data.data.data[0].price;
-                LCHprice = LCHprice.toFixed(4);
+        _coin.getPrice('btm', function (err, data) {
+            if (data.data)
                 var p = "";
-                if( data.data.data[0].change1d < 0 ){
-                    p = '￥' + LCHprice + '(<span class="down">' + data.data.data[0].change1d + '%</span>)'
-                }
-                else{
-                    p = '￥' + LCHprice + '(<span class="up">' + data.data.data[0].change1d + '%</span>)'
-                }
-                $(".lchprice").html(p);
+            if( parseInt(data.data[0].rose) < 0 ){
+                p = '￥' + data.data[0].priceCny + '(<span class="down">' + data.data[0].rose + '</span>)'
             }
+            else{
+                p = '￥' + data.data[0].priceCny + '(<span class="up">' + data.data[0].rose + '</span>)'
+            }
+            $(".btmprice").html(p);
         });
     },
     setwx: function () {

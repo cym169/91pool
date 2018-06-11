@@ -19,24 +19,7 @@ var json = require('util/languages/' + lang + '.json');
 var teach = require('teach/' + coin + '_teach.string');
 var xTime = ['now'],
     yData = [0];
-var coinType = "";
-switch (coin) {
-    case 'etc':
-        coinType = "ethereum-classic";
-        break;
-    case 'etf':
-        coinType = "ethereumfog";
-        break;
-    case 'hsr':
-        coinType = "hshare";
-        break;
-    case 'btm':
-        coinType = "bytom";
-        break;
-    case 'xdag':
-        coinType = "dagger";
-        break;
-}
+
 var index = {
     init: function () {
         this.setwx();
@@ -55,8 +38,6 @@ var index = {
             }
         });
 
-        // setInterval(_this.setData, 6000);
-
         // 币种导航
         $('.coin-title').on('click', 'li', function () {
             var i = $(this).index();
@@ -74,9 +55,6 @@ var index = {
         });
     },
     setData: function () {
-        if(coin == 'btm'){
-            return
-        }
         _coins.getBlocks(coin, function (data) {
 
             if (data.luck == null) {
@@ -122,10 +100,8 @@ var index = {
                             t.myUrl = "http://explorer.litecoincash.tech/block/";
                             t.reward = (t.mint).toFixed(6);
                             break;
-                        case 'btg':
-                            t.reward = (t.reward).toFixed(6);
-                            break;
-                        default:
+                        case 'btm':
+                            t.myUrl = "#";
                             t.reward = (t.reward).toFixed(6);
                             break;
                     }
@@ -159,11 +135,9 @@ var index = {
                             t.myUrl = "http://explorer.litecoincash.tech/block/";
                             t.reward = (t.mint).toFixed(6);
                             break;
-                        case 'btg':
-                            t.reward = (t.reward).toFixed(6);
-                            break;
-                        default:
-                            t.reward = (t.reward).toFixed(6);
+                        case 'btm':
+                            t.myUrl = "#";
+                            t.reward = (t.mint).toFixed(6);
                             break;
                     }
                     t.timestamp = _reset.formatDateLocale(t.timestamp);
@@ -193,6 +167,9 @@ var index = {
                             break;
                         case 'lch':
                             t.myUrl = "http://explorer.litecoincash.tech/block/";
+                            break;
+                        case 'btm':
+                            t.myUrl = "#";
                             break;
                     }
                 });
@@ -292,9 +269,6 @@ var index = {
     default: function () {
         var teachHtml = util.renderHtml(teach);
         $(".teach").html(teachHtml);
-        if(coin == 'btm'){
-            return
-        }
         var imgUrl = require('images/' + coin + '.png');
         var imgTempl = '<img src="' + imgUrl + '" />';
         $('.coin-logo').html(imgTempl);
@@ -325,9 +299,9 @@ var index = {
                 reward = "25LCH";
                 break;
             case 'btm':
-                mPrice = "100BTM";
-                payment = "0%";
-                reward = "420.5BTM";
+                mPrice = "1BTM";
+                payment = "1%";
+                reward = "412.5BTM";
                 break;
             case 'xdag':
                 mPrice = "100XDAG";

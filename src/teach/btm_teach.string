@@ -39,13 +39,15 @@
             <li>
                 <div class="step">3</div>
                 <div class="content">
-                    <p data-i18n="btmTeach.13">矿机配置</p>
+                    <p data-i18n="btmTeach.13"></p>
                     <div>
                         <span data-i18n="btmTeach.14"></span>
                         <br>
                         <span data-i18n="btmTeach.15"></span>
                         <br>
-                        <span data-i18n="btmTeach.16"></span>stratum+tcp://btm1.91pool.com:6666 <span data-i18n="btmTeach.17"></span>
+                        <span data-i18n="btmTeach.16"></span>stratum+tcp://btm.91pool.com:9221 <span data-i18n="btmTeach.17"></span>
+                        <br>
+                        <img src="../images/btm_img1.png">
                     </div>
                 </div>
             </li>
