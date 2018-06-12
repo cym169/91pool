@@ -59,7 +59,7 @@ var index = {
             if(wh > 700){
                 return
             }
-            
+
         })
     },
     setData: function () {
@@ -204,7 +204,11 @@ var index = {
                 yData = [];
                 $.each(data.poolCharts, function (i, t) {
                     xTime.unshift(t.timeFormat);
-                    yData.unshift(_reset.formatHashrateWithoutSuffix(t.poolHash));
+                    if(coin != 'btm'){
+                        yData.unshift(_reset.formatHashrateWithoutSuffix(t.poolHash));
+                    }else{
+                        yData.unshift(t.poolHash);
+                    }
                 });
             }
             var w = $(".section").width();
