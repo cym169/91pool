@@ -30,17 +30,23 @@ var index = {
             var require = util.validate(phone,'require');
             var validate = util.validate(phone,'phone');
             if(!require){
-                util.errorTips("请输入手机号！");
+                util.errorTips("请输入手机号！",function () {
+                    layer.closeAll();
+                    $("#phone").focus()
+                });
                 return false;
             }
             if(!validate){
-                util.errorTips("请输入正确的手机号！");
+                util.errorTips("请输入正确的手机号！",function () {
+                    layer.closeAll();
+                    $("#phone").focus()
+                });
                 return false;
             }
             if(mark == 0){
-                util.countDown('#sendCode','login',60);
+                util.countDown('#sendCode','login',30);
             }
-        })
+        });
 
     },
     setLoginTime: function () {

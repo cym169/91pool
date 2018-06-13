@@ -140,7 +140,7 @@
     padding: 0 10px;
 }
 
-.right-nav > li:nth-child(2n) {
+.right-nav > li:nth-child(2n-1) {
     border-right: none;
 }
 

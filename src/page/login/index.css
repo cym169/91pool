@@ -17,7 +17,7 @@ html, body {
     position: absolute;
     left: 50%;
     top: 50%;
-    margin: -174px 0 0 -200px;
+    margin: -203px 0 0 -200px;
 }
 
 .logo {
@@ -93,8 +93,30 @@ html, body {
 
 .login-form-box input[type='text'] {
     margin-bottom: 20px;
+    transition: all .5s;
+}
+.login-form-box input[type='text']:focus{
+    border-color: #40af37;
 }
 .login-form-box .send-box input[type='text']{
+    width: 238px;
+    padding-right: 90px;
+}
+.login-form-box .imgCode-box{
+    position: relative;
+    margin-bottom: 20px;
+}
+.login-form-box .imgCode-box img{
+    position: absolute;
+    top: 2px;
+    right: 2px;
+    width: 78px;
+    height: 34px;
+    border-radius: 4px;
+    z-index: 3;
+    outline: none;
+}
+.login-form-box .imgCode-box input[type='text']{
     width: 238px;
     padding-right: 90px;
 }

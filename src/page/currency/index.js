@@ -202,26 +202,36 @@ var index = {
             if (typeof (data.poolCharts) != 'undefined' || data.poolCharts.length > 0) {
                 xTime = [];
                 yData = [];
+                var dw = "";
                 $.each(data.poolCharts, function (i, t) {
                     xTime.unshift(t.timeFormat);
-                    if(coin != 'btm'){
-                        yData.unshift(_reset.formatHashrateWithoutSuffix(t.poolHash));
-                    }else{
+                    if(coin == 'btm'){
                         yData.unshift(t.poolHash);
+                    }else{
+                        yData.unshift(_reset.formatHashrateWithoutSuffix(t.poolHash));
                     }
                 });
+                if(coin == 'btm'){
+                    dw = "H";
+                }else{
+                    dw = _reset.formatSuffix(data.poolCharts[0].poolHash);
+                }
             }
-            var w = $(".section").width();
-            $('#calc-chart').css('width', w);
+
             var options = {
                 tooltip: {
                     trigger: 'axis',
                     axisPointer: {
-                        type: 'cross',
+                        type: 'line',
                         label: {
                             backgroundColor: '#6a7985'
                         }
-                    }
+                    },
+                    position: function (pt) {
+                        return [pt[0], '10%'];
+                    },
+                    formatter: "{c}"+dw+"<br>{b}",
+                    confine: true
                 },
                 title: false,
                 xAxis: {
@@ -237,6 +247,9 @@ var index = {
                     },
                     axisTick: {
                         show: false
+                    },
+                    axisLabel:{
+                        formatter:'{value}'+dw
                     }
                 },
                 series: [
@@ -245,6 +258,11 @@ var index = {
                         smooth: true,
                         sampling: 'average',
                         itemStyle: {
+                            normal: {
+                                color: 'rgb(254, 161, 18)'
+                            }
+                        },
+                        areaStyle: {
                             normal: {
                                 color: new echarts.graphic.LinearGradient(0, 0, 0, 1, [{
                                     offset: 0,
@@ -255,7 +273,6 @@ var index = {
                                 }])
                             }
                         },
-                        areaStyle: {},
                         data: []
                     }
                 ]
@@ -264,6 +281,9 @@ var index = {
             options.xAxis.data = xTime;
             var chartId = document.getElementById('calc-chart');
             var myChart = echarts.init(chartId);
+            $(window).resize(function () {
+                myChart.resize();
+            })
             // 绘制图表
             myChart.setOption(options);
         }, function (error) {

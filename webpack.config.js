@@ -94,7 +94,7 @@ var config = {
                         loader: 'url-loader',
                         options: {
                             limit: 100,
-                            name: '[name].[hash:8].[ext]',
+                            name: '[name].[ext]',
                             outputPath: 'img/'
                         }
                     }

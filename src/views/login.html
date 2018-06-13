@@ -9,7 +9,7 @@
 <div class="login-bg">
     <div class="login-box">
         <div class="logo"><img src="../images/login_logo.png"></div>
-        <div class="welcome-text">欢迎登陆91pool，一个最专业、最稳定的矿池！</div>
+        <div class="welcome-text">欢迎登陆91pool，最专业、最稳定的矿池！</div>
         <div class="login">
             <!--<ul class="login-type">-->
                 <!--<li class="active">密码登录</li>-->
@@ -25,8 +25,12 @@
 
                     <form class="ph-login login-form">
                         <input type="text" placeholder="请输入手机号" name="phone" id="phone">
+                        <div class="imgCode-box">
+                            <input type="text" id="imgCode" placeholder="请输入图形验证码" style="margin-bottom: 0;">
+                            <img src="../images/btm_icon.png">
+                        </div>
                         <div class="send-box">
-                            <input type="text" id="check" placeholder="请获取验证码" style="margin-bottom: 0;">
+                            <input type="text" id="check" placeholder="请输入手机验证码" style="margin-bottom: 0;">
                             <input type="button" id="sendCode" class="send no-send" mark="0" value="发送验证码">
                         </div>
                         <input class="submit" type="button" value="登录">

@@ -20,13 +20,17 @@ var index = {
     handler: function () {
         var _this = this;
         $("#login").click(function () {
+            var wd = $(window).width();
+            if(wd <= 700 ){
+                return
+            }
             util.doLogin();
         });
 
         // 注册点击事件
-        $('#register').click(function () {
-            window.location.href = './register.html';
-        });
+        // $('#register').click(function () {
+        //     window.location.href = './register.html';
+        // });
 
         $(document).on('click', '.dropdown', function (e) {
             e.stopPropagation();
