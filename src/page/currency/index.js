@@ -29,6 +29,9 @@ var index = {
         this.handler();
     },
     handler: function () {
+        if(coin == 'lch'){
+            return
+        }
         var _this = this;
         $(document).on('click', '#search', function () {
             var val = $.trim($("#address").val());
@@ -63,6 +66,9 @@ var index = {
         })
     },
     setData: function () {
+        if(coin == 'lch'){
+            return
+        }
         _coins.getBlocks(coin, function (data) {
 
             if (data.luck == null) {
@@ -204,7 +210,8 @@ var index = {
                 yData = [];
                 var dw = "";
                 $.each(data.poolCharts, function (i, t) {
-                    xTime.unshift(t.timeFormat);
+
+                    xTime.unshift(t.timeFormat.replace(/_/,':'));
                     if(coin == 'btm'){
                         yData.unshift(t.poolHash);
                     }else{
@@ -301,6 +308,9 @@ var index = {
 
     },
     default: function () {
+        if(coin == 'lch'){
+            return
+        }
         var teachHtml = util.renderHtml(teach);
         $(".teach").html(teachHtml);
         var imgUrl = require('images/' + coin + '.png');
@@ -356,9 +366,6 @@ var index = {
         }
         else if(coin === 'hsr'){
             $("#baidu").attr("src","https://hm.baidu.com/hm.js?635b661136fcc9cd418e2d71052312d0");
-        }
-        else if(coin === 'lch'){
-            $("#baidu").attr("src","https://hm.baidu.com/hm.js?ea68a83da63e357e1b28c662d1ac93df");
         }
         else if(coin === 'btm'){
             $("#baidu").attr("src","https://hm.baidu.com/hm.js?54a8a321e608052c96b72be4e84304c4");
