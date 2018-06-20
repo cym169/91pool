@@ -93,7 +93,7 @@
     text-align: center;
 }
 .market-info > tbody > tr{
-    cursor: default;
+    cursor: pointer;
 }
 .market-info > tbody > tr > td{
     font-family: Arial ;

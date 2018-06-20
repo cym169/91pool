@@ -212,17 +212,18 @@ var index = {
                 $.each(data.poolCharts, function (i, t) {
 
                     xTime.unshift(t.timeFormat.replace(/_/,':'));
-                    if(coin == 'btm'){
-                        yData.unshift(t.poolHash);
-                    }else{
-                        yData.unshift(_reset.formatHashrateWithoutSuffix(t.poolHash));
-                    }
+                    yData.unshift(_reset.formatHashrateWithoutSuffix(t.poolHash));
                 });
-                if(coin == 'btm'){
-                    dw = "H";
-                }else{
-                    dw = _reset.formatSuffix(data.poolCharts[0].poolHash);
-                }
+                dw = _reset.formatSuffix(data.poolCharts[0].poolHash);
+            }
+            var w = $(window).width();
+            var interval = 0,left;
+            if(w <= 700){
+                interval = 5;
+                left = "15%";
+            }else{
+                interval = 2;
+                left = "11%"
             }
 
             var options = {
@@ -240,10 +241,19 @@ var index = {
                     formatter: "{c}"+dw+"<br>{b}",
                     confine: true
                 },
+                grid: {
+                    left: left,
+                    bottom: 100,
+                    right: "5%"
+                },
                 title: false,
                 xAxis: {
                     type: 'category',
                     boundaryGap: false,
+                    axisLabel: {
+                        interval:interval,
+                        rotate: 60
+                    },
                     data: []
                 },
                 yAxis: {

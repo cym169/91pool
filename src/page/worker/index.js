@@ -159,7 +159,7 @@ var index = {
                 $.each(data.workers, function (i, t) {
                     t.hr = _reset.formatHashrate(t.hr);
                     t.hr2 = _reset.formatHashrate(t.hr2);
-                    t.lastBeat = _reset.formatDateLocale(t.lastBeat);
+                    t.lastBeat = _reset.getDateDiff(t.lastBeat);
                     t.name = i;
                 });
                 var dataList = {

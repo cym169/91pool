@@ -27,16 +27,11 @@ var index = {
             onready : function() {
                 var m = this;
                 /*在app已安装的情况尝试拉起app*/
-                m.schemeWakeup();
+                // m.schemeWakeup();
 
                 setTimeout(function () {
                     m.install();
-                },2000)
-                /*用户点击某个按钮时(假定按钮id为downloadButton)，安装app*/
-                // button.onclick = function() {
-                //     m.wakeupOrInstall();
-                //     return false;
-                // }
+                },1000)
             }
         }, data);
     }

@@ -126,3 +126,17 @@ img {
 .hidden{
     display: none;
 }
+
+/*滚动条*/
+::-webkit-scrollbar{
+    width: 8px;
+    background-color: #F5F5F5;
+}
+::-webkit-scrollbar-thumb{
+    border-radius: 10px;
+    background-color: #999;
+}
+::-webkit-scrollbar-track{
+    border-radius: 35px;
+    background-color: #F5F5F5;
+}

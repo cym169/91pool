@@ -21,7 +21,7 @@ if (process.env.type == 'build') {
     minimize = false;
     ugly = function () {
     };
-    publicPath = 'http://172.16.2.68:1717/';
+    publicPath = 'http://172.16.2.78:1717/';
 }
 
 var entries = {
@@ -58,8 +58,8 @@ var config = {
     output: {
         //打包的路径
         path: path.resolve(__dirname, './91pool'),
-        filename: 'js/[name].js',
-        publicPath: process.env.type == "build" ? '/' : "http://172.16.2.64:1717/"
+        filename: 'js/[name].[chunkHash:8].js',
+        publicPath: publicPath
     },
     resolve: {
         // 配置路径，为js require文件提供快捷路径
@@ -94,7 +94,7 @@ var config = {
                         loader: 'url-loader',
                         options: {
                             limit: 100,
-                            name: '[name].[ext]',
+                            name: '[name].[hash:8].[ext]',
                             outputPath: 'img/'
                         }
                     }
@@ -168,7 +168,7 @@ var config = {
             }
         }),  // 如果愿意，可以再new 一个commonsChunkPlugin
 
-        new extractTextPlugin('css/[name].css'),
+        new extractTextPlugin('css/[name].[chunkHash:8].css'),
 
         new HtmlWebpackPlugin({
             favicon: path.resolve('./src/images/favicon.ico')
@@ -187,7 +187,7 @@ var config = {
         //设置基本目录结构
         contentBase:path.resolve(__dirname,'91pool'),
         //服务器的IP地址，可以使用IP也可以使用localhost
-        host:'172.16.2.64',
+        host:'172.16.2.78',
         //服务端压缩是否开启
         compress:true,
         //配置服务端口号

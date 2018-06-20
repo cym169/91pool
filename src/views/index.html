@@ -32,11 +32,11 @@
                                                                      src="../images/activity/201804231624_banner.jpg"
                                                                      width="100%"></a>
             </div>
-            <div class="swiper-slide" style="text-align: center">
-                <a href="./activity.html?id=42" target="_blank"><img class="sliderImg"
-                                                                     src="../images/activity/20180420190949_banner.jpg"
-                                                                     width="100%"></a>
-            </div>
+            <!--<div class="swiper-slide" style="text-align: center">-->
+                <!--<a href="./activity.html?id=42" target="_blank"><img class="sliderImg"-->
+                                                                     <!--src="../images/activity/20180420190949_banner.jpg"-->
+                                                                     <!--width="100%"></a>-->
+            <!--</div>-->
         </div>
         <div class="swiper-pagination-white pagination"></div>
     </div>
@@ -66,8 +66,8 @@
             <tbody id="coinList">
             <script type="text/html" id="coinList-tp">
                 {{each list as item i}}
-                <tr class="coinType">
-                    <td><a href="./currency.html?coin={{item.coin}}"><i class="{{item.coin}}_icon"><img
+                <tr class="coinType" coin={{item.coin}}>
+                    <td><a><i class="{{item.coin}}_icon"><img
                             src="{{item.imgUrl}}"></i>{{item.upcoin}}</a></td>
                     <td class="hashrate{{i}}">{{item.hashrate}}</td>
                     <td class="netHashrate{{i}}">{{item.netHashrate}}</td>

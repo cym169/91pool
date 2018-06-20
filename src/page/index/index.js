@@ -27,15 +27,27 @@ var index = {
         var _this = this;
         setInterval(function(){
             _this.refresh();
-        }, 30000);
+        }, 5000);
+        
+        $(document).on("click",".coinType",function () {
+            var coin = $(this).attr("coin");
+            window.location.href = "./currency.html?coin="+coin;
+        });
     },
     slider: function () {
-        var param = {
-            autoplay: 5000,
-            loop: true,
-            pagination: '.pagination',
-            paginationClickable: true
-        };
+        if($(".swiper-slide").length > 1){
+            var param = {
+                autoplay: 5000,
+                loop: true,
+                pagination: '.pagination',
+                paginationClickable: true
+            };
+        }else{
+            var param = {
+                pagination: '.pagination',
+                paginationClickable: true
+            };
+        }
         var mySwiper = new Swiper('.swiper-container', param);
     },
     list: function () {
