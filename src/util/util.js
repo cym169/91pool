@@ -13,7 +13,7 @@ var util = {
     isMobile : function () {
         var width = $(window).width();
         if(width <= 700){
-            window.location.href = "./downloadApp.html";
+            window.location.href = "./download.html";
             return
         }
     },

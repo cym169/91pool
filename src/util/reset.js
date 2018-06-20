@@ -4,7 +4,7 @@
 */
 'use strict';
 
-var zharr = ["秒之前", "分钟之前", "小时之前","天之前","未爆块"];
+var zharr = ["秒之前", "分钟之前", "小时之前","未爆块"];
 var enarr = ["s ago", "mins ago", "hours ago", "no block"];
 var ruarr = ["секунду назад", "минуту назад", "час назад", "не берут"];
 

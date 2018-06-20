@@ -97,9 +97,19 @@ var index = {
                 }
 
                 $.each(data.minerCharts, function (i, t) {
-                    xTime.unshift(t.timeFormat);
+                    xTime.unshift(t.timeFormat.replace(/_/,':'));
                     yData.unshift(_reset.formatHashrateWithoutSuffix(t.minerHash));
                 });
+                var dw = _reset.formatSuffix(data.minerCharts[0].poolHash);
+                var w = $(window).width();
+                var interval = 0,left;
+                if(w <= 700){
+                    interval = 5;
+                    left = "15%";
+                }else{
+                    interval = 2;
+                    left = "11%"
+                }
                 var options = {
                     tooltip: {
                         trigger: 'axis',
@@ -114,6 +124,10 @@ var index = {
                     xAxis: {
                         type: 'category',
                         boundaryGap: false,
+                        axisLabel: {
+                            interval:interval,
+                            rotate: 60
+                        },
                         data: []
                     },
                     yAxis: {
@@ -124,7 +138,15 @@ var index = {
                         },
                         axisTick : {
                             show : false
+                        },
+                        axisLabel:{
+                            formatter:'{value}'+dw
                         }
+                    },
+                    grid: {
+                        left: left,
+                        bottom: 100,
+                        right: "5%"
                     },
                     series: [
                         {
@@ -132,6 +154,11 @@ var index = {
                             smooth:true,
                             sampling: 'average',
                             itemStyle: {
+                                normal: {
+                                    color: 'rgb(254, 161, 18)'
+                                }
+                            },
+                            areaStyle: {
                                 normal: {
                                     color: new echarts.graphic.LinearGradient(0, 0, 0, 1, [{
                                         offset: 0,
@@ -141,9 +168,6 @@ var index = {
                                         color: 'rgb(255, 255, 255)'
                                     }])
                                 }
-                            },
-                            areaStyle: {
-
                             },
                             data: []
                         }
