@@ -21,7 +21,7 @@ if (process.env.type == 'build') {
     minimize = false;
     ugly = function () {
     };
-    publicPath = 'http://localhost:1717/';
+    publicPath = 'http://172.16.2.78:1717/';
 }
 
 var entries = {
@@ -41,7 +41,7 @@ glob.sync('./src/page/**/index.js').forEach(function (myPath) {
         filename: chunk + '.html',
         inject: true,
         hash: true,
-        chunks: ['common', chunk],
+        chunks: ['common','manifest', chunk],
         title: chunk,
         // 压缩HTML代码，生产的时候用
         minify: minify
@@ -141,34 +141,43 @@ var config = {
         //     name : 'common',
         //     filename : 'js/base.js'
         // }),
-
-        new webpack.optimize.CommonsChunkPlugin({
-            name: 'common',
-            minChunks: function (module) {
-                return (
-                    module.resource &&
-                    /\.js$/.test(module.resource) &&
-                    module.resource.indexOf(
-                        path.join(__dirname, '../node_modules')
-                    ) === 0
-                )
-            }
-        }),
+        new webpack.optimize.CommonsChunkPlugin({names: ["common"]}),
         new webpack.optimize.CommonsChunkPlugin({
             name: 'manifest',
-            chunks: ['commons'],
-            minChunks: function (module) {
-                return (
-                    module.resource &&
-                    /\.js$/.test(module.resource) &&
-                    module.resource.indexOf(
-                        path.join(__dirname, '../node_modules')
-                    ) === 0 && ['jquery.js', 'layer.js'].indexOf(module.resource.substr(module.resource.lastIndexOf('/') + 1).toLowerCase()) != -1
-                )
-            }
-        }),  // 如果愿意，可以再new 一个commonsChunkPlugin
+            chunks: ['common']
+        }),
 
-        new extractTextPlugin('css/[name].[chunkHash:8].css'),
+        // new webpack.optimize.CommonsChunkPlugin({
+        //     name: 'common',
+        //     minChunks: function (module) {
+        //         return (
+        //             module.resource &&
+        //             /\.js$/.test(module.resource) &&
+        //             module.resource.indexOf(
+        //                 path.join(__dirname, '../node_modules')
+        //             ) === 0
+        //         )
+        //     }
+        // }),
+        // new webpack.optimize.CommonsChunkPlugin({
+        //     name: 'manifest',
+        //     chunks: ['commons'],
+        //     minChunks: function (module) {
+        //         return (
+        //             module.resource &&
+        //             /\.js$/.test(module.resource) &&
+        //             module.resource.indexOf(
+        //                 path.join(__dirname, '../node_modules')
+        //             ) === 0 && ['jquery.js', 'layer.js'].indexOf(module.resource.substr(module.resource.lastIndexOf('/') + 1).toLowerCase()) != -1
+        //         )
+        //     }
+        // }),  // 如果愿意，可以再new 一个commonsChunkPlugin
+        new extractTextPlugin({
+            filename: 'css/[name].[contenthash:8].css',
+            disable: false,
+            allChunks: true
+        }),
+        // new extractTextPlugin('css/[name].[chunkHash:8].css'),
 
         new HtmlWebpackPlugin({
             favicon: path.resolve('./src/images/favicon.ico')
@@ -187,7 +196,7 @@ var config = {
         //设置基本目录结构
         contentBase:path.resolve(__dirname,'91pool'),
         //服务器的IP地址，可以使用IP也可以使用localhost
-        host:'localhost',
+        host:'172.16.2.78',
         //服务端压缩是否开启
         compress:true,
         //配置服务端口号
