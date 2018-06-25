@@ -5,7 +5,7 @@ var uglify = require('uglifyjs-webpack-plugin');
 var extractTextPlugin = require("extract-text-webpack-plugin");
 var copyWebpackPlugin = require("copy-webpack-plugin");
 var glob = require('glob');
-var minimize, minify, ugly;
+var publicPath, minimize, minify, ugly;
 if (process.env.type == 'build') {
     minimize = true;
     minify = {
@@ -15,11 +15,13 @@ if (process.env.type == 'build') {
         collapseWhitespace: true
     };
     ugly = new uglify();
+    publicPath = '/';
 } else {
     minify = {};
     minimize = false;
     ugly = function () {
     };
+    publicPath = 'http://172.16.2.78:1717/';
 }
 
 var entries = {
@@ -32,7 +34,6 @@ glob.sync('./src/page/**/index.js').forEach(function (myPath) {
     entries[chunk] = myPath;
     chunks.push(chunk);
     var m = myPath.replace(/page/, "views").split('/index.js')[0]+".html";
-
     // html-webpack-plugin参数
     var htmlConfig = {
         template: 'html-withimg-loader!' + m,
@@ -57,7 +58,7 @@ var config = {
         //打包的路径
         path: path.resolve(__dirname, './91pool'),
         filename: 'js/[name].[chunkHash:8].js',
-        publicPath: '/'
+        publicPath: publicPath
     },
     resolve: {
         // 配置路径，为js require文件提供快捷路径
