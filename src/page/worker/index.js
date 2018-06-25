@@ -19,7 +19,8 @@ var name = util.getUrlParam('wallet');
 var totalShare = 0;
 var timer;
 var xTime = ['now'],
-    yData = [0];
+    yData = [0],
+    minerList=[];
 var index = {
     init: function () {
         mwx.getWxInfo();
@@ -58,7 +59,7 @@ var index = {
             mPrice = "0.1LCH";
         }
         else if (coin == 'btm') {
-            mPrice = "100BTM";
+            mPrice = "1BTM";
         }
         $("#minPrice").html(mPrice);
         _coins.getCoins(coin, function (data) {
@@ -94,15 +95,16 @@ var index = {
                 if (data.minerCharts != null) {
                     xTime = [];
                     yData = [];
+                    minerList = data.minerCharts.slice(0, 50);
                 }
 
-                $.each(data.minerCharts, function (i, t) {
+                $.each(minerList, function (i, t) {
                     xTime.unshift(t.timeFormat.replace(/_/,':'));
                     yData.unshift(_reset.formatHashrateWithoutSuffix(t.minerHash));
                 });
                 var dw = _reset.formatSuffix(data.minerCharts[0].poolHash);
                 var w = $(window).width();
-                var interval = 0,left;
+                var interval,left;
                 if(w <= 700){
                     interval = 5;
                     left = "15%";
@@ -114,11 +116,16 @@ var index = {
                     tooltip: {
                         trigger: 'axis',
                         axisPointer: {
-                            type: 'cross',
+                            type: 'line',
                             label: {
                                 backgroundColor: '#6a7985'
                             }
-                        }
+                        },
+                        position: function (pt) {
+                            return [pt[0], '10%'];
+                        },
+                        formatter: "{c}"+dw+"<br>{b}",
+                        confine: true
                     },
                     title: false,
                     xAxis: {
@@ -194,16 +201,18 @@ var index = {
                 $("#workerOnline").html(Onhtml);
                 $("#workerOffline").html(Offhtml);
 
-                $.each(data.payments, function (i, t) {
-                    t.timestamp = _reset.formatDateLocale(t.timestamp);
-                    t.text = _reset.formatTx(t.tx);
-                    t.amount = _reset.formatBalance(t.amount, coin);
-                });
-                var payList = {
-                    list: data.payments
-                };
-                var payHtml = template('payList-tp', payList);
-                $("#payList").html(payHtml);
+                if(data.payments){
+                    $.each(data.payments, function (i, t) {
+                        t.timestamp = _reset.formatDateLocale(t.timestamp);
+                        t.text = _reset.formatTx(t.tx);
+                        t.amount = _reset.formatBalance(t.amount, coin);
+                    });
+                    var payList = {
+                        list: data.payments
+                    };
+                    var payHtml = template('payList-tp', payList);
+                    $("#payList").html(payHtml);
+                }
             }, function (error) {
                 clearInterval(timer);
                 util.errorTips("没有找到您设置的矿工地址的数据，请确保矿工地址配置正确！",function () {

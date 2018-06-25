@@ -94,33 +94,97 @@
 .coin-name{
     min-height: 16px;
 }
-.coin-title li {
+.coin-title>li {
     float: left;
     height: 16px;
     width: 140px;
     border-right: 1px solid #333;
+    position: relative;
 }
 
-.coin-title li.active a {
+.coin-title>li.active>a {
     border-bottom: 4px solid #f86601;
     color: #f86601;
 }
-
-.coin-title li a:hover {
+.coin-title>li.active>a .btmIcon{
     color: #f86601;
 }
-
-.coin-title li a {
+.coin-title>li>a:hover {
+    color: #f86601;
+}
+.coin-title>li>a:hover .btmIcon{
+    color: #f86601;
+}
+.coin-title>li>a {
     display: inline-block;
     font-size: 14px;
     color: #333;
     padding-bottom: 30px;
 }
-
-.coin-title li:last-child {
+.coin-title>li>a .btmIcon{
+    display: none;
+    margin-left: 5px;
+    color: #333;
+}
+.coin-title>li:last-child {
     border-right: none;
 }
+.btmType {
+    display: none;
+    position: absolute;
+    top: 32px;
+    left: 7px;
+    z-index: 999999;
+    padding-top: 5px;
+    background-color: #fff;
+    border: 1px solid #ebeef5;
+    border-radius: 4px;
+    box-shadow: 0 2px 12px 0 rgba(0,0,0,.1);
+}
+.btmType li a {
+    display: block;
+    color: #333;
+    padding: 10px 20px;
+    font-size: 14px;
+    white-space: nowrap;
+}
 
+.btmType li a:hover {
+    background-color: #f0f0f0;
+}
+
+.btmType li:last-child {
+    border-bottom: none;
+}
+.btmType .btmType-arrow{
+    position: absolute;
+    display: block;
+    width: 0;
+    height: 0;
+    border-color: transparent;
+    border-style: solid;
+    border-width: 6px;
+    filter: drop-shadow(0 2px 12px rgba(0,0,0,.03));
+    top: -6px;
+    left: 50%;
+    margin-left: -6px;
+    border-top-width: 0;
+    border-bottom-color: #ebeef5;
+}
+.btmType .btmType-arrow:after{
+    position: absolute;
+    display: block;
+    width: 0;
+    height: 0;
+    border-color: transparent;
+    border-style: solid;
+    top: -4px;
+    margin-left: -6px;
+    border-top-width: 0;
+    border-bottom-color: #fff;
+    content: " ";
+    border-width: 6px;
+}
 .tab {
     display: none;
 }
@@ -348,83 +412,19 @@
 .info-list table tbody tr td:last-child {
     border-right: none;
 }
-.teach {
-    width: 100%;
-    background: url("../../images/teach_bg.jpg") center center no-repeat;
-    background-size: cover;
-}
 
-.time-line {
-    display: inline-block;
-    width: 100%;
-    position: relative;
-    margin-top: 30px;
-}
-
-.time-line:before {
-    content: "";
-    display: block;
-    width: 1px;
-    border-right: 1px solid #fff;
-    position: absolute;
-    left: 10px;
-    top: 0;
-    bottom: 0;
-}
-
-.teach-info {
-    width: 100%;
-    padding: 40px 0;
-}
-
-.teach-info li {
-    margin-bottom: 50px;
-}
-
-.teach-info li .step {
-    position: absolute;
-    left: 1px;
-    width: 20px;
-    height: 20px;
-    border-radius: 50%;
-    color: #fff;
-    line-height: 20px;
-    text-align: center;
-    font-size: 13px;
-    background-color: #f86601;
-}
-
-.teach-info li .content > p {
+.btmTeach-title{
+    color:#fff;
     text-align: left;
-    padding-left: 30px;
-    color: #fec711;
     font-size: 18px;
-    margin-bottom: 20px;
+    text-indent: 30px;
 }
 
-.teach-info li .content > div {
-    color: #fff;
-    font-size: 14px;
-    text-align: left;
-    padding-left: 30px;
-    line-height: 30px;
-}
 
-.teach-info li .content > div a {
-    color: #57bcda;
-}
-
-.teach-info li .content > div p {
-    border: 1px dashed #fff;
-    padding: 10px 15px;
-    font-size: 12px;
-    border-radius: 4px;
-}
-/*挖矿教程*/
 .teach {
     width: 100%;
-    background: url("../../images/teach_bg.jpg") center center no-repeat;
-    background-size: cover;
+    background: url("../../images/teach_bg.jpg") repeat;
+    background-size: auto;
 }
 
 .time-line {
@@ -497,6 +497,7 @@
 .teach-info li .content img{
     max-width: 100%;
 }
+
 .cubes {
     width: 100%;
     display: inline-block;
@@ -715,6 +716,15 @@
 
     .teach-info li .step {
         left: 6px;
+    }
+
+    .btmTeach-title{
+        text-indent: 40px;
+        font-size: 16px;
+    }
+
+    .btmType{
+        left: -18px;
     }
 
     .content {

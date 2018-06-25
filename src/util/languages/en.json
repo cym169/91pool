@@ -32,6 +32,7 @@
       },
       "table": {
         "GraphicMining": "Graphic Mining",
+        "B3Mining": "B3 Mining",
         "currency": "Currency",
         "poolHashrate": "Pool Hashrate",
         "netWorkHashrate": "Network Hashrate",
@@ -106,7 +107,9 @@
         "findTime": "Find Time",
         "difficulty": "Difficulty",
         "profit": "Profit",
-        "comingSoon": "Coming Soon!"
+        "comingSoon": "Coming Soon!",
+        "GraphicMining": "Graphics Mining Tutorial",
+        "B3Mining": "B3 Mining Tutorial"
       },
       "worker":{
         "immatureProfit": "Immature Profit",
@@ -306,6 +309,8 @@
         "17": "Please spare friends must set up a standby node."
       },
       "btmTeach": {
+        "title1": "BTM B3 Mining Tutorial",
+        "title2": "91pool BTMMINER BTM Graphics Mining Tutorial",
         "1": "Get wallet",
         "2": "Official wallet address",
         "3": "Phone light wallet address",
@@ -329,7 +334,23 @@
         "21": "Mine pool node configuration",
         "22": "node",
         "23": "Please spare friends must set up a standby node.",
-        "24": "Since each exchange will disable the ERC20 wallet address (beginning with 0x), the 91pool pool will only support the main network address (beginning with bm) for the sake of user's earnings security, so the miners should note that the miner address starts with bm."
+        "24": "Since each exchange will disable the ERC20 wallet address (beginning with 0x), the 91pool pool will only support the main network address (beginning with bm) for the sake of user's earnings security, so the miners should note that the miner address starts with bm.",
+        "25": "Download the mining software in the following way",
+        "26": "91pool version(QQ group：518761912)",
+        "27": "Baidu SkyDrive",
+        "28": "After downloading the compression software of the mining software, unzip the file.",
+        "29": "(1) windows version (recommended using win10 system)",
+        "30": "Double hit GUI_Wrapper starting mining procedure:",
+        "31": "Fill in the purse address and miner number and click 'start digging'.",
+        "32": "The word 'Found a target, submitted.' indicates that the submission is successful.",
+        "33": "Linux version",
+        "34": "After decompression, modify the wallet address in Linux.sh, then execute Linux.sh, and Linux.sh memory is as follows:",
+        "35": "This software, supporting 6 or 8 Card miners, in the non - direct system (which needs to match the high performance CPU), is likely to collapse under the default mining intensity, and needs to monitor the running state of the software regularly. In addition, the software needs to match the new version of the NVIDIA driver (the drive version is more than 396 versions) and does not support the old version of the drive. If it is an earlier mine, it is suggested that the drive be upgraded and then the mining is carried out.",
+        "36": "91pool BTMiner is a BTM mining software based on the Windows system for the NVIDIA graphics card. The operation is as simple as the conventional mining software, the process is simple, and more BTM enthusiasts are easy to take part in the mining.",
+        "37": "In addition, the mining software, to a certain extent, reduces the limitation on the bandwidth of CPU and PCI-E for the earlier Linux version of BTM mining software, which can be used as a non - direct graphics card for mining.",
+        "38": "According to the measured comparison, the 1080 graphics card can reach more than 500H/s, and the calculation force has a certain increase compared to the previous mining software.",
+        "39": "Start Digging",
+        "40": "Supplementary Instructions"
       }
     }
   }

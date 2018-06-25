@@ -5,7 +5,7 @@ var uglify = require('uglifyjs-webpack-plugin');
 var extractTextPlugin = require("extract-text-webpack-plugin");
 var copyWebpackPlugin = require("copy-webpack-plugin");
 var glob = require('glob');
-var publicPath, minimize, minify, ugly;
+var minimize, minify, ugly;
 if (process.env.type == 'build') {
     minimize = true;
     minify = {
@@ -15,13 +15,11 @@ if (process.env.type == 'build') {
         collapseWhitespace: true
     };
     ugly = new uglify();
-    publicPath = '/';
 } else {
     minify = {};
     minimize = false;
     ugly = function () {
     };
-    publicPath = 'http://localhost:1717/';
 }
 
 var entries = {
@@ -59,7 +57,7 @@ var config = {
         //打包的路径
         path: path.resolve(__dirname, './91pool'),
         filename: 'js/[name].[chunkHash:8].js',
-        publicPath: publicPath
+        publicPath: '/'
     },
     resolve: {
         // 配置路径，为js require文件提供快捷路径
@@ -196,7 +194,7 @@ var config = {
         //设置基本目录结构
         contentBase:path.resolve(__dirname,'91pool'),
         //服务器的IP地址，可以使用IP也可以使用localhost
-        host:'localhost',
+        host:'172.16.2.78',
         //服务端压缩是否开启
         compress:true,
         //配置服务端口号

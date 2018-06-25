@@ -1,77 +1,162 @@
 <div class="section">
-    <div class="time-line">
-        <ul class="teach-info">
-            <li>
-                <div class="step">1</div>
-                <div class="content">
-                    <p data-i18n="btmTeach.1"></p>
-                    <div>
-                        <span data-i18n="btmTeach.2"></span>（<a href="https://bytom.io/wallet/" target="_blank">https://bytom.io/wallet/</a>）
-                        <br>
-                        <span data-i18n="btmTeach.3"></span>
-                        <br>
-                        <span data-i18n="btmTeach.4"></span>
+
+        <div class="time-line btmTab">
+            <div class="btmTeach-title" data-i18n="btmTeach.title1"></div>
+            <ul class="teach-info">
+                <li>
+                    <div class="step">1</div>
+                    <div class="content">
+                        <p data-i18n="btmTeach.1"></p>
+                        <div>
+                            <span data-i18n="btmTeach.2"></span>（<a href="https://bytom.io/wallet/" target="_blank">https://bytom.io/wallet/</a>）
+                            <br>
+                            <span data-i18n="btmTeach.3"></span>
+                            <br>
+                            <span data-i18n="btmTeach.4"></span>
+                        </div>
                     </div>
-                </div>
-            </li>
-            <li>
-                <div class="step">2</div>
-                <div class="content">
-                    <p data-i18n="btmTeach.5"></p>
-                    <div>
-                        <br>
-                        <span data-i18n="btmTeach.6"></span>
-                        <br>
-                        <span data-i18n="btmTeach.7"></span>
-                        <br>
-                        <span data-i18n="btmTeach.8"></span>
-                        <br>
-                        <span data-i18n="btmTeach.9"></span>
-                        <br>
-                        <span data-i18n="btmTeach.10"></span>
-                        <br>
-                        <span data-i18n="btmTeach.11"></span>
-                        <br>
-                        <span data-i18n="btmTeach.12"></span>
+                </li>
+                <li>
+                    <div class="step">2</div>
+                    <div class="content">
+                        <p data-i18n="btmTeach.5"></p>
+                        <div>
+                            <span data-i18n="btmTeach.6"></span>
+                            <br>
+                            <span data-i18n="btmTeach.7"></span>
+                            <br>
+                            <span data-i18n="btmTeach.8"></span>
+                            <br>
+                            <span data-i18n="btmTeach.9"></span>
+                            <br>
+                            <span data-i18n="btmTeach.10"></span>
+                            <br>
+                            <span data-i18n="btmTeach.11"></span>
+                            <br>
+                            <span data-i18n="btmTeach.12"></span>
+                        </div>
                     </div>
-                </div>
-            </li>
-            <li>
-                <div class="step">3</div>
-                <div class="content">
-                    <p data-i18n="btmTeach.13"></p>
-                    <div>
-                        <span data-i18n="btmTeach.14"></span>
-                        <br>
-                        <span data-i18n="btmTeach.15"></span>
-                        <br>
-                        <span data-i18n="btmTeach.16"></span>stratum+tcp://btm.91pool.com:9221 <span data-i18n="btmTeach.17"></span>
-                        <br>
-                        <img src="../images/btm_img1.png">
-                        <br>
-                        <span class="red" data-i18n="btmTeach.24"></span>
+                </li>
+                <li>
+                    <div class="step">3</div>
+                    <div class="content">
+                        <p data-i18n="btmTeach.13"></p>
+                        <div>
+                            <span data-i18n="btmTeach.14"></span>
+                            <br>
+                            <span data-i18n="btmTeach.15"></span>
+                            <br>
+                            <span data-i18n="btmTeach.16"></span>stratum+tcp://btm.91pool.com:9221 <span data-i18n="btmTeach.17"></span>
+                            <br>
+                            <img src="../images/btm_img1.png">
+                            <br>
+                            <span class="red" data-i18n="btmTeach.24"></span>
+                        </div>
                     </div>
-                </div>
-            </li>
-            <li>
-                <div class="step">4</div>
-                <div class="content">
-                    <p data-i18n="btmTeach.18"></p>
-                    <div>
-                        <span data-i18n="btmTeach.19"></span> <a href="www.91pool.com" target="_blank">www.91pool.com</a>,<span data-i18n="btmTeach.20"></span>
+                </li>
+                <li>
+                    <div class="step">4</div>
+                    <div class="content">
+                        <p data-i18n="btmTeach.18"></p>
+                        <div>
+                            <span data-i18n="btmTeach.19"></span> <a href="www.91pool.com" target="_blank">www.91pool.com</a>,<span data-i18n="btmTeach.20"></span>
+                        </div>
                     </div>
-                </div>
-            </li>
-            <li>
-                <div class="step">5</div>
-                <div class="content">
-                     <p data-i18n="btmTeach.21"></p>
-                     <div>
-                          <span data-i18n="btmTeach.22"></span>1：stratum+tcp://btm.91pool.com:9221
-                          <br>
-                     </div>
-                </div>
-            </li>
-        </ul>
+                </li>
+                <li>
+                    <div class="step">5</div>
+                    <div class="content">
+                        <p data-i18n="btmTeach.21"></p>
+                        <div>
+                            <span data-i18n="btmTeach.22"></span>1：stratum+tcp://btm.91pool.com:9221
+                            <br>
+                        </div>
+                    </div>
+                </li>
+            </ul>
+        </div>
+        <div class="time-line btmTab hidden">
+            <div class="btmTeach-title" data-i18n="btmTeach.title2"></div>
+            <ul class="teach-info">
+                <li>
+                    <div class="step">1</div>
+                    <div class="content">
+                        <p data-i18n="btmTeach.1"></p>
+                        <div>
+                            <span data-i18n="btmTeach.2"></span>（<a href="https://bytom.io/wallet/" target="_blank">https://bytom.io/wallet/</a>）
+                            <br>
+                            <span data-i18n="btmTeach.3"></span>
+                            <br>
+                            <span data-i18n="btmTeach.4"></span>
+                        </div>
+                    </div>
+                </li>
+                <li>
+                    <div class="step">2</div>
+                    <div class="content">
+                        <p data-i18n="btmTeach.39"></p>
+                        <div>
+                            <span data-i18n="btmTeach.25"></span>
+                            <br>
+                            1. <span data-i18n="btmTeach.26"></span>
+                            <br>
+                            2. <a href="https://pan.baidu.com/s/1ATBYJye_SUdfOePd6q29yA" target="_blank" data-i18n="btmTeach.27"></a>
+                            <br>
+                            <span data-i18n="btmTeach.28"></span>
+                            <br>
+                            <span data-i18n="btmTeach.29"></span>
+                            <br>
+                            <span data-i18n="btmTeach.30"></span>
+                            <br>
+                            <img src="../images/btm_img3.png">
+                            <br>
+                            <span data-i18n="btmTeach.31"></span>
+                            <br>
+                            <span data-i18n="btmTeach.32"></span>
+                            <br>
+                            <span data-i18n="btmTeach.33"></span>
+                            <br>
+                            <span data-i18n="btmTeach.34"></span>
+                            <br>
+                            <span>./91btminer -url btm.91pool.com:9221 -user bm1qexwea5wl4d2vtm7gd2kkw3rq45gysffn4hnpga.1060</span>
+                            <br>
+                            <span data-i18n="btmTeach.35"></span>
+                            <br>
+                        </div>
+                    </div>
+                </li>
+                <li>
+                    <div class="step">3</div>
+                    <div class="content">
+                        <p data-i18n="btmTeach.40"></p>
+                        <div>
+                            <span data-i18n="btmTeach.36"></span>
+                            <br>
+                            <span data-i18n="btmTeach.37"></span>
+                            <br>
+                            <span data-i18n="btmTeach.38"></span>
+                        </div>
+                    </div>
+                </li>
+                <li>
+                    <div class="step">4</div>
+                    <div class="content">
+                        <p data-i18n="btmTeach.18"></p>
+                        <div>
+                            <span data-i18n="btmTeach.19"></span> <a href="www.91pool.com" target="_blank">www.91pool.com</a>,<span data-i18n="btmTeach.20"></span>
+                        </div>
+                    </div>
+                </li>
+                <li>
+                    <div class="step">5</div>
+                    <div class="content">
+                        <p data-i18n="btmTeach.21"></p>
+                        <div>
+                            <span data-i18n="btmTeach.22"></span>1：stratum+tcp://btm.91pool.com:9221
+                            <br>
+                        </div>
+                    </div>
+                </li>
+            </ul>
+        </div>
     </div>
-</div>

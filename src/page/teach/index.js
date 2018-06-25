@@ -14,42 +14,11 @@ var index = {
         this.handler();
     },
     handler : function () {
-
-        // ETF
-        // $.get("/currencies/ethereumfog",function (data) {
-        //     var text = $(data).find('.coinprice').html();
-        //     console.log(text)
-        // });
-        //
-        // // ETC
-        // $.get("/currencies/ethereum-classic",function (data) {
-        //     var text = $(data).find('.coinprice').html();
-        //     console.log(text)
-        // });
-        //
-        // // ETH
-        // $.get("/currencies/ethereum",function (data) {
-        //     var text = $(data).find('.coinprice').html();
-        //     console.log(text)
-        // });
-        //
-        // // HSR
-        // $.get("/currencies/hshare",function (data) {
-        //     var text = $(data).find('.coinprice').html();
-        //     console.log(text)
-        // });
-        //
-        // // BTM
-        // $.get("/currencies/bytom",function (data) {
-        //     var text = $(data).find('.coinprice').html();
-        //     console.log(text)
-        // });
-        //
-        // // XDAG
-        // $.get("/currencies/dagger",function (data) {
-        //     var text = $(data).find('.coinprice').html();
-        //     console.log(text)
-        // });
+        $(document).on("click",".btm-title li",function () {
+            var index = $(this).index();
+            $(this).addClass("active").siblings().removeClass("active");
+            $(".btmTab").addClass("hidden").eq(index).removeClass("hidden");
+        })
     }
 };
 

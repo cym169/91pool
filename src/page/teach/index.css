@@ -1,120 +1,31 @@
 
-.search-box {
+.btm-title{
+    display: inline-block;
     width: 100%;
-    height: 255px;
-    background: url("../../images/search_bg.jpg") center center no-repeat;
-    background-size: cover;
-    overflow: hidden;
-    position: relative;
+    margin-top: 30px;
 }
-
-.search-box .form {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    width: 672px;
-    height: 36px;
-    margin: -18px 0 0 -345px;
-}
-
-.search-box .form span {
-    position: absolute;
-    color: #a9a9a9;
+.btm-title li{
+    float: left;
+    color: #f86601;
+    margin: 0 12px 0 12px;
+    padding: 6px 12px;
+    background-color: #fff;
+    border-radius: 4px;
     font-size: 14px;
-    top: 11px;
-    left: 10px;
-    z-index: 9;
-}
-
-.search-box .form input[type='text'] {
-    position: absolute;
-    left: 0;
-    top: 0;
-    padding: 0;
-    font-size: 14px;
-    color: #a9a9a9;
-    height: 32px;
-    line-height: 32px;
-    padding-left: 30px;
-    border: 1px solid #dae2ed;
-    width: 540px;
-    border-radius: 4px 0 0 4px;
-    outline: none;
-}
-
-.search-box .form input[type='button'] {
-    position: absolute;
-    right: 0;
-    top: 0;
-    background-color: #fd752c;
-    color: #fff;
-    height: 36px;
-    width: 100px;
-    padding: 0;
-    border: 1px solid #fd752c;
-    border-radius: 0 4px 4px 0;
-    outline: none;
     cursor: pointer;
 }
-
-.search-box .form input[type='button']:hover {
-    background-color: #dd6626;
+.btm-title li.active{
+    background-color: #f86601;
+    color: #fff;
 }
-
-.coin-logo {
-    width: 94px;
-    height: 94px;
-    background-color: #2d8d4b;
-    border-radius: 50%;
-    text-align: center;
-    line-height: 94px;
-    margin: 25px auto 10px;
+.btmTeach-title{
+    color:#fff;
 }
-
-.coin-logo img {
-    display: inline-block;
-    vertical-align: middle;
-    width: 50%;
-}
-
-.coin-title {
-    display: inline-block;
-    padding: 50px 0 32px 0;
-    /*overflow: hidden;*/
-}
-
-.coin-title li {
-    float: left;
-    height: 16px;
-    width: 140px;
-    border-right: 1px solid #333;
-}
-
-.coin-title li.active a {
-    border-bottom: 4px solid #f86601;
-    color: #f86601;
-}
-
-.coin-title li a:hover {
-    color: #f86601;
-}
-
-.coin-title li a {
-    display: inline-block;
-    font-size: 14px;
-    color: #333;
-    padding-bottom: 30px;
-}
-
-.coin-title li:last-child {
-    border-right: none;
-}
-
 /*挖矿教程*/
 .teach {
     width: 100%;
-    background: url("../../images/teach_bg.jpg") center center no-repeat;
-    background-size: cover;
+    background: url("../../images/teach_bg.jpg") repeat;
+    background-size: auto;
 }
 
 .time-line {

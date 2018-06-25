@@ -19,6 +19,7 @@ var json = require('util/languages/' + lang + '.json');
 var teach = require('teach/' + coin + '_teach.string');
 var xTime = ['now'],
     yData = [0];
+var btmFlag = true;
 
 var index = {
     init: function () {
@@ -40,12 +41,62 @@ var index = {
                 window.location.href = './worker.html?coin=' + coin + '&wallet='+ val;
             }
         });
-
         // 币种导航
-        $('.coin-title').on('click', 'li', function () {
+        $(document).on('click', '.coin-title>li', function (e) {
+
             var i = $(this).index();
+            var page = $(this).attr("page");
             $(this).addClass('active').siblings().removeClass('active');
             $(".tab").hide().eq(i).show();
+
+            if(coin == 'btm'){
+                if( page == 'teach'){
+                    if (btmFlag) {
+                        $('.btmType').fadeIn();
+                        btmFlag = false;
+                    } else {
+                        btmFlag = true;
+                        $('.btmType').fadeOut();
+                    }
+                    e.stopPropagation();
+                }
+            }
+
+
+
+            // if(coin == 'btm'){
+            //     var page = $(this).attr("page");
+            //     var i = $(this).index();
+            //     $(this).addClass('active').siblings().removeClass('active');
+            //     if( page == 'teach'){
+            //         if (btmFlag) {
+            //             $('.btmType').fadeIn();
+            //             btmFlag = false;
+            //         } else {
+            //             btmFlag = true;
+            //             $('.btmType').fadeOut();
+            //         }
+            //         e.stopPropagation();
+            //     }else{
+            //         $(".tab").hide().eq(i).show();
+            //     }
+            // }
+            // else{
+            //     var i = $(this).index();
+            //     $(this).addClass('active').siblings().removeClass('active');
+            //     $(".tab").hide().eq(i).show();
+            // }
+        });
+
+        $(document).on('click', '.btmType li', function () {
+            var myIndex = $(this).index();
+            console.log(myIndex)
+            $(".btmTab").addClass("hidden").eq(myIndex).removeClass("hidden");
+        });
+
+        $(document).on('click', function (e) {
+            btmFlag = true;
+            $('.btmType').fadeOut();
         });
 
         $(document).on('click', '.work-title li', function () {
@@ -320,6 +371,9 @@ var index = {
     default: function () {
         if(coin == 'lch'){
             return
+        }
+        if(coin == 'btm'){
+            $(".btmIcon").show();
         }
         var teachHtml = util.renderHtml(teach);
         $(".teach").html(teachHtml);
