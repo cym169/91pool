@@ -95,6 +95,9 @@
 .market-info > tbody > tr{
     cursor: pointer;
 }
+.market-info > tbody > tr:hover td{
+    background-color: #F5F5F5;
+}
 .market-info > tbody > tr > td{
     font-family: Arial ;
 }
@@ -142,7 +145,7 @@
 }
 
 .market-info > tbody > tr:nth-child(even) {
-    background-color: #f4f4f4;
+    background-color: #f9f9f9;
 }
 
 .market-info > tbody > tr > td {

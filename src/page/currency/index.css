@@ -148,7 +148,9 @@
     font-size: 14px;
     white-space: nowrap;
 }
-
+.btmType li.active a{
+    color: #f86601;
+}
 .btmType li a:hover {
     background-color: #f0f0f0;
 }
@@ -156,34 +158,26 @@
 .btmType li:last-child {
     border-bottom: none;
 }
-.btmType .btmType-arrow{
+.btmType .btmType-arrow,.btmType .btmType-arrow:after{
     position: absolute;
     display: block;
     width: 0;
     height: 0;
-    border-color: transparent;
-    border-style: solid;
-    border-width: 6px;
+    border: 6px solid transparent;
+    margin-left: -6px;
+    border-top-width: 0;
+}
+
+.btmType .btmType-arrow{
     filter: drop-shadow(0 2px 12px rgba(0,0,0,.03));
     top: -6px;
     left: 50%;
-    margin-left: -6px;
-    border-top-width: 0;
     border-bottom-color: #ebeef5;
 }
 .btmType .btmType-arrow:after{
-    position: absolute;
-    display: block;
-    width: 0;
-    height: 0;
-    border-color: transparent;
-    border-style: solid;
-    top: -4px;
-    margin-left: -6px;
-    border-top-width: 0;
+    top: 2px;
     border-bottom-color: #fff;
     content: " ";
-    border-width: 6px;
 }
 .tab {
     display: none;
@@ -701,7 +695,7 @@
     .coin-title{
         width: 100%;
     }
-    .coin-title li{
+    .coin-title>li{
         width: 24%;
     }
 

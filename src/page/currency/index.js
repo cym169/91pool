@@ -61,36 +61,11 @@ var index = {
                     e.stopPropagation();
                 }
             }
-
-
-
-            // if(coin == 'btm'){
-            //     var page = $(this).attr("page");
-            //     var i = $(this).index();
-            //     $(this).addClass('active').siblings().removeClass('active');
-            //     if( page == 'teach'){
-            //         if (btmFlag) {
-            //             $('.btmType').fadeIn();
-            //             btmFlag = false;
-            //         } else {
-            //             btmFlag = true;
-            //             $('.btmType').fadeOut();
-            //         }
-            //         e.stopPropagation();
-            //     }else{
-            //         $(".tab").hide().eq(i).show();
-            //     }
-            // }
-            // else{
-            //     var i = $(this).index();
-            //     $(this).addClass('active').siblings().removeClass('active');
-            //     $(".tab").hide().eq(i).show();
-            // }
         });
 
         $(document).on('click', '.btmType li', function () {
             var myIndex = $(this).index();
-            console.log(myIndex)
+            $(this).addClass('active').siblings().removeClass('active');
             $(".btmTab").addClass("hidden").eq(myIndex).removeClass("hidden");
         });
 
@@ -121,7 +96,6 @@ var index = {
             return
         }
         _coins.getBlocks(coin, function (data) {
-
             if (data.luck == null) {
                 $('#get-box').hide();
             } else {

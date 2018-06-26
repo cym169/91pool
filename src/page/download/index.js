@@ -8,15 +8,20 @@ require('common/simple/index.js');
 require('./index.css');
 var index = {
     init    : function () {
+        this.goback();
         this.handler();
     },
     handler : function () {
+        // if(this.iswechat()){
+        //     $(".iswechat").show();
+        //     return false;
+        // }
         // var data = OpenInstall.parseUrlParams();
         new OpenInstall({
             /*appKey必选参数，openinstall平台为每个应用分配的ID*/
-            appKey : "zohls3",
+            appKey : "hg1nfq",
             /*可选参数，自定义android平台的apk下载文件名，只有apk在openinstall托管时才有效；个别andriod浏览器下载时，中文文件名显示乱码，请慎用中文文件名！*/
-            //apkFileName : 'com.fm.openinstalldemo-v2.2.0.apk',
+            // apkFileName : '91pool.apk',
             /*可选参数，是否优先考虑拉起app，以牺牲下载体验为代价*/
             //preferWakeup:true,
             /*自定义遮罩的html*/
@@ -34,9 +39,24 @@ var index = {
                 }
             }
         });
+    },
+    goback: function () {
+        var wh = $(window).width();
+        if(wh > 700){
+            // 直接切换到首页
+            window.location.replace('/');
+        }
+    },
+    iswechat : function () {
+            var ua = navigator.userAgent.toLowerCase();
+            if( ua.match(/MicroMessenger/i) == "micromessenger" ) {
+                return true;
+            } else {
+                return false;
+            }
     }
 };
 
 $(function () {
     index.init();
-})
+});
