@@ -168,6 +168,19 @@
     line-height: 15px;
     padding-bottom: 10px;
 }
+.qr-download,.qr-wechat{
+    width: 120px;
+    height: 120px;
+    position: absolute;
+    top: 50px;
+    color: #fff;
+}
+.qr-wechat{
+    right: 0;
+}
+.qr-download{
+    right: 150px;
+}
 /*兼容分辨率*/
 
 @media (max-width: 700px) {

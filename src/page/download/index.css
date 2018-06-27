@@ -15,7 +15,7 @@ html,body{
         width: 100%;
         top: 0;
         left: 0;
-        bottom: 12%;
+        bottom: 16%;
         background: url("../../images/download_bg.jpg") no-repeat;
         background-size: cover;
         text-align: center;
@@ -44,7 +44,7 @@ html,body{
         position: absolute;
         left: 0;
         bottom: 0;
-        height: 12%;
+        height: 16%;
         width: 100%;
     }
     .button-position{
@@ -55,7 +55,6 @@ html,body{
         align-items: center;
     }
     .downloadButton{
-
         padding: 8px 15%;
         background-color: #ff0000;
         color: #fff;

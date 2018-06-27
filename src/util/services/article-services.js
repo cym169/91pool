@@ -11,7 +11,7 @@ var _article = {
     saveArticle : function(data,resolve,reject){
         var _this = this;
         util.request({
-            url         : _this.getServerUrl('/article/save'),
+            url         : _this.getServerUrl('/article/save')+"?t="+new Date().getTime(),
             type        : 'post',
             data        : data,
             dataType    : "json",
@@ -22,7 +22,7 @@ var _article = {
     editArticle : function(data,resolve,reject){
         var _this = this;
         util.request({
-            url         : _this.getServerUrl('/article/edit'),
+            url         : _this.getServerUrl('/article/edit')+"?t="+new Date().getTime(),
             type        : 'post',
             data        : data,
             dataType    : "json",
@@ -33,7 +33,7 @@ var _article = {
     getArticle : function(id,resolve,reject){
         var _this = this;
         util.request({
-            url     : _this.getServerUrl('/article/get'),
+            url     : _this.getServerUrl('/article/get')+"?t="+new Date().getTime(),
             type    : 'get',
             data    : id,
             success : resolve,
@@ -43,7 +43,7 @@ var _article = {
     getList : function(page,resolve,reject){
         var _this = this;
         util.request({
-            url     : _this.getServerUrl('/article/list'),
+            url     : _this.getServerUrl('/article/list')+"?t="+new Date().getTime(),
             type    : 'post',
             data    : page,
             success : resolve,

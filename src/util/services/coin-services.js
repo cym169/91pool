@@ -12,7 +12,7 @@ var _coins = {
         var _this = this;
         serverHost = 'http://www.91pool.com/api';
         util.request({
-            url     : _this.getServerUrl('/pool/stats'),
+            url     : _this.getServerUrl('/pool/stats')+"?t="+new Date().getTime(),
             type  : 'get',
             success : resolve,
             error   : reject
@@ -22,7 +22,7 @@ var _coins = {
         var _this = this;
         serverHost = 'http://www.91pool.com/api';
         util.request({
-            url     : _this.getServerUrl('/'+type+'/stats'),
+            url     : _this.getServerUrl('/'+type+'/stats')+"?t="+new Date().getTime(),
             type  : 'get',
             success : resolve,
             error   : reject
@@ -32,7 +32,7 @@ var _coins = {
         var _this = this;
         serverHost = 'http://www.91pool.com/api';
         util.request({
-            url     : _this.getServerUrl('/'+type+'/blocks'),
+            url     : _this.getServerUrl('/'+type+'/blocks')+"?t="+new Date().getTime(),
             type  : 'get',
             success : resolve,
             error   : reject
@@ -42,20 +42,20 @@ var _coins = {
         var _this = this;
         serverHost = 'http://api.guower.com';
         util.getJsonp({
-            url     : _this.getServerUrl('/coin/markets/'+type),
+            url     : _this.getServerUrl('/coin/markets/'+type)+"?t="+new Date().getTime(),
             callback: resolve
         })
     },
-    getLCH : function (resolve,reject) {
-        var _this = this;
-        serverHost = 'https://block.cc/api/v1/query?str=lch&act=q';
-        util.request({
-            url     : serverHost,
-            type  : 'get',
-            success : resolve,
-            error   : reject
-        });
-    },
+    // getLCH : function (resolve,reject) {
+    //     var _this = this;
+    //     serverHost = 'https://block.cc/api/v1/query?str=lch&act=q';
+    //     util.request({
+    //         url     : serverHost,
+    //         type  : 'get',
+    //         success : resolve,
+    //         error   : reject
+    //     });
+    // },
     // 获取服务器地址
     getServerUrl : function(path){
         return serverHost + path;

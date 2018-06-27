@@ -243,10 +243,10 @@
                             {{each list as item}}
                             {{if item.orphan == false}}
                             <tr>
-                                {{if ('etc' == item.coin || 'eth' == item.coin || 'etf' == item.coin)&&item.uncle}}
+                                {{if ('etc' == item.coin || 'eth' == item.coin || 'etf' == item.coin || 'btm' == item.coin)&&item.uncle}}
                                 <td><a style="color: #fea112;" href="{{item.myUrl}}{{item.height}}"
                                        target="_blank">{{item.uncleHeight}}</a></td>
-                                {{else if 'etc' == item.coin || 'eth' == item.coin || 'etf' == item.coin}}
+                                {{else if 'etc' == item.coin || 'eth' == item.coin || 'etf' == item.coin || 'btm' == item.coin}}
                                 <td><a style="color: #fea112;" href="{{item.myUrl}}{{item.height}}"
                                        target="_blank">{{item.height}}</a></td>
                                 {{else}}
@@ -263,7 +263,7 @@
                                 <td>{{item.timestamp}}</td>
                                 <td>{{item.diff}}</td>
                                 {{if item.orphan == false}}
-                                <td>{{item.reward}}</td>
+                                <td>{{item.reward}} {{item.dw}}</td>
                                 {{else}}
                                 <td>0</td>
                                 {{/if}}
@@ -290,10 +290,10 @@
                             {{each list as item}}
                             {{if item.orphan == false}}
                             <tr>
-                                {{if ('etc' == item.coin || 'eth' == item.coin || 'etf' == item.coin)&&item.uncle}}
+                                {{if ('etc' == item.coin || 'eth' == item.coin || 'etf' == item.coin || 'btm' == item.coin)&&item.uncle}}
                                 <td><a style="color: #fea112;" href="{{item.myUrl}}{{item.height}}"
                                        target="_blank">{{item.uncleHeight}}</a></td>
-                                {{else if 'etc' == item.coin || 'eth' == item.coin || 'etf' == item.coin}}
+                                {{else if 'etc' == item.coin || 'eth' == item.coin || 'etf' == item.coin || 'btm' == item.coin}}
                                 <td><a style="color: #fea112;" href="{{item.myUrl}}{{item.height}}"
                                        target="_blank">{{item.height}}</a></td>
                                 {{else}}
@@ -310,7 +310,7 @@
                                 <td>{{item.timestamp}}</td>
                                 <td>{{item.diff}}</td>
                                 {{if item.orphan == false}}
-                                <td>{{item.reward}}</td>
+                                <td>{{item.reward}} {{item.dw}}</td>
                                 {{else}}
                                 <td>0</td>
                                 {{/if}}

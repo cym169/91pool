@@ -127,7 +127,6 @@ var index = {
                             t.myUrl = "https://gastracker.io/block/";
                             t.reward = (t.reward * 1e-18).toFixed(6);
                             break;
-                        // case 'eth':
                         case 'etf':
                             t.myUrl = "#";
                             t.reward = (t.reward * 1e-18).toFixed(6);
@@ -140,13 +139,14 @@ var index = {
                             t.reward = (t.mint).toFixed(6);
                             break;
                         case 'btm':
-                            t.myUrl = "#";
+                            t.myUrl = "http://blockmeta.com/block/";
                             t.reward = (t.reward).toFixed(6);
                             break;
                     }
                     t.timestamp = _reset.formatDateLocale(t.timestamp);
                     t.diff = _reset.getRoundVariance(t.shares, t.difficulty);
                     t.coin = coin;
+                    t.dw = upper;
                 });
                 var dataList1 = {
                     list: data.matured
@@ -175,13 +175,14 @@ var index = {
                             t.reward = (t.mint).toFixed(6);
                             break;
                         case 'btm':
-                            t.myUrl = "#";
+                            t.myUrl = "http://blockmeta.com/block/";
                             t.reward = (t.mint).toFixed(6);
                             break;
                     }
                     t.timestamp = _reset.formatDateLocale(t.timestamp);
                     t.diff = _reset.getRoundVariance(t.shares, t.difficulty);
                     t.coin = coin;
+                    t.dw = upper;
                 });
                 var dataList2 = {
                     list: data.immature
@@ -208,7 +209,7 @@ var index = {
                             t.myUrl = "http://explorer.litecoincash.tech/block/";
                             break;
                         case 'btm':
-                            t.myUrl = "#";
+                            t.myUrl = "http://blockmeta.com/block/";
                             break;
                     }
                 });

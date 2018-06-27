@@ -12,7 +12,7 @@ var _workers = {
         var _this = this;
         serverHost = 'http://www.91pool.com';
         util.request({
-            url     : _this.getServerUrl('/api/'+type+'/accounts/'+name+''),
+            url     : _this.getServerUrl('/api/'+type+'/accounts/'+name+'')+"?t="+new Date().getTime(),
             type  : 'get',
             success : resolve,
             error   : reject

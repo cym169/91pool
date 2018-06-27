@@ -155,9 +155,12 @@
                     {{each list as item}}
                     <tr>
                         <td>{{item.timestamp}}</td>
-                        <td><a style="color: #fea112;" href="https://gastracker.io/tx/{{item.tx}}" target="_blank">{{item.text}}</a>
-                        </td>
-                        <td>{{item.amount}}</td>
+                        {{if item.myUrl == '#'}}
+                        <td><a style="color: #fea112;" href="javascript:;">{{item.text}}</a></td>
+                        {{else}}
+                        <td><a style="color: #fea112;" href="{{item.myUrl}}{{item.tx}}" target="_blank">{{item.text}}</a></td>
+                        {{/if}}
+                        <td>{{item.amount}} {{item.dw}}</td>
                     </tr>
                     {{/each}}
                     </tbody>

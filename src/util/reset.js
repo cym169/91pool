@@ -13,6 +13,9 @@ var _reset = {
         if (coin == "etc" || coin == "eth" || coin == "etf") {
             value = value * 0.000000001;
         }
+        if(coin == 'hsr'){
+            value = value * 0.00000001;
+        }
         if (isNaN(value)) {
             value = 0;
         }

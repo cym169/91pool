@@ -206,6 +206,21 @@ var index = {
                         t.timestamp = _reset.formatDateLocale(t.timestamp);
                         t.text = _reset.formatTx(t.tx);
                         t.amount = _reset.formatBalance(t.amount, coin);
+                        t.dw = upper;
+                        switch (coin) {
+                            case 'etc':
+                                t.myUrl = "https://gastracker.io/tx/";
+                                break;
+                            case 'etf':
+                                t.myUrl = "#";
+                                break;
+                            case 'hsr':
+                                t.myUrl = "#";
+                                break;
+                            case 'btm':
+                                t.myUrl = "http://blockmeta.com/tx/";
+                                break;
+                        }
                     });
                     var payList = {
                         list: data.payments
