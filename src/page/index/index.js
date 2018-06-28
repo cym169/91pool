@@ -25,12 +25,20 @@ var index = {
     },
     handler: function () {
         var _this = this;
-        setInterval(function(){
-            _this.refresh();
-        }, 5000);
+        // setInterval(function(){
+        //     _this.refresh();
+        // }, 5000);
         
-        $(document).on("click",".coinType",function () {
-            var coin = $(this).attr("coin");
+        $(document).on("click",".coinType td:not(:last-child)",function (e) {
+            e.preventDefault();
+            var coin = $(this).parent('tr').attr("coin");
+            window.location.href = "./currency.html?coin="+coin;
+        });
+
+        $(document).on("click",".teach",function (e) {
+            // e.preventDefault();
+            var coin = $(this).parents('tr').attr("coin");
+            localStorage.coinIndex = 1;
             window.location.href = "./currency.html?coin="+coin;
         });
     },
@@ -60,6 +68,25 @@ var index = {
                 t.hashrate = _reset.formatHashrate(t.hashrate);
                 t.netHashrate = _reset.formatHashrate(t.netHashrate);
                 t.netDiff = _reset.changeDiff(t.netDiff);
+                t.word = lang == 'cn'?'教程':'Tutorial';
+                switch (t.coin) {
+                    case 'etc':
+                        t.fee = "1%";
+                        t.address = "etc1.91pool.com:8008";
+                        break;
+                    case 'etf':
+                        t.fee = "1%";
+                        t.address = "etf1.91pool.com:9108";
+                        break;
+                    case 'hsr':
+                        t.fee = "0%";
+                        t.address = "hsr1.91pool.com:9009";
+                        break;
+                    case 'btm':
+                        t.fee = "1%";
+                        t.address = "btm.91pool.com:9221";
+                        break;
+                }
             });
             var coinList = {
                 list: data

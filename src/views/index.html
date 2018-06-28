@@ -56,24 +56,30 @@
                 <th data-i18n="table.currency"></th>
                 <th data-i18n="table.poolHashrate"></th>
                 <th data-i18n="table.netWorkHashrate"></th>
-                <th data-i18n="table.netWorkDifficulty"></th>
+                <th data-i18n="table.poolFee"></th>
+                <th data-i18n="table.address"></th>
+                <!--<th data-i18n="table.netWorkDifficulty"></th>-->
                 <th><span data-i18n="table.price"></span>CNY（<a href="https://www.feixiaohao.com/" target="_blank" style="font-size: 12px;color:#333;opacity: .5;"
                                                                    data-i18n="table.fromFXH"></a>）
                 </th>
                 <th data-i18n="table.theoreticalEarnings"></th>
+                <th data-i18n="table.teach"></th>
             </tr>
             </thead>
             <tbody id="coinList">
             <script type="text/html" id="coinList-tp">
                 {{each list as item i}}
                 <tr class="coinType" coin={{item.coin}}>
-                    <td><a><i class="{{item.coin}}_icon"><img
-                            src="{{item.imgUrl}}"></i>{{item.upcoin}}</a></td>
+                    <td><i class="{{item.coin}}_icon"><img
+                            src="{{item.imgUrl}}"></i>{{item.upcoin}}</td>
                     <td class="hashrate{{i}}">{{item.hashrate}}</td>
                     <td class="netHashrate{{i}}">{{item.netHashrate}}</td>
-                    <td class="netDiff{{i}}">{{item.netDiff}}</td>
+                    <td class="fee{{i}}">{{item.fee}}</td>
+                    <td >{{item.address}}</td>
+                    <!--<td class="netDiff{{i}}">{{item.netDiff}}</td>-->
                     <td class="{{item.coin}}price"></td>
                     <td class="profit{{i}}">{{item.profit}}</td>
+                    <td><a title="{{item.upcoin}}{{item.word}}" class="teach" href="javascript:;"><img src="../images/teach_icon.png"></a></td>
                 </tr>
                 {{/each}}
             </script>

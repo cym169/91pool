@@ -39,9 +39,11 @@
         "poolFee": "矿池费率",
         "netWorkDifficulty": "网络难度",
         "price": "价格",
+        "teach":"教程",
+        "address":"矿池地址",
         "fromFXH": "来自非小号",
         "onlineMiners": "在线矿工",
-        "theoreticalEarnings": "理论收益"
+        "theoreticalEarnings": "24小时理论收益"
       },
       "contact": {
         "QQGroup": "QQ群",

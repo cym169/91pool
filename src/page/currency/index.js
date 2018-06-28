@@ -28,6 +28,7 @@ var index = {
         this.default();
         this.setData();
         this.handler();
+        this.setIndex();
     },
     handler: function () {
         if(coin == 'lch'){
@@ -350,6 +351,11 @@ var index = {
         if(coin == 'btm'){
             $(".btmIcon").show();
         }
+        if(localStorage.coinIndex){
+            var coinIndex = localStorage.coinIndex;
+            $(".coin-title li").removeClass("active").eq(coinIndex).addClass("active");
+            $(".tab").hide().eq(coinIndex).show();
+        }
         var teachHtml = util.renderHtml(teach);
         $(".teach").html(teachHtml);
         var imgUrl = require('images/' + coin + '.png');
@@ -413,6 +419,15 @@ var index = {
     setwx : function () {
         var baseUrl = location.href.split("#")[0];
         mwx.setWxInfo(upper+"矿池介绍","专注于数字资产增值服务",baseUrl);
+    },
+    setIndex : function () {
+        $(window).on('unload', function() {
+            localStorage.removeItem('coinIndex');
+        });
+
+        $(window).on('beforeunload', function() {
+            localStorage.removeItem('coinIndex');
+        });
     }
 };
 $(function () {

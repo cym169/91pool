@@ -37,9 +37,11 @@
         "poolHashrate": "Pool Hashrate",
         "netWorkHashrate": "Network Hashrate",
         "poolFee": "Pool Fee",
+        "address":"Miner Address",
         "netWorkDifficulty": "Network Difficulty",
         "price": "Price",
         "fromFXH": "From feixiaohao",
+        "teach":"Tutorial",
         "onlineMiners": "Online Miners",
         "theoreticalEarnings": "Theoretical Earnings"
       },
