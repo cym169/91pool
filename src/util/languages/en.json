@@ -22,6 +22,7 @@
         "logout": "logout",
         "home": "Home",
         "pool": "Pool",
+        "download": "Download",
         "support": "Support",
         "chinese": "Chinese",
         "english": "English",
@@ -42,6 +43,7 @@
         "price": "Price",
         "fromFXH": "From feixiaohao",
         "teach":"Tutorial",
+        "calculator":"Calculator",
         "onlineMiners": "Online Miners",
         "theoreticalEarnings": "Theoretical Earnings"
       },

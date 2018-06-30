@@ -174,9 +174,16 @@
     /*height: 100%;*/
     /*vertical-align: middle;*/
 }
-.market-info > tbody > tr > td > .teach img{
-    width: 28px;
+.market-info > tbody > tr > td > .calculator{
+
+}
+.market-info > tbody > tr > td > .calculator img{
     height: 28px;
+    width: auto;
+}
+.market-info > tbody > tr > td > .teach img{
+    width: auto;
+    height: 34px;
 }
 .market-info > tbody > tr > td > .teach:hover{
     text-decoration: underline;
@@ -194,18 +201,6 @@
     width: 100%;
     text-align: center;
 }
-
-/*.swiper-pagination-bullets .swiper-pagination-bullet {*/
-    /*display: inline-block;*/
-    /*width: 8px;*/
-    /*height: 8px;*/
-    /*border-radius: 8px;*/
-    /*background: #555;*/
-    /*margin: 0 5px;*/
-    /*opacity: 0.8;*/
-    /*border: 1px solid #fff;*/
-    /*cursor: pointer;*/
-/*}*/
 
 .swiper-active-switch {
     background: #fff;
@@ -260,11 +255,136 @@
         padding: 0 15px;
     }
     .market-info > tbody > tr > td{
-        padding: 0 30px;
+        padding: 0 5px;
     }
     .market-info > tbody > tr > td:nth-child(1){
         padding: 0 35px;
     }
+    .calculator-dialog{
+        position: fixed;
+        left: 0;
+        right: 0;
+        top: 0;
+        bottom: 0;
+        background-color: rgba(0,0,0,.5);
+        z-index: 999;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .calculator-wrap{
+        padding: 0 20px;
+    }
+    .calculator-title{
+        background-color: #fea112;
+        font-size: 18px;
+        text-align: center;
+        color: #333;
+        padding: 8px 0;
+        border-radius: 5px 5px 0 0;
+        user-select: none;
+    }
+    .calculator-content{
+        background-color: #fff;
+        padding: 20px 0 10px 0;
+        border-radius: 0 0 5px 5px;
+    }
+    .hash,.get{
+        position: relative;
+        padding: 0 10px;
+        /*overflow: hidden;*/
+        height: 40px;
+    }
+    .change{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin: 10px 0;
+    }
+    .change img{
+        height: 28px;
+        transform: rotate(90deg);
+    }
+    .get{
+
+    }
+    .hash input,.get input{
+        width: calc( 100% - 112px );
+        height: calc( 100% - 2px );
+        padding: 0 60px 0 50px;
+        border-radius: 4px;
+        font-size: 16px;
+        border: 1px solid #bbbbbb;
+        outline: none;
+    }
+    .hash input{
+        color: #ccc;
+    }
+    .get input{
+        color: #000;
+    }
+    .hash label,.get label{
+        display: block;
+        position: absolute;
+        top: 0;
+        left: 15px;
+        height: 40px;
+        line-height: 40px;
+        font-size: 16px;
+    }
+    .hash span,.get span{
+        display: flex;
+        position: absolute;
+        top: 1px;
+        right: 11px;
+        font-size: 16px;
+        padding: 0 5px;
+        color: #333;
+        height: 38px;
+        line-height: 40px;
+        background-color: #eeeeee;
+        user-select: none;
+    }
+    .hash span{
+        color: #fea112;
+    }
+    .hash .chooseHash{
+        display: none;
+        position: absolute;
+        right: 10px;
+        top: 40px;
+        z-index: 22;
+        padding-top: 10px;
+        background-color: #fff;
+        border: 1px solid #ebeef5;
+        box-shadow: 0 2px 12px 0 rgba(0,0,0,.1);
+    }
+    .hash .chooseHash li{
+        font-size: 16px;
+        padding: 5px 20px;
+        color: #333;
+        cursor: pointer;
+        user-select: none;
+    }
+    .little-tips{
+        padding: 0 10px;
+        margin-top: 20px;
+        color: #fea112;
+        font-size: 15px;
+    }
+    .calculator-close{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin-top: 20px;
+        text-align: justify;
+        text-align-last: left;
+    }
+    .calculator-close img{
+        width: 30px;
+    }
+
 }
 @media (min-width: 768px) and (max-width: 992px) {
     .section {
@@ -281,5 +401,127 @@
 @media (min-width: 1200px) {
     .section {
         width: 1170px;
+    }
+    .calculator-dialog{
+        position: fixed;
+        left: 0;
+        right: 0;
+        top: 0;
+        bottom: 0;
+        background-color: rgba(0,0,0,.5);
+        z-index: 999;
+    }
+
+    .calculator-wrap{
+        width: 750px;
+        position: absolute;
+        left: 50%;
+        top: 50%;
+        margin: -170px 0 0 -375px;
+    }
+    .calculator-title{
+        background-color: #fea112;
+        font-size: 30px;
+        text-align: center;
+        color: #333;
+        padding: 28px 0;
+        border-radius: 5px 5px 0 0;
+        user-select: none;
+    }
+    .calculator-content{
+        background-color: #fff;
+        padding: 50px 35px;
+        border-radius: 0 0 5px 5px;
+    }
+    .hash,.get{
+        float: left;
+        position: relative;
+        width: 45%;
+    }
+    .change{
+        float: left;
+        display: flex;
+        width: 10%;
+        height: 63px;
+        /*text-align: center;*/
+        justify-content: center;
+        align-items: center;
+    }
+    .change img{
+        width: 40px;
+    }
+    .hash input,.get input{
+        /*position: relative;*/
+        width: 57%;
+        border: 1px solid #bbbbbb;
+        font-size: 18px;
+        background-color: #f5f4f3;
+        padding: 20px 80px 20px 50px;
+        outline: none;
+    }
+    .hash input{
+        color: #ccc;
+    }
+    .get input{
+        color: #000;
+    }
+    .hash label,.get label{
+        display: block;
+        position: absolute;
+        top: 0;
+        left: 10px;
+        height: 100%;
+        line-height: 63px;
+        font-size: 15px;
+        color:#999999;
+        user-select: none;
+    }
+    .hash span,.get span{
+        display: block;
+        position: absolute;
+        top: 1px;
+        right: 1px;
+        font-size: 20px;
+        padding: 0 5px;
+        color: #ccc;
+        height: 61px;
+        line-height: 63px;
+        background-color: #eeeeee;
+        user-select: none;
+        cursor: pointer;
+    }
+    .hash span{
+        color: #fea112;
+    }
+    .hash .chooseHash{
+        display: none;
+        position: absolute;
+        right:-1px;
+        padding-top: 10px;
+        background-color: #fff;
+        border: 1px solid #ebeef5;
+        box-shadow: 0 2px 12px 0 rgba(0,0,0,.1);
+    }
+    .hash .chooseHash li{
+        font-size: 20px;
+        padding: 8px 5px;
+        color: #333;
+        cursor: pointer;
+        user-select: none;
+    }
+    .hash .chooseHash li:hover{
+        background-color: #f0f0f0;
+    }
+    .little-tips{
+        margin-top: 20px;
+        color: #fea112;
+        font-size: 15px;
+    }
+    .calculator-close{
+        text-align: center;
+        padding-top: 40px;
+    }
+    .calculator-close img{
+        width: 40px;
     }
 }

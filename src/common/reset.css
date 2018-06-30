@@ -96,6 +96,7 @@ hr {
 }
 
 input, select {
+    -webkit-appearance: none;
     vertical-align: middle;
 }
 img {

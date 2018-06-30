@@ -10,10 +10,12 @@ require('common/footer/index.js');
 var _article = require('util/services/article-services.js');
 var _coin = require('util/services/coin-services.js');
 var _reset = require('util/reset.js');
-// var util = require('util/util.js');
+var util = require('util/util.js');
 var mwx = require('util/wx.js');
 var lang = localStorage.lang;
 var json = require('util/languages/' + lang + '.json');
+var calcKb = 0;
+var showFlag = true;
 var index = {
     init: function () {
 
@@ -25,18 +27,89 @@ var index = {
     },
     handler: function () {
         var _this = this;
-        // setInterval(function(){
-        //     _this.refresh();
-        // }, 5000);
+        setInterval(function(){
+            _this.refresh();
+        }, 6000);
         
-        $(document).on("click",".coinType td:not(:last-child)",function (e) {
-            e.preventDefault();
+        $(document).on("click",".coinType td:not(:nth-child(8),:nth-child(9))",function (e) {
             var coin = $(this).parent('tr').attr("coin");
             window.location.href = "./currency.html?coin="+coin;
         });
 
+        $(document).on("click",".calculator",function (e) {
+            var hashdw = $(this).attr("calcShow");
+            var getdw = $(this).attr("calcDw");
+            calcKb = $(this).attr("calcKb");
+            $("#showHash").html(hashdw+"/s");
+            $("#getdw").html(getdw+"/天");
+            $("#calculator").removeClass("hidden");
+            $("#hashText").focus();
+        });
+
+
+
+        $(document).on("click",".calculator-close",function (e) {
+            $("#calculator").addClass("hidden");
+            $("#showHash").html("");
+            $("#getdw").html("");
+            $("#hashText").val("");
+            $("#getText").val("");
+            calcKb = 0;
+        });
+
+        $(document).on("click","#showHash",function (e) {
+            if(showFlag){
+                $(".chooseHash").fadeIn();
+                showFlag = false;
+            }else{
+                $(".chooseHash").fadeOut();
+                showFlag = true;
+            }
+            e.stopPropagation();
+        });
+
+        $(document).on("click",".chooseHash li",function (e) {
+            var text = $(this).text(),
+                dw = text.slice(0,2);
+            $("#showHash").html(dw+"/s");
+            $("#hashText").focus().trigger("input");
+        });
+
+        $(document).on("click",function (e) {
+            showFlag = true;
+            $(".chooseHash").fadeOut();
+        });
+
+        $("#hashText").on("input",function () {
+            var val = $(this).val();
+            var hashdw = $("#showHash").html().slice(0,2);
+            var result = 0;
+            if(!util.validate(val,'require')){
+                $("#getText").val("");
+                return
+            }
+            if(util.validate(val,'plus')){
+                switch (hashdw){
+                    case "KH":
+                        result = val*calcKb;
+                        break;
+                    case "MH":
+                        result = val*calcKb*1000;
+                        break;
+                    case "GH":
+                        result = val*calcKb*1000*1000;
+                        break;
+                    case "TH":
+                        result = val*calcKb*1000*1000*1000;
+                        break;
+                }
+                result = result.toFixed(6);
+                $("#getText").val(result)
+            }
+        });
+
+
         $(document).on("click",".teach",function (e) {
-            // e.preventDefault();
             var coin = $(this).parents('tr').attr("coin");
             localStorage.coinIndex = 1;
             window.location.href = "./currency.html?coin="+coin;

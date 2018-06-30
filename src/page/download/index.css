@@ -1,97 +1,64 @@
-html,body{
-    height: 100%;
+
+.download{
+    width: 100%;
+    padding-bottom: 50px;
+    background-color: #eeeeee;
+}
+.section {
+    margin-right: auto;
+    margin-left: auto;
     position: relative;
 }
-
-.back-wrap,.button-wrap,.iswechat{
-    display: none;
+.wrap{
+    padding-top: 60px;
 }
-/*兼容分辨率*/
-
+.download-title{
+    font-size: 24px;
+    color: #333333;
+    text-align: left;
+}
+.download-line{
+    width: 100%;
+    height: 5px;
+    background-color: #fea112;
+    margin: 28px 0;
+}
+.download-software{
+    display: inline-block;
+    width: 100%;
+}
+.download-software li{
+    float: left;
+    margin-right: 10px;
+    margin-bottom: 10px;
+    width: 283px;
+    height: 100px;
+    background-color: #fff;
+    border: 1px solid #bbbbbb;
+    position: relative;
+}
+.download-software li .software-title{
+    height: 100%;
+    font-size: 16px;
+    color:#333333;
+    text-align: left;
+    padding: 0 60px 0 15px;
+    display: flex;
+    align-items:center;
+}
+.download-software li .software-icon{
+    display: block;
+    width: 40px;
+    height: 40px;
+    background: url("../../images/download.png") no-repeat;
+    background-size: cover;
+    position: absolute;
+    right: 15px;
+    top: 30px;
+}
 @media (max-width: 700px) {
-    .back-wrap{
-        display: block;
-        position: absolute;
-        width: 100%;
-        top: 0;
-        left: 0;
-        bottom: 16%;
-        background: url("../../images/download_bg.jpg") no-repeat;
-        background-size: cover;
-        text-align: center;
-    }
-    .first-title,.second-title,.back-icon,.slogan,.wind{
-        position: absolute;
-    }
-    .first-title{
-        top: 5%;
-    }
-    .second-title{
-        top: 13%;
-    }
-    .back-icon{
-        top: 22%;
-    }
-    .slogan{
-        bottom: 8%;
-    }
-    .wind{
-        bottom: -10px;
-        z-index: 9;
-    }
-    .button-wrap{
-        display: block;
-        position: absolute;
-        left: 0;
-        bottom: 0;
-        height: 16%;
-        width: 100%;
-    }
-    .button-position{
-        display: flex;
-        width: 100%;
-        height: 100%;
-        justify-content: center;
-        align-items: center;
-    }
-    .downloadButton{
-        padding: 8px 15%;
-        background-color: #ff0000;
-        color: #fff;
-        border: none;
-        border-radius: 15px;
-        text-align: center;
-        outline: none;
-        font-size: 18px;
-        white-space: nowrap;
-    }
-    .iswechat{
-        display: none;
-        position: fixed;
-        right: 0;
-        top: 0;
-        width: 100%;
-        height: 100%;
-        z-index: 99999;
-        background-color: rgba(0,0,0,.5);
-    }
-    .wechat_img{
-        position: absolute;
-        right: 20px;
-        top: 10px;
-        width: 40px;
-    }
-    .wechat_ms{
-        position: absolute;
-        right: 65px;
-        top: 0;
-        height: 40px;
-        line-height: 60px;
-        color: #fff;
-        font-size: 18px;
-    }
-}
 
+}
 @media (min-width: 768px) and (max-width: 992px) {
     .section {
         width: 750px;

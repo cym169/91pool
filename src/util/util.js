@@ -67,6 +67,10 @@ var util = {
         if('email' === type){
             return /^(\w)+(\.\w+)*@(\w)+((\.\w{2,3}){1,3})$/.test(value);
         }
+        // 验证正数
+        if('plus' === type){
+            return /^[+]{0,1}(\d+)$|^[+]{0,1}(\d+\.\d+)$/.test(value)
+        }
     },
     // 统一登录处理
     doLogin : function(){

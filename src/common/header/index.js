@@ -32,6 +32,9 @@ var index = {
         //     window.location.href = './register.html';
         // });
 
+        $(document).on('click', '.download-software', function (e) {
+            window.location.href = "./download.html"
+        })
         $(document).on('click', '.dropdown', function (e) {
             e.stopPropagation();
             if (_this.flag) {

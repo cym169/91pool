@@ -1,5 +1,5 @@
 <div class="section">
-        <div class="time-line btmTab">
+        <div class="time-line btmTab hidden">
             <div class="btmTeach-title" data-i18n="btmTeach.title1"></div>
             <ul class="teach-info">
                 <li>
@@ -74,7 +74,7 @@
                 </li>
             </ul>
         </div>
-        <div class="time-line btmTab hidden">
+        <div class="time-line btmTab">
             <div class="btmTeach-title" data-i18n="btmTeach.title2"></div>
             <ul class="teach-info">
                 <li>

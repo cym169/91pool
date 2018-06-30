@@ -55,14 +55,15 @@
             <tr>
                 <th data-i18n="table.currency"></th>
                 <th data-i18n="table.poolHashrate"></th>
-                <th data-i18n="table.netWorkHashrate"></th>
                 <th data-i18n="table.poolFee"></th>
+                <th data-i18n="table.netWorkHashrate"></th>
                 <th data-i18n="table.address"></th>
                 <!--<th data-i18n="table.netWorkDifficulty"></th>-->
                 <th><span data-i18n="table.price"></span>CNY（<a href="https://www.feixiaohao.com/" target="_blank" style="font-size: 12px;color:#333;opacity: .5;"
                                                                    data-i18n="table.fromFXH"></a>）
                 </th>
                 <th data-i18n="table.theoreticalEarnings"></th>
+                <th data-i18n="table.calculator"></th>
                 <th data-i18n="table.teach"></th>
             </tr>
             </thead>
@@ -73,12 +74,13 @@
                     <td><i class="{{item.coin}}_icon"><img
                             src="{{item.imgUrl}}"></i>{{item.upcoin}}</td>
                     <td class="hashrate{{i}}">{{item.hashrate}}</td>
-                    <td class="netHashrate{{i}}">{{item.netHashrate}}</td>
                     <td class="fee{{i}}">{{item.fee}}</td>
+                    <td class="netHashrate{{i}}">{{item.netHashrate}}</td>
                     <td >{{item.address}}</td>
                     <!--<td class="netDiff{{i}}">{{item.netDiff}}</td>-->
                     <td class="{{item.coin}}price"></td>
                     <td class="profit{{i}}">{{item.profit}}</td>
+                    <td><a title="" class="calculator" href="javascript:;" calcDw="{{item.upcoin}}" calcShow="{{item.calcShow}}" calcKb="{{item.calcKb}}"><img src="../images/calculator.png"></a></td>
                     <td><a title="{{item.upcoin}}{{item.word}}" class="teach" href="javascript:;"><img src="../images/teach_icon.png"></a></td>
                 </tr>
                 {{/each}}
@@ -88,6 +90,33 @@
     </div>
 </div>
 
+<div class="calculator-dialog hidden" id="calculator">
+    <div class="calculator-wrap">
+        <div class="calculator-title">收益计算器</div>
+        <div class="calculator-content">
+            <div class="hash">
+                <label><font>算力</font></label>
+                <input id="hashText" type="text" placeholder="请输入算力" type="number" pattern="\d*">
+                <span id="showHash"></span>
+                <ul class="chooseHash">
+                    <li>KH/s</li>
+                    <li>MH/s</li>
+                    <li>GH/s</li>
+                    <li>TH/s</li>
+                </ul>
+            </div>
+            <div class="change"><img src="../images/change.png"></div>
+            <div class="get">
+                <label>收益</label>
+                <input type="text" id="getText" disabled>
+                <span id="getdw"></span>
+            </div>
+            <div class="clear"></div>
+            <div class="little-tips">温馨提示：收益计算器采用当前难度估算PPLNS理论收益，可能与您的实际收益产生偏差，仅供参考！</div>
+        </div>
+        <div class="calculator-close"><a href="javascript:;"><img src="../images/close.png"></a></div>
+    </div>
+</div>
 <!--footer部分-->
 #include("./layout/footer.html")
 
