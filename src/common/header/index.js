@@ -32,7 +32,7 @@ var index = {
         //     window.location.href = './register.html';
         // });
 
-        $(document).on('click', '.download-software', function (e) {
+        $(document).on('click', '.download-ware', function (e) {
             window.location.href = "./download.html"
         })
         $(document).on('click', '.dropdown', function (e) {

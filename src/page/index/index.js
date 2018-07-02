@@ -42,6 +42,10 @@ var index = {
             calcKb = $(this).attr("calcKb");
             $("#showHash").html(hashdw+"/s");
             $("#getdw").html(getdw+"/天");
+            $('body,html').css({
+                "overflow": "hidden",
+                "height": "100%"
+            });
             $("#calculator").removeClass("hidden");
             $("#hashText").focus();
         });
@@ -49,6 +53,10 @@ var index = {
 
 
         $(document).on("click",".calculator-close",function (e) {
+            $('body,html').css({
+                "overflow": "auto",
+                "height": "auto"
+            });
             $("#calculator").addClass("hidden");
             $("#showHash").html("");
             $("#getdw").html("");
@@ -56,6 +64,8 @@ var index = {
             $("#getText").val("");
             calcKb = 0;
         });
+
+        $("#calculator").on('touchmove',function(event) { event.preventDefault(); }, false);
 
         $(document).on("click","#showHash",function (e) {
             if(showFlag){

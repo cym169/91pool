@@ -9,7 +9,7 @@ require('common/footer/index.js');
 require('./index.css');
 var index = {
     init    : function () {
-        this.handler();
+        // this.handler();
     },
     handler : function () {
 
@@ -17,5 +17,5 @@ var index = {
 
 };
 $(function () {
-    index.init();
+    // index.init();
 });
