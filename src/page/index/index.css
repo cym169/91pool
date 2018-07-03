@@ -402,6 +402,9 @@
     .section {
         width: 1170px;
     }
+}
+
+@media (min-width: 701px){
     .calculator-dialog{
         position: fixed;
         left: 0;

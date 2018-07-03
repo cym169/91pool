@@ -42,21 +42,11 @@ var index = {
             calcKb = $(this).attr("calcKb");
             $("#showHash").html(hashdw+"/s");
             $("#getdw").html(getdw+"/天");
-            $('body,html').css({
-                "overflow": "hidden",
-                "height": "100%"
-            });
             $("#calculator").removeClass("hidden");
             $("#hashText").focus();
         });
 
-
-
-        $(document).on("click",".calculator-close",function (e) {
-            $('body,html').css({
-                "overflow": "auto",
-                "height": "auto"
-            });
+        $(document).on("click","#calculator-close",function (e) {
             $("#calculator").addClass("hidden");
             $("#showHash").html("");
             $("#getdw").html("");
