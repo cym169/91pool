@@ -1,16 +1,16 @@
 
-
-
 .section {
     margin-right: auto;
     margin-left: auto;
     position: relative;
 }
+
 .order-box {
     background-color: #f4f4f4;
     padding: 30px 0 40px 0;
 }
-.order{
+
+.order {
     background-color: #fff;
     padding: 50px 80px;
     min-height: 400px;
@@ -21,7 +21,7 @@
 }
 
 @media (max-width: 700px) {
-    .order{
+    .order {
         padding: 50px 20px;
     }
 }

@@ -4,17 +4,16 @@
       "input": {
         "etcPlaceholder": "Please enter your ETC wallet address",
         "etfPlaceholder": "Please enter your ETF wallet address",
-        "lchPlaceholder": "Please enter your LCH wallet address",
+        "xvg-scryptPlaceholder": "Please enter your XVG wallet address",
         "hsrPlaceholder": "Please enter your HSR wallet address",
         "btmPlaceholder": "Please enter your BTM wallet address",
-        "xdagPlaceholder": "Please enter your XDAG wallet address",
         "search": "Search"
       },
       "language": {
         "cn": "中文",
         "en": "English",
         "ru": "Русский",
-        "weChatOfficialAccounts":"WeChat Official Accounts"
+        "weChatOfficialAccounts": "WeChat Official Accounts"
       },
       "nav": {
         "login": "login",
@@ -38,12 +37,12 @@
         "poolHashrate": "Pool Hashrate",
         "netWorkHashrate": "Network Hashrate",
         "poolFee": "Pool Fee",
-        "address":"Miner Address",
+        "address": "Miner Address",
         "netWorkDifficulty": "Network Difficulty",
         "price": "Price",
         "fromFXH": "From feixiaohao",
-        "teach":"Tutorial",
-        "calculator":"Calculator",
+        "teach": "Tutorial",
+        "calculator": "Calculator",
         "onlineMiners": "Online Miners",
         "theoreticalEarnings": "Theoretical Earnings"
       },
@@ -52,7 +51,7 @@
         "full": "full",
         "cooperation": "Cooperation"
       },
-      "support":{
+      "support": {
         "1": "How to see how many times I pay and how much I have paid?",
         "1An": "You can query historical payment data on the block chain browser.",
         "2": "Why does the hashrate show instability? Isn't it correct?",
@@ -62,7 +61,7 @@
         "4": "Why do my three miners only show one?",
         "4An": "You can see if the name of the machine is the same, and the miner's name can not be one.",
         "5": "What is the rate of the pool?",
-        "5An": "ETC, ETF and BTM's pool rate is 1%,HSR and LCH are free at present.",
+        "5An": "ETC, ETF, BTM's pool rate is 1%,HSR,XVG are free at present.",
         "6": "How do the miners write?",
         "6An": "You can set it at random, usually within 15 characters or letters.",
         "7": "What is the Paid in the 91Pool miner page?",
@@ -87,6 +86,7 @@
         "luckyValue": "Lucky Value",
         "miningBlock": "Mining Block",
         "packedBlock": "Packed Block",
+        "Cheight": "Current Height",
         "characteristic": "Characteristic",
         "leastPayout": "Least Payout",
         "settleEveryHalfAnHour": "Settle Every Half An Hour",
@@ -115,7 +115,7 @@
         "GraphicMining": "Graphics Mining Tutorial",
         "B3Mining": "B3 Mining Tutorial"
       },
-      "worker":{
+      "worker": {
         "immatureProfit": "Immature Profit",
         "matureProfit": "Mature Profit",
         "pendingProfit": "Pending Profit",
@@ -293,25 +293,6 @@
         "39": "node",
         "40": "Please spare friends must set up a standby node."
       },
-      "lchTeach": {
-        "1": "Get wallet",
-        "2": "Wright Cash's official app wallet is under development. Currently, you can get the wallet address through the following methods:",
-        "3": "Method 1 (recommended)",
-        "4": "Use than the wallet, see details",
-        "5": "Select LCH",
-        "6": "Method 2",
-        "7": "Use Wright Cash official client, source code",
-        "8": "91pool provides the compiling version for the miners, which can be directly downloaded and used in the qq group file",
-        "9": "Configure Litecoin mining machine",
-        "10": "Note: Due to the launch of the dedicated Wright mining machine, it is not recommended that GPUs dig for Wright cash.",
-        "11": "Ant L3+ Litecoin mining machine configuration is as follows",
-        "12": "Page view mining results",
-        "13": "Please click to open",
-        "14": "Click LCH, enter the LCH page, enter the wallet ID, you can view your own miner information and mining results!",
-        "15": "Mine pool node configuration",
-        "16": "node",
-        "17": "Please spare friends must set up a standby node."
-      },
       "btmTeach": {
         "title1": "BTM B3 Mining Tutorial",
         "title2": "BTM Graphics Mining Tutorial",
@@ -350,6 +331,21 @@
         "33": "If there is a false report, double click the EXE installation",
         "34": "Download Software",
         "35": "PS"
+      },
+      "xvgTeach": {
+        "1": "Get wallet",
+        "2": "Verge",
+        "3": "Full-node wallet",
+        "4": "Phone light wallet address",
+        "5": "Recharge address of major exchanges",
+        "6": "Configuration of the lett Mint machine",
+        "7": "The ant L3+ Mint diggers are configured as follows:",
+        "8": "Check earnings",
+        "9": "Enter www.91pool.com,Click on XVG.Enter the main page of Pork, enter your wallet address, click on the query.",
+        "10": "Mine pool node configuration",
+        "11": "node",
+        "12": "Please spare friends must set up a standby node.",
+        "13": "At present, 91POOL opened the Scrypt algorithm, you can use the Scrypt algorithm to support the ASIC mining machine (dug let coin LTC mining machines can be dug XVG, such as L3+, L3++, A4, A4+, A6, etc.) to dig, and we will also open other algorithms for mining."
       }
     }
   }

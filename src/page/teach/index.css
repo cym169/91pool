@@ -1,10 +1,11 @@
 
-.btm-title{
+.btm-title {
     display: inline-block;
     width: 100%;
     margin-top: 30px;
 }
-.btm-title li{
+
+.btm-title li {
     float: left;
     color: #f86601;
     margin: 0 12px 0 12px;
@@ -14,13 +15,16 @@
     font-size: 14px;
     cursor: pointer;
 }
-.btm-title li.active{
+
+.btm-title li.active {
     background-color: #f86601;
     color: #fff;
 }
-.btmTeach-title{
-    color:#fff;
+
+.btmTeach-title {
+    color: #fff;
 }
+
 /*挖矿教程*/
 .teach {
     width: 100%;

@@ -20,7 +20,7 @@ var totalShare = 0;
 var timer;
 var xTime = ['now'],
     yData = [0],
-    minerList=[];
+    minerList = [];
 var index = {
     init: function () {
         mwx.getWxInfo();
@@ -30,7 +30,7 @@ var index = {
     },
     handler: function () {
         var _this = this;
-        timer = setInterval(_this.setData, 6000);
+        timer = setInterval(_this.setData, 8000);
 
         $(document).on('click', '.work-title li', function () {
             if ($(this).hasClass('active')) {
@@ -40,26 +40,28 @@ var index = {
             $(this).addClass('active').siblings().removeClass('active');
             $('.f-tab').hide().eq(i).show();
         });
-        $(window).unload(function(){
+        $(window).unload(function () {
             localStorage.removeItem('name');
         });
     },
     setData: function () {
         var mPrice;
-        if (coin == 'etc') {
-            mPrice = "1ETC";
-        }
-        else if (coin == 'etf') {
-            mPrice = "0.1ETF";
-        }
-        else if (coin == 'hsr') {
-            mPrice = "0.1HSR";
-        }
-        else if (coin == 'lch') {
-            mPrice = "0.1LCH";
-        }
-        else if (coin == 'btm') {
-            mPrice = "1BTM";
+        switch (coin) {
+            case 'etc':
+                mPrice = "1ETC";
+                break;
+            case 'etf':
+                mPrice = "0.1ETF";
+                break;
+            case 'hsr':
+                mPrice = "0.1HSR";
+                break;
+            case 'btm':
+                mPrice = "1BTM";
+                break;
+            case 'xvg-scrypt':
+                mPrice = "1XVG";
+                break;
         }
         $("#minPrice").html(mPrice);
         _coins.getCoins(coin, function (data) {
@@ -92,100 +94,100 @@ var index = {
                 $(".workersOnline").html(data.workersOnline);
                 $(".workersOffline").html(data.workersOffline);
 
-                if (data.minerCharts != null) {
+                if (data.minerCharts != null && data.minerCharts.length > 0) {
                     xTime = [];
                     yData = [];
                     minerList = data.minerCharts.slice(0, 50);
-                }
 
-                $.each(minerList, function (i, t) {
-                    xTime.unshift(t.timeFormat.replace(/_/,':'));
-                    yData.unshift(_reset.formatHashrateWithoutSuffix(t.minerHash));
-                });
-                var dw = _reset.formatSuffix(data.minerCharts[0].poolHash);
-                var w = $(window).width();
-                var interval,left;
-                if(w <= 700){
-                    interval = 5;
-                    left = "15%";
-                }else{
-                    interval = 2;
-                    left = "11%"
-                }
-                var options = {
-                    tooltip: {
-                        trigger: 'axis',
-                        axisPointer: {
-                            type: 'line',
-                            label: {
-                                backgroundColor: '#6a7985'
-                            }
-                        },
-                        position: function (pt) {
-                            return [pt[0], '10%'];
-                        },
-                        formatter: "{c}"+dw+"<br>{b}",
-                        confine: true
-                    },
-                    title: false,
-                    xAxis: {
-                        type: 'category',
-                        boundaryGap: false,
-                        axisLabel: {
-                            interval:interval,
-                            rotate: 60
-                        },
-                        data: []
-                    },
-                    yAxis: {
-                        type: 'value',
-                        boundaryGap: [0, '100%'],
-                        axisLine : {
-                            show : false
-                        },
-                        axisTick : {
-                            show : false
-                        },
-                        axisLabel:{
-                            formatter:'{value}'+dw
-                        }
-                    },
-                    grid: {
-                        left: left,
-                        bottom: 100,
-                        right: "5%"
-                    },
-                    series: [
-                        {
-                            type:'line',
-                            smooth:true,
-                            sampling: 'average',
-                            itemStyle: {
-                                normal: {
-                                    color: 'rgb(254, 161, 18)'
+                    $.each(minerList, function (i, t) {
+                        xTime.unshift(t.timeFormat.replace(/_/, ':'));
+                        yData.unshift(_reset.formatHashrateWithoutSuffix(t.minerHash));
+                    });
+                    var dw = _reset.formatSuffix(data.minerCharts[0].poolHash);
+                    var w = $(window).width();
+                    var interval, left;
+                    if (w <= 700) {
+                        interval = 5;
+                        left = "15%";
+                    } else {
+                        interval = 2;
+                        left = "11%"
+                    }
+                    var options = {
+                        tooltip: {
+                            trigger: 'axis',
+                            axisPointer: {
+                                type: 'line',
+                                label: {
+                                    backgroundColor: '#6a7985'
                                 }
                             },
-                            areaStyle: {
-                                normal: {
-                                    color: new echarts.graphic.LinearGradient(0, 0, 0, 1, [{
-                                        offset: 0,
-                                        color: 'rgb(254, 161, 18)'
-                                    }, {
-                                        offset: 1,
-                                        color: 'rgb(255, 255, 255)'
-                                    }])
-                                }
+                            position: function (pt) {
+                                return [pt[0], '10%'];
+                            },
+                            formatter: "{c}" + dw + "<br>{b}",
+                            confine: true
+                        },
+                        title: false,
+                        xAxis: {
+                            type: 'category',
+                            boundaryGap: false,
+                            axisLabel: {
+                                interval: interval,
+                                rotate: 60
                             },
                             data: []
-                        }
-                    ]
-                };
-                options.series[0].data = yData;
-                options.xAxis.data = xTime;
-                var chartId = document.getElementById('chart');
-                var myChart = echarts.init(chartId);
-                // 绘制图表
-                myChart.setOption(options);
+                        },
+                        yAxis: {
+                            type: 'value',
+                            boundaryGap: [0, '100%'],
+                            axisLine: {
+                                show: false
+                            },
+                            axisTick: {
+                                show: false
+                            },
+                            axisLabel: {
+                                formatter: '{value}' + dw
+                            }
+                        },
+                        grid: {
+                            left: left,
+                            bottom: 100,
+                            right: "5%"
+                        },
+                        series: [
+                            {
+                                type: 'line',
+                                smooth: true,
+                                sampling: 'average',
+                                itemStyle: {
+                                    normal: {
+                                        color: 'rgb(254, 161, 18)'
+                                    }
+                                },
+                                areaStyle: {
+                                    normal: {
+                                        color: new echarts.graphic.LinearGradient(0, 0, 0, 1, [{
+                                            offset: 0,
+                                            color: 'rgb(254, 161, 18)'
+                                        }, {
+                                            offset: 1,
+                                            color: 'rgb(255, 255, 255)'
+                                        }])
+                                    }
+                                },
+                                data: []
+                            }
+                        ]
+                    };
+                    options.series[0].data = yData;
+                    options.xAxis.data = xTime;
+                    var chartId = document.getElementById('chart');
+                    var myChart = echarts.init(chartId);
+                    // 绘制图表
+                    myChart.setOption(options);
+                }
 
                 $.each(data.workers, function (i, t) {
                     t.hr = _reset.formatHashrate(t.hr);
@@ -201,7 +203,7 @@ var index = {
                 $("#workerOnline").html(Onhtml);
                 $("#workerOffline").html(Offhtml);
 
-                if(data.payments){
+                if (data.payments) {
                     $.each(data.payments, function (i, t) {
                         t.timestamp = _reset.formatDateLocale(t.timestamp);
                         t.text = _reset.formatTx(t.tx);
@@ -220,6 +222,9 @@ var index = {
                             case 'btm':
                                 t.myUrl = "http://blockmeta.com/tx/";
                                 break;
+                            case 'xvg-scrypt':
+                                t.myUrl = "https://verge-blockchain.info/tx/";
+                                break;
                         }
                     });
                     var payList = {
@@ -230,15 +235,15 @@ var index = {
                 }
             }, function (error) {
                 clearInterval(timer);
-                util.errorTips("没有找到您设置的矿工地址的数据，请确保矿工地址配置正确！",function () {
-                    window.location.href = './currency.html?coin='+coin;
+                util.errorTips("没有找到您设置的矿工地址的数据，请确保矿工地址配置正确！", function () {
+                    window.location.href = './currency.html?coin=' + coin;
                 });
             });
         });
     },
     setwx: function () {
         var baseUrl = location.href.split("#")[0];
-        mwx.setWxInfo("个人钱包中心，您的资料，一手掌握。","专注于数字资产增值服务",baseUrl);
+        mwx.setWxInfo("个人钱包中心，您的资料，一手掌握。", "专注于数字资产增值服务", baseUrl);
     }
 };
 

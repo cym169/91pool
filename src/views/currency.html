@@ -22,10 +22,11 @@
     <div class="coin-logo"></div>
     <p class="coin-name"></p>
     <ul class="coin-title tab-title">
-        <li page="home" class="active"><a href="javascript:;"><span id="coin-name"></span><span data-i18n="currency.home"></span></a>
+        <li page="home" class="active"><a href="javascript:;"><span data-i18n="currency.home"></span></a>
         </li>
         <li page="teach">
-            <a href="javascript:;"><span data-i18n="currency.miningTutorial"></span><i class="fa fa-angle-down btmIcon"></i></a>
+            <a href="javascript:;"><span data-i18n="currency.miningTutorial"></span><i
+                    class="fa fa-angle-down btmIcon"></i></a>
             <ul class="btmType">
                 <li><a href="javascript:;" data-i18n="currency.B3Mining"></a></li>
                 <li class="active"><a href="javascript:;" data-i18n="currency.GraphicMining"></a></li>
@@ -52,7 +53,7 @@
                     <div class="icon"><i class="fa fa-object-ungroup"></i></div>
                 </li>
                 <li>
-                    <div class="data-title" data-i18n="currency.packedBlock"></div>
+                    <div class="data-title" data-i18n="currency.Cheight"></div>
                     <div class="data-number maturedTotal"></div>
                     <div class="icon"><i class="fa fa-sliders"></i></div>
                 </li>
@@ -72,7 +73,7 @@
                     <div class="icon"><i class="fa fa-hourglass-o"></i></div>
                 </li>
                 <li>
-                    <div class="data-title" data-i18n="currency.miningBlock"></div>
+                    <div class="data-title" data-i18n="currency.packedBlock"></div>
                     <div class="data-number" id="blocks"></div>
                     <div class="icon"><i class="fa fa-sitemap"></i></div>
                 </li>
@@ -243,10 +244,12 @@
                             {{each list as item}}
                             {{if item.orphan == false}}
                             <tr>
-                                {{if ('etc' == item.coin || 'eth' == item.coin || 'etf' == item.coin || 'btm' == item.coin)&&item.uncle}}
+                                {{if ('etc' == item.coin || 'eth' == item.coin || 'etf' == item.coin || 'btm' ==
+                                item.coin)&&item.uncle}}
                                 <td><a style="color: #fea112;" href="{{item.myUrl}}{{item.height}}"
                                        target="_blank">{{item.uncleHeight}}</a></td>
-                                {{else if 'etc' == item.coin || 'eth' == item.coin || 'etf' == item.coin || 'btm' == item.coin}}
+                                {{else if 'etc' == item.coin || 'eth' == item.coin || 'etf' == item.coin || 'btm' ==
+                                item.coin}}
                                 <td><a style="color: #fea112;" href="{{item.myUrl}}{{item.height}}"
                                        target="_blank">{{item.height}}</a></td>
                                 {{else}}
@@ -290,10 +293,12 @@
                             {{each list as item}}
                             {{if item.orphan == false}}
                             <tr>
-                                {{if ('etc' == item.coin || 'eth' == item.coin || 'etf' == item.coin || 'btm' == item.coin)&&item.uncle}}
+                                {{if ('etc' == item.coin || 'eth' == item.coin || 'etf' == item.coin || 'btm' ==
+                                item.coin)&&item.uncle}}
                                 <td><a style="color: #fea112;" href="{{item.myUrl}}{{item.height}}"
                                        target="_blank">{{item.uncleHeight}}</a></td>
-                                {{else if 'etc' == item.coin || 'eth' == item.coin || 'etf' == item.coin || 'btm' == item.coin}}
+                                {{else if 'etc' == item.coin || 'eth' == item.coin || 'etf' == item.coin || 'btm' ==
+                                item.coin}}
                                 <td><a style="color: #fea112;" href="{{item.myUrl}}{{item.height}}"
                                        target="_blank">{{item.height}}</a></td>
                                 {{else}}
@@ -324,11 +329,11 @@
                 <div class="f-tab">
                     <table>
                         <thead>
-                            <tr>
-                                <th data-i18n="currency.height"></th>
-                                <th data-i18n="currency.findTime"></th>
-                                <th data-i18n="currency.difficulty"></th>
-                            </tr>
+                        <tr>
+                            <th data-i18n="currency.height"></th>
+                            <th data-i18n="currency.findTime"></th>
+                            <th data-i18n="currency.difficulty"></th>
+                        </tr>
                         </thead>
                         <tbody id="block-three">
                         <script type="text/html" id="block-three-tp">
@@ -359,12 +364,6 @@
         <div class="section">
             <div style="font-size: 20px;margin-top: 100px;" data-i18n="currency.comingSoon"></div>
         </div>
-    </div>
-</div>
-
-<div id="showImg">
-    <div class="wrapper">
-        <img id="show">
     </div>
 </div>
 

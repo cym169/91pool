@@ -28,15 +28,15 @@
         <!--banner图-->
         <div class="swiper-wrapper">
             <div class="swiper-slide" style="text-align: center">
-                <a href="./activity.html?id=45" target="_blank"><img id="sliderImg" class="sliderImg"
+                <a href="./currency.html?coin=xvg-scrypt" target="_blank"><img id="sliderImg" class="sliderImg"
+                                                                               src="../images/activity/201807031641_banner.jpg"
+                                                                               width="100%"></a>
+            </div>
+            <div class="swiper-slide" style="text-align: center">
+                <a href="./activity.html?id=42" target="_blank"><img class="sliderImg"
                                                                      src="../images/activity/201804231624_banner.jpg"
                                                                      width="100%"></a>
             </div>
-            <!--<div class="swiper-slide" style="text-align: center">-->
-                <!--<a href="./activity.html?id=42" target="_blank"><img class="sliderImg"-->
-                                                                     <!--src="../images/activity/20180420190949_banner.jpg"-->
-                                                                     <!--width="100%"></a>-->
-            <!--</div>-->
         </div>
         <div class="swiper-pagination-white pagination"></div>
     </div>
@@ -45,9 +45,9 @@
 <!--货币行情-->
 <div class="section market">
     <!--<ul class="market-type">-->
-        <!--<li class="active"><a href="javascript:;" data-i18n="table.GraphicMining"></a></li>-->
-        <!--<li><a href="javascript:;">ASIC挖矿</a></li>-->
-        <!--<li><a href="javascript:;">POS挖矿</a></li>-->
+    <!--<li class="active"><a href="javascript:;" data-i18n="table.GraphicMining"></a></li>-->
+    <!--<li><a href="javascript:;">ASIC挖矿</a></li>-->
+    <!--<li><a href="javascript:;">POS挖矿</a></li>-->
     <!--</ul>-->
     <div class="table-box">
         <table class="table market-info">
@@ -59,8 +59,9 @@
                 <th data-i18n="table.netWorkHashrate"></th>
                 <th data-i18n="table.address"></th>
                 <!--<th data-i18n="table.netWorkDifficulty"></th>-->
-                <th><span data-i18n="table.price"></span>CNY（<a href="https://www.feixiaohao.com/" target="_blank" style="font-size: 12px;color:#333;opacity: .5;"
-                                                                   data-i18n="table.fromFXH"></a>）
+                <th><span data-i18n="table.price"></span>CNY（<a href="https://www.feixiaohao.com/" target="_blank"
+                                                                style="font-size: 12px;color:#333;opacity: .5;"
+                                                                data-i18n="table.fromFXH"></a>）
                 </th>
                 <th data-i18n="table.theoreticalEarnings"></th>
                 <th data-i18n="table.calculator"></th>
@@ -70,19 +71,26 @@
             <tbody id="coinList">
             <script type="text/html" id="coinList-tp">
                 {{each list as item i}}
+                {{if item.isShow === true}}
                 <tr class="coinType" coin={{item.coin}}>
-                    <td><i class="{{item.coin}}_icon"><img
-                            src="{{item.imgUrl}}"></i>{{item.upcoin}}</td>
+                    <td><i class="{{item.coin}}_icon"><img src="{{item.imgUrl}}"></i>
+                        {{item.upcoin}}
+                        {{if item.coin == 'xvg-scrypt'}}<br><span
+                                style="font-size: 12px;font-weight: normal;">scrypt</span>{{/if}}
+                        {{if item.new}}<span class="new_coin">new</span>{{/if}}
+                    </td>
                     <td class="hashrate{{i}}">{{item.hashrate}}</td>
                     <td class="fee{{i}}">{{item.fee}}</td>
                     <td class="netHashrate{{i}}">{{item.netHashrate}}</td>
-                    <td >{{item.address}}</td>
-                    <!--<td class="netDiff{{i}}">{{item.netDiff}}</td>-->
+                    <td>{{item.address}}</td>
                     <td class="{{item.coin}}price"></td>
                     <td class="profit{{i}}">{{item.profit}}</td>
-                    <td><a title="" class="calculator" href="javascript:;" calcDw="{{item.upcoin}}" calcShow="{{item.calcShow}}" calcKb="{{item.calcKb}}"><img src="../images/calculator.png"></a></td>
-                    <td><a title="{{item.upcoin}}{{item.word}}" class="teach" href="javascript:;"><img src="../images/teach_icon.png"></a></td>
+                    <td><a class="calculator" href="javascript:;" calcDw="{{item.upcoin}}" calcShow="{{item.calcShow}}"
+                           calcKb="{{item.calcKb}}"><img src="../images/calculator.png"></a></td>
+                    <td><a title="{{item.upcoin}}{{item.word}}" class="teach" href="javascript:;"><img
+                            src="../images/teach_icon.png"></a></td>
                 </tr>
+                {{/if}}
                 {{/each}}
             </script>
             </tbody>
@@ -114,7 +122,8 @@
             <div class="clear"></div>
             <div class="little-tips">温馨提示：收益计算器采用当前难度估算PPLNS理论收益，可能与您的实际收益产生偏差，仅供参考！</div>
         </div>
-        <div class="calculator-close"><a href="javascript:;" id="calculator-close"><img src="../images/close.png"></a></div>
+        <div class="calculator-close"><a href="javascript:;" id="calculator-close"><img src="../images/close.png"></a>
+        </div>
     </div>
 </div>
 <!--footer部分-->

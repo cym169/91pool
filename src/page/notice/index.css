@@ -104,13 +104,16 @@
         margin-bottom: 20px;
         padding-bottom: 20px;
     }
-    .info-box .title{
+
+    .info-box .title {
         margin-top: 0;
     }
-    .info-box .from{
+
+    .info-box .from {
         margin: 5px 0;
     }
-    .info-box .intro{
+
+    .info-box .intro {
         height: 50px;
     }
 

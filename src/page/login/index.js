@@ -27,32 +27,32 @@ var index = {
         $("#sendCode").click(function () {
             var mark = $(this).attr('mark');
             var phone = $.trim($("#phone").val());
-            var require = util.validate(phone,'require');
-            var validate = util.validate(phone,'phone');
-            if(!require){
-                util.errorTips("请输入手机号！",function () {
+            var require = util.validate(phone, 'require');
+            var validate = util.validate(phone, 'phone');
+            if (!require) {
+                util.errorTips("请输入手机号！", function () {
                     layer.closeAll();
                     $("#phone").focus()
                 });
                 return false;
             }
-            if(!validate){
-                util.errorTips("请输入正确的手机号！",function () {
+            if (!validate) {
+                util.errorTips("请输入正确的手机号！", function () {
                     layer.closeAll();
                     $("#phone").focus()
                 });
                 return false;
             }
-            if(mark == 0){
-                util.countDown('#sendCode','login',30);
+            if (mark == 0) {
+                util.countDown('#sendCode', 'login', 30);
             }
         });
 
     },
     setLoginTime: function () {
         var count = localStorage.getItem('logincount');
-        if(count > 0){
-            util.countDown('#sendCode','login',count);
+        if (count > 0) {
+            util.countDown('#sendCode', 'login', count);
         }
     }
 };

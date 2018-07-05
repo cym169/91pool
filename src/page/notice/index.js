@@ -48,7 +48,7 @@ var index = {
     },
     setwx: function () {
         var baseUrl = location.href.split("#")[0];
-        mwx.setWxInfo("91pool最近动向，尽在掌握","专注于数字资产增值服务",baseUrl);
+        mwx.setWxInfo("91pool最近动向，尽在掌握", "专注于数字资产增值服务", baseUrl);
     }
 };
 

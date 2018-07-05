@@ -31,17 +31,15 @@ var index = {
         this.setIndex();
     },
     handler: function () {
-        if(coin == 'lch'){
-            return
-        }
         var _this = this;
         $(document).on('click', '#search', function () {
             var val = $.trim($("#address").val());
-            var continued = util.validate(val,'require');
-            if(continued){
-                window.location.href = './worker.html?coin=' + coin + '&wallet='+ val;
+            var continued = util.validate(val, 'require');
+            if (continued) {
+                window.location.href = './worker.html?coin=' + coin + '&wallet=' + val;
             }
         });
+
         // 币种导航
         $(document).on('click', '.coin-title>li', function (e) {
 
@@ -50,8 +48,8 @@ var index = {
             $(this).addClass('active').siblings().removeClass('active');
             $(".tab").hide().eq(i).show();
 
-            if(coin == 'btm'){
-                if( page == 'teach'){
+            if (coin == 'btm') {
+                if (page == 'teach') {
                     if (btmFlag) {
                         $('.btmType').fadeIn();
                         btmFlag = false;
@@ -84,18 +82,8 @@ var index = {
             $('.f-tab').hide().eq(i).show();
         });
 
-        $('.teach').on('click', 'img', function () {
-            var wh = $(window).width();
-            if(wh > 700){
-                return
-            }
-
-        })
     },
     setData: function () {
-        if(coin == 'lch'){
-            return
-        }
         _coins.getBlocks(coin, function (data) {
             if (data.luck == null) {
                 $('#get-box').hide();
@@ -117,7 +105,6 @@ var index = {
             $(".maturedTotal-small").html(_reset.formatNumber(data.maturedTotal));
             $(".immatureTotal-small").html(_reset.formatNumber(data.immatureTotal));
             $(".candidatesTotal-small").html(_reset.formatNumber(data.candidatesTotal));
-            $(".maturedTotal").html(data.maturedTotal);
             $(".immatureTotal").html(data.immatureTotal);
             $(".candidatesTotal").html(data.candidatesTotal);
 
@@ -135,12 +122,12 @@ var index = {
                         case 'hsr':
                             t.myUrl = "http://explorer.h.cash/block/";
                             break;
-                        case 'lch':
-                            t.myUrl = "http://explorer.litecoincash.tech/block/";
-                            t.reward = (t.mint).toFixed(6);
-                            break;
                         case 'btm':
                             t.myUrl = "http://blockmeta.com/block/";
+                            t.reward = (t.reward).toFixed(6);
+                            break;
+                        case 'xvg-scrypt':
+                            t.myUrl = "https://verge-blockchain.info/block/";
                             t.reward = (t.reward).toFixed(6);
                             break;
                     }
@@ -171,12 +158,12 @@ var index = {
                         case 'hsr':
                             t.myUrl = "http://explorer.h.cash/block/";
                             break;
-                        case 'lch':
-                            t.myUrl = "http://explorer.litecoincash.tech/block/";
-                            t.reward = (t.mint).toFixed(6);
-                            break;
                         case 'btm':
                             t.myUrl = "http://blockmeta.com/block/";
+                            t.reward = (t.mint).toFixed(6);
+                            break;
+                        case 'xvg':
+                            t.myUrl = "https://verge-blockchain.info/block/";
                             t.reward = (t.mint).toFixed(6);
                             break;
                     }
@@ -206,11 +193,11 @@ var index = {
                         case 'hsr':
                             t.myUrl = "http://explorer.h.cash/block/";
                             break;
-                        case 'lch':
-                            t.myUrl = "http://explorer.litecoincash.tech/block/";
-                            break;
                         case 'btm':
                             t.myUrl = "http://blockmeta.com/block/";
+                            break;
+                        case 'xvg':
+                            t.myUrl = "https://verge-blockchain.info/block/";
                             break;
                     }
                 });
@@ -226,29 +213,31 @@ var index = {
         _coins.getCoins(coin, function (data) {
             $("#workers").html(data.minersTotal);
             $("#pool_hash").html(_reset.formatHashrate(data.hashrate));
-            if(data.nodes != null){
+            if (data.nodes != null) {
                 $("#net_diff").html(_reset.changeDiff(data.nodes[0].difficulty));
             }
             $("#last-one").html(_reset.getDateDiff(data.stats.lastBlockFound));
             $("#blocks").html(data.maturedTotal);
-
+            $(".maturedTotal").html(data.nodes[0].height);
             if (typeof (data.poolCharts) != 'undefined' || data.poolCharts.length > 0) {
                 xTime = [];
                 yData = [];
-                var dw = "";
+                var dwArray = [];
                 $.each(data.poolCharts, function (i, t) {
-
-                    xTime.unshift(t.timeFormat.replace(/_/,':'));
-                    yData.unshift(_reset.formatHashrateWithoutSuffix(t.poolHash));
+                    xTime.unshift(t.timeFormat.replace(/_/, ':'));
+                    dwArray.unshift(_reset.formatSuffix(t.poolHash));
+                    yData.unshift(_reset.formatHashrate(t.poolHash));
                 });
-                dw = _reset.formatSuffix(data.poolCharts[0].poolHash);
             }
+
+            var dw = _reset.getDw(dwArray);
+            yData = _reset.resetChart(dw, yData);
             var w = $(window).width();
-            var interval = 0,left;
-            if(w <= 700){
+            var interval = 0, left;
+            if (w <= 700) {
                 interval = 5;
-                left = "15%";
-            }else{
+                left = "20%";
+            } else {
                 interval = 2;
                 left = "11%"
             }
@@ -265,7 +254,28 @@ var index = {
                     position: function (pt) {
                         return [pt[0], '10%'];
                     },
-                    formatter: "{c}"+dw+"<br>{b}",
+                    formatter: function (item) {
+                        if (item[0].value > 1000) {
+                            item[0].value = item[0].value / 1000;
+                            if (dw == 'H') {
+                                return item[0].value + "KH<br />" + item[0].axisValueLabel;
+                            }
+                            else if (dw == 'KH') {
+                                return item[0].value + "MH<br />" + item[0].axisValueLabel;
+                            }
+                            else if (dw == 'MH') {
+                                return item[0].value + "GH<br />" + item[0].axisValueLabel;
+                            }
+                            else if (dw == 'GH') {
+                                return item[0].value + "TH<br />" + item[0].axisValueLabel;
+                            }
+                            else if (dw == 'TH') {
+                                return item[0].value + "PH<br />" + item[0].axisValueLabel;
+                            }
+                        } else {
+                            return item[0].value + dw + "<br />" + item[0].axisValueLabel;
+                        }
+                    },
                     confine: true
                 },
                 grid: {
@@ -278,7 +288,7 @@ var index = {
                     type: 'category',
                     boundaryGap: false,
                     axisLabel: {
-                        interval:interval,
+                        interval: interval,
                         rotate: 60
                     },
                     data: []
@@ -292,8 +302,8 @@ var index = {
                     axisTick: {
                         show: false
                     },
-                    axisLabel:{
-                        formatter:'{value}'+dw
+                    axisLabel: {
+                        formatter: '{value}' + dw
                     }
                 },
                 series: [
@@ -333,25 +343,23 @@ var index = {
         }, function (error) {
         });
 
-        // $.get("/currencies/"+coinType,function (data) {
-        //     var text = $(data).find('.coinprice').html();
-        //     $(".etcprice").html(text);
-        // });
+        var coinFor = coin;
 
-        _coins.getPrice(coin, function (error, data) {
+        if (coin == 'xvg-scrypt') {
+            coinFor = 'xvg';
+        }
+        _coins.getPrice(coinFor, function (error, data) {
             if (data.data)
                 $("#price").html('￥' + data.data[0].priceCny + '(' + data.data[0].rose + ')');
         })
 
+
     },
     default: function () {
-        if(coin == 'lch'){
-            return
-        }
-        if(coin == 'btm'){
+        if (coin == 'btm') {
             $(".btmIcon").show();
         }
-        if(localStorage.coinIndex){
+        if (localStorage.coinIndex) {
             var coinIndex = localStorage.coinIndex;
             $(".coin-title li").removeClass("active").eq(coinIndex).addClass("active");
             $(".tab").hide().eq(coinIndex).show();
@@ -361,11 +369,10 @@ var index = {
         var imgUrl = require('images/' + coin + '.png');
         var imgTempl = '<img src="' + imgUrl + '" />';
         $('.coin-logo').html(imgTempl);
-        $(".coin-name").html(upper);
-        $("#coin-name").html(upper);
-        $("#address").attr('data-i18n', '[placeholder]input.'+coin+'Placeholder');
+        $(".coin-name").html(coin == 'xvg-scrypt' ? upper.slice(0, 3) + "<br><span style='font-size: 13px;'>scrypt</span>" : upper);
+        $("#address").attr('data-i18n', '[placeholder]input.' + coin + 'Placeholder');
         $("#html-title").html(upper + '矿池 - 91pool');
-        var mPrice,payment,reward;
+        var mPrice, payment, reward;
         switch (coin) {
             case 'etc':
                 mPrice = "1ETC";
@@ -382,50 +389,45 @@ var index = {
                 payment = "0%";
                 reward = "1.584HSR";
                 break;
-            case 'lch':
-                mPrice = "0.1LCH";
-                payment = "0%";
-                reward = "25LCH";
-                break;
             case 'btm':
                 mPrice = "1BTM";
                 payment = "1%";
                 reward = "412.5BTM";
                 break;
-            case 'xdag':
-                mPrice = "100XDAG";
+            case 'xvg-scrypt':
+                mPrice = "1XVG";
                 payment = "0%";
-                reward = "420.5XDAG";
+                reward = "730XVG";
                 break;
         }
         $("#mPrice").html(mPrice);
         $("#payment").html(payment);
         $("#reward").html(reward);
     },
-    setBaidu : function () {
-        if(coin === 'etc'){
-            $("#baidu").attr("src","https://hm.baidu.com/hm.js?3486de3be2cbc530bb79945f4b87f0d8");
+    setBaidu: function () {
+        if (coin === 'etc') {
+            $("#baidu").attr("src", "https://hm.baidu.com/hm.js?3486de3be2cbc530bb79945f4b87f0d8");
         }
-        else if(coin === 'etf'){
-            $("#baidu").attr("src","https://hm.baidu.com/hm.js?47d6096998f3b16663aa637d3ada3443");
+        else if (coin === 'etf') {
+            $("#baidu").attr("src", "https://hm.baidu.com/hm.js?47d6096998f3b16663aa637d3ada3443");
         }
-        else if(coin === 'hsr'){
-            $("#baidu").attr("src","https://hm.baidu.com/hm.js?635b661136fcc9cd418e2d71052312d0");
+        else if (coin === 'hsr') {
+            $("#baidu").attr("src", "https://hm.baidu.com/hm.js?635b661136fcc9cd418e2d71052312d0");
         }
-        else if(coin === 'btm'){
-            $("#baidu").attr("src","https://hm.baidu.com/hm.js?54a8a321e608052c96b72be4e84304c4");
+        else if (coin === 'btm') {
+            $("#baidu").attr("src", "https://hm.baidu.com/hm.js?54a8a321e608052c96b72be4e84304c4");
         }
     },
-    setwx : function () {
+    setwx: function () {
         var baseUrl = location.href.split("#")[0];
-        mwx.setWxInfo(upper+"矿池介绍","专注于数字资产增值服务",baseUrl);
+        mwx.setWxInfo(upper + "矿池介绍", "专注于数字资产增值服务", baseUrl);
     },
-    setIndex : function () {
-        $(window).on('unload', function() {
+    setIndex: function () {
+        $(window).on('unload', function () {
             localStorage.removeItem('coinIndex');
         });
 
-        $(window).on('beforeunload', function() {
+        $(window).on('beforeunload', function () {
             localStorage.removeItem('coinIndex');
         });
     }

@@ -38,7 +38,7 @@ var index = {
     },
     setwx: function () {
         var baseUrl = location.href.split("#")[0];
-        mwx.setWxInfo($("#aTitle").html(),$("#aIntro").html(),baseUrl);
+        mwx.setWxInfo($("#aTitle").html(), $("#aIntro").html(), baseUrl);
     }
 
 };

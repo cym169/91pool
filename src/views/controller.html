@@ -7,49 +7,90 @@
 <body>
 <!--header部分-->
 #include("./layout/header.html")
-
 #include("./layout/ad.html")
 <div class="control-wrap">
     <div class="section">
-        <div class="title">控制台</div>
-        <div class="name">
+        <div class="add-control"><a href="javascript:;"><i class="fa fa-plus-square"></i><span>添加监控</span></a></div>
+        <div class="monitor">
             <table>
-                <thead>
-                <tr>
+                <tr class="table-header">
                     <th>币种</th>
-                    <th>在线机器</th>
-                    <th>离线机器</th>
-                    <th>最低算力</th>
-                    <th>操作</th>
+                    <th>在线</th>
+                    <th>离线</th>
+                    <th>低算力</th>
+                    <td class="table-corporation" rowspan="2">查看收益</td>
                 </tr>
-                </thead>
-                <tbody>
-                <tr>
+                <tr class="table-content">
                     <td>ETC</td>
                     <td>5</td>
                     <td>2</td>
                     <td>2.148T</td>
-                    <td>查看收益</td>
                 </tr>
-                <tr>
-                    <td>ETF</td>
+            </table>
+            <table>
+                <tr class="table-header">
+                    <th>币种</th>
+                    <th>在线</th>
+                    <th>离线</th>
+                    <th>低算力</th>
+                    <td class="table-corporation" rowspan="2">查看收益</td>
+                </tr>
+                <tr class="table-content">
+                    <td>ETC</td>
                     <td>5</td>
                     <td>2</td>
                     <td>2.148T</td>
-                    <td>查看收益</td>
                 </tr>
-                </tbody>
+            </table>
+            <table>
+                <tr class="table-header">
+                    <th>币种</th>
+                    <th>在线</th>
+                    <th>离线</th>
+                    <th>低算力</th>
+                    <td class="table-corporation" rowspan="2">查看收益</td>
+                </tr>
+                <tr class="table-content">
+                    <td>ETC</td>
+                    <td>5</td>
+                    <td>2</td>
+                    <td>2.148T</td>
+                </tr>
             </table>
         </div>
-        <div class="title">常用工具</div>
-        <ul>
-            <li>收益计算器</li>
-            <li>算力预估</li>
-            <li>报警设置</li>
+    </div>
+</div>
+<div class="tool-wrap">
+    <div class="section">
+        <div class="tool-title"><span>常用工具</span></div>
+        <ul class="tool">
+            <li>
+                <a href="javascript:;">
+                    <div>
+                        <p class="tool-icon"><i class="fa fa-calculator"></i></p>
+                        <p class="tool-text">收益计算器</p>
+                    </div>
+                </a>
+            </li>
+            <li>
+                <a href="javascript:;">
+                    <div>
+                        <p class="tool-icon"><i class="fa fa-line-chart"></i></p>
+                        <p class="tool-text">算力预估</p>
+                    </div>
+                </a>
+            </li>
+            <li>
+                <a href="javascript:;">
+                    <div>
+                        <p class="tool-icon"><i class="fa fa-warning"></i></p>
+                        <p class="tool-text">报警设置</p>
+                    </div>
+                </a>
+            </li>
         </ul>
     </div>
 </div>
-
 <div class="error-wrap">
     <ul>
         <li></li>

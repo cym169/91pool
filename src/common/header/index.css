@@ -47,6 +47,7 @@
     display: block;
     color: #333;
     padding: 10px 30px;
+    text-align: center;
 }
 
 .dropdown-menu li a:hover {
@@ -173,11 +174,11 @@
         border-radius: 4px;
         box-shadow: 0 2px 12px 0 rgba(0,0,0,.1);
     }
-
     .phone-menu > a {
         display: block;
         color: #333;
         padding: 15px 30px;
+        text-align: center;
     }
 
     .phone-menu > a:last-child {

@@ -16,11 +16,11 @@ $(function () {
         var h1 = $(this).children('.title').outerHeight(),
             h2 = $(this).children('.content').outerHeight(),
             h = h1 + h2;
-        $(this).css('height',h).siblings().css('height',h1);
+        $(this).css('height', h).siblings().css('height', h1);
     });
 
     var baseUrl = location.href.split("#")[0];
 
-    mwx.setWxInfo("91pool常见问题","专注于数字资产增值服务",baseUrl);
+    mwx.setWxInfo("91pool常见问题", "专注于数字资产增值服务", baseUrl);
 
 });

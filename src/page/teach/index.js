@@ -9,12 +9,12 @@ require('common/footer/index.js');
 require('./index.css');
 var util = require("util/util.js");
 var index = {
-    init : function () {
+    init: function () {
         util.isMobile();
         this.handler();
     },
-    handler : function () {
-        $(document).on("click",".btm-title li",function () {
+    handler: function () {
+        $(document).on("click", ".btm-title li", function () {
             var index = $(this).index();
             $(this).addClass("active").siblings().removeClass("active");
             $(".btmTab").addClass("hidden").eq(index).removeClass("hidden");

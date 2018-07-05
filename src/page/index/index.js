@@ -27,80 +27,83 @@ var index = {
     },
     handler: function () {
         var _this = this;
-        setInterval(function(){
+        setInterval(function () {
             _this.refresh();
-        }, 6000);
-        
-        $(document).on("click",".coinType td:not(:nth-child(8),:nth-child(9))",function (e) {
+        }, 10000);
+
+
+        $(document).on("click", ".coinType td:not(:nth-child(8),:nth-child(9))", function (e) {
             var coin = $(this).parent('tr').attr("coin");
-            window.location.href = "./currency.html?coin="+coin;
+            window.location.href = "./currency.html?coin=" + coin;
         });
 
-        $(document).on("click",".calculator",function (e) {
+        $(document).on("click", ".calculator", function (e) {
             var hashdw = $(this).attr("calcShow");
             var getdw = $(this).attr("calcDw");
             calcKb = $(this).attr("calcKb");
-            $("#showHash").html(hashdw+"/s");
-            $("#getdw").html(getdw+"/天");
+            $("#showHash").html(hashdw + "/s");
+            $("#getdw").html(getdw + "/天").attr("title", getdw + "/天");
             $("#calculator").removeClass("hidden");
             $("#hashText").focus();
         });
 
-        $(document).on("click","#calculator-close",function (e) {
+        $(document).on("click", "#calculator-close", function (e) {
             $("#calculator").addClass("hidden");
             $("#showHash").html("");
-            $("#getdw").html("");
+            $("#getdw").html("").attr("title", "");
             $("#hashText").val("");
             $("#getText").val("");
             calcKb = 0;
         });
 
-        $("#calculator").on('touchmove',function(event) { event.preventDefault(); }, false);
+        $("#calculator").on('touchmove', function (event) {
+            event.preventDefault();
+        }, false);
 
-        $(document).on("click","#showHash",function (e) {
-            if(showFlag){
+        $(document).on("click", "#showHash", function (e) {
+            if (showFlag) {
                 $(".chooseHash").fadeIn();
                 showFlag = false;
-            }else{
+            } else {
                 $(".chooseHash").fadeOut();
                 showFlag = true;
             }
             e.stopPropagation();
         });
 
-        $(document).on("click",".chooseHash li",function (e) {
+        $(document).on("click", ".chooseHash li", function (e) {
             var text = $(this).text(),
-                dw = text.slice(0,2);
-            $("#showHash").html(dw+"/s");
+                dw = text.slice(0, 2);
+            $("#showHash").html(dw + "/s");
             $("#hashText").focus().trigger("input");
         });
 
-        $(document).on("click",function (e) {
+        $(document).on("click", function (e) {
             showFlag = true;
             $(".chooseHash").fadeOut();
         });
 
-        $("#hashText").on("input",function () {
+        $("#hashText").on("input", function () {
             var val = $(this).val();
-            var hashdw = $("#showHash").html().slice(0,2);
+            var hashdw = $("#showHash").html().slice(0, 2);
             var result = 0;
-            if(!util.validate(val,'require')){
+            if (!util.validate(val, 'require')) {
                 $("#getText").val("");
                 return
             }
-            if(util.validate(val,'plus')){
-                switch (hashdw){
+            if (util.validate(val, 'plus')) {
+                switch (hashdw) {
                     case "KH":
-                        result = val*calcKb;
+                        result = val * calcKb;
                         break;
                     case "MH":
-                        result = val*calcKb*1000;
+                        result = val * calcKb * 1000;
                         break;
                     case "GH":
-                        result = val*calcKb*1000*1000;
+                        result = val * calcKb * 1000 * 1000;
                         break;
                     case "TH":
-                        result = val*calcKb*1000*1000*1000;
+                        result = val * calcKb * 1000 * 1000 * 1000;
                         break;
                 }
                 result = result.toFixed(6);
@@ -109,21 +112,21 @@ var index = {
         });
 
 
-        $(document).on("click",".teach",function (e) {
+        $(document).on("click", ".teach", function (e) {
             var coin = $(this).parents('tr').attr("coin");
             localStorage.coinIndex = 1;
-            window.location.href = "./currency.html?coin="+coin;
+            window.location.href = "./currency.html?coin=" + coin;
         });
     },
     slider: function () {
-        if($(".swiper-slide").length > 1){
+        if ($(".swiper-slide").length > 1) {
             var param = {
                 autoplay: 5000,
                 loop: true,
                 pagination: '.pagination',
                 paginationClickable: true
             };
-        }else{
+        } else {
             var param = {
                 pagination: '.pagination',
                 paginationClickable: true
@@ -137,27 +140,36 @@ var index = {
             $.each(data, function (i, t) {
                 var imgUrl = require('images/' + t.coin + '_icon.png');
                 t.imgUrl = imgUrl;
-                t.upcoin = t.coin.toUpperCase();
                 t.hashrate = _reset.formatHashrate(t.hashrate);
                 t.netHashrate = _reset.formatHashrate(t.netHashrate);
                 t.netDiff = _reset.changeDiff(t.netDiff);
-                t.word = lang == 'cn'?'教程':'Tutorial';
+                t.word = lang == 'cn' ? '教程' : 'Tutorial';
                 switch (t.coin) {
                     case 'etc':
                         t.fee = "1%";
+                        t.upcoin = t.coin.toUpperCase();
                         t.address = "etc1.91pool.com:8008";
                         break;
                     case 'etf':
                         t.fee = "1%";
+                        t.upcoin = t.coin.toUpperCase();
                         t.address = "etf1.91pool.com:9108";
                         break;
                     case 'hsr':
                         t.fee = "0%";
+                        t.upcoin = t.coin.toUpperCase();
                         t.address = "hsr1.91pool.com:9009";
                         break;
                     case 'btm':
                         t.fee = "1%";
+                        t.upcoin = t.coin.toUpperCase();
                         t.address = "btm.91pool.com:9221";
+                        break;
+                    case 'xvg-scrypt':
+                        t.fee = "0%";
+                        t.upcoin = t.coin.slice(0, 3).toUpperCase();
+                        t.new = true;
+                        t.address = "xvg-scrypt.91pool.com:8110";
                         break;
                 }
             });
@@ -185,10 +197,10 @@ var index = {
         _coin.getPrice('etc', function (err, data) {
             if (data.data)
                 var p = "";
-            if( parseInt(data.data[0].rose) < 0 ){
+            if (parseInt(data.data[0].rose) < 0) {
                 p = '￥' + data.data[0].priceCny + '(<span class="down">' + data.data[0].rose + '</span>)'
             }
-            else{
+            else {
                 p = '￥' + data.data[0].priceCny + '(<span class="up">' + data.data[0].rose + '</span>)'
             }
             $(".etcprice").html(p);
@@ -197,10 +209,10 @@ var index = {
         _coin.getPrice('etf', function (err, data) {
             if (data.data)
                 var p = "";
-            if( parseInt(data.data[0].rose) < 0 ){
+            if (parseInt(data.data[0].rose) < 0) {
                 p = '￥' + data.data[0].priceCny + '(<span class="down">' + data.data[0].rose + '</span>)'
             }
-            else{
+            else {
                 p = '￥' + data.data[0].priceCny + '(<span class="up">' + data.data[0].rose + '</span>)'
             }
             $(".etfprice").html(p);
@@ -209,10 +221,10 @@ var index = {
         _coin.getPrice('hsr', function (err, data) {
             if (data.data)
                 var p = "";
-            if( parseInt(data.data[0].rose) < 0 ){
+            if (parseInt(data.data[0].rose) < 0) {
                 p = '￥' + data.data[0].priceCny + '(<span class="down">' + data.data[0].rose + '</span>)'
             }
-            else{
+            else {
                 p = '￥' + data.data[0].priceCny + '(<span class="up">' + data.data[0].rose + '</span>)'
             }
             $(".hsrprice").html(p);
@@ -221,25 +233,39 @@ var index = {
         _coin.getPrice('btm', function (err, data) {
             if (data.data)
                 var p = "";
-            if( parseInt(data.data[0].rose) < 0 ){
+            if (parseInt(data.data[0].rose) < 0) {
                 p = '￥' + data.data[0].priceCny + '(<span class="down">' + data.data[0].rose + '</span>)'
             }
-            else{
+            else {
                 p = '￥' + data.data[0].priceCny + '(<span class="up">' + data.data[0].rose + '</span>)'
             }
             $(".btmprice").html(p);
         });
+
+        _coin.getPrice('xvg', function (err, data) {
+            if (data.data)
+                var p = "";
+            if (parseInt(data.data[0].rose) < 0) {
+                p = '￥' + data.data[0].priceCny + '(<span class="down">' + data.data[0].rose + '</span>)'
+            }
+            else {
+                p = '￥' + data.data[0].priceCny + '(<span class="up">' + data.data[0].rose + '</span>)'
+            }
+            $(".xvg-scryptprice").html(p);
+        });
+
+
     },
     setwx: function () {
         var baseUrl = location.href.split("#")[0];
-        mwx.setWxInfo("91pool，值得信赖的矿池服务商","专注于数字资产增值服务",baseUrl);
+        mwx.setWxInfo("91pool，值得信赖的矿池服务商", "专注于数字资产增值服务", baseUrl);
     },
     scroll: function () {
         var _this = this;
         _article.getList({currentPage: 1}, function (data) {
             if (data.code === 200) {
                 var menuList = {
-                    list: data.data.data.slice(0, 3)
+                    list: data.data.data.slice(0, 1)
                 };
                 var html = template('scroll-tp', menuList);
                 $("#scroll").html(html);

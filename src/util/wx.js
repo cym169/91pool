@@ -6,10 +6,11 @@
 'use strict';
 
 var mwx = {
-    getWxInfo : function () {
+    // 从接口获取微信分享的主要参数
+    getWxInfo: function () {
         var url = encodeURIComponent(location.href.split("#")[0]);
         $.ajax({
-            url: "http://www.91pool.com/api/article/wx/signature/wx4ffd9fbdf1388129?url=" +url,
+            url: "http://www.91pool.com/api/article/wx/signature/wx4ffd9fbdf1388129?url=" + url,
             async: true,
             success: function (data) {
                 wx.config({
@@ -17,7 +18,7 @@ var mwx = {
                     appId: data.appId,
                     timestamp: data.timestamp,
                     nonceStr: data.nonce,
-                    signature:data.signature,
+                    signature: data.signature,
                     jsApiList: [
                         'onMenuShareTimeline',
                         'onMenuShareAppMessage'
@@ -26,7 +27,8 @@ var mwx = {
             }
         });
     },
-    setWxInfo : function (title,desc,baseUrl) {
+    // 设置分享的内容
+    setWxInfo: function (title, desc, baseUrl) {
         this.getWxInfo();
         wx.ready(function () {
             // <% --公共方法--%>

@@ -9,12 +9,12 @@ require('common/ad/index.js');
 require('common/footer/index.js');
 require('./index.css');
 var util = require("util/util.js");
+util.isMobile();
 var index = {
-    init : function () {
-        util.isMobile();
+    init: function () {
         this.handler();
     },
-    handler : function () {
+    handler: function () {
 
     }
 };

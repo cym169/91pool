@@ -46,7 +46,7 @@
 }
 
 .market {
-    margin-top: 20px;
+    margin-top: 7px;
     margin-bottom: 60px;
 }
 
@@ -76,9 +76,11 @@
     color: #878383;
     border-radius: 50px;
 }
-.market-info table{
-    font-family: "Microsoft YaHei" ;
+
+.market-info table {
+    font-family: "Microsoft YaHei";
 }
+
 .market-info > thead > tr {
     background-color: #e5e8ee;
 }
@@ -92,59 +94,82 @@
     white-space: nowrap;
     text-align: center;
 }
-.market-info > tbody > tr{
+
+.market-info > tbody > tr {
     cursor: pointer;
 }
-.market-info > tbody > tr:hover td{
+
+.market-info > tbody > tr:hover td {
     background-color: #F5F5F5;
 }
-.market-info > tbody > tr > td{
-    font-family: Arial ;
+
+.market-info > tbody > tr > td {
+    font-family: Arial;
 }
-.market-info > tbody > tr > td:nth-child(1){
+
+.market-info > tbody > tr > td:nth-child(1) {
     position: relative;
-    padding: 0 22px;
+    padding: 0 0 0 40px;
+    font-weight: bold;
+    text-align: left;
 }
+
+.market-info > tbody > tr > td:nth-child(1) .new_coin {
+    color: #dd0000;
+    font-size: 12px;
+    position: absolute;
+    left: 74px;
+    top: 11px;
+    font-style: oblique;
+}
+
 /*.market-info > tbody > tr > td:nth-child(1) a{*/
-    /*color: #808080;*/
-    /*position: relative;*/
-    /*display: block;*/
-    /*padding: 0;*/
-    /*width: 80px;*/
-    /*height: 100%;*/
+/*color: #808080;*/
+/*position: relative;*/
+/*display: block;*/
+/*padding: 0;*/
+/*width: 80px;*/
+/*height: 100%;*/
 /*}*/
-.market-info > tbody > tr > td:nth-child(1) i{
+.market-info > tbody > tr > td:nth-child(1) i {
     display: block;
     position: absolute;
 }
-.market-info > tbody > tr > td:nth-child(1) i img{
+
+.market-info > tbody > tr > td:nth-child(1) i img {
     width: 100%;
 }
-.market-info > tbody > tr > td:nth-child(1) i.etc_icon{
-    left: 0;
+
+.market-info > tbody > tr > td:nth-child(1) i.etc_icon {
+    left: 5px;
     top: 10px;
     width: 32px;
 }
-.market-info > tbody > tr > td:nth-child(1) i.hsr_icon{
+
+.market-info > tbody > tr > td:nth-child(1) i.hsr_icon {
     width: 24px;
-    left: 4px;
+    left: 9px;
     top: 16px;
 }
-.market-info > tbody > tr > td:nth-child(1) i.etf_icon{
+
+.market-info > tbody > tr > td:nth-child(1) i.etf_icon {
     width: 24px;
-    left: 4px;
+    left: 9px;
     top: 16px;
 }
-.market-info > tbody > tr > td:nth-child(1) i.lch_icon{
-    width: 24px;
-    left: 4px;
-    top: 7px;
+
+.market-info > tbody > tr > td:nth-child(1) i.xvg-scrypt_icon {
+    width: 20px;
+    left: 9px;
+    top: 14px;
 }
-.market-info > tbody > tr > td:nth-child(1) i.btm_icon{
+
+.market-info > tbody > tr > td:nth-child(1) i.btm_icon {
     width: 21px;
-    left: 4px;
+    left: 9px;
     top: 16px;
 }
+
 .market-info > tbody > tr:nth-child(odd) {
     background-color: #fff;
 }
@@ -162,38 +187,44 @@
     text-align: center;
     white-space: nowrap;
 }
-.market-info > tbody > tr > td > *{
+
+.market-info > tbody > tr > td > * {
     vertical-align: middle;
 }
-.market-info > tbody > tr > td:first-child {
-    font-weight: bold;
-}
-.market-info > tbody > tr > td > .teach{
+
+.market-info > tbody > tr > td > .teach {
     /*display: table-cell;*/
     /*width: 100%;*/
     /*height: 100%;*/
     /*vertical-align: middle;*/
 }
-.market-info > tbody > tr > td > .calculator{
+
+.market-info > tbody > tr > td > .calculator {
 
 }
-.market-info > tbody > tr > td > .calculator img{
+
+.market-info > tbody > tr > td > .calculator img {
     height: 28px;
     width: auto;
 }
-.market-info > tbody > tr > td > .teach img{
+
+.market-info > tbody > tr > td > .teach img {
     width: auto;
     height: 34px;
 }
-.market-info > tbody > tr > td > .teach:hover{
+
+.market-info > tbody > tr > td > .teach:hover {
     text-decoration: underline;
 }
-.market-info tr td .down{
+
+.market-info tr td .down {
     color: #399736;
 }
-.market-info tr td .up{
+
+.market-info tr td .up {
     color: #ea5c5c;
 }
+
 .pagination {
     position: absolute;
     z-index: 20;
@@ -238,45 +269,52 @@
     .notice {
         margin: 10px 0;
     }
+
     .market-type > li {
         margin-right: 15px;
     }
+
     .table-box {
         display: -webkit-box;
         overflow-x: scroll;
         overflow-y: hidden;
         -webkit-overflow-scrolling: touch;
     }
+
     .market {
-        margin: 30px 0;
+        margin: 7px 0;
     }
 
     .market-info > thead > tr > th {
         padding: 0 15px;
     }
-    .market-info > tbody > tr > td{
+
+    .market-info > tbody > tr > td {
         padding: 0 5px;
     }
-    .market-info > tbody > tr > td:nth-child(1){
-        padding: 0 35px;
+
+    .market-info > tbody > tr > td:nth-child(1) {
+        padding: 0 20px 0 40px;
     }
-    .calculator-dialog{
+
+    .calculator-dialog {
         position: fixed;
         left: 0;
         right: 0;
         top: 0;
         bottom: 0;
-        background-color: rgba(0,0,0,.5);
+        background-color: rgba(0, 0, 0, .5);
         z-index: 999;
         display: flex;
         justify-content: center;
         align-items: center;
     }
 
-    .calculator-wrap{
+    .calculator-wrap {
         padding: 0 20px;
     }
-    .calculator-title{
+
+    .calculator-title {
         background-color: #fea112;
         font-size: 18px;
         text-align: center;
@@ -285,46 +323,55 @@
         border-radius: 5px 5px 0 0;
         user-select: none;
     }
-    .calculator-content{
+
+    .calculator-content {
         background-color: #fff;
         padding: 20px 0 10px 0;
         border-radius: 0 0 5px 5px;
     }
-    .hash,.get{
+
+    .hash, .get {
         position: relative;
         padding: 0 10px;
         /*overflow: hidden;*/
         height: 40px;
     }
-    .change{
+
+    .change {
         display: flex;
         justify-content: center;
         align-items: center;
         margin: 10px 0;
     }
-    .change img{
+
+    .change img {
         height: 28px;
         transform: rotate(90deg);
     }
-    .get{
+
+    .get {
 
     }
-    .hash input,.get input{
-        width: calc( 100% - 112px );
-        height: calc( 100% - 2px );
+
+    .hash input, .get input {
+        width: calc(100% - 112px);
+        height: calc(100% - 2px);
         padding: 0 60px 0 50px;
         border-radius: 4px;
         font-size: 16px;
         border: 1px solid #bbbbbb;
         outline: none;
     }
-    .hash input{
+
+    .hash input {
         color: #ccc;
     }
-    .get input{
+
+    .get input {
         color: #000;
     }
-    .hash label,.get label{
+
+    .hash label, .get label {
         display: block;
         position: absolute;
         top: 0;
@@ -333,7 +380,8 @@
         line-height: 40px;
         font-size: 16px;
     }
-    .hash span,.get span{
+
+    .hash span, .get span {
         display: flex;
         position: absolute;
         top: 1px;
@@ -346,10 +394,12 @@
         background-color: #eeeeee;
         user-select: none;
     }
-    .hash span{
+
+    .hash span {
         color: #fea112;
     }
-    .hash .chooseHash{
+
+    .hash .chooseHash {
         display: none;
         position: absolute;
         right: 10px;
@@ -358,22 +408,25 @@
         padding-top: 10px;
         background-color: #fff;
         border: 1px solid #ebeef5;
-        box-shadow: 0 2px 12px 0 rgba(0,0,0,.1);
+        box-shadow: 0 2px 12px 0 rgba(0, 0, 0, .1);
     }
-    .hash .chooseHash li{
+
+    .hash .chooseHash li {
         font-size: 16px;
         padding: 5px 20px;
         color: #333;
         cursor: pointer;
         user-select: none;
     }
-    .little-tips{
+
+    .little-tips {
         padding: 0 10px;
         margin-top: 20px;
         color: #fea112;
         font-size: 15px;
     }
-    .calculator-close{
+
+    .calculator-close {
         display: flex;
         justify-content: center;
         align-items: center;
@@ -381,11 +434,13 @@
         text-align: justify;
         text-align-last: left;
     }
-    .calculator-close img{
+
+    .calculator-close img {
         width: 30px;
     }
 
 }
+
 @media (min-width: 768px) and (max-width: 992px) {
     .section {
         width: 750px;
@@ -404,25 +459,26 @@
     }
 }
 
-@media (min-width: 701px){
-    .calculator-dialog{
+@media (min-width: 701px) {
+    .calculator-dialog {
         position: fixed;
         left: 0;
         right: 0;
         top: 0;
         bottom: 0;
-        background-color: rgba(0,0,0,.5);
+        background-color: rgba(0, 0, 0, .5);
         z-index: 999;
     }
 
-    .calculator-wrap{
+    .calculator-wrap {
         width: 750px;
         position: absolute;
         left: 50%;
         top: 50%;
         margin: -170px 0 0 -375px;
     }
-    .calculator-title{
+
+    .calculator-title {
         background-color: #fea112;
         font-size: 30px;
         text-align: center;
@@ -431,17 +487,20 @@
         border-radius: 5px 5px 0 0;
         user-select: none;
     }
-    .calculator-content{
+
+    .calculator-content {
         background-color: #fff;
         padding: 50px 35px;
         border-radius: 0 0 5px 5px;
     }
-    .hash,.get{
+
+    .hash, .get {
         float: left;
         position: relative;
         width: 45%;
     }
-    .change{
+
+    .change {
         float: left;
         display: flex;
         width: 10%;
@@ -450,10 +509,12 @@
         justify-content: center;
         align-items: center;
     }
-    .change img{
+
+    .change img {
         width: 40px;
     }
-    .hash input,.get input{
+
+    .hash input, .get input {
         /*position: relative;*/
         width: 57%;
         border: 1px solid #bbbbbb;
@@ -462,13 +523,16 @@
         padding: 20px 80px 20px 50px;
         outline: none;
     }
-    .hash input{
+
+    .hash input {
         color: #ccc;
     }
-    .get input{
+
+    .get input {
         color: #000;
     }
-    .hash label,.get label{
+
+    .hash label, .get label {
         display: block;
         position: absolute;
         top: 0;
@@ -476,10 +540,11 @@
         height: 100%;
         line-height: 63px;
         font-size: 15px;
-        color:#999999;
+        color: #999999;
         user-select: none;
     }
-    .hash span,.get span{
+
+    .hash span, .get span {
         display: block;
         position: absolute;
         top: 1px;
@@ -492,39 +557,50 @@
         background-color: #eeeeee;
         user-select: none;
         cursor: pointer;
+        white-space: nowrap;
+        max-width: 80px;
+        overflow: hidden;
+        text-overflow: ellipsis;
     }
-    .hash span{
+
+    .hash span {
         color: #fea112;
     }
-    .hash .chooseHash{
+
+    .hash .chooseHash {
         display: none;
         position: absolute;
-        right:-1px;
+        right: -1px;
         padding-top: 10px;
         background-color: #fff;
         border: 1px solid #ebeef5;
-        box-shadow: 0 2px 12px 0 rgba(0,0,0,.1);
+        box-shadow: 0 2px 12px 0 rgba(0, 0, 0, .1);
     }
-    .hash .chooseHash li{
+
+    .hash .chooseHash li {
         font-size: 20px;
         padding: 8px 5px;
         color: #333;
         cursor: pointer;
         user-select: none;
     }
-    .hash .chooseHash li:hover{
+
+    .hash .chooseHash li:hover {
         background-color: #f0f0f0;
     }
-    .little-tips{
+
+    .little-tips {
         margin-top: 20px;
         color: #fea112;
         font-size: 15px;
     }
-    .calculator-close{
+
+    .calculator-close {
         text-align: center;
         padding-top: 40px;
     }
-    .calculator-close img{
+
+    .calculator-close img {
         width: 40px;
     }
 }

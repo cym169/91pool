@@ -25,9 +25,11 @@ html, body {
     height: 52px;
     text-align: center;
 }
-.logo img{
+
+.logo img {
     height: 100%;
 }
+
 .welcome-text {
     margin: 10px 0 10px 0;
     color: #fff;
@@ -74,12 +76,15 @@ html, body {
     min-height: 158px;
     position: relative;
 }
-.login-form{
+
+.login-form {
     /*display: none;*/
 }
-.login-form.active{
+
+.login-form.active {
     display: block;
 }
+
 .login-form-box input[type='text'], .login-form-box input[type='password'] {
     width: 318px;
     border: 1px solid #dddddd;
@@ -95,18 +100,22 @@ html, body {
     margin-bottom: 20px;
     transition: all .5s;
 }
-.login-form-box input[type='text']:focus{
+
+.login-form-box input[type='text']:focus {
     border-color: #40af37;
 }
-.login-form-box .send-box input[type='text']{
+
+.login-form-box .send-box input[type='text'] {
     width: 238px;
     padding-right: 90px;
 }
-.login-form-box .imgCode-box{
+
+.login-form-box .imgCode-box {
     position: relative;
     margin-bottom: 20px;
 }
-.login-form-box .imgCode-box img{
+
+.login-form-box .imgCode-box img {
     position: absolute;
     top: 2px;
     right: 2px;
@@ -116,10 +125,12 @@ html, body {
     z-index: 3;
     outline: none;
 }
-.login-form-box .imgCode-box input[type='text']{
+
+.login-form-box .imgCode-box input[type='text'] {
     width: 238px;
     padding-right: 90px;
 }
+
 .login-form-box .submit {
     width: 100%;
     background-color: #ff7519;
@@ -140,7 +151,6 @@ html, body {
 .login-form-box .submit:hover {
     background-color: #e66d1d;
 }
-
 
 .send-box {
     width: 100%;
@@ -169,17 +179,21 @@ html, body {
     background-color: #ff7519;
     cursor: pointer;
 }
-.no-send:hover{
+
+.no-send:hover {
     background-color: #e66d1d;
 }
+
 .has-send {
     background-color: #dddddd;
     cursor: default;
 }
+
 .checkbox {
     position: relative;
     height: 30px;
 }
+
 .checkbox input[type='checkbox'] {
     position: absolute;
     left: 0;

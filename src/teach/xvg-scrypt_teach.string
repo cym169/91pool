@@ -1,14 +1,4 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    #include("./layout/head-common.html")
-    <title>教程</title>
-</head>
-<body>
-<!--header部分-->
-#include("./layout/header.html")
-<div class="teach">
-    <div class="section">
+<div class="section">
         <div class="time-line btmTab">
             <ul class="teach-info">
                 <li>
@@ -16,13 +6,13 @@
                     <div class="content">
                         <p data-i18n="xvgTeach.1"></p>
                         <div>
-                            <span data-i18n="xvgTeach.2"></span>（<a href="https://bytom.io/wallet/" target="_blank">https://bytom.io/wallet/</a>）
+                            <span data-i18n="xvgTeach.2"></span>（<a href="https://vergecurrency.com/" target="_blank">https://vergecurrency.com/</a>）
                             <br>
-                            <span data-i18n="xvgTeach.3"></span>
+                            <span data-i18n="xvgTeach.3"></span>（<a href="https://vergecurrency.com/wallets/" target="_blank">https://vergecurrency.com/wallets/</a>）
                             <br>
-                            <span data-i18n="xvgTeach.4"></span>
+                            <span data-i18n="xvgTeach.4"></span>（<a href="https://play.google.com/store/apps/details?id=com.vergeandroid.wallet" target="_blank">https://play.google.com/store/apps/details?id=com.vergeandroid.wallet</a>）
                             <br>
-                            <span data-i18n="xvgTeach.5"></span>
+                            <span data-i18n="xvgTeach.5"></span>（<a href="https://vergecurrency.com/get-verge/" target="_blank">https://vergecurrency.com/get-verge/</a>）
                         </div>
                     </div>
                 </li>
@@ -31,6 +21,8 @@
                     <div class="content">
                         <p data-i18n="xvgTeach.6"></p>
                         <div>
+                            <span data-i18n="xvgTeach.13"></span>
+                            <br>
                             <span data-i18n="xvgTeach.7"></span>
                             <br>
                             <img src="../images/xvg-scrypt_img1.png">
@@ -51,7 +43,7 @@
                     <div class="content">
                         <p data-i18n="xvgTeach.10"></p>
                         <div>
-                            <span data-i18n="xvgTeach.11"></span>1：xvg1.91pool.com:9108
+                            <span data-i18n="xvgTeach.11"></span>：xvg-scrypt.91pool.com:8110
                             <br>
                         </div>
                     </div>
@@ -59,8 +51,3 @@
             </ul>
         </div>
     </div>
-</div>
-<!--footer部分-->
-#include("./layout/footer.html")
-</body>
-</html>
