@@ -20,6 +20,19 @@
             <li>
                 <div class="step">2</div>
                 <div class="content">
+                    <p data-i18n="hsrTeach.41"></p>
+                    <div>
+                        <span data-i18n="hsrTeach.42"></span>
+                        <br>
+                        1. <span data-i18n="hsrTeach.43"></span>
+                        <br>
+                        2. <a href="./download.html#hsr" target="_blank" data-i18n="hsrTeach.44"></a>
+                    </div>
+                </div>
+            </li>
+            <li>
+                <div class="step">3</div>
+                <div class="content">
                     <p data-i18n="hsrTeach.6"></p>
                     <div>
                         <span data-i18n="hsrTeach.7"></span>
@@ -78,7 +91,7 @@
                 </div>
             </li>
             <li>
-                <div class="step">3</div>
+                <div class="step">4</div>
                 <div class="content">
                     <p data-i18n="hsrTeach.13">设置挖矿软件</p>
                     <div>
@@ -132,7 +145,7 @@
                 </div>
             </li>
             <li>
-                <div class="step" style="font-size: 12px">4</div>
+                <div class="step" style="font-size: 12px">5</div>
                 <div class="content">
                     <p data-i18n="hsrTeach.32"></p>
                     <div>
@@ -148,11 +161,11 @@
                 </div>
             </li>
             <li>
-                <div class="step" style="font-size: 12px;">5</div>
+                <div class="step" style="font-size: 12px;">6</div>
                 <div class="content">
                     <p data-i18n="hsrTeach.35"></p>
                     <div>
-                        <span data-i18n="hsrTeach.36"></span> <a href="http://www.91pool.com">www.91pool.com</a>，<span data-i18n="hsrTeach.37"></span><br>
+                        <span data-i18n="hsrTeach.36"></span> <a href="http://www.91pool.com/currency.html?coin=hsr">www.91pool.com/currency.html?coin=hsr</a>，<span data-i18n="hsrTeach.37"></span><br>
                     </div>
                 </div>
             </li>

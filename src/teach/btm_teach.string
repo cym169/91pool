@@ -9,9 +9,11 @@
                         <div>
                             <span data-i18n="btmTeach.2"></span>（<a href="https://bytom.io/wallet/" target="_blank">https://bytom.io/wallet/</a>）
                             <br>
-                            <span data-i18n="btmTeach.3"></span>
+                            <span>火币Pro：</span><a href="https://www.huobi.pro" target="_blank">https://www.huobi.pro</a>
                             <br>
-                            <span data-i18n="btmTeach.4"></span>
+                            <span>OKEx：</span><a href="https://www.okex.com" target="_blank">https://www.okex.com</a>
+                            <br>
+                            <span>Gate.io：</span><a href="https://gate.io/" target="_blank">https://gate.io/</a>
                         </div>
                     </div>
                 </li>
@@ -58,7 +60,7 @@
                     <div class="content">
                         <p data-i18n="btmTeach.18"></p>
                         <div>
-                            <span data-i18n="btmTeach.19"></span> <a href="www.91pool.com" target="_blank">www.91pool.com</a>,<span data-i18n="btmTeach.20"></span>
+                            <span data-i18n="btmTeach.19"></span> <a href="http://www.91pool.com/currency.html?coin=btm" target="_blank">www.91pool.com/currency.html?coin=btm</a>,<span data-i18n="btmTeach.20"></span>
                         </div>
                     </div>
                 </li>
@@ -84,9 +86,11 @@
                         <div>
                             <span data-i18n="btmTeach.2"></span>（<a href="https://bytom.io/wallet/" target="_blank">https://bytom.io/wallet/</a>）
                             <br>
-                            <span data-i18n="btmTeach.3"></span>
+                            <span>火币Pro：</span><a href="https://www.huobi.pro" target="_blank">https://www.huobi.pro</a>
                             <br>
-                            <span data-i18n="btmTeach.4"></span>
+                            <span>OKEx：</span><a href="https://www.okex.com" target="_blank">https://www.okex.com</a>
+                            <br>
+                            <span>Gate.io：</span><a href="https://gate.io/" target="_blank">https://gate.io/</a>
                         </div>
                     </div>
                 </li>
@@ -99,7 +103,13 @@
                             <br>
                             1. <span data-i18n="btmTeach.26"></span>
                             <br>
-                            2. <a href="https://pan.baidu.com/s/1wDZaFKXyPYbNRhExSjwA9Q" target="_blank" data-i18n="btmTeach.27"></a>
+                            2. <a href="./download.html#btm" target="_blank" data-i18n="btmTeach.27"></a>
+                            <br>
+                            <span class="red" data-i18n="btmTeach.35"></span>
+                            <br>
+                            <span class="red" data-i18n="btmTeach.37"></span>
+                            <br>
+                            <img src="../images/btm_img1.jpg" />
                         </div>
                     </div>
                 </li>
@@ -108,44 +118,37 @@
                     <div class="content">
                         <p data-i18n="btmTeach.28"></p>
                         <div>
+                            <span data-i18n="btmTeach.36"></span>
+                            <br>
+                            <img src="../images/btm_img6.png">
+                            <br>
                             <span data-i18n="btmTeach.29"></span>
                             <br>
                             <img src="../images/btm_img3.png">
                             <br>
                             <span data-i18n="btmTeach.30"></span>
                             <br>
-                            Bminer：bminer -uri tensority://wallet_address.worker_name@btm.91pool.com:9221
-                            <br>
-                            <span data-i18n="btmTeach.31"></span>
+                            <img src="../images/btm_img4.png">
                             <br>
                             <span data-i18n="btmTeach.32"></span>
                             <br>
-                            <img src="../images/btm_img4.png">
+                            <img src="../images/btm_img5.png">
+                            <br>
+                            PS : <span data-i18n="btmTeach.38"></span><a href="https://pan.baidu.com/s/1cK6q3R0lpEJTo0Is-1oGwA" target="_blank" data-i18n="btmTeach.39"></a><span data-i18n="btmTeach.40"></span>
                         </div>
                     </div>
                 </li>
                 <li>
                     <div class="step">4</div>
                     <div class="content">
-                        <p data-i18n="btmTeach.35"></p>
+                        <p data-i18n="btmTeach.18"></p>
                         <div>
-                            <span data-i18n="btmTeach.33"></span>
-                            <br>
-                            <img src="../images/btm_img5.png">
+                            <span data-i18n="btmTeach.19"></span> <a href="http://www.91pool.com/currency.html?coin=btm" target="_blank">www.91pool.com/currency.html?coin=btm</a>,<span data-i18n="btmTeach.20"></span>
                         </div>
                     </div>
                 </li>
                 <li>
                     <div class="step">5</div>
-                    <div class="content">
-                        <p data-i18n="btmTeach.18"></p>
-                        <div>
-                            <span data-i18n="btmTeach.19"></span> <a href="www.91pool.com" target="_blank">www.91pool.com</a>,<span data-i18n="btmTeach.20"></span>
-                        </div>
-                    </div>
-                </li>
-                <li>
-                    <div class="step">6</div>
                     <div class="content">
                         <p data-i18n="btmTeach.21"></p>
                         <div>

@@ -20,13 +20,13 @@ var util = {
     // ajax网络请求
     request: function (param) {
         $.ajax({
-            type            : param.type || 'get',
-            url             : param.url || '',
-            dataType        : param.dataType || 'json',
-            data            : param.data || '',
-            time            : param.time || '0',
-            success         : param.success,
-            error           : param.error
+            type: param.type || 'get',
+            url: param.url || '',
+            dataType: param.dataType || 'json',
+            data: param.data || '',
+            time: param.time || '0',
+            success: param.success,
+            error: param.error
         });
     },
     // jsonp获取请求
@@ -109,7 +109,18 @@ var util = {
                 setTime(obj)
             }, 1000)
         }
+    },
+    androidOrios: function () {
+        var u = navigator.userAgent;
+        var isAndroid = u.indexOf('Android') > -1 || u.indexOf('Linux') > -1; //g
+        var isIOS = !!u.match(/\(i[^;]+;( U;)? CPU.+Mac OS X/); //ios终端
+        if (isAndroid) {
+            return 'android';
+        }
+        if (isIOS) {
+            return 'ios';
+        }
     }
-};
+}
 
 module.exports = util;

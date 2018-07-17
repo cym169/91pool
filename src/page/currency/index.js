@@ -127,9 +127,11 @@ var index = {
                             t.reward = (t.reward).toFixed(6);
                             break;
                         case 'xvg-scrypt':
+                        case 'xvg-blake2s':
                             t.myUrl = "https://verge-blockchain.info/block/";
                             t.reward = (t.reward).toFixed(6);
                             break;
+
                     }
                     t.timestamp = _reset.formatDateLocale(t.timestamp);
                     t.diff = _reset.getRoundVariance(t.shares, t.difficulty);
@@ -150,7 +152,6 @@ var index = {
                             t.myUrl = "https://gastracker.io/block/";
                             t.reward = (t.reward * 1e-18).toFixed(6);
                             break;
-                        // case 'eth':
                         case 'etf':
                             t.myUrl = "#";
                             t.reward = (t.reward * 1e-18).toFixed(6);
@@ -162,7 +163,8 @@ var index = {
                             t.myUrl = "http://blockmeta.com/block/";
                             t.reward = (t.mint).toFixed(6);
                             break;
-                        case 'xvg':
+                        case 'xvg-scrypt':
+                        case 'xvg-blake2s':
                             t.myUrl = "https://verge-blockchain.info/block/";
                             t.reward = (t.mint).toFixed(6);
                             break;
@@ -196,7 +198,8 @@ var index = {
                         case 'btm':
                             t.myUrl = "http://blockmeta.com/block/";
                             break;
-                        case 'xvg':
+                        case 'xvg-scrypt':
+                        case 'xvg-blake2s':
                             t.myUrl = "https://verge-blockchain.info/block/";
                             break;
                     }
@@ -222,15 +225,12 @@ var index = {
             if (typeof (data.poolCharts) != 'undefined' || data.poolCharts.length > 0) {
                 xTime = [];
                 yData = [];
-                var dwArray = [];
                 $.each(data.poolCharts, function (i, t) {
                     xTime.unshift(t.timeFormat.replace(/_/, ':'));
-                    dwArray.unshift(_reset.formatSuffix(t.poolHash));
                     yData.unshift(_reset.formatHashrate(t.poolHash));
                 });
             }
-
-            var dw = _reset.getDw(dwArray);
+            var dw = _reset.getDw(yData);
             yData = _reset.resetChart(dw, yData);
             var w = $(window).width();
             var interval = 0, left;
@@ -256,7 +256,7 @@ var index = {
                     },
                     formatter: function (item) {
                         if (item[0].value > 1000) {
-                            item[0].value = item[0].value / 1000;
+                            item[0].value = (item[0].value / 1000).toFixed(2);
                             if (dw == 'H') {
                                 return item[0].value + "KH<br />" + item[0].axisValueLabel;
                             }
@@ -273,7 +273,7 @@ var index = {
                                 return item[0].value + "PH<br />" + item[0].axisValueLabel;
                             }
                         } else {
-                            return item[0].value + dw + "<br />" + item[0].axisValueLabel;
+                            return (item[0].value).toFixed(2) + dw + "<br />" + item[0].axisValueLabel;
                         }
                     },
                     confine: true
@@ -327,6 +327,11 @@ var index = {
                                 }])
                             }
                         },
+                        lable:{
+                            formatter: function (item) {
+                                console.log(item)
+                            }
+                        },
                         data: []
                     }
                 ]
@@ -345,7 +350,7 @@ var index = {
 
         var coinFor = coin;
 
-        if (coin == 'xvg-scrypt') {
+        if (coin === 'xvg-scrypt' || coin === 'xvg-blake2s') {
             coinFor = 'xvg';
         }
         _coins.getPrice(coinFor, function (error, data) {
@@ -369,7 +374,15 @@ var index = {
         var imgUrl = require('images/' + coin + '.png');
         var imgTempl = '<img src="' + imgUrl + '" />';
         $('.coin-logo').html(imgTempl);
-        $(".coin-name").html(coin == 'xvg-scrypt' ? upper.slice(0, 3) + "<br><span style='font-size: 13px;'>scrypt</span>" : upper);
+        var str = "";
+        if(coin === 'xvg-scrypt'){
+            str = upper.slice(0, 3) + "<br><span style='font-size: 13px;'>scrypt</span>";
+        }else if(coin === 'xvg-blake2s'){
+            str = upper.slice(0, 3) + "<br><span style='font-size: 13px;'>blake2s</span>";
+        }else{
+            str = upper
+        }
+        $(".coin-name").html(str);
         $("#address").attr('data-i18n', '[placeholder]input.' + coin + 'Placeholder');
         $("#html-title").html(upper + '矿池 - 91pool');
         var mPrice, payment, reward;
@@ -395,6 +408,7 @@ var index = {
                 reward = "412.5BTM";
                 break;
             case 'xvg-scrypt':
+            case 'xvg-blake2s':
                 mPrice = "1XVG";
                 payment = "0%";
                 reward = "730XVG";

@@ -169,7 +169,10 @@
     left: 9px;
     top: 16px;
 }
-
+.market-info > tbody > tr > td:nth-child(1) .subTitle{
+    font-size: 12px;
+    font-weight: normal;
+}
 .market-info > tbody > tr:nth-child(odd) {
     background-color: #fff;
 }
@@ -361,13 +364,6 @@
         font-size: 16px;
         border: 1px solid #bbbbbb;
         outline: none;
-    }
-
-    .hash input {
-        color: #ccc;
-    }
-
-    .get input {
         color: #000;
     }
 
@@ -522,13 +518,6 @@
         background-color: #f5f4f3;
         padding: 20px 80px 20px 50px;
         outline: none;
-    }
-
-    .hash input {
-        color: #ccc;
-    }
-
-    .get input {
         color: #000;
     }
 

@@ -21,6 +21,9 @@ var timer;
 var xTime = ['now'],
     yData = [0],
     minerList = [];
+if(coin == 'xvg-scrypt'){
+    upper = upper.slice(0,3)
+}
 var index = {
     init: function () {
         mwx.getWxInfo();
@@ -30,7 +33,7 @@ var index = {
     },
     handler: function () {
         var _this = this;
-        timer = setInterval(_this.setData, 8000);
+        timer = setInterval(_this.setData, 10000);
 
         $(document).on('click', '.work-title li', function () {
             if ($(this).hasClass('active')) {
@@ -60,6 +63,7 @@ var index = {
                 mPrice = "1BTM";
                 break;
             case 'xvg-scrypt':
+            case 'xvg-blake2s':
                 mPrice = "1XVG";
                 break;
         }
@@ -101,14 +105,15 @@ var index = {
 
                     $.each(minerList, function (i, t) {
                         xTime.unshift(t.timeFormat.replace(/_/, ':'));
-                        yData.unshift(_reset.formatHashrateWithoutSuffix(t.minerHash));
+                        yData.unshift(_reset.formatHashrate(t.minerHash));
                     });
-                    var dw = _reset.formatSuffix(data.minerCharts[0].poolHash);
+                    var dw = _reset.getDw(yData);
+                    yData = _reset.resetChart(dw, yData);
                     var w = $(window).width();
                     var interval, left;
                     if (w <= 700) {
                         interval = 5;
-                        left = "15%";
+                        left = "20%";
                     } else {
                         interval = 2;
                         left = "11%"
@@ -223,6 +228,7 @@ var index = {
                                 t.myUrl = "http://blockmeta.com/tx/";
                                 break;
                             case 'xvg-scrypt':
+                            case 'xvg-blake2s':
                                 t.myUrl = "https://verge-blockchain.info/tx/";
                                 break;
                         }

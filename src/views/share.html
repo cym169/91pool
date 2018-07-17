@@ -1,10 +1,25 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <title>下载APP - 91pool</title>
-    <script type="text/javascript" src="//res.cdn.openinstall.io/openinstall.js"></script>
+    #include("./layout/head-common.html")
+    <script type="text/javascript" src="../lib/qrcode.min.js"></script>
+    <title>分享 - 91pool</title>
 </head>
 <body>
-#include("./layout/simple.html")
+<div class="wrapper">
+    <div class="img1">
+        <img src="../images/share_img3.png">
+    </div>
+    <div class="inviteCode">
+        <span>注册邀请码：<a id="inviteCode"></a></span>
+    </div>
+    <div class="img2"><img src="../images/share_img2.png"></div>
+    <div class="img3">
+        <div class="qrCode">
+            <div id="qrcode"></div>
+        </div>
+    </div>
+    <div class="img4"><img src="../images/download_slogan.png"></div>
+</div>
 </body>
 </html>

@@ -4,8 +4,8 @@
 */
 'use strict';
 
-var zharr = ["秒之前", "分钟之前", "小时之前", "未爆块"];
-var enarr = ["s ago", "mins ago", "hours ago", "no block"];
+var zharr = ["秒之前", "分钟前", "小时前","天前","未爆块"];
+var enarr = ["s ago", "mins ago", "hours ago", "day ago", "no block"];
 var ruarr = ["секунду назад", "минуту назад", "час назад", "не берут"];
 
 var _reset = {
@@ -21,7 +21,12 @@ var _reset = {
         if (isNaN(value)) {
             value = 0;
         }
-        return parseFloat(value).toFixed(8);
+        if(value == 0){
+            return 0;
+        }else{
+            return parseFloat(value).toFixed(8);
+        }
+
     },
     // 时间换算，这里默认输入的ts是没有后面000的
     formatDateLocale: function (ts) {
@@ -86,7 +91,7 @@ var _reset = {
         }
         return a.getFullYear() + "-" + month + "-" + day;
     },
-    // 算了换算,有单位
+    // 算力换算,有单位
     formatHashrate: function (value) {
         var hashrate = value;
         var i = 0;
@@ -146,35 +151,44 @@ var _reset = {
         if (la == null) {
             la = "cn";
         }
-        var arr;
+        var array = [];
         if (la == "en") {
-            arr = enarr;
+            array = enarr;
         } else if (la == "ru") {
-            arr = ruarr;
+            array = ruarr;
         } else {
-            arr = zharr;
+            array = zharr;
         }
 
         if (value == null || value == "") {
-            return arr[3];
+            return array[4];
         }
 
-        var n = new Date().getTime();
-        var total = (n - value * 1000) / 1000;
-        if (total < 0) {
-            total = 0;
+        var now = new Date(),
+            last = value*1000,
+            time = now - last,
+            day,hours,munites,seconds;
+
+        if (time>=0) {
+            day = Math.floor(time/1000/60/60/24);
+            hours = Math.floor(time/1000/60/60%24);
+            munites = Math.floor(time/1000/60%60);
+            seconds = Math.floor(time/1000%60);
+        }else{
+            return array[4];
         }
-        if (total < 60) {
-            return (total).toFixed(0) + arr[0];
-            //return diff.toString() +"" + arr[0];
-        } else if (total > 60 && total < 3600) {
-            return (total / 60).toFixed(0) + arr[1];
-            //diff = parseInt(total/60);
-            //return diff.toString() + arr[1];
-        } else {
-            return (total / (60 * 60)).toFixed(0) + arr[2];
-            //diff = parseInt(total/(60*60));
-            //return diff.toString() + arr[2];
+
+        if( day > 0 ){
+            return day + array[3];
+        }
+        else if( day <= 0 && hours > 0 ){
+            return hours + array[2];
+        }
+        else if( day <= 0 && hours <=0 && munites > 0 ){
+            return munites + array[1];
+        }
+        else if( day <= 0 && hours <=0 && munites <= 0 && seconds > 0 ){
+            return seconds + array[0];
         }
     },
     // 隐藏交易hash的中间部分
@@ -218,31 +232,34 @@ var _reset = {
         }
         return newNumber;
     },
+
+    // 根据单位，将要显示的数据更合理化输出
     resetChart: function (dw, array) {
         var Array = array;
         if (dw == 'H') {
             for (var i = 0; i < Array.length; i++) {
-                if (Array[i].indexOf(' KH') > 0) {
+                if (Array[i].indexOf(' KH') > -1) {
                     Array[i] = parseFloat(Array[i]) * 1000 + " H";
                 }
-                if (Array[i].indexOf(' MH') > 0) {
+                if (Array[i].indexOf(' MH') > -1) {
                     Array[i] = parseFloat(Array[i]) * 1000 * 1000 + " H";
                 }
-                if (Array[i].indexOf(' GH') > 0) {
+                if (Array[i].indexOf(' GH') > -1) {
                     Array[i] = parseFloat(Array[i]) * 1000 * 1000 * 1000 + " H";
                 }
                 Array[i] = parseFloat(Array[i])
             }
+            console.log(Array)
         }
         else if (dw == 'KH') {
             for (var i = 0; i < Array.length; i++) {
-                if (Array[i].indexOf(' H') > 0) {
+                if (Array[i].indexOf(' H') > -1) {
                     Array[i] = parseFloat(Array[i]) / 1000 + " KH";
                 }
-                if (Array[i].indexOf(' MH') > 0) {
+                if (Array[i].indexOf(' MH') > -1) {
                     Array[i] = parseFloat(Array[i]) * 1000 + " KH";
                 }
-                if (Array[i].indexOf(' GH') > 0) {
+                if (Array[i].indexOf(' GH') > -1) {
                     Array[i] = parseFloat(Array[i]) * 1000 * 1000 + " KH";
                 }
                 Array[i] = parseFloat(Array[i])
@@ -250,19 +267,19 @@ var _reset = {
         }
         else if (dw == 'MH') {
             for (var i = 0; i < Array.length; i++) {
-                if (Array[i].indexOf(' H') > 0) {
+                if (Array[i].indexOf(' H') > -1) {
                     Array[i] = parseFloat(Array[i]) / 1000 / 1000 + " MH";
                 }
-                if (Array[i].indexOf(' KH') > 0) {
+                if (Array[i].indexOf(' KH') > -1) {
                     Array[i] = parseFloat(Array[i]) / 1000 + " MH";
                 }
-                if (Array[i].indexOf(' GH') > 0) {
+                if (Array[i].indexOf(' GH') > -1) {
                     Array[i] = parseFloat(Array[i]) * 1000 + " MH";
                 }
-                if (Array[i].indexOf(' TH') > 0) {
+                if (Array[i].indexOf(' TH') > -1) {
                     Array[i] = parseFloat(Array[i]) * 1000 * 1000 + " MH";
                 }
-                if (Array[i].indexOf(' PH') > 0) {
+                if (Array[i].indexOf(' PH') > -1) {
                     Array[i] = parseFloat(Array[i]) * 1000 * 1000 * 1000 + " MH";
                 }
                 Array[i] = parseFloat(Array[i])
@@ -271,16 +288,16 @@ var _reset = {
         }
         else if (dw == 'GH') {
             for (var i = 0; i < Array.length; i++) {
-                if (Array[i].indexOf(' KH') > 0) {
+                if (Array[i].indexOf(' KH') > -1) {
                     Array[i] = parseFloat(Array[i]) / 1000 / 1000 + " GH";
                 }
-                if (Array[i].indexOf(' MH') > 0) {
+                if (Array[i].indexOf(' MH') > -1) {
                     Array[i] = parseFloat(Array[i]) / 1000 + " GH";
                 }
-                if (Array[i].indexOf(' TH') > 0) {
+                if (Array[i].indexOf(' TH') > -1) {
                     Array[i] = parseFloat(Array[i]) * 1000 + " GH";
                 }
-                if (Array[i].indexOf(' PH') > 0) {
+                if (Array[i].indexOf(' PH') > -1) {
                     Array[i] = parseFloat(Array[i]) * 1000 * 1000 + " GH";
                 }
                 Array[i] = parseFloat(Array[i])
@@ -288,10 +305,10 @@ var _reset = {
         }
         else if (dw == 'TH') {
             for (var i = 0; i < Array.length; i++) {
-                if (Array[i].indexOf(' MH') > 0) {
+                if (Array[i].indexOf(' MH') > -1) {
                     Array[i] = parseFloat(Array[i]) / 1000 / 1000 + " TH";
                 }
-                if (Array[i].indexOf(' GH') > 0) {
+                if (Array[i].indexOf(' GH') > -1) {
                     Array[i] = parseFloat(Array[i]) / 1000 + " TH";
                 }
                 if (Array[i].indexOf(' PH') > 0) {
@@ -302,10 +319,10 @@ var _reset = {
         }
         else if (dw == 'PH') {
             for (var i = 0; i < Array.length; i++) {
-                if (Array[i].indexOf(' GH') > 0) {
+                if (Array[i].indexOf(' GH') > -1) {
                     Array[i] = parseFloat(Array[i]) / 1000 / 1000 + " PH";
                 }
-                if (Array[i].indexOf(' TH') > 0) {
+                if (Array[i].indexOf(' TH') > -1) {
                     Array[i] = parseFloat(Array[i]) / 1000 + " PH";
                 }
                 Array[i] = parseFloat(Array[i])
@@ -313,48 +330,48 @@ var _reset = {
         }
         return Array
     },
+    // 筛选
+    arrayFilter: function (array,val) {
+        var processArr;
+        processArr = array.filter(function(value) {
+            if(parseFloat(value) > 0){
+                return value.indexOf(val) > -1;
+            }else{
+                return 0;
+            }
+        });
+        return processArr.length;
+    },
+    // 根据出来的数据，获取图表要显示的单位
     getDw: function (array) {
         var _this = this;
-        var H = [], KH = [], MH = [], GH = [], TH = [], PH = [];
         var dw = "";
         var units = ['H', 'KH', 'MH', 'GH', 'TH', 'PH'];
-        for (var i = 0; i < array.length; i++) {
-            if (array[i] == units[0]) {
-                H.push(array[i])
-            }
-            else if (array[i] == units[1]) {
-                KH.push(array[i])
-            }
-            else if (array[i] == units[2]) {
-                MH.push(array[i])
-            }
-            else if (array[i] == units[3]) {
-                GH.push(array[i])
-            }
-            else if (array[i] == units[4]) {
-                TH.push(array[i])
-            }
-            else if (array[i] == units[5]) {
-                PH.push(array[i])
-            }
-        }
-
-        if (H.length > KH.length && H.length > MH.length) {
+        var H = _this.arrayFilter(array,' H'),
+            KH = _this.arrayFilter(array,' KH'),
+            MH = _this.arrayFilter(array,' MH'),
+            GH = _this.arrayFilter(array,' GH'),
+            TH = _this.arrayFilter(array,' TH'),
+            PH = _this.arrayFilter(array,' PH');
+        if(H === 0&&KH === 0&&MH === 0&&GH === 0&&TH === 0&&PH === 0){
             dw = units[0];
         }
-        else if (KH.length > H.length && KH.length > MH.length && KH.length > GH.length) {
+        if (H >= KH && H > MH && H > GH && H > TH && H > PH) {
+            dw = units[0];
+        }
+        else if (KH > H && KH >= MH && KH > GH && KH > TH && KH > PH) {
             dw = units[1];
         }
-        else if (MH.length > H.length && MH.length > KH.length && MH.length > GH.length) {
+        else if (MH > H && MH > KH && MH >= GH && MH > TH && MH > PH) {
             dw = units[2];
         }
-        else if (GH.length > H.length && GH.length > KH.length && GH.length > MH.length && GH.length > TH.length) {
+        else if (GH > H && GH > KH && GH > MH && GH >= TH && GH > PH) {
             dw = units[3];
         }
-        else if (TH.length > MH.length && TH.length > GH.length && TH.length > PH.length) {
+        else if (TH > H && TH > KH && TH > MH && TH > GH && TH >= PH) {
             dw = units[4];
         }
-        else if (PH.length > GH.length && PH.length > TH.length) {
+        else if (PH > H && PH > KH && PH > MH && PH > GH && PH > TH) {
             dw = units[5];
         }
         return dw;

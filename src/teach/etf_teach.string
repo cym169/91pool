@@ -12,7 +12,7 @@
                         <br>
                         <span data-i18n="etfTeach.4"></span>
                         <br>
-                        <span data-i18n="etfTeach.5"></span>
+                        <span data-i18n="etfTeach.5"></span>（<a href="https://pan.baidu.com/s/1Yz7EMvi6FoGsixibOEfBDg" target="_blank">快速下载</a>）
                         <br>
                         <span data-i18n="etfTeach.6"></span>
                         <br>
@@ -80,7 +80,15 @@
                 <div class="step">2</div>
                 <div class="content">
                     <p data-i18n="etfTeach.27"></p>
-                    <div><span data-i18n="etfTeach.28"></span></div>
+                    <div>
+                        <span data-i18n="etfTeach.50"></span>
+                        <br>
+                        <span data-i18n="etfTeach.47"></span>
+                        <br>
+                        1. <span data-i18n="etfTeach.48"></span>
+                        <br>
+                        2. <a href="./download.html#etf" target="_blank" data-i18n="etfTeach.49"></a>
+                    </div>
                 </div>
             </li>
             <li>
@@ -100,6 +108,8 @@
                         <br>
                         <span data-i18n="etfTeach.34"></span>
                         <br>
+                        <img src="../images/etf_img11.png">
+                        <br>
                         <span data-i18n="etfTeach.35"></span>ethdcrminer64.exe -epool etf1.91pool.com:9108 -ewal 0xbc42eb23728c73c6a3c79b273c370e85f76927fc -epsw x -eworker 10 -mode 1 -allcoins -1
                         <br>
                         <span data-i18n="etfTeach.36"></span>
@@ -116,7 +126,7 @@
                 <div class="content">
                     <p data-i18n="etfTeach.41"></p>
                     <div>
-                        <span data-i18n="etfTeach.42"></span><a href="http://www.91pool.com" target="_blank">http://www.91pool.com</a>，<span data-i18n="etfTeach.43"></span>
+                        <span data-i18n="etfTeach.42"></span><a href="http://www.91pool.com/currency.html?coin=etf" target="_blank">http://www.91pool.com/currency.html?coin=etf</a>，<span data-i18n="etfTeach.43"></span>
                     </div>
                 </div>
             </li>

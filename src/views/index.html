@@ -75,8 +75,13 @@
                 <tr class="coinType" coin={{item.coin}}>
                     <td><i class="{{item.coin}}_icon"><img src="{{item.imgUrl}}"></i>
                         {{item.upcoin}}
-                        {{if item.coin == 'xvg-scrypt'}}<br><span
-                                style="font-size: 12px;font-weight: normal;">scrypt</span>{{/if}}
+                        {{if item.coin == 'xvg-scrypt'}}
+                            <br>
+                            <span class="subTitle">scrypt</span>
+                        {{else if item.coin == 'xvg-blake2s'}}
+                            <br>
+                            <span class="subTitle">blake2s</span>
+                        {{/if}}
                         {{if item.new}}<span class="new_coin">new</span>{{/if}}
                     </td>
                     <td class="hashrate{{i}}">{{item.hashrate}}</td>

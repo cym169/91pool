@@ -91,7 +91,7 @@ var index = {
                 $("#getText").val("");
                 return
             }
-            if (util.validate(val, 'plus')) {
+            if(util.validate(val, 'plus')){
                 switch (hashdw) {
                     case "KH":
                         result = val * calcKb;
@@ -108,6 +108,8 @@ var index = {
                 }
                 result = result.toFixed(6);
                 $("#getText").val(result)
+            }else{
+                $("#getText").val("");
             }
         });
 
@@ -136,6 +138,7 @@ var index = {
     },
     list: function () {
         var _this = this;
+        console.log(4e9)
         _coin.getCoinList(function (data) {
             $.each(data, function (i, t) {
                 var imgUrl = require('images/' + t.coin + '_icon.png');
@@ -168,8 +171,13 @@ var index = {
                     case 'xvg-scrypt':
                         t.fee = "0%";
                         t.upcoin = t.coin.slice(0, 3).toUpperCase();
-                        t.new = true;
                         t.address = "xvg-scrypt.91pool.com:8110";
+                        break;
+                    case 'xvg-blake2s':
+                        t.fee = "0%";
+                        t.upcoin = t.coin.slice(0, 3).toUpperCase();
+                        t.new = true;
+                        t.address = "xvg-blake2s.91pool.com:9008";
                         break;
                 }
             });

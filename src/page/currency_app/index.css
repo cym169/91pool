@@ -1,0 +1,158 @@
+
+.section {
+    margin-right: auto;
+    margin-left: auto;
+    position: relative;
+    text-align: center;
+}
+
+.coin-logo {
+    width: 94px;
+    height: 94px;
+    background-color: #2d8d4b;
+    border-radius: 50%;
+    text-align: center;
+    line-height: 94px;
+    margin: 25px auto 10px;
+}
+
+.coin-logo img {
+    display: inline-block;
+    vertical-align: middle;
+    width: 50%;
+}
+
+.coin-name {
+    min-height: 16px;
+}
+
+.coin-info {
+    width: 100%;
+    height: auto;
+    overflow: hidden;
+    position: relative;
+    min-height: 500px;
+    margin-top: 1px;
+}
+
+/*ETC首页 样式*/
+
+.teach {
+    width: 100%;
+}
+
+.time-line {
+    display: inline-block;
+    width: 100%;
+    position: relative;
+    margin-top: 30px;
+    margin-bottom: 20px;
+}
+
+.time-line:before {
+    content: "";
+    display: block;
+    width: 1px;
+    border-right: 1px solid #f86601;
+    position: absolute;
+    left: 10px;
+    top: 0;
+    bottom: 0;
+}
+
+.teach-info {
+    width: 100%;
+    padding: 0;
+}
+
+.teach-info li {
+    margin-bottom: 50px;
+}
+.teach-info li:last-child{
+    margin-bottom: 0;
+}
+.teach-info li .step {
+    position: absolute;
+    left: 1px;
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    color: #fff;
+    line-height: 20px;
+    text-align: center;
+    font-size: 13px;
+    background-color: #f86601;
+}
+
+.teach-info li .content > p {
+    text-align: left;
+    padding-left: 30px;
+    color: #fec711;
+    font-size: 18px;
+    margin-bottom: 20px;
+}
+
+.teach-info li .content > div {
+    color: #000;
+    font-size: 14px;
+    text-align: left;
+    padding-left: 30px;
+    line-height: 30px;
+}
+
+.teach-info li .content > div a {
+    color: #57bcda;
+}
+
+.teach-info li .content > div p {
+    border: 1px dashed #fff;
+    padding: 10px 15px;
+    font-size: 12px;
+    border-radius: 4px;
+}
+
+.teach-info li .content img {
+    max-width: 100%;
+}
+
+/*兼容分辨率*/
+
+@media (max-width: 700px) {
+    .teach-info {
+        width: auto;
+        padding: 0 10px;
+    }
+
+    .time-line:before {
+        left: 15px;
+    }
+
+    .teach-info li .step {
+        left: 6px;
+    }
+    .btmTeach-title{
+        margin-bottom: 20px;
+    }
+}
+
+@media (min-width: 768px) and (max-width: 992px) {
+    .section {
+        width: 750px;
+    }
+}
+
+@media (min-width: 992px) and (max-width: 1200px) {
+    .section {
+        width: 970px;
+    }
+}
+
+@media (min-width: 1200px) {
+    .section {
+        width: 1170px;
+    }
+
+    .feature li:nth-child(3n) .feature-box {
+        border-right: none;
+    }
+}

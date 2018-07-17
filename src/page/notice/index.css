@@ -83,6 +83,7 @@
 }
 
 .info-box .intro a {
+    display: block;
     color: #000200;
     font-size: 13px;
 }

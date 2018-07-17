@@ -46,16 +46,6 @@ var _coins = {
             callback: resolve
         })
     },
-    // getLCH : function (resolve,reject) {
-    //     var _this = this;
-    //     serverHost = 'https://block.cc/api/v1/query?str=lch&act=q';
-    //     util.request({
-    //         url     : serverHost,
-    //         type  : 'get',
-    //         success : resolve,
-    //         error   : reject
-    //     });
-    // },
     // 获取服务器地址
     getServerUrl: function (path) {
         return serverHost + path;
