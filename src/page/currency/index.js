@@ -131,6 +131,10 @@ var index = {
                             t.myUrl = "https://verge-blockchain.info/block/";
                             t.reward = (t.reward).toFixed(6);
                             break;
+                        case 'dcr':
+                            t.myUrl = "https://mainnet.decred.org/block/";
+                            t.reward = (t.reward).toFixed(6);
+                            break;
 
                     }
                     t.timestamp = _reset.formatDateLocale(t.timestamp);
@@ -168,6 +172,9 @@ var index = {
                             t.myUrl = "https://verge-blockchain.info/block/";
                             t.reward = (t.mint).toFixed(6);
                             break;
+                        case 'dcr':
+                            t.myUrl = "https://mainnet.decred.org/block/";
+                            break;
                     }
                     t.timestamp = _reset.formatDateLocale(t.timestamp);
                     t.diff = _reset.getRoundVariance(t.shares, t.difficulty);
@@ -201,6 +208,9 @@ var index = {
                         case 'xvg-scrypt':
                         case 'xvg-blake2s':
                             t.myUrl = "https://verge-blockchain.info/block/";
+                            break;
+                        case 'dcr':
+                            t.myUrl = "https://mainnet.decred.org/block/";
                             break;
                     }
                 });
@@ -412,6 +422,11 @@ var index = {
                 mPrice = "1XVG";
                 payment = "0%";
                 reward = "730XVG";
+                break;
+            case 'dcr':
+                mPrice = "1DCR";
+                payment = "0%";
+                reward = "12DCR";
                 break;
         }
         $("#mPrice").html(mPrice);

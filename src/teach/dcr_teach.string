@@ -1,14 +1,4 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    #include("./layout/head-common.html")
-    <title>教程</title>
-</head>
-<body>
-<!--header部分-->
-#include("./layout/header.html")
-<div class="teach">
-    <div class="section">
+<div class="section">
         <div class="time-line">
             <ul class="teach-info">
                 <li>
@@ -107,8 +97,3 @@
             </ul>
         </div>
     </div>
-</div>
-<!--footer部分-->
-#include("./layout/footer.html")
-</body>
-</html>

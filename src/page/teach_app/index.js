@@ -21,9 +21,17 @@ var index = {
         $(".teach").html(teachHtml);
         var imgUrl = require('images/' + coin + '.png');
         var imgTempl = '<img src="' + imgUrl + '" />';
-        $('.coin-logo').html(imgTempl);
-        $(".coin-name").html(coin == 'xvg-scrypt' ? upper.slice(0, 3) + "<br><span style='font-size: 13px;'>scrypt</span>" : upper);
-        $("#html-title").html(upper + '矿池 - 91pool');
+        $(".coin-logo").html(imgTempl);
+        var str = "";
+        if(coin === 'xvg-scrypt'){
+            str = upper.slice(0, 3) + "<br><span style='font-size: 13px;'>scrypt</span>";
+        }else if(coin === 'xvg-blake2s'){
+            str = upper.slice(0, 3) + "<br><span style='font-size: 13px;'>blake2s</span>";
+        }else{
+            str = upper
+        }
+        $(".coin-name").html(str);
+        $("#html-title").html(upper + '教程 - 91pool');
     }
 };
 $(function () {

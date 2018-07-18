@@ -4,8 +4,7 @@
 */
 'use strict';
 var util = require('util/util.js');
-var serverHost = 'http://www.91pool.com/api';
-// var serverHost = 'http://172.16.5.105:8080';
+var serverHost = require('globalUrl');
 
 var _article = {
     saveArticle: function (data, resolve, reject) {

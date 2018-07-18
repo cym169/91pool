@@ -29,8 +29,7 @@ var index = {
         var _this = this;
         setInterval(function () {
             _this.refresh();
-        }, 10000);
-
+        }, 12000);
 
         $(document).on("click", ".coinType td:not(:nth-child(8),:nth-child(9))", function (e) {
             var coin = $(this).parent('tr').attr("coin");
@@ -44,7 +43,7 @@ var index = {
             $("#showHash").html(hashdw + "/s");
             $("#getdw").html(getdw + "/天").attr("title", getdw + "/天");
             $("#calculator").removeClass("hidden");
-            $("#hashText").focus();
+            $("#hashText").val(1).focus().trigger("input");
         });
 
         $(document).on("click", "#calculator-close", function (e) {
@@ -138,7 +137,6 @@ var index = {
     },
     list: function () {
         var _this = this;
-        console.log(4e9)
         _coin.getCoinList(function (data) {
             $.each(data, function (i, t) {
                 var imgUrl = require('images/' + t.coin + '_icon.png');
@@ -178,6 +176,12 @@ var index = {
                         t.upcoin = t.coin.slice(0, 3).toUpperCase();
                         t.new = true;
                         t.address = "xvg-blake2s.91pool.com:9008";
+                        break;
+                    case 'dcr':
+                        t.fee = "0%";
+                        t.upcoin = t.coin.toUpperCase();
+                        t.new = true;
+                        t.address = "dcr.91pool.com:9011";
                         break;
                 }
             });
@@ -259,7 +263,19 @@ var index = {
             else {
                 p = '￥' + data.data[0].priceCny + '(<span class="up">' + data.data[0].rose + '</span>)'
             }
-            $(".xvg-scryptprice").html(p);
+            $(".xvg-scryptprice,.xvg-blake2sprice").html(p);
+        });
+
+        _coin.getPrice('dcr', function (err, data) {
+            if (data.data)
+                var p = "";
+            if (parseInt(data.data[0].rose) < 0) {
+                p = '￥' + data.data[0].priceCny + '(<span class="down">' + data.data[0].rose + '</span>)'
+            }
+            else {
+                p = '￥' + data.data[0].priceCny + '(<span class="up">' + data.data[0].rose + '</span>)'
+            }
+            $(".dcrprice").html(p);
         });
 
 
@@ -273,7 +289,7 @@ var index = {
         _article.getList({currentPage: 1}, function (data) {
             if (data.code === 200) {
                 var menuList = {
-                    list: data.data.data.slice(0, 1)
+                    list: data.data.data.slice(0, 2)
                 };
                 var html = template('scroll-tp', menuList);
                 $("#scroll").html(html);

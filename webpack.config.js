@@ -1,27 +1,39 @@
 var path = require('path');
 var webpack = require('webpack');
+var os = require('os');
 var HtmlWebpackPlugin = require('html-webpack-plugin');
 var uglify = require('uglifyjs-webpack-plugin');
 var extractTextPlugin = require("extract-text-webpack-plugin");
 var copyWebpackPlugin = require("copy-webpack-plugin");
+var CompressionWebpackPlugin = require("compression-webpack-plugin");
 var glob = require('glob');
-var publicPath, minimize, minify, ugly;
-if (process.env.type == 'build') {
-    minimize = true;
-    minify = {
-        caseSensitive: false,
-        removeComments: true,
-        removeEmptyAttributes: true,
-        collapseWhitespace: true
-    };
-    ugly = new uglify();
-} else {
-    minify = {};
-    minimize = false;
-    ugly = function () {
-    };
+var minimize, minify, ugly,globalUrl;
+switch (process.env.type){
+    case 'build':
+        minimize = true;
+        minify = {
+            caseSensitive: false,
+            removeComments: true,
+            removeEmptyAttributes: true,
+            collapseWhitespace: true
+        };
+        ugly = new uglify();
+        globalUrl = "http://www.91pool.com/api";
+        break;
+    case 'beta':
+        minify = {};
+        minimize = false;
+        ugly = function () {
+        };
+        globalUrl = "http://172.16.2.12:8880/api";
+        break;
+    default :
+        minify = {};
+        minimize = false;
+        ugly = function () {
+        };
+        globalUrl = "http://www.91pool.com/api";
 }
-
 var entries = {
     'common': './src/common/index.js'
 };
@@ -69,6 +81,9 @@ var config = {
             'teach': path.resolve('./src/teach')
         }
     },
+    externals: {
+        "globalUrl": JSON.stringify(globalUrl)
+    },
     //模块：例如解读CSS,图片如何转换，压缩
     module: {
         rules: [
@@ -101,11 +116,10 @@ var config = {
                 test: /\.(eot|woff|woff2|ttf|svg)$/,
                 use: ['file-loader?name=fonts/[name].[ext]']
             },
-            // {
-            //     test: /\.(htm|html)$/i,
-            //     loader: 'html-loader'
-            // },
-            {test: /\.string$/, loader: 'html-loader'},
+            {
+                test: /\.string$/,
+                loader: 'html-loader'
+            },
             {
                 test: require.resolve('jquery'),
                 use: [{
@@ -179,6 +193,7 @@ var config = {
         new HtmlWebpackPlugin({
             favicon: path.resolve('./src/images/favicon.ico')
         }),
+        
     ],
     //配置webpack开发服务功能
     devServer:{
@@ -193,7 +208,7 @@ var config = {
         //设置基本目录结构
         contentBase:path.resolve(__dirname,'91pool'),
         //服务器的IP地址，可以使用IP也可以使用localhost
-        host:'localhost',
+        host:getIPAdress(),
         //服务端压缩是否开启
         compress:true,
         //配置服务端口号
@@ -204,3 +219,15 @@ var config = {
 config.plugins = [...config.plugins,...htmlWebpackPluginArray]
 module.exports = config;
 
+function getIPAdress(){
+    var interfaces = os.networkInterfaces();
+    for(var devName in interfaces){
+        var iface = interfaces[devName];
+        for(var i=0;i<iface.length;i++){
+            var alias = iface[i];
+            if(alias.family === 'IPv4' && alias.address !== '127.0.0.1' && !alias.internal){
+                return alias.address;
+            }
+        }
+    }
+}

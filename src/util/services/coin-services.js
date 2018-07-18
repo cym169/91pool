@@ -5,12 +5,11 @@
 'use strict';
 
 var util = require('util/util.js');
-var serverHost = '';
+var serverHost = require('globalUrl');
 var _coins = {
 
     getCoinList: function (resolve, reject) {
         var _this = this;
-        serverHost = 'http://www.91pool.com/api';
         util.request({
             url: _this.getServerUrl('/pool/stats') + "?t=" + new Date().getTime(),
             type: 'get',
@@ -20,7 +19,6 @@ var _coins = {
     },
     getCoins: function (type, resolve, reject) {
         var _this = this;
-        serverHost = 'http://www.91pool.com/api';
         util.request({
             url: _this.getServerUrl('/' + type + '/stats') + "?t=" + new Date().getTime(),
             type: 'get',
@@ -30,7 +28,6 @@ var _coins = {
     },
     getBlocks: function (type, resolve, reject) {
         var _this = this;
-        serverHost = 'http://www.91pool.com/api';
         util.request({
             url: _this.getServerUrl('/' + type + '/blocks') + "?t=" + new Date().getTime(),
             type: 'get',
@@ -39,10 +36,8 @@ var _coins = {
         });
     },
     getPrice: function (type, resolve) {
-        var _this = this;
-        serverHost = 'http://api.guower.com';
         util.getJsonp({
-            url: _this.getServerUrl('/coin/markets/' + type) + "?t=" + new Date().getTime(),
+            url: 'http://api.guower.com/coin/markets/' + type + "?t=" + new Date().getTime(),
             callback: resolve
         })
     },

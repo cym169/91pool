@@ -23,7 +23,7 @@
 
 .scroll li {
     float: left;
-    margin-right: 60px;
+    margin-right: 100px;
     height: 30px;
     line-height: 30px;
 }
@@ -163,11 +163,20 @@
     left: 9px;
     top: 14px;
 }
-
+.market-info > tbody > tr > td:nth-child(1) i.xvg-blake2s_icon {
+    width: 20px;
+    left: 9px;
+    top: 14px;
+}
 .market-info > tbody > tr > td:nth-child(1) i.btm_icon {
     width: 21px;
     left: 9px;
     top: 16px;
+}
+.market-info > tbody > tr > td:nth-child(1) i.dcr_icon {
+    width: 24px;
+    left: 9px;
+    top: 19px;
 }
 .market-info > tbody > tr > td:nth-child(1) .subTitle{
     font-size: 12px;

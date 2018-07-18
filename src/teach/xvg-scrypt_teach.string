@@ -4,26 +4,24 @@
                 <li>
                     <div class="step">1</div>
                     <div class="content">
-                        <p data-i18n="xvgTeach.1"></p>
+                        <p data-i18n="xvgscryptTeach.1"></p>
                         <div>
-                            <span data-i18n="xvgTeach.2"></span>（<a href="https://vergecurrency.com/" target="_blank">https://vergecurrency.com/</a>）
+                            <span data-i18n="xvgscryptTeach.2"></span>（<a href="https://vergecurrency.com/" target="_blank">https://vergecurrency.com/</a>）
                             <br>
-                            <span data-i18n="xvgTeach.3"></span>（<a href="https://vergecurrency.com/wallets/" target="_blank">https://vergecurrency.com/wallets/</a>）
+                            <span data-i18n="xvgscryptTeach.3"></span>（<a href="https://vergecurrency.com/wallets/" target="_blank">https://vergecurrency.com/wallets/</a>）
                             <br>
-                            <span data-i18n="xvgTeach.4"></span>（<a href="https://play.google.com/store/apps/details?id=com.vergeandroid.wallet" target="_blank">https://play.google.com/store/apps/details?id=com.vergeandroid.wallet</a>）
+                            <span data-i18n="xvgscryptTeach.4"></span>（<a href="https://play.google.com/store/apps/details?id=com.vergeandroid.wallet" target="_blank">https://play.google.com/store/apps/details?id=com.vergeandroid.wallet</a>）
                             <br>
-                            <span data-i18n="xvgTeach.5"></span>（<a href="https://vergecurrency.com/get-verge/" target="_blank">https://vergecurrency.com/get-verge/</a>）
+                            <span data-i18n="xvgscryptTeach.5"></span>（<a href="https://vergecurrency.com/get-verge/" target="_blank">https://vergecurrency.com/get-verge/</a>）
                         </div>
                     </div>
                 </li>
                 <li>
                     <div class="step">2</div>
                     <div class="content">
-                        <p data-i18n="xvgTeach.6"></p>
+                        <p data-i18n="xvgscryptTeach.6"></p>
                         <div>
-                            <span data-i18n="xvgTeach.13"></span>
-                            <br>
-                            <span data-i18n="xvgTeach.7"></span>
+                            <span data-i18n="xvgscryptTeach.7"></span>
                             <br>
                             <img src="../images/xvg-scrypt_img1.png">
                         </div>
@@ -32,18 +30,18 @@
                 <li>
                     <div class="step">3</div>
                     <div class="content">
-                        <p data-i18n="xvgTeach.8"></p>
+                        <p data-i18n="xvgscryptTeach.8"></p>
                         <div>
-                            <span data-i18n="xvgTeach.14"></span><a href="http://www.91pool.com/currency.html?coin=xvg-scrypt">www.91pool.com/currency.html?coin=xvg-scrypt</a><span data-i18n="xvgTeach.9"></span>
+                            <span data-i18n="xvgscryptTeach.14"></span><a href="http://www.91pool.com/currency.html?coin=xvgscrypt-scrypt">www.91pool.com/currency.html?coin=xvgscrypt-scrypt</a><span data-i18n="xvgscryptTeach.9"></span>
                         </div>
                     </div>
                 </li>
                 <li>
                     <div class="step">4</div>
                     <div class="content">
-                        <p data-i18n="xvgTeach.10"></p>
+                        <p data-i18n="xvgscryptTeach.10"></p>
                         <div>
-                            <span data-i18n="xvgTeach.11"></span>：xvg-scrypt.91pool.com:8110
+                            <span data-i18n="xvgscryptTeach.11"></span>：xvg-scrypt.91pool.com:8110
                             <br>
                         </div>
                     </div>

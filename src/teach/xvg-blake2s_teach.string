@@ -1,50 +1,87 @@
 <div class="section">
-        <div class="time-line btmTab">
+        <div class="time-line">
             <ul class="teach-info">
                 <li>
                     <div class="step">1</div>
                     <div class="content">
-                        <p data-i18n="xvgTeach.1"></p>
+                        <p data-i18n="xvgblake2sTeach.1"></p>
                         <div>
-                            <span data-i18n="xvgTeach.2"></span>（<a href="https://vergecurrency.com/" target="_blank">https://vergecurrency.com/</a>）
+                            <span data-i18n="xvgblake2sTeach.2"></span>（<a href="https://vergecurrency.com/" target="_blank">https://vergecurrency.com/</a>）
                             <br>
-                            <span data-i18n="xvgTeach.3"></span>（<a href="https://vergecurrency.com/wallets/" target="_blank">https://vergecurrency.com/wallets/</a>）
+                            <span data-i18n="xvgblake2sTeach.3"></span>（<a href="https://vergecurrency.com/wallets/" target="_blank">https://vergecurrency.com/wallets/</a>）
                             <br>
-                            <span data-i18n="xvgTeach.4"></span>（<a href="https://play.google.com/store/apps/details?id=com.vergeandroid.wallet" target="_blank">https://play.google.com/store/apps/details?id=com.vergeandroid.wallet</a>）
+                            <span data-i18n="xvgblake2sTeach.4"></span>（<a href="https://play.google.com/store/apps/details?id=com.vergeandroid.wallet" target="_blank">https://play.google.com/store/apps/details?id=com.vergeandroid.wallet</a>）
                             <br>
-                            <span data-i18n="xvgTeach.5"></span>（<a href="https://vergecurrency.com/get-verge/" target="_blank">https://vergecurrency.com/get-verge/</a>）
+                            <span data-i18n="xvgblake2sTeach.5"></span>（<a href="https://vergecurrency.com/get-verge/" target="_blank">https://vergecurrency.com/get-verge/</a>）
                         </div>
                     </div>
                 </li>
                 <li>
                     <div class="step">2</div>
                     <div class="content">
-                        <p data-i18n="xvgTeach.6"></p>
+                        <p data-i18n="xvgblake2sTeach.6"></p>
                         <div>
-                            <span data-i18n="xvgTeach.13"></span>
+                            <span data-i18n="xvgblake2sTeach.7"></span>
                             <br>
-                            <span data-i18n="xvgTeach.7"></span>
+                            <span data-i18n="xvgblake2sTeach.8"></span>
                             <br>
-                            <img src="../images/xvg-scrypt_img1.png">
+                            1. <span data-i18n="xvgblake2sTeach.9"></span>
+                            <br>
+                            2. <a href="./download.html#xvg-blake2s" data-i18n="xvgblake2sTeach.10"></a>
+                        </div>
+                    </div>
+                </li>
+                <li>
+                    <div class="step">2</div>
+                    <div class="content">
+                        <p data-i18n="xvgblake2sTeach.11"></p>
+                        <div>
+                            <span data-i18n="xvgblake2sTeach.12"></span>
+                            <br>
+                            <span data-i18n="xvgblake2sTeach.13"></span>
+                            <br>
+                            <img src="../images/xvg-blake2s_img1.png">
+                            <br>
+                            <span data-i18n="xvgblake2sTeach.14"></span>
+                            <br>
+                            <img src="../images/xvg-blake2s_img2.png">
+                            <br>
+                            <span data-i18n="xvgblake2sTeach.15"></span>
+                            <br>
+                            <img src="../images/xvg-blake2s_img3.png">
+                            <br>
+                            <span data-i18n="xvgblake2sTeach.16"></span>
+                            <br>
+                            <span data-i18n="xvgblake2sTeach.17"></span>
+                            <br>
+                            <img src="../images/xvg-blake2s_img4.png">
+                            <br>
+                            <span data-i18n="xvgblake2sTeach.18"></span>
+                            <br>
+                            <img src="../images/xvg-blake2s_img5.png">
+                            <br>
+                            <span data-i18n="xvgblake2sTeach.19"></span>
+                            <br>
+                            <img src="../images/xvg-blake2s_img6.png">
+                            <br>
                         </div>
                     </div>
                 </li>
                 <li>
                     <div class="step">3</div>
                     <div class="content">
-                        <p data-i18n="xvgTeach.8"></p>
+                        <p data-i18n="xvgblake2sTeach.20"></p>
                         <div>
-                            <span data-i18n="xvgTeach.14"></span><a href="http://www.91pool.com/currency.html?coin=xvg-scrypt">www.91pool.com/currency.html?coin=xvg-scrypt</a><span data-i18n="xvgTeach.9"></span>
+                            <span data-i18n="xvgblake2sTeach.21"></span><a href="http://www.91pool.com/currency.html?coin=xvg-blake2s">www.91pool.com/currency.html?coin=xvg-blake2s</a><span data-i18n="xvgblake2sTeach.22"></span>
                         </div>
                     </div>
                 </li>
                 <li>
                     <div class="step">4</div>
                     <div class="content">
-                        <p data-i18n="xvgTeach.10"></p>
+                        <p data-i18n="xvgblake2sTeach.23"></p>
                         <div>
-                            <span data-i18n="xvgTeach.11"></span>：xvg-scrypt.91pool.com:8110
-                            <br>
+                            <span data-i18n="xvgblake2sTeach.24"></span>：xvg-blake2s.91pool.com:9008
                         </div>
                     </div>
                 </li>
